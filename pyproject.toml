@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "codemix-nlu"
+description = "Romanized, code-mixed Hinglish intent and slot NLU on MASSIVE: how much accuracy code-mixing costs versus Devanagari, measured, and what recovers it."
+license = { text = "Apache-2.0" }
+version = "0.1.0"
+requires-python = ">=3.11"
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest", "ruff"]
+
+[tool.setuptools]
+packages = ["cmx"]
