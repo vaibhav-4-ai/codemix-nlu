@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hinglish typing</title>
+<style>
+  :root { --bg:#fafaf7; --fg:#1d1d1b; --muted:#6b6b66; --line:#ddd; --accent:#2f6fdf; --ok:#1e8a4c; --bad:#c43c2c; --slot:#fff1c2; }
+  @media (prefers-color-scheme: dark) { :root { --bg:#17171a; --fg:#eee; --muted:#9a9a9a; --line:#333; --slot:#4a3f12; } }
+  body { margin:0; background:var(--bg); color:var(--fg); font:16px/1.5 system-ui, sans-serif; }
+  main { max-width:720px; margin:0 auto; padding:16px; }
+  .card { border:1px solid var(--line); border-radius:10px; padding:16px; margin:12px 0; }
+  .muted { color:var(--muted); font-size:14px; }
+  .hindi { font-size:22px; }
+  mark { background:var(--slot); color:inherit; border-radius:4px; padding:0 3px; }
+  input[type=text] { width:100%; box-sizing:border-box; font-size:18px; padding:8px; border:1px solid var(--line); border-radius:6px; background:transparent; color:inherit; }
+  label { display:block; margin-top:10px; }
+  button { font-size:16px; padding:8px 14px; border-radius:6px; border:1px solid var(--line); background:transparent; color:inherit; cursor:pointer; }
+  button.primary { background:var(--accent); color:#fff; border-color:var(--accent); }
+  .row { display:flex; gap:8px; flex-wrap:wrap; align-items:center; }
+  .ok { color:var(--ok); } .bad { color:var(--bad); }
+</style>
+</head>
+<body>
+<main>
+  <h1>Hinglish typing</h1>
+  <p class="muted">Rewrite each Hindi sentence the way you'd type it on WhatsApp: English letters, mix in English
+    words if you naturally would, spell it however feels normal. Don't copy the English line, it's only there to help.</p>
+
+  <div class="card" id="start">
+    <p>1. Choose <b>data/annotation/seed_50.jsonl</b> from the codemix-nlu folder.</p>
+    <input type="file" id="file" accept=".jsonl">
+    <p class="muted">Your work saves in this browser as you go. When done, press "Download my work".</p>
+  </div>
+
+  <div id="work" hidden>
+    <div class="row">
+      <button id="prev">← Back</button>
+      <span id="pos"></span>
+      <button id="next" class="primary">Save &amp; next →</button>
+      <button id="download">Download my work</button>
+    </div>
+    <div class="card">
+      <div class="muted" id="intent"></div>
+      <div class="hindi" id="hindi"></div>
+      <div class="muted" id="english"></div>
+      <label>Your Hinglish sentence
+        <input type="text" id="sentence" autocomplete="off">
+      </label>
+      <div id="slots"></div>
+      <p id="msg"></p>
+    </div>
+  </div>
+</main>
+<script>
+const SLOT = /\[\s*([^\]:]+?)\s*:\s*([^\]]*?)\s*\]/g;
+let rows = [], i = 0, done = {};
+const $ = id => document.getElementById(id);
+const esc = s => s.replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const slotsOf = a => [...a.matchAll(SLOT)].map(m => [m[1].trim(), m[2].trim()]);
+const show = a => esc(a).replace(/\[\s*([^\]:]+?)\s*:\s*([^\]]*?)\s*\]/g, '<mark title="$1">$2</mark>');
+
+try { done = JSON.parse(localStorage.getItem("cmx-done") || "{}"); } catch (e) { done = {}; }
+
+$("file").onchange = async e => {
+  const text = await e.target.files[0].text();
+  rows = text.split("\n").filter(Boolean).map(l => JSON.parse(l));
+  i = rows.findIndex(r => !done[r.id]); if (i < 0) i = 0;
+  $("start").hidden = true; $("work").hidden = false; render();
+};
+
+function render() {
+  const r = rows[i], d = done[r.id] || {};
+  $("pos").textContent = `${i + 1} / ${rows.length} · ${Object.keys(done).length} done`;
+  $("intent").textContent = "wants: " + r.intent;
+  $("hindi").innerHTML = show(r.hindi);
+  $("english").innerHTML = "English: " + show(r.english);
+  $("sentence").value = d.hinglish || "";
+  $("slots").innerHTML = "<p class='muted'>Now copy the words from YOUR sentence that mean each highlighted part:</p>" +
+    slotsOf(r.hindi).map(([type, val], k) =>
+      `<label>${esc(type)} <span class="muted">(${esc(val)})</span>
+       <input type="text" data-k="${k}" value="${esc((d.slots || [])[k] || "")}" autocomplete="off"></label>`).join("");
+  $("msg").textContent = "";
+  $("sentence").focus();
+}
+
+// Wrap each slot's words in [type : words] inside the sentence; return an error message if they aren't found.
+function build(r) {
+  let s = " " + $("sentence").value.trim().replace(/\s+/g, " ") + " ";
+  const types = slotsOf(r.hindi).map(x => x[0]);
+  const vals = [...document.querySelectorAll("#slots input")].map(x => x.value.trim().replace(/\s+/g, " "));
+  if (s.trim() === "") return { error: "Type the sentence first." };
+  for (let k = 0; k < types.length; k++) {
+    if (!vals[k]) return { error: `Fill in the "${types[k]}" box.` };
+    const at = s.indexOf(" " + vals[k] + " ");
+    if (at < 0) return { error: `"${vals[k]}" isn't in your sentence word-for-word.` };
+    s = s.slice(0, at + 1) + `[${types[k]} : ${vals[k]}]` + s.slice(at + 1 + vals[k].length);
+  }
+  return { hinglish: $("sentence").value.trim(), slots: vals, annot: s.trim() };
+}
+
+function save() {
+  const r = rows[i], b = build(r);
+  if (b.error) { $("msg").innerHTML = `<span class="bad">${esc(b.error)}</span>`; return false; }
+  done[r.id] = { id: r.id, intent: r.intent, hinglish: b.hinglish, slots: b.slots, hinglish_annot: b.annot };
+  try { localStorage.setItem("cmx-done", JSON.stringify(done)); } catch (e) {}
+  return true;
+}
+
+$("next").onclick = () => {
+  if (!save()) return;
+  if (i < rows.length - 1) { i++; render(); }
+  else { $("msg").innerHTML = '<span class="ok">Saved. That was the last one — press "Download my work".</span>'; }
+};
+$("prev").onclick = () => { if (i > 0) { i--; render(); } };
+$("sentence").onkeydown = e => { if (e.key === "Enter") document.querySelector("#slots input")?.focus(); };
+$("download").onclick = () => {
+  const lines = rows.filter(r => done[r.id]).map(r => JSON.stringify(done[r.id])).join("\n") + "\n";
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(new Blob([lines], { type: "application/json" }));
+  a.download = "seed_50_hinglish.jsonl"; a.click();
+};
+</script>
+</body>
+</html>

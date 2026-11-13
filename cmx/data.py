@@ -1,0 +1,86 @@
+"""Download MASSIVE, keep the Hindi + English files, and pick sentences for you to rewrite."""
+
+import hashlib
+import io
+import json
+import random
+import tarfile
+import urllib.request
+from pathlib import Path
+
+from cmx.massive import slots
+
+URL = "https://amazon-massive-nlu-dataset.s3.amazonaws.com/amazon-massive-dataset-1.1.tar.gz"
+SIZE = 40_251_390  # bytes, checked 2026-11-11
+SHA256 = None  # pinned after the first run prints it
+KEEP = ("id", "partition", "scenario", "intent", "utt", "annot_utt")
+DATA = Path("data")
+SEED = 13
+
+
+def load(locale: str) -> list[dict]:
+    """Read one saved language file, e.g. load('hi-IN')."""
+    path = DATA / "massive" / f"{locale}.jsonl"
+    return [json.loads(line) for line in path.read_text(encoding="utf-8").splitlines()]
+
+
+def save_jsonl(path: Path, rows: list[dict]) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    text = "".join(json.dumps(r, ensure_ascii=False) + "\n" for r in rows)
+    path.write_text(text, encoding="utf-8")
+
+
+def pick_seed(hindi: list[dict], english: list[dict], n: int = 50) -> list[dict]:
+    """Pick n test sentences, each from a different intent, so the 50 cover many kinds of request."""
+    english_by_id = {r["id"]: r for r in english}
+    by_intent: dict[str, list[dict]] = {}
+    for r in hindi:
+        if r["partition"] == "test" and r["id"] in english_by_id and slots(r["annot_utt"]):
+            by_intent.setdefault(r["intent"], []).append(r)
+    rng = random.Random(SEED)
+    intents = sorted(by_intent)
+    rng.shuffle(intents)
+    picked = []
+    for intent in intents[:n]:
+        r = rng.choice(by_intent[intent])
+        picked.append(
+            {
+                "id": r["id"],
+                "intent": r["intent"],
+                "hindi": r["annot_utt"],
+                "english": english_by_id[r["id"]]["annot_utt"],
+            }
+        )
+    return picked
+
+
+def fetch() -> None:
+    """Download the tarball, check it, save hi-IN and en-US, and write the 50-sentence seed batch."""
+    with urllib.request.urlopen(URL) as resp:
+        blob = resp.read()
+    digest = hashlib.sha256(blob).hexdigest()
+    print(f"downloaded {len(blob):,} bytes, sha256 {digest}")
+    if len(blob) != SIZE or (SHA256 and digest != SHA256):
+        raise SystemExit("the download does not match the expected file")
+
+    out = {}
+    with tarfile.open(fileobj=io.BytesIO(blob), mode="r:gz") as tar:
+        for locale in ("hi-IN", "en-US"):
+            member = next(m for m in tar.getmembers() if m.name.endswith(f"/{locale}.jsonl"))
+            rows = [json.loads(line) for line in tar.extractfile(member)]
+            rows = [{k: r[k] for k in KEEP} for r in rows]
+            save_jsonl(DATA / "massive" / f"{locale}.jsonl", rows)
+            out[locale] = rows
+            counts = {p: sum(r["partition"] == p for r in rows) for p in ("train", "dev", "test")}
+            print(f"{locale}: {counts}")
+
+    print("\nexample (same id in both languages):")
+    first = out["hi-IN"][0]
+    english = next(r for r in out["en-US"] if r["id"] == first["id"])
+    print(f"  intent : {first['intent']}")
+    print(f"  hindi  : {first['annot_utt']}")
+    print(f"  english: {english['annot_utt']}")
+
+    seed = pick_seed(out["hi-IN"], out["en-US"])
+    save_jsonl(DATA / "annotation" / "seed_50.jsonl", seed)
+    print(f"\nwrote {len(seed)} sentences for you to rewrite in data/annotation/seed_50.jsonl")

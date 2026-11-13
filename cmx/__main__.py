@@ -22,7 +22,12 @@ def main() -> None:
     for name in COMMANDS:
         sub.add_parser(name)
     args = parser.parse_args()
-    print(f"{args.command}: not implemented")
+    if args.command == "fetch-data":
+        from cmx.data import fetch
+
+        fetch()
+    else:
+        print(f"{args.command}: not implemented")
 
 
 if __name__ == "__main__":
