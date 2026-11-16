@@ -3,6 +3,7 @@ import argparse
 # One subcommand per stage of the build. Each one will import its own code inside
 # its branch, so `python -m cmx --help` stays fast and never loads torch.
 COMMANDS = (
+    "quick",  # the quick version: first rough number on your 50 sentences
     "fetch-data",  # Stage 1: download MASSIVE, check its checksum, extract Hindi + English
     "check-annotations",  # Stage 1b: validate your typed Hinglish rows
     "eda",  # Stage 2: data analysis + engineered features
@@ -22,7 +23,11 @@ def main() -> None:
     for name in COMMANDS:
         sub.add_parser(name)
     args = parser.parse_args()
-    if args.command == "fetch-data":
+    if args.command == "quick":
+        from cmx.quick import run
+
+        run()
+    elif args.command == "fetch-data":
         from cmx.data import fetch
 
         fetch()
