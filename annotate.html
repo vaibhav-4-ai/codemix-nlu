@@ -28,7 +28,7 @@
     words if you naturally would, spell it however feels normal. Don't copy the English line, it's only there to help.</p>
 
   <div class="card" id="start">
-    <p>1. Choose <b>data/annotation/seed_50.jsonl</b> from the codemix-nlu folder.</p>
+    <p>1. Choose <b>data/annotation/seed_50_drafted.jsonl</b> from the codemix-nlu folder.</p>
     <input type="file" id="file" accept=".jsonl">
     <p class="muted">Your work saves in this browser as you go. When done, press "Download my work".</p>
   </div>
@@ -44,6 +44,8 @@
       <div class="muted" id="intent"></div>
       <div class="hindi" id="hindi"></div>
       <div class="muted" id="english"></div>
+      <p id="draftnote" class="muted" hidden>✏️ This is Claude's draft. Read it: if you wouldn't text it this way,
+        change it. If it's fine, just press "Save &amp; next".</p>
       <label>Your Hinglish sentence
         <input type="text" id="sentence" autocomplete="off">
       </label>
@@ -70,7 +72,10 @@ $("file").onchange = async e => {
 };
 
 function render() {
-  const r = rows[i], d = done[r.id] || {};
+  const r = rows[i];
+  // Saved work first; otherwise Claude's draft (if the file has one) for you to check and fix.
+  const d = done[r.id] || (r.draft ? { hinglish: r.draft, slots: r.draft_slots } : {});
+  $("draftnote").hidden = !(r.draft && !done[r.id]);
   $("pos").textContent = `${i + 1} / ${rows.length} · ${Object.keys(done).length} done`;
   $("intent").textContent = "wants: " + r.intent;
   $("hindi").innerHTML = show(r.hindi);
@@ -102,7 +107,13 @@ function build(r) {
 function save() {
   const r = rows[i], b = build(r);
   if (b.error) { $("msg").innerHTML = `<span class="bad">${esc(b.error)}</span>`; return false; }
-  done[r.id] = { id: r.id, intent: r.intent, hinglish: b.hinglish, slots: b.slots, hinglish_annot: b.annot };
+  const rec = { id: r.id, intent: r.intent, hinglish: b.hinglish, slots: b.slots, hinglish_annot: b.annot };
+  if (r.draft) {
+    // Recorded so the dataset card can say exactly how many drafts the native speaker changed.
+    rec.drafted_by = "claude";
+    rec.edited = b.hinglish !== r.draft || JSON.stringify(b.slots) !== JSON.stringify(r.draft_slots);
+  }
+  done[r.id] = rec;
   try { localStorage.setItem("cmx-done", JSON.stringify(done)); } catch (e) {}
   return true;
 }
