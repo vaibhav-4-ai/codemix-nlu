@@ -216,3 +216,7 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# made by CI, not committed
+artifacts/
+docs/*.json

@@ -10,6 +10,8 @@ Three simple models (TF-IDF over character pieces + logistic regression), traine
 """
 
 import json
+import math
+import os
 import random
 from pathlib import Path
 
@@ -37,13 +39,63 @@ def bootstrap_ci(correct: list[bool], n: int = 2000, seed: int = SEED) -> tuple[
 
 
 def make_model():
+    # max_features keeps the model small enough (~4 MB) to run inside a web page.
     return make_pipeline(
-        TfidfVectorizer(analyzer="char_wb", ngram_range=(2, 4), min_df=2, sublinear_tf=True),
+        TfidfVectorizer(
+            analyzer="char_wb", ngram_range=(2, 4), min_df=2, sublinear_tf=True, max_features=10000
+        ),
         LogisticRegression(max_iter=2000),
     )
 
 
-def run() -> None:
+def export(model, path: Path) -> None:
+    """Save a model as plain numbers the demo page can use (it redoes the maths in JavaScript)."""
+    vec = model.named_steps["tfidfvectorizer"]
+    clf = model.named_steps["logisticregression"]
+    data = {
+        "intents": [str(c) for c in clf.classes_],
+        "vocab": {k: int(v) for k, v in vec.vocabulary_.items()},
+        "idf": [round(float(x), 4) for x in vec.idf_],
+        "coef": [[round(float(x), 4) for x in row] for row in clf.coef_],
+        "intercept": [round(float(x), 4) for x in clf.intercept_],
+    }
+    path.write_text(json.dumps(data, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
+
+
+def predict_from_export(data: dict, text: str) -> str:
+    """The same steps the demo page runs in JavaScript, in Python, so a test can check them.
+
+    1. cut each word (padded with spaces) into 2-4 letter pieces: " room " -> " r", "ro", ...
+    2. weight each known piece: (1 + log(count)) * idf, then scale the list to length 1
+    3. score each intent: sum(weight * coef) + intercept; the highest score wins
+    """
+    counts: dict[int, int] = {}
+    for word in text.lower().split():
+        w = f" {word} "
+        for n in range(2, 5):
+            last = max(0, len(w) - n)
+            for start in range(last + 1):
+                idx = data["vocab"].get(w[start : start + n])
+                if idx is not None:
+                    counts[idx] = counts.get(idx, 0) + 1
+            if last == 0:  # word shorter than n: scikit-learn counts it once and stops
+                break
+    weights = {i: (1 + math.log(c)) * data["idf"][i] for i, c in counts.items()}
+    norm = math.sqrt(sum(v * v for v in weights.values())) or 1.0
+    scores = [
+        b + sum(v / norm * row[i] for i, v in weights.items())
+        for row, b in zip(data["coef"], data["intercept"], strict=True)
+    ]
+    return data["intents"][scores.index(max(scores))]
+
+
+def notice(title: str, message: str) -> None:
+    """On GitHub, also post the line as a note on the run page (Claude can read these)."""
+    if os.environ.get("GITHUB_ACTIONS"):
+        print(f"::notice title={title}::{message}")
+
+
+def run(export_dir: str | None = None) -> None:
     hindi = load("hi-IN")
     english = {r["id"]: r for r in load("en-US")}
     train = [r for r in hindi if r["partition"] == "train"]
@@ -79,10 +131,12 @@ def run() -> None:
             row[script] = {"accuracy": acc, "ci95": [lo, hi]}
         results[name] = row
         d, h = row["devanagari"], row["hinglish"]
-        print(
-            f"{name:32} {d['accuracy']:>6.0%} [{d['ci95'][0]:.0%}-{d['ci95'][1]:.0%}]"
-            f" {h['accuracy']:>6.0%} [{h['ci95'][0]:.0%}-{h['ci95'][1]:.0%}]"
+        line = (
+            f"Devanagari {d['accuracy']:.0%} [{d['ci95'][0]:.0%}-{d['ci95'][1]:.0%}]"
+            f" | Hinglish {h['accuracy']:.0%} [{h['ci95'][0]:.0%}-{h['ci95'][1]:.0%}]"
         )
+        print(f"{name:32} {line}")
+        notice(f"Quick result {name}", line)
 
     print("\n[x-y] = 95% range. With only 50 sentences the ranges are wide - this is a first look.\n")
     print("Examples (your Hinglish -> what models 1 and 3 guessed):")
@@ -94,3 +148,11 @@ def run() -> None:
     out = Path("artifacts") / "quick.json"
     out.parent.mkdir(exist_ok=True)
     out.write_text(json.dumps(results, indent=2), encoding="utf-8")
+
+    if export_dir:
+        folder = Path(export_dir)
+        folder.mkdir(parents=True, exist_ok=True)
+        export(first, folder / "model_plain.json")
+        export(last, folder / "model_fixed.json")
+        (folder / "results.json").write_text(json.dumps(results), encoding="utf-8")
+        print(f"\nexported both models for the demo page into {folder}/")

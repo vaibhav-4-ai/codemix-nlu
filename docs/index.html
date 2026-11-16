@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hinglish NLU demo</title>
+<style>
+  :root { --bg:#fafaf7; --fg:#1d1d1b; --muted:#6b6b66; --line:#e2e2dc; --card:#fff; --accent:#2f6fdf; --ok:#1e8a4c; --bad:#c43c2c; }
+  @media (prefers-color-scheme: dark) { :root { --bg:#151517; --fg:#ececec; --muted:#9a9a9a; --line:#2c2c30; --card:#1d1d20; } }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--fg); font:16px/1.5 system-ui, sans-serif; }
+  main { max-width:760px; margin:0 auto; padding:24px 16px 48px; }
+  h1 { margin:0 0 4px; font-size:28px; }
+  .muted { color:var(--muted); font-size:14px; }
+  input { width:100%; font-size:20px; padding:12px; border:1px solid var(--line); border-radius:8px; background:var(--card); color:inherit; margin-top:16px; }
+  .chips { display:flex; flex-wrap:wrap; gap:8px; margin:10px 0 20px; }
+  .chips button { font-size:14px; padding:6px 10px; border-radius:999px; border:1px solid var(--line); background:var(--card); color:inherit; cursor:pointer; }
+  .grid { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+  @media (max-width:560px) { .grid { grid-template-columns:1fr; } }
+  .card { background:var(--card); border:1px solid var(--line); border-radius:10px; padding:16px; }
+  .card h2 { font-size:15px; margin:0 0 2px; }
+  .intent { font-size:22px; font-weight:600; margin:10px 0 4px; word-break:break-word; }
+  .bar { height:8px; background:var(--line); border-radius:4px; overflow:hidden; }
+  .bar span { display:block; height:100%; background:var(--accent); }
+  table { width:100%; border-collapse:collapse; font-size:14px; margin-top:8px; }
+  td, th { text-align:left; padding:6px 4px; border-bottom:1px solid var(--line); }
+  td:not(:first-child), th:not(:first-child) { text-align:right; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Hinglish NLU demo</h1>
+  <p class="muted">Type a request to a voice assistant the way you'd text it. Two models guess what you want.
+    Both learned from Amazon's MASSIVE Hindi data; only the right one also saw Hinglish-style text.</p>
+
+  <input id="q" placeholder="e.g. room ki light blue kar do" autocomplete="off" disabled>
+  <div class="chips" id="examples"></div>
+
+  <div class="grid">
+    <div class="card">
+      <h2>Plain model</h2>
+      <div class="muted">learned from Devanagari Hindi only</div>
+      <div class="intent" id="out-plain">…</div>
+      <div class="bar"><span id="bar-plain" style="width:0"></span></div>
+      <div class="muted" id="conf-plain"></div>
+    </div>
+    <div class="card">
+      <h2>Fixed model</h2>
+      <div class="muted">+ auto-romanized Hindi + English</div>
+      <div class="intent" id="out-fixed">…</div>
+      <div class="bar"><span id="bar-fixed" style="width:0"></span></div>
+      <div class="muted" id="conf-fixed"></div>
+    </div>
+  </div>
+
+  <div class="card" style="margin-top:20px">
+    <h2>Measured on 50 test sentences (intent accuracy)</h2>
+    <table id="results"><tr><th>model</th><th>Devanagari</th><th>Hinglish</th></tr></table>
+    <p class="muted">Quick version: simple character-based models, 50 sentences, so the ranges in brackets are wide.
+      The Hinglish test sentences were drafted by AI and reviewed by a native speaker.
+      The real model (HingBERT) comes next.</p>
+  </div>
+</main>
+<script>
+const EXAMPLES = ["room ki light blue kar do", "kal subah 7 baje ka alarm laga do", "arijit singh ke gaane chalao",
+  "aaj delhi me mausam kaisa hai", "mummy ko email bhejo", "ek pizza order karo"];
+const models = {};
+const pretty = s => s.replace(/_/g, " ");
+
+// Same steps as predict_from_export in cmx/quick.py (a test there keeps them matching scikit-learn).
+function predict(m, text) {
+  const counts = new Map();
+  for (const word of text.toLowerCase().split(/\s+/).filter(Boolean)) {
+    const w = " " + word + " ";
+    for (let n = 2; n <= 4; n++) {
+      const last = Math.max(0, w.length - n);
+      for (let s = 0; s <= last; s++) {
+        const idx = m.vocab[w.slice(s, s + n)];
+        if (idx !== undefined) counts.set(idx, (counts.get(idx) || 0) + 1);
+      }
+      if (last === 0) break;
+    }
+  }
+  const weights = [...counts].map(([i, c]) => [i, (1 + Math.log(c)) * m.idf[i]]);
+  const norm = Math.sqrt(weights.reduce((a, [, v]) => a + v * v, 0)) || 1;
+  const scores = m.coef.map((row, k) => weights.reduce((a, [i, v]) => a + (v / norm) * row[i], m.intercept[k]));
+  const top = Math.max(...scores);
+  const exps = scores.map(s => Math.exp(s - top)), total = exps.reduce((a, b) => a + b, 0);
+  const best = scores.indexOf(top);
+  return { intent: m.intents[best], conf: exps[best] / total };
+}
+
+function show(which, text) {
+  if (!text.trim()) { document.getElementById("out-" + which).textContent = "…"; document.getElementById("bar-" + which).style.width = 0; document.getElementById("conf-" + which).textContent = ""; return; }
+  const p = predict(models[which], text);
+  document.getElementById("out-" + which).textContent = pretty(p.intent);
+  document.getElementById("bar-" + which).style.width = (p.conf * 100).toFixed(0) + "%";
+  document.getElementById("conf-" + which).textContent = `confidence ${(p.conf * 100).toFixed(0)}%`;
+}
+const update = () => { const t = document.getElementById("q").value; show("plain", t); show("fixed", t); };
+
+const q = document.getElementById("q");
+q.oninput = update;
+for (const e of EXAMPLES) {
+  const b = document.createElement("button"); b.textContent = e;
+  b.onclick = () => { q.value = e; update(); };
+  document.getElementById("examples").appendChild(b);
+}
+
+Promise.all(["model_plain.json", "model_fixed.json", "results.json"].map(f => fetch(f).then(r => r.json())))
+  .then(([plain, fixed, results]) => {
+    models.plain = plain; models.fixed = fixed;
+    q.disabled = false; q.focus();
+    const t = document.getElementById("results");
+    for (const [name, r] of Object.entries(results)) {
+      const cell = x => `${Math.round(x.accuracy * 100)}% <span class="muted">[${Math.round(x.ci95[0] * 100)}–${Math.round(x.ci95[1] * 100)}]</span>`;
+      t.insertAdjacentHTML("beforeend", `<tr><td>${name.replace(/^\d\.\s*/, "")}</td><td>${cell(r.devanagari)}</td><td>${cell(r.hinglish)}</td></tr>`);
+    }
+  })
+  .catch(() => { q.placeholder = "Couldn't load the models."; });
+</script>
+</body>
+</html>

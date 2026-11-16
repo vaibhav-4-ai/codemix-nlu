@@ -21,12 +21,14 @@ def main() -> None:
     parser = argparse.ArgumentParser(prog="cmx")
     sub = parser.add_subparsers(dest="command", required=True)
     for name in COMMANDS:
-        sub.add_parser(name)
+        p = sub.add_parser(name)
+        if name == "quick":
+            p.add_argument("--export", help="folder to save the demo page's models into")
     args = parser.parse_args()
     if args.command == "quick":
         from cmx.quick import run
 
-        run()
+        run(args.export)
     elif args.command == "fetch-data":
         from cmx.data import fetch
 
