@@ -24,8 +24,16 @@ def main() -> None:
         p = sub.add_parser(name)
         if name == "quick":
             p.add_argument("--export", help="folder to save the demo page's models into")
+        if name == "train":
+            p.add_argument("--recipe", choices=["plain", "fixed"], default="fixed")
+            p.add_argument("--seed", type=int, default=13)
+            p.add_argument("--backbone", default="l3cube-pune/hing-mbert")
     args = parser.parse_args()
-    if args.command == "quick":
+    if args.command == "train":
+        from cmx.train import train
+
+        train(args.recipe, args.seed, args.backbone)
+    elif args.command == "quick":
         from cmx.quick import run
 
         run(args.export)
