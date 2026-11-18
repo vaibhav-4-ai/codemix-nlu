@@ -12,7 +12,7 @@ from cmx.massive import slots
 
 URL = "https://amazon-massive-nlu-dataset.s3.amazonaws.com/amazon-massive-dataset-1.1.tar.gz"
 SIZE = 40_251_390  # bytes, checked 2026-11-11
-SHA256 = None  # pinned after the first run prints it
+SHA256 = "4cba5faa11c71437928e17cb1b9b3d8b8e727e7ea363a3a9a8045e19c0491577"  # measured 2026-11-18
 KEEP = ("id", "partition", "scenario", "intent", "utt", "annot_utt")
 DATA = Path("data")
 SEED = 13

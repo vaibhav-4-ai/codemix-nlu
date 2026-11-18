@@ -34,7 +34,7 @@ It's not translation: the output is a label plus the key details, not another se
 
 1. **Data:** [MASSIVE](https://github.com/alexa/massive) (Amazon, CC BY 4.0), Hindi (`hi-IN`) and English
    (`en-US`), 60 intents, with slots marked in BIO tags.
-2. **Paired test set:** 50 Hindi test sentences, one per intent, each with at least one slot. Each one is rewritten
+2. **Paired test set:** 50 Hindi test sentences, each from a different intent and each with at least one slot. Each one is rewritten
    in Hinglish with **identical labels**, so the only thing that changes is how the sentence is written.
 3. **Model:** [`l3cube-pune/hing-mbert`](https://huggingface.co/l3cube-pune/hing-mbert) with two heads: intent on
    `[CLS]`, and one slot tag per word (first word-piece). Trained jointly with a hand-written PyTorch loop: AdamW,
@@ -110,8 +110,10 @@ pattern: Devanagari-only training scores 12% on Hinglish, and adding romanized +
 - **Hinglish-TOP** (Google, [`WillHeld/hinglish_top`](https://huggingface.co/datasets/WillHeld/hinglish_top)):
   a human-written Hinglish semantic-parsing set. It's the closest existing resource, and a transfer evaluation on
   it is planned.
-- arXiv [2204.12753](https://arxiv.org/abs/2204.12753): joint intent + slot on Hindi code-mixed text.
-- arXiv [1812.02914](https://arxiv.org/abs/1812.02914): a code-mixed English-Hindi intent dataset.
+- arXiv [2204.12753](https://arxiv.org/abs/2204.12753): *A Comprehensive Understanding of Code-mixed Language
+  Semantics using Hierarchical Transformer*.
+- arXiv [1812.02914](https://arxiv.org/abs/1812.02914): *Intent Detection for code-mix utterances in task oriented
+  dialogue systems*.
 - Krishnan et al., 2021: multilingual code-switching augmentation for zero-shot cross-lingual intent and slot
   prediction.
 - Recent Hinglish intent datasets on Hugging Face (`Sachin-099/hinglish-support-intents-india`,
