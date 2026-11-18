@@ -1,0 +1,560 @@
+{"id": "3161", "intent": "alarm_query", "hindi": "क्या मेरे पास [date : कल] [time : सुबह छह बजे] के लिए कोई अलार्म सेट है", "english": "do i have any alarms set for [time : six am] [date : tomorrow]"}
+{"id": "5902", "intent": "alarm_query", "hindi": "जांचें कि अलार्म सुबह [time : छह बजे] के लिए सेट है या नहीं", "english": "check if alarm is set for [time : six am]"}
+{"id": "2673", "intent": "alarm_query", "hindi": "क्या मुझे अपने अगले [event_name : डॉक्टर] के [event_name : नियुक्ति] के लिए रिमाइंडर अलार्म सेट करना याद है", "english": "did i remember to set a reminder alarm for my next [event_name : doctor's appointment]"}
+{"id": "4145", "intent": "alarm_query", "hindi": "[date : आज] मैं कौन से अलार्म लगाऊंगा", "english": "what alarms did i set [date : today]"}
+{"id": "3870", "intent": "alarm_query", "hindi": "मेरे अलार्म के लिए [alarm_type : जागने का] समय क्या है मैंने [date : इस सप्ताह] के अंत में उड़ान के लिए निर्धारित किया है", "english": "what is the [alarm_type : wake up] time for my alarm i have set for the flight [date : this weekend]"}
+{"id": "2957", "intent": "alarm_query", "hindi": "क्या क्या [time : सुबह दस बजे] का अलार्म है का अलार्म है", "english": "is there an alarm for [time : ten am]"}
+{"id": "5974", "intent": "alarm_query", "hindi": "[timeofday : दोपहर] में [event_name : टैबलेट] रखने के लिए अलार्म सेट करें", "english": "did i set an alarm [event_name : to have tablets] in the [timeofday : noon]"}
+{"id": "1646", "intent": "alarm_query", "hindi": "क्या [date : आज] कोई अलार्म बज रहा है", "english": "are there any alarms going off [date : today]"}
+{"id": "1264", "intent": "alarm_query", "hindi": "क्या मेरा अलार्म [date : कल] [timeofday : सुबह] के लिए सेट है", "english": "is my alarm set for [date : tomorrow] [timeofday : morning]"}
+{"id": "3702", "intent": "alarm_query", "hindi": "olly क्या मेरे पास [date : कल] के लिए अलार्म सेट है", "english": "olly do i have an alarm set for [date : tomorrow]"}
+{"id": "3829", "intent": "alarm_remove", "hindi": "कृपया उस अलार्म को हटा दें जो [date : कार्यदिवसों] के लिए [time : नौ] बजे सेट किया गया है", "english": "please remove the alarm that is set for [date : weekdays] at [time : nine]"}
+{"id": "59", "intent": "alarm_remove", "hindi": "मेरा [time : सुबह सात बजे] का अलार्म रद्द करो", "english": "cancel my [time : seven am] alarm"}
+{"id": "560", "intent": "alarm_remove", "hindi": "[time : सुबह आठ बजे] का अलार्म बंद करें", "english": "turn off [time : eight am] alarm"}
+{"id": "4712", "intent": "alarm_remove", "hindi": "मुझे [date : कल] मत जगाना", "english": "do not wake me up [date : tomorrow]"}
+{"id": "1452", "intent": "alarm_remove", "hindi": "[date : कल] के लिए अलार्म हटा दें", "english": "remove the alarm for [date : tomorrow]"}
+{"id": "1675", "intent": "alarm_remove", "hindi": "[date : मंगलवार] [time : सुबह नौ बजे] का अलार्म हटा दें", "english": "remove [date : tuesday] alarm of [time : nine am]"}
+{"id": "1205", "intent": "alarm_remove", "hindi": "दोपहर [time : तीन बजे] के लिए अलार्म अक्षम करें", "english": "disable alarm for [time : three p. m.]"}
+{"id": "5103", "intent": "alarm_remove", "hindi": "olly सभी [alarm_type : फुटबॉल का अभ्यास] अलार्म रद्द करें", "english": "olly cancel all [alarm_type : soccer practice] alarms"}
+{"id": "2985", "intent": "alarm_remove", "hindi": "अलार्म रद्द करें", "english": "cancel alarm"}
+{"id": "399", "intent": "alarm_remove", "hindi": "पहला अलार्म हटाएं", "english": "remove the first alarm"}
+{"id": "3761", "intent": "alarm_set", "hindi": "मुझे [time : आठ बजे] उठा देना", "english": "get me up at [time : eight am]"}
+{"id": "5475", "intent": "alarm_set", "hindi": "मैं चाहता हूँ आप मुझे सुबह [time : छह बजे] उठाओ", "english": "i need you to get me up at [time : six am]"}
+{"id": "1982", "intent": "alarm_set", "hindi": "[time : साढ़े छह बजे] अलार्म लगाओ", "english": "set alarm at [time : six thirty am]"}
+{"id": "5635", "intent": "alarm_set", "hindi": "सुनिश्चित करें कि मुझे [timeofday : सुबह] [time : छह] बजे उठना है", "english": "ensure i have to get up at [time : six] in [timeofday : morning]"}
+{"id": "939", "intent": "alarm_set", "hindi": "[time : सुबह सात बजे] के लिए मेरा अलार्म लगाओ", "english": "set my alarm for [time : seven am]"}
+{"id": "5043", "intent": "alarm_set", "hindi": "[time : बारह बजे] के लिए मेरा अलार्म लगाओ", "english": "set my alarm for [time : twelve p. m.]"}
+{"id": "174", "intent": "alarm_set", "hindi": "[date : गुरुवार] सुबह [time : सात बजे] उठना सेट करें", "english": "set wake up [date : thursday] [time : seven am]"}
+{"id": "612", "intent": "alarm_set", "hindi": "कृपया अगले [date : शनिवार] [time : सुबह आठ बजे] [alarm_type : जागो] अलार्म बजाएं", "english": "please ring the [alarm_type : wake up] alarm at [time : eight am] next [date : saturday]"}
+{"id": "4654", "intent": "alarm_set", "hindi": "साढ़े [time : छह बजे] का अलार्म लगाओ", "english": "set an alarm for [time : six thirty am]"}
+{"id": "4081", "intent": "alarm_set", "hindi": "जब मैं [date : कल] घर जा रहा होता हूँ तो मैं अलार्म सेट करना चाहता हूँ ताकि याद रहे कि [event_name : दुकान पर रुकना और भोजन प्राप्त करना है]", "english": "i want to set an alarm when i'm driving home [date : tomorrow] to remember to [event_name : stop at the store and get food]"}
+{"id": "5823", "intent": "audio_volume_down", "hindi": "[change_amount : बीस प्रतिशत] काम करो", "english": "decrease [change_amount : twenty percent]"}
+{"id": "1715", "intent": "audio_volume_down", "hindi": "वॉल्यूम को [change_amount : पचास प्रतिशत तक] कम करे", "english": "lower volume [change_amount : by fifty percent]"}
+{"id": "1048", "intent": "audio_volume_down", "hindi": "स्पीकर आवाज़ कम करें", "english": "lower the speaker volume"}
+{"id": "5481", "intent": "audio_volume_down", "hindi": "वॉल्यूम कम करें", "english": "cut down the volume"}
+{"id": "1639", "intent": "audio_volume_down", "hindi": "कृपया वॉल्यूम कम करें", "english": "please turn the volume down"}
+{"id": "3809", "intent": "audio_volume_down", "hindi": "स्पीकर वॉल्यूम धीमा करें", "english": "slow down the speaker volume"}
+{"id": "1352", "intent": "audio_volume_down", "hindi": "कृपया स्पीकर का वॉल्यूम कम करो", "english": "please slow down volume of speaker"}
+{"id": "5219", "intent": "audio_volume_down", "hindi": "स्पीकर का वॉल्यूम कम करो", "english": "please reduce the speaker volume"}
+{"id": "5611", "intent": "audio_volume_down", "hindi": "कृपया वॉल्यूम कम करें", "english": "reduce volume"}
+{"id": "3486", "intent": "audio_volume_down", "hindi": "कृपया आवाज़ कम करें", "english": "speak softer please"}
+{"id": "1509", "intent": "audio_volume_mute", "hindi": "[timeofday : सुबह] का अलार्म बजने तक कोई शोर न करें", "english": "do not make any noise until [timeofday : morning] alarm"}
+{"id": "6166", "intent": "audio_volume_mute", "hindi": "कृपया [time : पांच मिनट] के लिए म्यूट करें", "english": "please mute for [time : five minutes]"}
+{"id": "2205", "intent": "audio_volume_mute", "hindi": "[time : दो घंटे] का चुप करना", "english": "silence for [time : two hours]"}
+{"id": "3812", "intent": "audio_volume_mute", "hindi": "[time : पंद्रह मिनट] के लिए म्यूट करें", "english": "mute for [time : fifteen minutes]"}
+{"id": "315", "intent": "audio_volume_mute", "hindi": "कृपया एक और [time : घंटे] के लिए चुप रहें", "english": "please be quiet for [time : another hour]"}
+{"id": "317", "intent": "audio_volume_mute", "hindi": "[date : आज] मत बोलो", "english": "do not speak [date : today]"}
+{"id": "6064", "intent": "audio_volume_mute", "hindi": "[time : एक घंटा] तक शांत रहो", "english": "don't speak for [time : an hour]"}
+{"id": "5525", "intent": "audio_volume_mute", "hindi": "[time : एक घंटे] के लिए मूक", "english": "mute for [time : one hour]"}
+{"id": "3582", "intent": "audio_volume_mute", "hindi": "कृपया म्यूट करें", "english": "mute please"}
+{"id": "4833", "intent": "audio_volume_mute", "hindi": "डाटा मिटायें", "english": "clear data"}
+{"id": "4155", "intent": "audio_volume_other", "hindi": "वॉल्यूम को [change_amount : पैंतीस प्रतिशत] में बदलें", "english": "change volume [change_amount : to thirty five percent]"}
+{"id": "4166", "intent": "audio_volume_other", "hindi": "वॉल्यूम स्तर को [change_amount : अधिकतम में बदलें]", "english": "change volume level [change_amount : to maximum]"}
+{"id": "5579", "intent": "audio_volume_other", "hindi": "क्या आप वॉल्यूम बदल सकते हैं", "english": "can you change the volume at"}
+{"id": "5812", "intent": "audio_volume_other", "hindi": "डिफ़ॉल्ट ऑडियो सेटिंग सेट करें", "english": "set the default audio setting"}
+{"id": "4638", "intent": "audio_volume_other", "hindi": "नेगेटिव alexa में वॉल्यूम सेटिंग बदलें", "english": "change volume settings in the negative alexa"}
+{"id": "1065", "intent": "audio_volume_other", "hindi": "वॉल्यूम सेटिंग कहां है", "english": "where is volume setting"}
+{"id": "4831", "intent": "audio_volume_up", "hindi": "स्पीकर वॉल्यूम बढ़ाना", "english": "speaker volume increase"}
+{"id": "1630", "intent": "audio_volume_up", "hindi": "वर्तमान संगीत की मात्रा बढ़ाएँ", "english": "raise the volume of the current music"}
+{"id": "4702", "intent": "audio_volume_up", "hindi": "मेरे स्पीकर्स को google पे ऑन कर दो", "english": "please turn my speakers on google"}
+{"id": "1300", "intent": "audio_volume_up", "hindi": "तेज", "english": "fast"}
+{"id": "608", "intent": "audio_volume_up", "hindi": "बंद करने के बाद", "english": "unmute after"}
+{"id": "261", "intent": "audio_volume_up", "hindi": "मैं तुम्हें बड़ी मुश्किल से सुन पा रहा हूँ", "english": "i can barely hear you"}
+{"id": "443", "intent": "audio_volume_up", "hindi": "वॉल्यूम बढ़ाएँ", "english": "raise volume"}
+{"id": "4090", "intent": "audio_volume_up", "hindi": "मेरा स्पीकर का वॉल्यूम बढ़ाओ", "english": "turn up the volume on my speakers"}
+{"id": "3590", "intent": "audio_volume_up", "hindi": "जोर से बोलो", "english": "speak loudly"}
+{"id": "258", "intent": "audio_volume_up", "hindi": "मैं तुम को नहीं सुन पा रहा हूँ", "english": "i can't hear you"}
+{"id": "8165", "intent": "calendar_query", "hindi": "पहले ही दोपहर के [time : एक बजकर तीस मिनट] हो चुके हैं आपकी एक [event_name : मीटिंग] हैं [time : दस मिनट] में", "english": "[time : one thousand two hundred and thirty p. m.] already you will have a [event_name : meeting] in [time : ten mins]"}
+{"id": "8116", "intent": "calendar_query", "hindi": "[date : एक फरवरी और सोलह मार्च] की समय सीमा के दौरान क्या [event_name : बैठकें] हुईं", "english": "during the timeframe of [date : february one and march sixteen] what [event_name : meetings] occurred"}
+{"id": "8762", "intent": "calendar_query", "hindi": "मुझे [timeofday : आज दोपहर] बाद के लिए मेरा कार्यक्रम बताओ", "english": "tell me my schedule for later [timeofday : this afternoon]"}
+{"id": "7662", "intent": "calendar_query", "hindi": "क्या आप [date : आज] मेरी [event_name : बैठकों] की सूची बना सकते हैं", "english": "can you list out my [event_name : meetings] [date : today]"}
+{"id": "9137", "intent": "calendar_query", "hindi": "लंच और डिनर के बीच [business_name : देवा मिसठान भंडार] किस समय बंद होता है", "english": "at what time is the [business_name : italian cafe] closed between lunch and dinner"}
+{"id": "8494", "intent": "calendar_query", "hindi": "[date : आज] मेरा शेड्यूल कैसा दिखता है", "english": "what does my schedule look like [date : today]"}
+{"id": "8672", "intent": "calendar_query", "hindi": "[event_name : चुंबन संगीत कार्यक्रम] कहाँ है", "english": "where is the [event_name : kiss concert]"}
+{"id": "8781", "intent": "calendar_query", "hindi": "क्या मैं [time : चार पी.एम.] पर खाली हूं", "english": "am i free at [time : four p. m.]"}
+{"id": "8782", "intent": "calendar_query", "hindi": "[timeofday : इस दोपहर] मैंने एक [event_name : बैठक] रखी है", "english": "do i have a [event_name : meeting] [timeofday : this afternoon]"}
+{"id": "7927", "intent": "calendar_query", "hindi": "मुझे [date : इस सप्ताह] क्या करना है", "english": "what do i have to do [date : this week]"}
+{"id": "8284", "intent": "calendar_remove", "hindi": "कैलेंडर से [event_name : जन्मदिन] हटाएं", "english": "remove [event_name : birthday] from calendar"}
+{"id": "9095", "intent": "calendar_remove", "hindi": "[event_name : शेली के साथ आज रात का खाना] हटा दें", "english": "remove [event_name : tonights dinner with shelly]"}
+{"id": "10772", "intent": "calendar_remove", "hindi": "[date : आज] के schedule से मेरे डेंटिस्ट का अपॉइंटमेंट हटा दें", "english": "remove my [event_name : dentist's appointment] from [date : today's] schedule"}
+{"id": "7912", "intent": "calendar_remove", "hindi": "एलेक्सा मेरे कैलेंडर से [person : माइक] के साथ [meal_type : रात का खाना] हटा दि", "english": "alexa remove [meal_type : dinner] with [person : mike] from my calendar"}
+{"id": "8409", "intent": "calendar_remove", "hindi": "[date : कल] मेरा [meal_type : रात का भोजन] डिलीट कर दो", "english": "delete my [meal_type : dinner] [date : tomorrow]"}
+{"id": "7953", "intent": "calendar_remove", "hindi": "कृपया [date : शनिवार] को [relation : मेरे डॉक्टर] के साथ मेरी [event_name : नियुक्ति] को हटा दें", "english": "remove my [event_name : appointment] with [relation : my doctor] on [date : saturday] please"}
+{"id": "9009", "intent": "calendar_remove", "hindi": "मेरे कैलेंडर से [event_name : सालगिरह] का कार्यक्रम हटाएं", "english": "remove [event_name : anniversary] event from my calendar"}
+{"id": "9182", "intent": "calendar_remove", "hindi": "मेरे [event_name : माता-पिता को] [place_name : हवाई अड्डे] से [event_name : लेने] की मेरी योजना रद्द करें", "english": "cancel my plans to [event_name : pick up my parents] from the [place_name : airport]"}
+{"id": "8241", "intent": "calendar_remove", "hindi": "[date : शेष वर्ष] के लिए मेरे कैलेंडर से सब कुछ साफ़ करें", "english": "clear everything off my calendar for the [date : rest of the year]"}
+{"id": "9030", "intent": "calendar_remove", "hindi": "[date : आज] के लिए मेरी [event_name : चिकित्सा नियुक्ति] को कैलेंडर से हटा दें", "english": "remove from calendar my [event_name : medical appointment] for [date : today]"}
+{"id": "8900", "intent": "calendar_set", "hindi": "[general_frequency : हर रविवार] के लिए दोहराए जाने वाले अनुस्मारक सेट करें", "english": "set repeating reminder for [general_frequency : every sunday]"}
+{"id": "7726", "intent": "calendar_set", "hindi": "मुझे [general_frequency : हर सोमवार] को कुछ चाहिए इसके लिए एक अनुस्मारक सेट करें", "english": "i need to something [general_frequency : every monday] set a reminder for it"}
+{"id": "8126", "intent": "calendar_set", "hindi": "मेरे कैलेंडर में एक [event_name : मीटिंग] इवेंट शेड्यूल करें", "english": "schedule a [event_name : meeting] event in my calendar"}
+{"id": "7559", "intent": "calendar_set", "hindi": "मुझे आज रात [time : आठ पी.एम.] पर मेरी [event_name : ड्राई क्लीनिंग लेने की] याद दिलाना", "english": "remind me tonight to [event_name : pick up my dry cleaning] at [time : eight p. m.]"}
+{"id": "8107", "intent": "calendar_set", "hindi": "[person : रोहन] के लिए [event_name : जन्मदिन] का कार्यक्रम निर्धारित करें", "english": "set a [event_name : birthday] event for [person : martin]"}
+{"id": "9054", "intent": "calendar_set", "hindi": "event [date : मंगलवार] को [event_name : राम] याद दिलाना", "english": "event reminder [event_name : mona] [date : tuesday]"}
+{"id": "7902", "intent": "calendar_set", "hindi": "मेरी [person : john] के साथ [event_name : meeting] set करो [date : कल] [time : दोपहर दो बजे]", "english": "set a [event_name : meeting] between myself and [person : john] at [time : two p. m.] [date : tomorrow]"}
+{"id": "9153", "intent": "calendar_set", "hindi": "[date : शनिवार] को [event_name : मीरा के साथ रात का भोजन] मेरे कैलेंडर में डालो", "english": "please add [event_name : dinner with mary] to my calendar on [date : saturday]"}
+{"id": "8825", "intent": "calendar_set", "hindi": "मुझे अगले [date : शुक्रवार] को [person : विजय] के साथ मेरी [event_name : मुलाकात] का रिमाइंडर भेजें", "english": "send me a reminder of my [event_name : meeting] with [person : tom] next [date : friday]"}
+{"id": "8948", "intent": "calendar_set", "hindi": "[person : राहुल] के साथ [event_name : मुलाकात] के लिए आयोजन जोड़ें", "english": "add event for [event_name : meeting] with [person : james]"}
+{"id": "10213", "intent": "cooking_recipe", "hindi": "मशहूर [food_type : बिरयानी] विधि की सूची बताओ", "english": "list of famous [food_type : biryani] recipes"}
+{"id": "10049", "intent": "cooking_recipe", "hindi": "मुझे बताओ कि एक गरीब लड़के के लिए [food_type : तवा रोटी कैसे] बनाया जाता है", "english": "tell me how to make a [food_type : poor boy sandwich]"}
+{"id": "10100", "intent": "cooking_recipe", "hindi": "क्या आप [food_type : रस वाली सब्जी] की विधि जानते हैं", "english": "do you know recipe for [food_type : risotto]"}
+{"id": "10220", "intent": "cooking_recipe", "hindi": "एक बड़ा [food_type : केक] [cooking_type : बनाने] करने के लिए मुझे किन सामग्रियों की आवश्यकता होगी", "english": "what ingredients do i need to [cooking_type : bake] a large [food_type : cake]"}
+{"id": "9976", "intent": "cooking_recipe", "hindi": "अरे रोबोट मुझे [food_type : गुलाब जामुन] के लिए सामग्री की एक सूची दें", "english": "hey robot give me a list of ingredients for [food_type : welsh rarebit]"}
+{"id": "9941", "intent": "cooking_recipe", "hindi": "[food_type : बटर चिकन] कैसे [cooking_type : बनाना है]", "english": "how do i [cooking_type : cook] [food_type : butter chicken]"}
+{"id": "9955", "intent": "cooking_recipe", "hindi": "मुझे [food_type : भुना हुआ मुर्गा] पर एक [media_type : वीडियो] दिखाओ", "english": "show me a [media_type : video] on cooking [food_type : fried chicken]"}
+{"id": "10217", "intent": "cooking_recipe", "hindi": "[app_name : cookingforu] एप्लीकेशन में [food_type : सांबर] की रेसिपी दो", "english": "find the recipe for [food_type : sambar] in [app_name : cookingforu] application"}
+{"id": "10107", "intent": "cooking_recipe", "hindi": "मुझे [food_type : पुलाव] की विधि की ज़रूरत है", "english": "i need a recipe of [food_type : veg pulav]"}
+{"id": "10048", "intent": "cooking_recipe", "hindi": "मैं [food_type : भारतीय जलेबी] कैसे बनाता हूं", "english": "how do i make a [food_type : turkey]"}
+{"id": "1266", "intent": "datetime_convert", "hindi": "अगर [place_name : नोएडा] में [time : सुबह के पाँच बज] रहे हैं तो यहाँ क्या समय है", "english": "if it's [time : five am] in [place_name : berlin] what time is it here"}
+{"id": "2309", "intent": "datetime_convert", "hindi": "[time_zone : इंडियन] [time : मानक समय में सुबह] के सात बज रहे हैं", "english": "it is [time : seven am] in [time_zone : pacific] standard time"}
+{"id": "1191", "intent": "datetime_convert", "hindi": "अगर [place_name : इलाहबाद] में [time : सूर्योदय] है तो [place_name : वाराणसी] में कितने बजे हैं", "english": "if it's [time : sunrise] in [place_name : stockholm] what time is it in [place_name : okinawa]"}
+{"id": "4112", "intent": "datetime_convert", "hindi": "वर्तमान समय को [time_zone : जी. एम. टी.] से [time_zone : इ. एस. टी.] में बदलें", "english": "convert current time from [time_zone : g. m. t.] to [time_zone : e. s. t.]"}
+{"id": "5523", "intent": "datetime_convert", "hindi": "[time : साढ़े आठ] को [time_zone : बी बी सी चार] से [time_zone : जी एम टी साढ़े पांच] में बदलें", "english": "convert [time : eight thirty] from [time_zone : gtm four] to [time_zone : g. m. t. five thirty]"}
+{"id": "944", "intent": "datetime_convert", "hindi": "यहाँ और [place_name : भारत] के बीच समय का अंतर क्या है", "english": "what is the time difference between here and [place_name : japan]"}
+{"id": "5497", "intent": "datetime_convert", "hindi": "[place_name : मध्य प्रदेश] और [place_name : हिमाचल प्रदेश] के बीच समय का अंतर क्या है", "english": "what is the time difference between [place_name : california] and [place_name : new york]"}
+{"id": "5204", "intent": "datetime_convert", "hindi": "[time : सुबह आठ बजे] [place_name : दिल्ली] समय को [place_name : मुंबई] समय में बदलें", "english": "convert [time : eight am] [place_name : manila] time to [place_name : new york] time"}
+{"id": "50", "intent": "datetime_convert", "hindi": "olly मुझे [time_zone : जी. एम. टी.] में समय बताओ", "english": "olly tell me the time in [time_zone : g. m. t. plus five]"}
+{"id": "5332", "intent": "datetime_convert", "hindi": "[place_name : दिल्ली] और [place_name : मुंबई] के बीच का समय", "english": "time between [place_name : us] and [place_name : canada]"}
+{"id": "4580", "intent": "datetime_query", "hindi": "[place_name : आगरा] में समय क्या है", "english": "what is the time in [place_name : chicago]"}
+{"id": "5774", "intent": "datetime_query", "hindi": "[place_name : मुंबई] में वर्तमान समय", "english": "current time in [place_name : cpt]"}
+{"id": "2824", "intent": "datetime_query", "hindi": "[date : तेरह दिसंबर] को कौन सा दिन है", "english": "what day is [date : december thirteenth]"}
+{"id": "4253", "intent": "datetime_query", "hindi": "[time_zone : पूर्वी] मानक में वर्तमान समय क्या है", "english": "what's the current time in [time_zone : eastern] standard"}
+{"id": "3995", "intent": "datetime_query", "hindi": "olly [date : सप्ताह का कौन सा दिन] [event_name : रविवार] है", "english": "olly what [date : day of the week] is [event_name : halloween]"}
+{"id": "486", "intent": "datetime_query", "hindi": "[place_name : शिमला] में क्या टाइम हो रहा है", "english": "what time is it in [place_name : new york city]"}
+{"id": "2412", "intent": "datetime_query", "hindi": "क्या आप मुझे [place_name : नई दिल्ली] में समय बता सकते हैं", "english": "could you tell me the time in [place_name : london]"}
+{"id": "2198", "intent": "datetime_query", "hindi": "[date : चार दिसंबर उन्नीस सौ बयासी] को सप्ताह का कौन सा दिन था", "english": "what day of the week was [date : december four one thousand nine hundred and eighty two]"}
+{"id": "1796", "intent": "datetime_query", "hindi": "[date : आज] की तिथि", "english": "date [date : today]"}
+{"id": "3118", "intent": "datetime_query", "hindi": "अभी [time_zone : इंडियन] मानक समय क्या है", "english": "what is [time_zone : eastern] standard time right noe"}
+{"id": "16694", "intent": "email_addcontact", "hindi": "[business_name : टाटा] को ईमेल का पता लगाएं और इसे मेरी [list_name : संपर्क सूची] में डाल दें", "english": "locate the email to [business_name : giant eagle] and put it into my [list_name : contact list]"}
+{"id": "16455", "intent": "email_addcontact", "hindi": "[email_address : जीमेल डॉट कॉम पर मेरे कॉन्टैक्ट मैक] में नया ईमेल जोड़ें", "english": "add new email to my contacts [email_address : macs at gmail dot com]"}
+{"id": "15747", "intent": "email_addcontact", "hindi": "इस व्यक्ति का [personal_info : ईमेल] जोड़ें", "english": "add this person's [personal_info : email]"}
+{"id": "17054", "intent": "email_addcontact", "hindi": "[person : देवेंद्र] से मेरे संपर्कों में बस एक नया ईमेल जोड़ें", "english": "just add a new email in my contacts from [person : michael]"}
+{"id": "16846", "intent": "email_addcontact", "hindi": "कृपया [email_address : johndoe at yahoo dot com] पर मेरे संपर्कों में [person : जदिश मिश्रा] के लिए एक ईमेल जोड़ें", "english": "please add an email for [person : john doe] to my contacts [email_address : johndoe at yahoo dot com]"}
+{"id": "16693", "intent": "email_addcontact", "hindi": "[place_name : लखनऊ उत्तर प्रदेश] में स्थित मेरे संपर्क ईमेल में श्याम हार्डवेयर जोड़े", "english": "add lowes hardware to my contact emails located in [place_name : cleveland ohio]"}
+{"id": "15987", "intent": "email_addcontact", "hindi": "इस नए ईमेल को संपर्क के साथ जोड़ें", "english": "add this new email with contact"}
+{"id": "16470", "intent": "email_addcontact", "hindi": "कृपया इस ईमेल को मेरे संपर्कों में जोड़ें", "english": "please add this email to my contacts"}
+{"id": "16911", "intent": "email_addcontact", "hindi": "कृपया मेरा नया ईमेल पता संपर्क को दें", "english": "please place my new email address to the contact"}
+{"id": "16225", "intent": "email_addcontact", "hindi": "कॉन्टेक्ट्स खोलो", "english": "open contacts"}
+{"id": "16813", "intent": "email_query", "hindi": "जब मुझे [person : कृष्णा] से ईमेल आए तो बीप करना", "english": "beep when i get an email from [person : john]"}
+{"id": "17075", "intent": "email_query", "hindi": "[date : आज] [time : चार] बजे [time : के बाद] कोई नया ईमेल प्राप्त हुआ है", "english": "are there any new emails received [time : after four] o'clock [date : today]"}
+{"id": "16987", "intent": "email_query", "hindi": "[person : रोहन] से कोई भी नया ईमेल आया", "english": "any new email from [person : john]"}
+{"id": "16974", "intent": "email_query", "hindi": "कृपया [business_name : आयकर विभाग] के सभी नए ईमेल देखें", "english": "please check all new email of [business_name : income tax department]"}
+{"id": "16354", "intent": "email_query", "hindi": "मेरे [relation : नियोक्ता] से ईमेल की जाँच करें", "english": "check for emails from my [relation : employer]"}
+{"id": "16669", "intent": "email_query", "hindi": "क्या मुझे [person : राम] से एक ईमेल मिला", "english": "did i get an email from [person : paul]"}
+{"id": "16075", "intent": "email_query", "hindi": "[person : अंश] से हालिया ईमेल प्रदर्शित करें", "english": "display recent email from [person : john]"}
+{"id": "16038", "intent": "email_query", "hindi": "अरे [person : राम] ने मुझे हाल ही में कोई ईमेल भेजा है", "english": "hey has [person : john] sent me any email lately"}
+{"id": "16642", "intent": "email_query", "hindi": "[person : सुरभि] से किसी भी चीज़ के लिए मेल चेक करें", "english": "check mail for anything from [person : shelly]"}
+{"id": "16263", "intent": "email_query", "hindi": "क्या मुझे रॉबर्ट की ओर से कोई नया ईमेल [person : प्राप्त] होगा", "english": "did i receive any new email from [person : robert]"}
+{"id": "15815", "intent": "email_querycontact", "hindi": "[person : रितु] का [personal_info : वर्क फोन नंबर] क्या है", "english": "what is a [personal_info : work phone number] of [person : emilia]"}
+{"id": "16797", "intent": "email_querycontact", "hindi": "[business_name : ओला] का [personal_info : phone number] क्या है यह मेरे संपर्क में है", "english": "what is [business_name : mr. taxi's] [personal_info : phone number] it is in my contacts"}
+{"id": "16874", "intent": "email_querycontact", "hindi": "मेरे पास [person : राम] के लिए कितने [personal_info : फ़ोन नंबर] हैं", "english": "how many [personal_info : phone numbers] do i have for [person : brenden]"}
+{"id": "16777", "intent": "email_querycontact", "hindi": "[person : रामू की] संपर्क जानकारी दिखाओ", "english": "show [person : john's] contact information"}
+{"id": "17111", "intent": "email_querycontact", "hindi": "[person : रोहन] का [personal_info : संपर्क विवरण]", "english": "[personal_info : contact detail] of [person : paul]"}
+{"id": "16222", "intent": "email_querycontact", "hindi": "मुझे [person : सोनम] के बारे में बताओ", "english": "tell me about [person : mary s.]"}
+{"id": "16229", "intent": "email_querycontact", "hindi": "[time : बारह महीनों] में मैंने किस संपर्क को फोन नहीं किया", "english": "which contact haven't i called in [time : twelve months]"}
+{"id": "17095", "intent": "email_querycontact", "hindi": "[person : राम का] [personal_info : ईमेल] क्या है", "english": "what's [person : leon's] [personal_info : email]"}
+{"id": "15946", "intent": "email_querycontact", "hindi": "संपर्क में [person : राम कुमार] खोजें", "english": "find [person : john smith] in contacts"}
+{"id": "16907", "intent": "email_querycontact", "hindi": "[person : राम का] [personal_info : फ़ोन नंबर] दो", "english": "[person : jay's] [personal_info : phone number]"}
+{"id": "16780", "intent": "email_sendemail", "hindi": "[email_address : रामकुमार एट जीमेल डॉट] पर एक ईमेल भेजें", "english": "send an email to [email_address : juanpedro at gmail dot com]"}
+{"id": "16989", "intent": "email_sendemail", "hindi": "कृपया [person : राम] द्वारा भेजे गए ईमेल में कहें कि मुझे पैसे चाहिए अब यह जरूरी है", "english": "please say to the email that sent me [person : george] i need the money now it's urgent"}
+{"id": "16791", "intent": "email_sendemail", "hindi": "एक नया ईमेल लिखें लेकिन मुझे इस बार एक नया पता मिला [email_address : ब्रैंडन एट एक्साम्पल डॉट कॉम]", "english": "compose a new email but i got a new address this time [email_address : brandon at example dot com]"}
+{"id": "15765", "intent": "email_sendemail", "hindi": "[person : प्रदीप] के ईमेल का जवाब", "english": "answer to [person : pawel's] email"}
+{"id": "16245", "intent": "email_sendemail", "hindi": "ईमेल भेजो [email_address : rajesh at a. o. l. dot com] पे", "english": "send email to [email_address : joe at a. o. l. dot com]"}
+{"id": "15825", "intent": "email_sendemail", "hindi": "[relation : पापा] को जवाब लिखो मुझे देर हो जाएगी", "english": "reply to [relation : dad] write i will be late"}
+{"id": "16297", "intent": "email_sendemail", "hindi": "धन्यवाद के लिए [person : जगदीश] को एक ईमेल भेजें", "english": "send an email to [person : jake] to tell him thank you"}
+{"id": "16166", "intent": "email_sendemail", "hindi": "क्या आप [person : हर्षिता] को जवाब दे सकते हैं कि मैं [time : अगले तीन हफ्ते] के लिए परियोजनाओं में व्यस्त रहूंगा", "english": "can you reply to [person : charlotte] that i am going to be busy with the projects for [time : next three weeks]"}
+{"id": "16320", "intent": "email_sendemail", "hindi": "मैं [person : अमित सिंह के] ईमेल का जवाब देना चाहता हूं", "english": "i want to reply to [person : bob smith's] email"}
+{"id": "16729", "intent": "email_sendemail", "hindi": "[person : प्रवीण] से मेरे ईमेल का जवाब दें उन्हें बताएं कि मैं उनसे कल मिलूँगा", "english": "respond to my email from [person : bob] letting them know i'll see them [date : tomorrow]"}
+{"id": "46", "intent": "general_greet", "hindi": "क्या चल रहा है ओली", "english": "what's up olly"}
+{"id": "6147", "intent": "general_joke", "hindi": "[joke_type : मज़ेदार] चुटकुले खोजें", "english": "find [joke_type : funny] jokes"}
+{"id": "4982", "intent": "general_joke", "hindi": "अब तक का सबसे [joke_type : मजेदार] चुटकुला कौन सा है", "english": "what is the [joke_type : funniest] joke ever"}
+{"id": "1256", "intent": "general_joke", "hindi": "आप सबसे [joke_type : मजेदार] चुटकुला क्या जानते हैं", "english": "what's the [joke_type : funniest] joke you know"}
+{"id": "5952", "intent": "general_joke", "hindi": "मुझे एक [joke_type : अच्छा] चुटकुला सुनाओ", "english": "say a [joke_type : good] joke for me right now"}
+{"id": "494", "intent": "general_joke", "hindi": "[joke_type : अच्छा] मज़ाक क्या है", "english": "what's a [joke_type : good] joke"}
+{"id": "412", "intent": "general_joke", "hindi": "मुझे एक [joke_type : मज़ेदार] चुटकुला सुनाओ", "english": "tell me a [joke_type : funny] joke"}
+{"id": "4217", "intent": "general_joke", "hindi": "मैं कुछ [joke_type : अच्छे मज़ेदार] चुटकुले सुनना चाहता हूँ", "english": "i would like to hear some [joke_type : good funny] jokes"}
+{"id": "4216", "intent": "general_joke", "hindi": "मुझे अब तक का सबसे [joke_type : मजेदार] चुटकुला बताओ", "english": "tell me the [joke_type : funniest] joke that was ever told"}
+{"id": "1372", "intent": "general_joke", "hindi": "एक [joke_type : अच्छा] चुटकुला क्या है", "english": "what's a [joke_type : good] joke"}
+{"id": "2721", "intent": "general_joke", "hindi": "क्या आपके पास मेरे लिए एक [joke_type : मज़ेदार] चुटकुला है", "english": "do you have a [joke_type : funny] joke for me"}
+{"id": "14339", "intent": "general_quirky", "hindi": "मुझे अर्थव्यवस्था के बारे में बताओ और जी. डी. पी. [place_name : भारत] बनाम [place_name : चीन] के बारे में", "english": "tell me about economy and g. d. p. about [place_name : india] versus [place_name : china]"}
+{"id": "6438", "intent": "general_quirky", "hindi": "[date : आज] मैंने अपने फोन की पूरी खोज की और वह नहीं मिला", "english": "[date : today] i searched all over for my phone and couldn't find it"}
+{"id": "6559", "intent": "general_quirky", "hindi": "हे ओली क्या तुम मेरी [relation : प्रेमिका] को पसंद करते हो", "english": "hey olly do you like my [relation : girlfriend]"}
+{"id": "6241", "intent": "general_quirky", "hindi": "मैंने [date : आज] एक गरीब जरूरतमंद की मदद की ओली", "english": "i helped a poor needy [date : today] olly"}
+{"id": "6293", "intent": "general_quirky", "hindi": "हे ओली मैं [date : आज] अपने एक पुराने सहपाठी से मिला", "english": "hey olly i met one of my old classmates [date : today]"}
+{"id": "6550", "intent": "general_quirky", "hindi": "[date : आज] मेरा प्रमोशन हो गया बहुत अच्छा लग रहा है", "english": "i got promoted [date : today] it feels so good"}
+{"id": "6646", "intent": "general_quirky", "hindi": "[date : आज] गूगल में सबसे ज्यादा सर्च कौन सी है", "english": "what is the top searches in google [date : today]"}
+{"id": "8320", "intent": "general_quirky", "hindi": "मुझे [date : इस सप्ताह] के अंत में [event_name : परेड] के बारे में और जानने की जरूरत है", "english": "i need to know more about the [event_name : parade] [date : this weekend]"}
+{"id": "14071", "intent": "general_quirky", "hindi": "मुझे बताओ कि मैंने [date : कल] क्या पहना था", "english": "tell me what i wore [date : yesterday]"}
+{"id": "14673", "intent": "general_quirky", "hindi": "क्या आप मुझे [place_name : अमेज़न के जंगल] में जानवरों के साम्राज्य के बारे में बता सकते हैं", "english": "can you tell me about animal kingdom in [place_name : amazon forest]"}
+{"id": "2960", "intent": "iot_cleaning", "hindi": "[device_type : वैक्यूम] शुरू करो", "english": "start the [device_type : vacuum]"}
+{"id": "2434", "intent": "iot_cleaning", "hindi": "[device_type : रोबोट वैक्यूम क्लीनर] शुरु करें", "english": "start [device_type : robot vacuum cleaner]"}
+{"id": "2959", "intent": "iot_cleaning", "hindi": "[device_type : रोबोट वैक्यूम] को आवाक्षरित करें", "english": "initialize the [device_type : robot vacuum]"}
+{"id": "3841", "intent": "iot_cleaning", "hindi": "[device_type : रूमबा] को सक्रिय करें", "english": "activate the [device_type : roomba]"}
+{"id": "4043", "intent": "iot_cleaning", "hindi": "[device_type : वैक्यूम] ऑन करो", "english": "run the [device_type : vacuum]"}
+{"id": "1941", "intent": "iot_cleaning", "hindi": "मेरा [house_place : मकान] साफ करो", "english": "clean my [house_place : house]"}
+{"id": "864", "intent": "iot_cleaning", "hindi": "रोबोट अब [house_place : शयनकक्ष] को वैक्यूम करता है", "english": "robot vacuum the [house_place : living room] now"}
+{"id": "2517", "intent": "iot_cleaning", "hindi": "मैं [device_type : रोबोट वैक्यूम क्लीनर] कैसे शुरु करूं", "english": "how do i start the [device_type : robot vacuum cleaner]"}
+{"id": "635", "intent": "iot_cleaning", "hindi": "[device_type : वैक्यूम क्लीनर] को शुरू कर दो", "english": "please start [device_type : vacuum cleaner]"}
+{"id": "843", "intent": "iot_cleaning", "hindi": "[device_type : रोबोट रूमबा] शुरू करें", "english": "start the [device_type : robot roomba]"}
+{"id": "3196", "intent": "iot_coffee", "hindi": "हे olly क्या आप कृपया मुझे एक [coffee_type : मलाईदार] कॉफी बना सकते हैं", "english": "hey olly can you please make me a [coffee_type : creamy] coffee"}
+{"id": "1812", "intent": "iot_coffee", "hindi": "[coffee_type : बिना मीठे के] कॉफ़ी बना दो", "english": "please make me coffee [coffee_type : without sweetener]"}
+{"id": "448", "intent": "iot_coffee", "hindi": "[device_type : कॉफ़ी मेकर] को चलाओ", "english": "run [device_type : coffee maker]"}
+{"id": "4798", "intent": "iot_coffee", "hindi": "मुझे [date : हर दिन] कॉफ़ी चाहिए", "english": "i want coffee [date : everyday]"}
+{"id": "5010", "intent": "iot_coffee", "hindi": "मेरा [coffee_type : सामान्य] बनाओ", "english": "make my [coffee_type : usual]"}
+{"id": "4244", "intent": "iot_coffee", "hindi": "olly मेरे लिए कुछ कॉफी बनाने के लिए [device_type : कॉफी मशीन] चालू करें", "english": "olly turn on the [device_type : coffee machine] to make me some coffee"}
+{"id": "4443", "intent": "iot_coffee", "hindi": "[device_type : कॉफ़ी मशीन] को [time : तीन] बजे स्टार्ट कर दो", "english": "start the [device_type : coffee machine] at [time : three]"}
+{"id": "3323", "intent": "iot_coffee", "hindi": "कृपया मेरा [device_type : कॉफी का बर्तन] चालू करें", "english": "please turn on my [device_type : coffee pot]"}
+{"id": "2868", "intent": "iot_coffee", "hindi": "कृपया मुझे कॉफी बनाने के लिए [device_type : कॉफी मशीन] प्राप्त करें", "english": "please get the [device_type : coffee machine] to make me some coffee"}
+{"id": "6060", "intent": "iot_coffee", "hindi": "[device_type : कॉफी का बर्तन] शुरु करें", "english": "please start the [device_type : coffee pot]"}
+{"id": "2540", "intent": "iot_hue_lightchange", "hindi": "[house_place : कमरे] की बत्ती को [color_type : नीला] बनाना", "english": "make the [house_place : room] light [color_type : blue]"}
+{"id": "1960", "intent": "iot_hue_lightchange", "hindi": "लाइट को [color_type : गुलाबी] रंग में बदल दो", "english": "change the light to [color_type : pink] color"}
+{"id": "4248", "intent": "iot_hue_lightchange", "hindi": "घर की रोशनी [color_type : नीली]", "english": "house lights [color_type : blue]"}
+{"id": "4247", "intent": "iot_hue_lightchange", "hindi": "घर की सभी लाइट्स को [color_type : नीला] कर दो", "english": "house change all lights to [color_type : blue]"}
+{"id": "3542", "intent": "iot_hue_lightchange", "hindi": "[house_place : बैठक कक्ष] में रोशनी को [color_type : हरे और लाल] रंग में बदलें", "english": "change the lights in the [house_place : living room] to [color_type : green and red]"}
+{"id": "2906", "intent": "iot_hue_lightchange", "hindi": "चमक [change_amount : नब्बे प्रतिशत]", "english": "brightness [change_amount : ninety percent]"}
+{"id": "4249", "intent": "iot_hue_lightchange", "hindi": "क्या आप [house_place : घर] की सभी लाइटें [color_type : नीली] कर सकती हैं", "english": "house can you make all the lights in the [house_place : house] [color_type : blue]"}
+{"id": "4299", "intent": "iot_hue_lightchange", "hindi": "यहाँ [color_type : लाल] रंग में रोशनी करो", "english": "make the light in here [color_type : redder]"}
+{"id": "2542", "intent": "iot_hue_lightchange", "hindi": "[house_place : बेडरूम] की लाइट्स को [color_type : लाल] कर दो और [house_place : हॉल] की लाइट्स को [color_type : नार्मल] रंग", "english": "make the [house_place : bedroom] lights [color_type : red] and the [house_place : hall] lights [color_type : normal] color please"}
+{"id": "1427", "intent": "iot_hue_lightchange", "hindi": "olly बत्तियों को [color_type : नीले] में बदलें", "english": "change the lights to [color_type : blue] olly"}
+{"id": "5047", "intent": "iot_hue_lightdim", "hindi": "alexa कृपया [house_place : घर] में बत्तियाँ बंद कर दें", "english": "alexa please turn down the lights in the [house_place : house]"}
+{"id": "1030", "intent": "iot_hue_lightdim", "hindi": "[house_place : लिविंग रूम] में रोशनी कम करें", "english": "dim the lights in the [house_place : living room]"}
+{"id": "2311", "intent": "iot_hue_lightdim", "hindi": "alexa रोशनी को कम करके [change_amount : सात तक] करदो", "english": "alexa turn the lights down [change_amount : to seven]"}
+{"id": "4896", "intent": "iot_hue_lightdim", "hindi": "[house_place : भूमि के ऊपर] लाइट कम करें", "english": "lower the [house_place : overhead] lights"}
+{"id": "2016", "intent": "iot_hue_lightdim", "hindi": "[house_place : रसोई] में बत्ती कम करो", "english": "lower lights in [house_place : kitchen]"}
+{"id": "3222", "intent": "iot_hue_lightdim", "hindi": "मुझे कम रोशनी चाहिए", "english": "i want a lower light"}
+{"id": "3280", "intent": "iot_hue_lightdim", "hindi": "कृपया रोशनी कम करें", "english": "lower the lights please"}
+{"id": "5201", "intent": "iot_hue_lightdim", "hindi": "मेरी लाइट्स को ब्राइटनेस के कम लेवल पर कर दो", "english": "turn my lights down to a lower level of brightness"}
+{"id": "3834", "intent": "iot_hue_lightdim", "hindi": "लाइट्स को कम कर दो", "english": "turn down lights"}
+{"id": "665", "intent": "iot_hue_lightdim", "hindi": "क्या आप रोशनी कम कर सकते हैं", "english": "can you lower the lights"}
+{"id": "2578", "intent": "iot_hue_lightoff", "hindi": "[house_place : बरामदे] की लाइट बंद कर दो", "english": "turn off the [house_place : porch] light"}
+{"id": "651", "intent": "iot_hue_lightoff", "hindi": "[house_place : कक्ष की] बत्तियां बंद करो", "english": "turn off [house_place : room] lights"}
+{"id": "427", "intent": "iot_hue_lightoff", "hindi": "[house_place : स्नानघर] में बत्तियाँ बंद करें", "english": "turn off the lights in the [house_place : bathroom]"}
+{"id": "1786", "intent": "iot_hue_lightoff", "hindi": "[house_place : मास्टर] के [house_place : बेडरूम] को बंद कर दो", "english": "switch off the [house_place : master's bedroom]"}
+{"id": "1377", "intent": "iot_hue_lightoff", "hindi": "कृपया [house_place : मेरे बेटे के कमरे] की बत्ती बुझा दें", "english": "please turn off the light of [house_place : my son's room]"}
+{"id": "1554", "intent": "iot_hue_lightoff", "hindi": "[device_type : बत्तियाँ] बंद करो", "english": "turn off the [device_type : lamps]"}
+{"id": "19", "intent": "iot_hue_lightoff", "hindi": "ओली [house_place : शयनकक्ष] में बत्तियाँ बंद कर दें", "english": "olly turn the lights off in the [house_place : bedroom]"}
+{"id": "4171", "intent": "iot_hue_lightoff", "hindi": "[house_place : रसोई] की बत्तियां बंद करो", "english": "turn off the lights in the [house_place : kitchen]"}
+{"id": "2441", "intent": "iot_hue_lightoff", "hindi": "[house_place : छप्पर] की बत्ती बंद करो", "english": "turn off the [house_place : shed] light"}
+{"id": "997", "intent": "iot_hue_lightoff", "hindi": "[house_place : लिविंग रूम की] लाइट बंद कर दो", "english": "turn the [house_place : living room's] light off"}
+{"id": "286", "intent": "iot_hue_lighton", "hindi": "[house_place : किचन] की लाइट्स को जला दो", "english": "light up the lights in the [house_place : kitchen]"}
+{"id": "3522", "intent": "iot_hue_lighton", "hindi": "मेरी [house_place : बालकनी] की lights चालू करें", "english": "please turn on my [house_place : balcony] lights"}
+{"id": "14", "intent": "iot_hue_lighton", "hindi": "और अँधेरा छा गया", "english": "and the darkness has fallen"}
+{"id": "1090", "intent": "iot_hue_lightup", "hindi": "क्या आप [house_place : कमरे] की रौशनी बढ़ा सकते हैं", "english": "can you increase the brightness in the [house_place : room]"}
+{"id": "5014", "intent": "iot_hue_lightup", "hindi": "क्या आप [house_place : कमरे] को उज्जवल बना सकते हैं", "english": "can you make the [house_place : room] brighter"}
+{"id": "5573", "intent": "iot_hue_lightup", "hindi": "[house_place : किचन] की लाइट्स को ठीक ब्राइटनेस पे सेट कर दो", "english": "please set the brightness of lightness appropriately in [house_place : kitchen]"}
+{"id": "5501", "intent": "iot_hue_lightup", "hindi": "कृपया [device_type : सभी बत्तियां] लगाओ", "english": "please put [device_type : all the lights]"}
+{"id": "5727", "intent": "iot_hue_lightup", "hindi": "[house_place : हॉल] का प्रकाश रोशन करो", "english": "brighten the light of [house_place : hall]"}
+{"id": "2264", "intent": "iot_hue_lightup", "hindi": "[house_place : अध्ययन कक्ष] के लिए हल्का रंग", "english": "light color for [house_place : study room]"}
+{"id": "1071", "intent": "iot_hue_lightup", "hindi": "[house_place : दालान] में बत्तियां रोशन करें", "english": "brighten the lights in the [house_place : hallway]"}
+{"id": "1072", "intent": "iot_hue_lightup", "hindi": "कृपया [device_type : स्क्रीन] की चमक को [change_amount : पूरी] तरह बढ़ा दें", "english": "please turn up the [device_type : screen] brightness [change_amount : all the way]"}
+{"id": "5574", "intent": "iot_hue_lightup", "hindi": "[house_place : लिविंग रूम] की लाइट्स की ब्राइटनेस बढ़ा दो", "english": "brighten of lights in [house_place : living room]"}
+{"id": "4283", "intent": "iot_hue_lightup", "hindi": "[house_place : इस कमरे] में उजाला बढ़ाएं", "english": "increase the brightness in [house_place : this room]"}
+{"id": "4966", "intent": "iot_wemo_off", "hindi": "हैलो मैं अपना [device_type : वेमो प्लग] बंद करना चाहता हूं", "english": "hello i want to turn off my [device_type : wemo plug]"}
+{"id": "3298", "intent": "iot_wemo_off", "hindi": "[device_type : wemo प्लग] को बंद कर दो", "english": "power off the [device_type : wemo plug]"}
+{"id": "5652", "intent": "iot_wemo_off", "hindi": "[device_type : वेमो प्लग सॉकेट] बंद करें", "english": "switch [device_type : wemo plug socket] off"}
+{"id": "5856", "intent": "iot_wemo_off", "hindi": "[device_type : स्मार्ट प्लग सॉकेट] बंद करें", "english": "turn off [device_type : smart plug socket]"}
+{"id": "2690", "intent": "iot_wemo_off", "hindi": "[device_type : सॉकेट] बंद करें", "english": "turn off the [device_type : socket]"}
+{"id": "321", "intent": "iot_wemo_off", "hindi": "मेरा [device_type : प्लग] अक्षम करें", "english": "disable my [device_type : okug]"}
+{"id": "2566", "intent": "iot_wemo_off", "hindi": "मेरा [device_type : वेमो सॉकेट] बंद करो", "english": "turn off my [device_type : wemo socket]"}
+{"id": "3775", "intent": "iot_wemo_off", "hindi": "मुझे अभी [device_type : स्मार्ट सॉकेट] बंद करना है", "english": "i want the [device_type : smart socket] off now"}
+{"id": "3774", "intent": "iot_wemo_off", "hindi": "[device_type : स्मार्ट सॉकेट] अक्षम करें", "english": "disable [device_type : smart socket]"}
+{"id": "5396", "intent": "iot_wemo_off", "hindi": "सॉकेट को बंद कर दो", "english": "please turn socket off"}
+{"id": "4799", "intent": "iot_wemo_on", "hindi": "कृपया [device_type : वेमो प्लग सॉकेट] चालू करें", "english": "please turn on the [device_type : wemo plug socket]"}
+{"id": "389", "intent": "iot_wemo_on", "hindi": "[device_type : स्मार्ट प्लग] चालू करें", "english": "turn the [device_type : smart plug] on"}
+{"id": "426", "intent": "iot_wemo_on", "hindi": "[device_type : एक प्लग सॉकेट] को पावर दें", "english": "power up the [device_type : plug socket one]"}
+{"id": "4620", "intent": "iot_wemo_on", "hindi": "नया [device_type : स्मार्ट सॉकेट] चालू करें", "english": "turn on new [device_type : smart socket]"}
+{"id": "4618", "intent": "iot_wemo_on", "hindi": "[device_type : स्मार्ट सॉकेट] सक्षम करें", "english": "enable [device_type : smart socket]"}
+{"id": "322", "intent": "iot_wemo_on", "hindi": "मेरा [device_type : प्लग] सक्षम करें", "english": "enable my [device_type : plug]"}
+{"id": "1551", "intent": "iot_wemo_on", "hindi": "[device_type : wemo] को ऑन कर दो", "english": "turn on [device_type : wemo]"}
+{"id": "4201", "intent": "iot_wemo_on", "hindi": "[device_type : सिसका] सॉकेट चालू करो", "english": "power on [device_type : wemo]"}
+{"id": "13548", "intent": "iot_wemo_on", "hindi": "मैं चाहता हूं कि आप टी. वी. चालू करें", "english": "i'd like you to turn turn on the t. v."}
+{"id": "3184", "intent": "iot_wemo_on", "hindi": "जूस को देना बंद करो", "english": "stop start the juice"}
+{"id": "10640", "intent": "lists_createoradd", "hindi": "मुझे [list_name : जो चीजें खरीदनी हैं] उस सूची में डिटर्जेंट ऐड करो", "english": "add detergent to the list of [list_name : things i need to buy]"}
+{"id": "10938", "intent": "lists_createoradd", "hindi": "कृपया मेरी [list_name : किराने] की सूची में चीनी जोड़ें", "english": "please add sugar to my [list_name : grocery] list"}
+{"id": "10503", "intent": "lists_createoradd", "hindi": "पोस्ट ऑफिस को [date : शनिवार] के मेरे [list_name : कामों] की सूची में जोड़ें", "english": "add the post office to my list of [list_name : errands] for [date : saturday]"}
+{"id": "10996", "intent": "lists_createoradd", "hindi": "[person : बॉब] को मेरी [list_name : कॉन्टेक्ट्स की सूची] में ऐड करो", "english": "add [person : bob] to my [list_name : list of contacts]"}
+{"id": "10898", "intent": "lists_createoradd", "hindi": "कृपया [event_name : पार्टी] के लिए खरीदने के लिए चीजों की सूची जोड़ें", "english": "please add list of things to buy for [event_name : party]"}
+{"id": "11177", "intent": "lists_createoradd", "hindi": "हाथ की घड़ी को [list_name : शॉपिंग] सूची में ऐड करो", "english": "add a wrist watch to the [list_name : shopping list]"}
+{"id": "11146", "intent": "lists_createoradd", "hindi": "business contacts को [list_name : contact list] मे जोड़ो", "english": "add business contacts to [list_name : contact list]"}
+{"id": "10471", "intent": "lists_createoradd", "hindi": "मुझे [list_name : काम करने] की एक नई सूची बनाने की जरूरत है", "english": "i need to create a new [list_name : to do] list"}
+{"id": "14549", "intent": "lists_createoradd", "hindi": "[person : जूही चावला] कॉन्सर्ट शेड्यूल के बारे में एक सूची बनाएं", "english": "make a list about [person : selena gomez] concert schedule"}
+{"id": "10472", "intent": "lists_createoradd", "hindi": "मेरी [list_name : रसोई] सूची शुरू करने में मेरी मदद करें", "english": "help me start my [list_name : kitchen] list"}
+{"id": "10760", "intent": "lists_query", "hindi": "मैंने जो लिस्ट [date : दो दिन] पहले बनाई थी मुझे बताओ", "english": "tell me that list i wrote [date : two days] ago"}
+{"id": "10753", "intent": "lists_query", "hindi": "मैंने अपनी [list_name : वी मार्ट की सूची] में पहले से ही क्या डाला हुआ है", "english": "what did i put down already on the [list_name : walmart list]"}
+{"id": "10679", "intent": "lists_query", "hindi": "मेरे [date : आज] [list_name : काम करने] की सूची में क्या है", "english": "what is on my [list_name : to do] list [date : today]"}
+{"id": "10667", "intent": "lists_query", "hindi": "सूची के [list_name : शेड्यूल] को बोलो", "english": "recite the [list_name : schedules] of the list"}
+{"id": "11250", "intent": "lists_query", "hindi": "मेरे लिए [list_name : किराना] की सूची फिर से पढ़ो", "english": "read back my [list_name : grocery] list to me"}
+{"id": "10451", "intent": "lists_query", "hindi": "मैं [date : आज] क्या करने जा रहा हूँ", "english": "what i am going to do [date : today]"}
+{"id": "11107", "intent": "lists_query", "hindi": "मेरी [list_name : वर्तमान] सूची क्या है", "english": "what are my [list_name : current] list"}
+{"id": "10493", "intent": "lists_query", "hindi": "मेरी [list_name : काम करने] की सूची में क्या है", "english": "what is on my [list_name : to do] list"}
+{"id": "11186", "intent": "lists_query", "hindi": "मुझे मेरे [list_name : कपड़ों] की सूची दो", "english": "i have my [list_name : clothes] list"}
+{"id": "10757", "intent": "lists_query", "hindi": "मेरी [list_name : शॉपिंग] लिस्ट में कौन से आइटम हैं", "english": "what items are on my [list_name : shopping] list"}
+{"id": "11085", "intent": "lists_remove", "hindi": "[list_name : खरीददारी] सूची मे से दूध को बाहर निकाले", "english": "take out the milk from the [list_name : shopping] list"}
+{"id": "10827", "intent": "lists_remove", "hindi": "[list_name : किराने के सामान] की सूची हटाएं", "english": "delete list for [list_name : groceries]"}
+{"id": "10755", "intent": "lists_remove", "hindi": "मेरी [list_name : काम करने] की सूची को हटा दो", "english": "throw away my [list_name : to do] list please"}
+{"id": "10985", "intent": "lists_remove", "hindi": "[date : इस हफ्ते] के लिए मेरी [list_name : काम] की सूची हटा दो", "english": "delete my [list_name : to do's] for [date : this week]"}
+{"id": "10568", "intent": "lists_remove", "hindi": "[list_name : पुराने संगीत] की सूची को हटा दो", "english": "remove the [list_name : old music] list"}
+{"id": "10756", "intent": "lists_remove", "hindi": "[list_name : ख़रीदारी] की सूची साफ़ करें", "english": "clear out the [list_name : shopping] list"}
+{"id": "10494", "intent": "lists_remove", "hindi": "[list_name : स्टेशनरी] से पेंसिल हटाओ", "english": "remove pencil from [list_name : stationary]"}
+{"id": "10990", "intent": "lists_remove", "hindi": "मेरी [list_name : काम करने] की सूची से मॉप किचन हटा दो", "english": "on my [list_name : to dos] remove mop kitchen"}
+{"id": "10786", "intent": "lists_remove", "hindi": "[date : आज] के लिए मेरी [list_name : गतिविधियों] की सूची साफ़ करें", "english": "clear my [list_name : activities] list for [date : today]"}
+{"id": "10655", "intent": "lists_remove", "hindi": "[list_name : पार्टी टाइम] वाली सूची को हटा दो", "english": "remove the list called [list_name : party time]"}
+{"id": "1076", "intent": "music_dislikeness", "hindi": "[music_genre : रॉक मेटल] मत चलाओ", "english": "do not play [music_genre : rock metal]"}
+{"id": "3029", "intent": "music_dislikeness", "hindi": "मुझे इस गीत से नफरत है", "english": "i hate this song"}
+{"id": "3103", "intent": "music_dislikeness", "hindi": "यह गाना फिर से मत चलाना", "english": "don't play this song again"}
+{"id": "2056", "intent": "music_dislikeness", "hindi": "मैं उस गाने को फिर कभी नहीं सुनना चाहता", "english": "i never want to hear that song again"}
+{"id": "1874", "intent": "music_likeness", "hindi": "[playlist_name : चल रही] सूची में गीत जोड़ें", "english": "add song to [playlist_name : running] list"}
+{"id": "71", "intent": "music_likeness", "hindi": "मुझे [artist_name : अरिजीत सिंह के] गाने पसंद है", "english": "i like [artist_name : senatra] songs"}
+{"id": "2780", "intent": "music_likeness", "hindi": "क्या कोई आगामी संगीत [event_name : कार्यक्रम] हैं", "english": "are there any upcoming [event_name : concerts] by"}
+{"id": "1336", "intent": "music_likeness", "hindi": "मुझे [artist_name : अभिजीत] के गाने पसंद हैं कृपया इसे बजाएं", "english": "i like the songs of [artist_name : yeshudas] please play it"}
+{"id": "4550", "intent": "music_likeness", "hindi": "हे olly मुझे [artist_name : जुबिन नौटियाल] का दिल लौट दो संगीत पसंद है", "english": "hey olly i like music by [artist_name : sigur ros]"}
+{"id": "3204", "intent": "music_likeness", "hindi": "कृपया ध्यान दें कि मुझे [music_genre : जैज] पसंद है और [place_name : डिस्को] से नफरत है", "english": "please note i like [music_genre : jazz] and hate [place_name : disco]"}
+{"id": "4887", "intent": "music_likeness", "hindi": "[artist_name : जुबिन नौटियाल] के संगीत पर मेरी राय बचाओ", "english": "save my opinion on [artist_name : adele's] song"}
+{"id": "1527", "intent": "music_likeness", "hindi": "मुझे याद दिलाएं कि मुझे वह गाना पसंद है", "english": "remind me that i like that song"}
+{"id": "870", "intent": "music_likeness", "hindi": "राय बचाओ", "english": "opinion save"}
+{"id": "4809", "intent": "music_likeness", "hindi": "याद रखें कि मैं इस गीत के बारे में कैसे गिर गया", "english": "remember how i fell about this song"}
+{"id": "13855", "intent": "music_query", "hindi": "[artist_name : अरिजीत सिंह] के सबसे लोकप्रिय गाने कौन से हैं", "english": "what are [artist_name : lady gagas] most popular songs"}
+{"id": "1176", "intent": "music_query", "hindi": "[song_name : दोस्ती] के बारे में गाना किसने गया है", "english": "who sings the song about a [song_name : long black train]"}
+{"id": "5261", "intent": "music_query", "hindi": "क्या ये [artist_name : हनी सिंह] का गाना है", "english": "is the song by [artist_name : shakira]"}
+{"id": "5554", "intent": "music_query", "hindi": "मुझे [artist_name : अरिजीत सिंह] का संगीत पसंद है", "english": "is this song [artist_name : ed sheeran]"}
+{"id": "2174", "intent": "music_query", "hindi": "[song_name : दिल लौटा दो] का गायक कौन है", "english": "who is the singer of [song_name : hotel california]"}
+{"id": "761", "intent": "music_query", "hindi": "मैं इस गाने के बारे में जानना चाहता हूँ", "english": "i want to know about this song"}
+{"id": "2030", "intent": "music_query", "hindi": "वर्तमान गाना बज रहा है यह क्या है", "english": "current song playing what is it"}
+{"id": "6013", "intent": "music_query", "hindi": "इस radio पर कौन है", "english": "who is this on the radio"}
+{"id": "484", "intent": "music_query", "hindi": "गीत का गायक कौन है", "english": "who is the singer of song"}
+{"id": "1807", "intent": "music_query", "hindi": "गीत शीर्षक", "english": "song title"}
+{"id": "5152", "intent": "music_settings", "hindi": "कृपया दो गाने [player_setting : छोड़ें]", "english": "please [player_setting : skip] two songs"}
+{"id": "1710", "intent": "music_settings", "hindi": "संगीत मोड को [music_genre : रॉक] में [player_setting : बदलें]", "english": "[player_setting : change] the music mode to [music_genre : rock]"}
+{"id": "5911", "intent": "music_settings", "hindi": "संगीत [player_setting : फिर से चलाओ]", "english": "[player_setting : replay] the musics"}
+{"id": "2647", "intent": "music_settings", "hindi": "क्या आप कृपया [artist_name : अर्जीत सिंह] के लिए एक पेंडोरा चैनल बना सकते हैं", "english": "could you please create a pandora channel for [artist_name : adele]"}
+{"id": "4268", "intent": "music_settings", "hindi": "सूची में अगले गीत पर [player_setting : जाएँ]", "english": "[player_setting : move] to the next song in the list"}
+{"id": "5912", "intent": "music_settings", "hindi": "इस संगीत में गाने काटें", "english": "cut the songs in this musics"}
+{"id": "5930", "intent": "news_query", "hindi": "[media_type : हिंदुस्तान टाइम्स] से कोई ब्रेकिंग न्यूज", "english": "any breaking news from the [media_type : huffington post]"}
+{"id": "1636", "intent": "news_query", "hindi": "मुझे [media_type : दा प्रिंट] से नवीनतम समाचार दिखाओ", "english": "show me the latest news from the [media_type : guardian]"}
+{"id": "4662", "intent": "news_query", "hindi": "alexa [media_type : रिपब्लिक भारत] से समाचार प्राप्त करो", "english": "the news from [media_type : c. b. s.] alexa"}
+{"id": "2921", "intent": "news_query", "hindi": "[media_type : सीएनएन] वेबसाइट पर समाचार क्या हैं", "english": "what are the news stories on the [media_type : c. n. n.] website"}
+{"id": "451", "intent": "news_query", "hindi": "मेरे लिए [news_topic : रिलायंस का नवीनतम स्टॉक मूल्य] प्राप्त करें", "english": "get me the latest [news_topic : stock price for costco]"}
+{"id": "1093", "intent": "news_query", "hindi": "[media_type : दा हिंदू] की वेबसाइट पर जाएं", "english": "go to the [media_type : washington post] website"}
+{"id": "6129", "intent": "news_query", "hindi": "मुझे [place_name : दुनिया] की खबरों से अपडेट रखें", "english": "keep me up to date with the [place_name : world] news"}
+{"id": "2203", "intent": "news_query", "hindi": "[media_type : ज़ी न्यूज़] दुनिया की सुर्खियां", "english": "[media_type : b. b. c. world] headlines"}
+{"id": "1794", "intent": "news_query", "hindi": "[person : मोदी] जल्द कभी भी [place_name : रूस] जाएंगे", "english": "will [person : trump] visit [place_name : russia] anytime soon"}
+{"id": "680", "intent": "news_query", "hindi": "मुझे [news_topic : बिटकॉइन की कीमत] के बारे में सूचित रखें", "english": "keep me informed about [news_topic : bitcoin price]"}
+{"id": "9896", "intent": "play_audiobook", "hindi": "[audiobook_name : चाणक्य नीति] का [player_setting : पांचवा अध्याय शुरू करें]", "english": "[player_setting : start chapter five] of [audiobook_name : physics for future presidents]"}
+{"id": "9760", "intent": "play_audiobook", "hindi": "[player_setting : चालू रोको]", "english": "[player_setting : stop play]"}
+{"id": "11273", "intent": "play_audiobook", "hindi": "[audiobook_author : चाणक्य] द्वारा [audiobook_name : चाणक्य नीति] का अगला प्रकरण चलाएं", "english": "play next episode of [audiobook_name : harry potter] by [audiobook_author : j. k. rowling]"}
+{"id": "9746", "intent": "play_audiobook", "hindi": "[audiobook_name : गोदान] चलाओ", "english": "play [audiobook_name : pride and prejudice]"}
+{"id": "9885", "intent": "play_audiobook", "hindi": "कृपया [audiobook_name : सफ़ल सोच का सफ़ल जादू] का ऑडियो चलाएं", "english": "please play [audiobook_name : the notebook] audio"}
+{"id": "9720", "intent": "play_audiobook", "hindi": "[audiobook_name : गोदान] [player_setting : फिर शुरू करना]", "english": "[player_setting : resume] [audiobook_name : harry potter book four]"}
+{"id": "9680", "intent": "play_audiobook", "hindi": "[audiobook_name : गुनाहों के देवता] को उस जगह से [player_setting : फिर से शुरू करें] जहाँ मैंने पिछली बार सुनना बंद कर दिया था", "english": "[player_setting : resume] [audiobook_name : harry potter] from the place i have stopped listening to last time"}
+{"id": "9902", "intent": "play_audiobook", "hindi": "मुझे एक यादृच्छिक [media_type : ऑडियो बुक] चलाएं जिसका प्यार से संबंध है", "english": "play me a random [media_type : audio book] that has to do with love"}
+{"id": "9691", "intent": "play_audiobook", "hindi": "[audiobook_name : रोम के इतिहास] की ऑडियो बुक खोलो", "english": "open audio book [audiobook_name : history of rome]"}
+{"id": "9875", "intent": "play_audiobook", "hindi": "[audiobook_author : चेतन भगत] की [media_type : किताब] को मेरे लिए थोड़ा और [player_setting : पढ़ो]", "english": "[player_setting : read] some more of the [audiobook_author : daisy goodwin] [media_type : book] for me"}
+{"id": "10381", "intent": "play_game", "hindi": "मेरे लिए [game_name : शतरंज] की बिसात लगाओ", "english": "start a [game_name : competitive crossword] for us"}
+{"id": "10285", "intent": "play_game", "hindi": "कृपया [game_name : तीन पत्ती] खेलें", "english": "please play [game_name : clash of clans]"}
+{"id": "10353", "intent": "play_game", "hindi": "[game_name : सांप सीडी] खेलना", "english": "bring up [game_name : papa pear saga]"}
+{"id": "10335", "intent": "play_game", "hindi": "olly मेरे साथ [game_name : तीन पत्ती] खेलें", "english": "olly play [game_name : poker] with me"}
+{"id": "10268", "intent": "play_game", "hindi": "चलो [game_name : तीन पत्ती] खेलते हैं", "english": "let's play [game_name : global thermonuclear war]"}
+{"id": "10355", "intent": "play_game", "hindi": "[game_name : लूडो] खेलें", "english": "play [game_name : chess]"}
+{"id": "10352", "intent": "play_game", "hindi": "[game_name : तीन पत्ती] खेलना", "english": "play [game_name : papa pear saga]"}
+{"id": "10317", "intent": "play_game", "hindi": "[game_name : लूडो] चलाओ", "english": "play me in [game_name : tic tac toe]"}
+{"id": "10256", "intent": "play_game", "hindi": "[game_name : शतरंज] लॉन्च करें", "english": "launch [game_name : super mario]"}
+{"id": "10286", "intent": "play_game", "hindi": "कृपया [game_name : लूडो] खेलना चालू करो", "english": "please begin [game_name : clash of clans]"}
+{"id": "1467", "intent": "play_music", "hindi": "[artist_name : जगजीत सिंह] चलाओ", "english": "play [artist_name : slayer]"}
+{"id": "3967", "intent": "play_music", "hindi": "[music_genre : भक्ति]", "english": "[music_genre : rap]"}
+{"id": "5619", "intent": "play_music", "hindi": "[music_descriptor : पिछला] [song_name : गाना] चलाओ", "english": "play [music_descriptor : previous] [song_name : song]"}
+{"id": "827", "intent": "play_music", "hindi": "[artist_name : अरिजीत सिंह] प्लेलिस्ट प्ले करो", "english": "play [artist_name : bob dylan] playlist"}
+{"id": "182", "intent": "play_music", "hindi": "मेरी [music_genre : शास्त्रीय संगीत] की प्लेलिस्ट चलाओ", "english": "play my [music_genre : rock] playlist"}
+{"id": "4205", "intent": "play_music", "hindi": "मैं by [artist_name : rush] [song_name : limelight] सुनना चाहता हूं", "english": "i want to hear [song_name : limelight] by [artist_name : rush]"}
+{"id": "4116", "intent": "play_music", "hindi": "कृपया मेरी [playlist_name : मिलाई गई प्लेलिस्ट] चलाएं", "english": "play my [playlist_name : shuffled playlist] please"}
+{"id": "3400", "intent": "play_music", "hindi": "[artist_name : अरिजीत सिंह] का लाइव संस्करण चलाएं", "english": "play a live version of [artist_name : elton john]"}
+{"id": "5683", "intent": "play_music", "hindi": "मेरे [playlist_name : प्रेम गीत] प्लेलिस्ट गानों को चालू करो", "english": "play my playlist [playlist_name : party songs]"}
+{"id": "2531", "intent": "play_music", "hindi": "एलेक्सा एक के बाद एक [music_genre : रैप] और [music_genre : रॉक] का एक मील का गाना बजाती है", "english": "alexa play a mi song of [music_genre : rap] and [music_genre : rock] one after the other"}
+{"id": "11340", "intent": "play_podcasts", "hindi": "क्या [person : अरिजीत सिंह] के पास एक नया पॉडकास्ट है", "english": "does [person : allearsnet] have a new podcast"}
+{"id": "11467", "intent": "play_podcasts", "hindi": "[podcast_name : एक और कहानी] का [podcast_descriptor : नवीनतम पॉडकास्ट] चालू करें", "english": "play the [podcast_descriptor : most recent podcast] for this [podcast_name : american life]"}
+{"id": "11451", "intent": "play_podcasts", "hindi": "मैं नवीनतम [podcast_name : एक और कहानी] पॉडकास्ट सुनना चाहता हूँ", "english": "i want to listen to the latest [podcast_name : mike and mike] podcast"}
+{"id": "11418", "intent": "play_podcasts", "hindi": "[person : निलेश मिश्रा] के नवीनतम पॉडकास्ट को चालू करो", "english": "play [person : duncan trussel's] latest podcast"}
+{"id": "11306", "intent": "play_podcasts", "hindi": "वह पॉडकास्ट चलाओ जो मैं [podcast_descriptor : listening to yesterday]", "english": "play that podcast i was [podcast_descriptor : listening to yesterday]"}
+{"id": "11483", "intent": "play_podcasts", "hindi": "[podcast_name : एक और कहानी] खेलना शुरू करें", "english": "start playing [podcast_name : ringcast]"}
+{"id": "11453", "intent": "play_podcasts", "hindi": "मोबाइल पर [podcast_name : एक और कहानी] चलाओ", "english": "start podcasts on [podcast_name : n. f. l.]"}
+{"id": "11423", "intent": "play_podcasts", "hindi": "[time : तीस सेकंड] [player_setting : पीछे जाओ]", "english": "[player_setting : go backward] [time : thirty seconds]"}
+{"id": "11366", "intent": "play_podcasts", "hindi": "पॉडकास्ट के [podcast_descriptor : पिछले एपिसोड] पर वापस जाएं", "english": "go back to [podcast_descriptor : previous episode] of podcast"}
+{"id": "9592", "intent": "play_podcasts", "hindi": "[podcast_descriptor : पुरुषों के मुद्दों] को कवर करने वाले [media_type : पॉडकास्ट] की खोज करें", "english": "search for [media_type : podcasts] that cover [podcast_descriptor : men's issues]"}
+{"id": "9254", "intent": "play_radio", "hindi": "कृपया रेडियो मिर्ची पर [radio_name : नौ सौ अड़तीस एफ. एम.] चालू करें", "english": "please tune [radio_name : nine hundred and thirty eight f. m.] radio mirchi"}
+{"id": "9524", "intent": "play_radio", "hindi": "[radio_name : आकाशवाणी] पर कार्यक्रम को चालू करें", "english": "turn program on [radio_name : xmtune]"}
+{"id": "9519", "intent": "play_radio", "hindi": "कोई भी [music_genre : भक्ति] [radio_name : एफ. एम.] चैनल चालू करें", "english": "play any [music_genre : pop] [radio_name : f. m.] channel"}
+{"id": "9269", "intent": "play_radio", "hindi": "[radio_name : ऑल इंडिया रेडियो] ट्यून करें", "english": "tune in to [radio_name : eight hundred and ninety seven f. m.]"}
+{"id": "9471", "intent": "play_radio", "hindi": "एक [music_genre : देश] संगीत स्टेशन चालू करें", "english": "turn on a [music_genre : country] music station"}
+{"id": "9569", "intent": "play_radio", "hindi": "ok google [radio_name : एक सौ छह दशमलव सात] चालू करो", "english": "ok google play [radio_name : one hundred and six point seven]"}
+{"id": "9617", "intent": "play_radio", "hindi": "मेरे लिए [radio_name : एक सौ एक दशमलव नौ] से इस सुबह के नाटक को चालू करो", "english": "play me this mornings show from [radio_name : one hundred and one point nine]"}
+{"id": "9620", "intent": "play_radio", "hindi": "क्या मै [house_place : शयनकक्ष] में रेडियो पर मिर्ची मुर्गा सुन सकता हूं", "english": "can i get delilah on the radio in the [house_place : bedroom]"}
+{"id": "9601", "intent": "play_radio", "hindi": "[radio_name : ऑल इंडिया रेडियो] बजाओ", "english": "play [radio_name : country radio]"}
+{"id": "9438", "intent": "play_radio", "hindi": "क्या आप मेरे लिए रेडियो पर [music_genre : भक्ति] गाना चालू कर सकते हैं", "english": "can you play me a [music_genre : rap] song on the radio"}
+{"id": "14142", "intent": "qa_currency", "hindi": "[currency_name : भारतीय रुपया] कितना है", "english": "how much is the [currency_name : british pound]"}
+{"id": "14763", "intent": "qa_currency", "hindi": "[currency_name : यूरो] की तुलना में [currency_name : डॉलर] का मूल्य कितना है", "english": "how much is the [currency_name : dollar] worth compared to the [currency_name : euro]"}
+{"id": "13741", "intent": "qa_currency", "hindi": "[place_name : भारत] के लिए मुद्रा विनिमय दर क्या है", "english": "what's the currency exchange rate for [place_name : china]"}
+{"id": "13796", "intent": "qa_currency", "hindi": "[currency_name : अमेरिका] और [currency_name : मेक्सिको] के बीच विनिमय दर क्या है", "english": "what is the exchange rate between [currency_name : us] and [currency_name : mexico]"}
+{"id": "14074", "intent": "qa_currency", "hindi": "एक [currency_name : डॉलर] कितने [currency_name : भारतीय रुपया] के बराबर है", "english": "one [currency_name : dolla] equals how much [currency_name : inr]"}
+{"id": "13966", "intent": "qa_currency", "hindi": "[currency_name : येन] मूल्य क्या है", "english": "what is the [currency_name : yen] worth"}
+{"id": "14029", "intent": "qa_currency", "hindi": "[currency_name : भारतीय रुपया] और [currency_name : यूरो] विनिमय दर क्या है", "english": "what is the [currency_name : us dollar] and [currency_name : euro] exchange rate"}
+{"id": "14453", "intent": "qa_currency", "hindi": "[currency_name : डॉलर] के साथ [currency_name : यूरो] की विनिमय दर", "english": "exchange rate of [currency_name : euro] with [currency_name : dollar]"}
+{"id": "14530", "intent": "qa_currency", "hindi": "मुझे सूचित करें जब [currency_name : भारतीय रुपया] से [currency_name : यू एस डी] दर जैसा कि मुझे उम्मीद थी", "english": "notify me when [currency_name : g. b. p.] to [currency_name : u. s. d.] rate as i expected"}
+{"id": "13847", "intent": "qa_currency", "hindi": "[currency_name : मेक्सिको] पैसे के लिए विनिमय दर क्या है", "english": "what is the exchange rate for [currency_name : mexico] money"}
+{"id": "13069", "intent": "qa_definition", "hindi": "[definition_word : संतरा] की परिभाषा क्या है", "english": "what are the definitions of [definition_word : orange]"}
+{"id": "14138", "intent": "qa_definition", "hindi": "कृपया मुझे बताएं कि [definition_word : सिलेंडर] की परिभाषा क्या है", "english": "please tell me what is the definition of [definition_word : cylinder]"}
+{"id": "14429", "intent": "qa_definition", "hindi": "[definition_word : कफ्तान] क्या है", "english": "what is a [definition_word : caftan]"}
+{"id": "13777", "intent": "qa_definition", "hindi": "तुम [definition_word : क्रेडिट कार्ड] का वर्णन कर सकते हो", "english": "can you describe a [definition_word : credit card]"}
+{"id": "12961", "intent": "qa_definition", "hindi": "कृपया [definition_word : फोरेंसिक] को परिभाषित करें", "english": "please define [definition_word : forensic]"}
+{"id": "13140", "intent": "qa_definition", "hindi": "मुझे [definition_word : तूफान] के बारे में सब बताओ", "english": "tell me all about [definition_word : hurricane]"}
+{"id": "14272", "intent": "qa_definition", "hindi": "अरे [definition_word : किताब] क्या है", "english": "hey what's a [definition_word : book]"}
+{"id": "14347", "intent": "qa_definition", "hindi": "एक [definition_word : परिकल्पना] क्या है", "english": "what is a [definition_word : hypothesis]"}
+{"id": "13908", "intent": "qa_definition", "hindi": "क्या आप मुझे बता सकते हैं कि [definition_word : स्तंभित] का क्या मतलब होता है", "english": "can you tell me what [definition_word : flabbergasted] means"}
+{"id": "14592", "intent": "qa_definition", "hindi": "मुझे [definition_word : स्मार्टफोन सर्किट] का विवरण दें", "english": "give me the description of a [definition_word : smartphone circuit]"}
+{"id": "14706", "intent": "qa_factoid", "hindi": "[person : पी टी उषा] कहाँ रहती है", "english": "where does [person : sophia vergara] live"}
+{"id": "13078", "intent": "qa_factoid", "hindi": "मुझे [person : अक्षय कुमार] का पता बताओ", "english": "tell me [person : billy crytals] address"}
+{"id": "14939", "intent": "qa_factoid", "hindi": "मुझे [person : धनुष] के बारे में कुछ जानकारी चाहिए", "english": "i need some details about [person : bruce lee] please assist"}
+{"id": "14684", "intent": "qa_factoid", "hindi": "[place_name : भारत] के प्रधान मंत्री कौन हैं", "english": "who is the prime minister of [place_name : russia]"}
+{"id": "14118", "intent": "qa_factoid", "hindi": "[place_name : पिरामिडों] का भौगोलिक विवरण दिखाएं", "english": "show geographic details of [place_name : pyramids]"}
+{"id": "13487", "intent": "qa_factoid", "hindi": "ओली [place_name : आंध्रा प्रदेश] की राजधानी क्या है", "english": "olly what is the capital of [place_name : california]"}
+{"id": "13717", "intent": "qa_factoid", "hindi": "क्या आप वास्तव में [place_name : रूस] को [place_name : अलास्का] से देख सकते हैं", "english": "can you really see [place_name : russia] from [place_name : alaska]"}
+{"id": "13252", "intent": "qa_factoid", "hindi": "[person : विक्रम सेठ] का पहला नवंबर क्या था", "english": "what was [person : george eliot's] first november el"}
+{"id": "13854", "intent": "qa_factoid", "hindi": "[person : प्रभूदेवा] की मृत्यु कब हुई", "english": "when did [person : elvis] die"}
+{"id": "13439", "intent": "qa_factoid", "hindi": "[person : चेतन भगत] कितने साल के हैं", "english": "how old is [person : j. k. rowling]"}
+{"id": "13312", "intent": "qa_maths", "hindi": "alexa मेरे पास महीने के लिए डॉलर हैं मैं [date : इस महीने] [general_frequency : हर दिन] कितना खर्च कर सकता हूं", "english": "alexa i've got dollars for the month how much can i spend [general_frequency : every day] [date : this month]"}
+{"id": "13459", "intent": "qa_maths", "hindi": "बारह क्या चार से विभाजित है", "english": "what is twelve divided by four"}
+{"id": "13766", "intent": "qa_maths", "hindi": "दो बटा दो कितना होगा", "english": "two by two is"}
+{"id": "14757", "intent": "qa_maths", "hindi": "छब्बीस को दो भागों में विभाजित करें", "english": "divide seventy six in two parts"}
+{"id": "13102", "intent": "qa_maths", "hindi": "एक प्लस एक कितना होता है", "english": "how much is one plus one"}
+{"id": "13391", "intent": "qa_maths", "hindi": "चालीस डॉलर पर दस प्रतिशत की छूट क्या है", "english": "what's ten percent off forty dollars"}
+{"id": "13172", "intent": "qa_maths", "hindi": "दो गुणा दो की गणना करें", "english": "calculate two multiplied by two"}
+{"id": "13101", "intent": "qa_maths", "hindi": "वन प्लस वन क्या है", "english": "what is one plus one"}
+{"id": "13122", "intent": "qa_maths", "hindi": "दस का भाज्य क्या है", "english": "what is the factorial of ten"}
+{"id": "13460", "intent": "qa_maths", "hindi": "मुझे बताओ कि अठारह और इकतीस का गुणनफल क्या है", "english": "tell me what the product of eighteen and thirty one is"}
+{"id": "2995", "intent": "qa_stock", "hindi": "कृपया मुझे [news_topic : शेयर बाजार] से जुड़ी खबर बताएं", "english": "please tell me news related to the [news_topic : stock market]"}
+{"id": "14919", "intent": "qa_stock", "hindi": "[date : पिछले हफ्ते] [business_name : बिरला] के शेयरों का प्रदर्शन कैसा रहा", "english": "how have [business_name : megatel] shares done [date : last week]"}
+{"id": "14253", "intent": "qa_stock", "hindi": "[business_name : अमेज़न] स्टॉक कितना है", "english": "how much is [business_name : amazon] stock"}
+{"id": "13754", "intent": "qa_stock", "hindi": "मुझे [business_name : भारत गैस] स्टॉक की मौजूदा कीमत बताओ", "english": "tell me the current price of [business_name : exxon mobil] stock"}
+{"id": "14130", "intent": "qa_stock", "hindi": "[business_name : रिलायंस] की वर्तमान कीमत क्या है", "english": "what is [business_name : googs] current price"}
+{"id": "14925", "intent": "qa_stock", "hindi": "[business_name : वॉलमार्ट] के शेयर की कीमत बढ़ी या घटी", "english": "did the price of [business_name : walmart] stock go up or down"}
+{"id": "14544", "intent": "qa_stock", "hindi": "कृपया नैस्डैक में [business_name : रिलायंस] के शेयर मूल्य का पता लगाएं", "english": "please find out the share price of [business_name : microsoft] in nasdaq"}
+{"id": "14342", "intent": "qa_stock", "hindi": "[business_name : एचडीएफसी] का शेयर भाव क्या है", "english": "what is the stock price of [business_name : hdfc]"}
+{"id": "13734", "intent": "qa_stock", "hindi": "[business_name : बैद्यनाथ] का शेयर कैसा कर रहा है", "english": "what is [business_name : terranova] stock going for"}
+{"id": "14090", "intent": "qa_stock", "hindi": "[business_name : फेसबुक] वर्तमान स्टॉक दर", "english": "[business_name : facebook] current stock rate"}
+{"id": "11905", "intent": "recommendation_events", "hindi": "मुझे [date : इस सप्ताहांत] में मेरे क्षेत्र की गतिविधियों के बारे में बताएं", "english": "olly tell me about activities in my area [date : this weekend]"}
+{"id": "11600", "intent": "recommendation_events", "hindi": "मैं [timeofday : आज रात] यहाँ [place_name : नई दिल्ली] में कौन सी [business_type : फिल्म] देख सकता हूँ", "english": "what [business_type : movie] can i watch [timeofday : tonight] on the theater here in [place_name : boston]"}
+{"id": "12054", "intent": "recommendation_events", "hindi": "[place_name : शहर के आसपास] क्या हो रहा है", "english": "what's happening [place_name : around town]"}
+{"id": "7026", "intent": "recommendation_events", "hindi": "[date : इस सप्ताह] मेरे [place_name : नगर] में कौन से कार्यक्रम चल रहे हैं", "english": "what events are going in my [place_name : town] [date : this week]"}
+{"id": "11841", "intent": "recommendation_events", "hindi": "क्या इस क्षेत्र में कोई [event_name : शिल्प मेले] हो रहे हैं", "english": "are there any [event_name : crafts fairs] happening in this area"}
+{"id": "11720", "intent": "recommendation_events", "hindi": "[event_name : तैराकी]", "english": "[event_name : swimming]"}
+{"id": "11644", "intent": "recommendation_events", "hindi": "मुझे [place_name : मथुरा] में कार्यक्रम दिखाओ", "english": "show me events in [place_name : sacramento]"}
+{"id": "12073", "intent": "recommendation_events", "hindi": "[event_name : स्थानीय वर्तमान घटनाओं] का संदर्भ लें", "english": "refer [event_name : local current events]"}
+{"id": "11570", "intent": "recommendation_events", "hindi": "मेरे [place_name : शहर] के आसपास क्या हो रहा है", "english": "what's happening around my [place_name : town]"}
+{"id": "11582", "intent": "recommendation_events", "hindi": "क्या [place_name : बांद्रा] के आसपास [movie_type : सरकार] पर कुछ हो रहा है", "english": "is there anything happening on [movie_type : jazz scene] around [place_name : edinburgh]"}
+{"id": "11942", "intent": "recommendation_locations", "hindi": "क्या आप मेरे आस-पास [business_type : फ़र्नीचर की दुकान] ढूंढ सकते हैं", "english": "can you find me a [business_type : furniture store] near me"}
+{"id": "11607", "intent": "recommendation_locations", "hindi": "[place_name : आस - पास] के [business_type : सिनेमाघरों] की सूची दें", "english": "give the list of [business_type : theaters] in the [place_name : vicinity]"}
+{"id": "11954", "intent": "recommendation_locations", "hindi": "my क्षेत्र में एक [business_type : theater i] कहाँ है", "english": "where is a [business_type : theater] in my area"}
+{"id": "13318", "intent": "recommendation_locations", "hindi": "मैं जानना चाहता हूं कि मेरे निकट के किस [business_type : पालिका बाज़ार] में [food_type : पास्ता] पर सबसे बेहतर कीमत है", "english": "i want to know what [business_type : supermarket] near me has the best price on [food_type : gluten free bread]"}
+{"id": "11953", "intent": "recommendation_locations", "hindi": "निकटतम [business_name : विशाल मेगा मार्ट] कहां है", "english": "where is the nearest [business_name : walmart]"}
+{"id": "6366", "intent": "recommendation_locations", "hindi": "मुझे [place_name : भारत] में घूमने के लिए कुछ [place_name : बेहतरीन पर्यटन स्थल] बताएं", "english": "tell me some [place_name : best tourist places] to visit in [place_name : america]"}
+{"id": "11922", "intent": "recommendation_locations", "hindi": "कृपया स्थानीय [business_type : रेस्टोरेंट] देखें जो अभी खुले हैं", "english": "please look up local [business_type : restaurants] that are open now"}
+{"id": "11825", "intent": "recommendation_locations", "hindi": "महिलाओं के कपड़ों के लिए [place_name : गोवा] में [business_type : शॉपिंग मॉल] की तलाश करें", "english": "look for [business_type : shopping mall] in [place_name : sacramento] for women's clothes"}
+{"id": "11700", "intent": "recommendation_locations", "hindi": "मुझे मेरे [place_name : निकटतम स्थान] [business_type : फ़ूड कोर्ट] की समीक्षाएँ दिखाएँ", "english": "show me reviews of my [place_name : nearest location] [business_type : food court]"}
+{"id": "13031", "intent": "recommendation_locations", "hindi": "निकटतम [business_type : पिज्जा की दुकान] क्या है", "english": "what is the nearest [business_type : pizza shop]"}
+{"id": "11812", "intent": "recommendation_movies", "hindi": "[timeofday : आज रात] कौन सी फिल्म चलेगी", "english": "what movies are playing [timeofday : tonight]"}
+{"id": "11633", "intent": "recommendation_movies", "hindi": "[date : आज] [business_type : सिनेमा] में कौन सी फिल्में दिखाई जा रही हैं", "english": "what movies are showing in [business_type : cinema] [date : today]"}
+{"id": "11695", "intent": "recommendation_movies", "hindi": "क्या आपके पास कोई सुझाव [movie_type : एक्शन] मूवी है", "english": "do you have any suggestion [movie_type : action] movies"}
+{"id": "12104", "intent": "recommendation_movies", "hindi": "[movie_name : कुंग फू पांडा तीन]", "english": "[movie_name : kung fu panda three]"}
+{"id": "11733", "intent": "recommendation_movies", "hindi": "कैसी है नई फिल्म [movie_name : कबीर सिंह]", "english": "how is the new movie [movie_name : swat]"}
+{"id": "11990", "intent": "recommendation_movies", "hindi": "[place_name : सिनेमाघरों] में ऐसी कौन सी फिल्म है जो बेकार नहीं है", "english": "what's a movie in [place_name : theaters] that doesn't suck"}
+{"id": "11932", "intent": "recommendation_movies", "hindi": "मैं [date : आज] क्या देखूंगा", "english": "what should i watch [date : today]"}
+{"id": "11920", "intent": "recommendation_movies", "hindi": "[date : इस सप्ताह] कौन सी फिल्में आ रही हैं", "english": "what movies are out [date : this week]"}
+{"id": "11634", "intent": "recommendation_movies", "hindi": "मुझे [date : आज] कौन सी फिल्म देखनी चाहिए", "english": "what movie should i watch [date : today]"}
+{"id": "6376", "intent": "recommendation_movies", "hindi": "[date : दो हजार सोलह] में से एक अच्छी ईरानी फिल्म कौन सी है", "english": "what is a good iranian film from [date : two thousand and sixteen]"}
+{"id": "15197", "intent": "social_post", "hindi": "मेरी भारत यात्रा [media_type : ट्विटर] पर पोस्ट करें", "english": "post in [media_type : twitter] my visit to japan"}
+{"id": "15618", "intent": "social_post", "hindi": "[business_name : सैमसंग] [media_type : ट्वीट] करें और उन्हें बताएं कि वे बेकार हैं", "english": "[media_type : tweet] [business_name : esurance] and tell them they suck"}
+{"id": "15459", "intent": "social_post", "hindi": "एक [media_type : twitter] शिकायत भेजो", "english": "send a [media_type : twitter] complaint"}
+{"id": "15626", "intent": "social_post", "hindi": "कृपया खराब ग्राहक सेवा के लिए [business_name : कॉमकास्ट] करने के लिए एक शिकायत [media_type : ट्वीट] करें", "english": "please [media_type : tweet] a complaint to [business_name : comcast] for bad customer service"}
+{"id": "15732", "intent": "social_post", "hindi": "[business_name : सैमसंग] को [media_type : ट्वीट] करें और उनसे कहें कि वे अपने उत्पादों से लोगों को मारना बंद करें", "english": "[media_type : tweet] [business_name : samsung] and tell them to stop killing people with their products"}
+{"id": "15731", "intent": "social_post", "hindi": "ओली ने एक संदेश [media_type : ट्वीट] किया [business_name : ए.टी.एंड.टी] और उन्हें बताओ कि मेरी सेवा खराब है", "english": "olly [media_type : tweet] a message to [business_name : a. t. & t.] and tell them my service is bad"}
+{"id": "15598", "intent": "social_post", "hindi": "[business_name : कंपनी का नाम] खोलें और शिकायतें पाएं", "english": "open [business_name : company name] and find complaints"}
+{"id": "15359", "intent": "social_post", "hindi": "[business_name : apple] को [media_type : ट्वीट] करें कि मेरे आईफोन की बैटरी हमेशा खत्म हो जाती है", "english": "open [media_type : tweet] to [business_name : apple] that my iphone's battery is always drained"}
+{"id": "15364", "intent": "social_post", "hindi": "क्या आप [business_name : रिलाइंस] को बता सकते हैं कि यह नया फ़ोन केस कबाड़ है", "english": "can you let [business_name : amazon] know that this new phone case is junk"}
+{"id": "15155", "intent": "social_post", "hindi": "क्या तुम मेरे [media_type : facebook account] में मेरी नयी selfie upload कर सकते हो", "english": "can you upload my latest selfie in my [media_type : facebook account]"}
+{"id": "15205", "intent": "social_query", "hindi": "मुझे [general_frequency : हर तीन घंटे] में मेरा [media_type : फेसबुक] अपडेट दें", "english": "give me my [media_type : facebook] update [general_frequency : every three hours]"}
+{"id": "15333", "intent": "social_query", "hindi": "[media_type : इंस्टा] पर कुछ भी नया", "english": "anything new on [media_type : insta]"}
+{"id": "15345", "intent": "social_query", "hindi": "please [media_type : twitter] पर trending topic check करो", "english": "please check the trending topics on [media_type : twitter]"}
+{"id": "15138", "intent": "social_query", "hindi": "मेरा [media_type : सामाजिक मीडिया] खोजो", "english": "check my [media_type : social networks]"}
+{"id": "15348", "intent": "social_query", "hindi": "अभी कौन [media_type : फेसबुक लाइव] कर रहा है", "english": "who is doing [media_type : facebook live] right now"}
+{"id": "15200", "intent": "social_query", "hindi": "मेरे लिए [media_type : फेसबुक] से नवीनतम अपडेट प्राप्त करें", "english": "get me latest updates from [media_type : facebook]"}
+{"id": "4334", "intent": "social_query", "hindi": "मेरा [media_type : फेसबुक] फीड कैसा दिखता है", "english": "what does my [media_type : facebook] feed look like"}
+{"id": "15326", "intent": "social_query", "hindi": "कृपया मेरा [media_type : फेसबुक] फीड पढ़ें", "english": "please read my [media_type : facebook] feed"}
+{"id": "15445", "intent": "social_query", "hindi": "मुझे बताओ की [media_type : instagram] पर क्या हो रहा है", "english": "tell me what's happening on [media_type : instagram]"}
+{"id": "15280", "intent": "social_query", "hindi": "[media_type : फेसबुक]", "english": "[media_type : facebook]"}
+{"id": "4544", "intent": "takeaway_order", "hindi": "सीज़निमग अलटन द फ्राई और पेय के रूप में [drink_type : स्प्राइट] के साथ बारह पीस [food_type : पालक पनीर] कॉम्बो ऑर्डर करें", "english": "order a twelve piece [food_type : honey mustard wing combo] with seasonimg altnon the fries and a [drink_type : sprite] as the drink"}
+{"id": "132", "intent": "takeaway_order", "hindi": "[order_type : ले जाने के लिए] एक खरीदारी करो", "english": "order a [order_type : takeaway]"}
+{"id": "5840", "intent": "takeaway_order", "hindi": "मुझे [business_name : पापा जॉन्स] से कुछ खाना मंगवाना है", "english": "i need to order some food from [business_name : papa john's]"}
+{"id": "1043", "intent": "takeaway_order", "hindi": "[order_type : डिलीवरी] के साथ निकटतम [food_type : थाई] [business_type : रेस्तरां] को कॉल करें", "english": "call the nearest [food_type : thai] [business_type : restaurant] with [order_type : delivery]"}
+{"id": "1830", "intent": "takeaway_order", "hindi": "मैं कुछ [food_type : spicy] चीज खाना चाहता हूँ", "english": "i want to eat some [food_type : spicy] thing"}
+{"id": "5488", "intent": "takeaway_order", "hindi": "[order_type : डिलीवरी] के लिए [food_type : पिज़्ज़ा] खरीदें", "english": "order [food_type : pizza] for [order_type : delivery]"}
+{"id": "2338", "intent": "takeaway_order", "hindi": "एक पैक [food_type : दलमखनि] के लिए ऑर्डर बनाओ इसे [order_type : ले जाने के लिए] ऑर्डर करो", "english": "make an order for [food_type : noodles] one pack make it as [order_type : takeaway] order"}
+{"id": "668", "intent": "takeaway_order", "hindi": "मैं दो [food_type : burgers] और एक [food_type : coke] चाहता हूं यह जल्दी से ऑर्डर करो", "english": "i want two [food_type : burgers] and one [food_type : coke] order it fast"}
+{"id": "89", "intent": "takeaway_order", "hindi": "क्या आप [timeofday : आज रात] [meal_type : के खाने] के लिए [food_type : सूप] ऑर्डर कर सकते हैं", "english": "could you order [food_type : sushi] for [timeofday : tonight] [meal_type : dinner]"}
+{"id": "2255", "intent": "takeaway_order", "hindi": "क्या मैं [business_name : रेस्ट्रा] से [order_type : बाहर निकलने] का आदेश दे सकता हूँ", "english": "can i order [order_type : take out] from [business_name : licari's]"}
+{"id": "5406", "intent": "takeaway_query", "hindi": "क्या [business_name : डोमिनोज] [order_type : टेकअवे] करता है", "english": "does [business_name : pings] do [order_type : takeaway]"}
+{"id": "3671", "intent": "takeaway_query", "hindi": "क्या मैं इस [business_type : रेस्टोरेंट] के साथ काम कर सकता हूँ", "english": "can i carry out with this [business_type : restaurant]"}
+{"id": "6072", "intent": "takeaway_query", "hindi": "[business_name : पिज्जा हट] से अपना भोजन लेने के लिए मुझे कितने मिनट प्रतीक्षा करनी होगी", "english": "how many minutes do i need to wait to pick up my food from [business_name : china on the go]"}
+{"id": "4461", "intent": "takeaway_query", "hindi": "क्या [business_name : फोंग] केवल भोजन करते हैं", "english": "is [business_name : fongs] dine in only"}
+{"id": "4934", "intent": "takeaway_query", "hindi": "मेरा [business_name : डोमिनोज़] ऑर्डर कितने बजे आने की उम्मीद है", "english": "what time is my [business_name : domino's] order expected to arrive"}
+{"id": "3020", "intent": "takeaway_query", "hindi": "क्या [business_name : हल्दीराम] बाहर ले जाता है", "english": "does [business_name : louie's] do take out"}
+{"id": "170", "intent": "takeaway_query", "hindi": "क्या वें घर [order_type : deliver] करते हैं", "english": "do they [order_type : deliver] home"}
+{"id": "5552", "intent": "takeaway_query", "hindi": "[order_type : पंहुचाने] के लिए काम समय कौन लेता है", "english": "who takes less of duration of time for [order_type : delivery]"}
+{"id": "967", "intent": "takeaway_query", "hindi": "क्या मुझे [business_name : हल्दीराम] चेंज से [order_type : टेक-आउट] मिल सकता है", "english": "can i get [order_type : take-out] from [business_name : pf changs]"}
+{"id": "3021", "intent": "takeaway_query", "hindi": "उपलब्ध [business_name : louies] को बाहर निकालें", "english": "take out available [business_name : louies]"}
+{"id": "12392", "intent": "transport_query", "hindi": "मुझे [date : आज] की दिशा बताओ", "english": "tell me [date : today's] direction"}
+{"id": "12251", "intent": "transport_query", "hindi": "मुझे [place_name : cstm] गंतव्य के लिए लोकल [transport_type : रेलगाड़ी] की समयसारिणी बताएं", "english": "get me the local [transport_type : train] timing to destination [place_name : cstm]"}
+{"id": "12817", "intent": "transport_query", "hindi": "मैं [place_name : मॉल] में कैसे पहुंचूं", "english": "how do i get to [place_name : the mall]"}
+{"id": "12264", "intent": "transport_query", "hindi": "[place_name : न्यूयॉर्क]", "english": "[place_name : new york]"}
+{"id": "12930", "intent": "transport_query", "hindi": "मेरे आस-पास [business_type : किराना] करने के लिए मानचित्र देखें", "english": "look up the map to [business_type : stores] near me"}
+{"id": "12310", "intent": "transport_query", "hindi": "मुझे [place_name : अयोध्या] से [place_name : अमृतसर] के लिए उपलब्ध [transport_type : रेलगाड़ी] टिकटों की सूची दें", "english": "give me the list of available [transport_type : train] tickets from [place_name : edinburgh] to [place_name : leeds]"}
+{"id": "12581", "intent": "transport_query", "hindi": "[date : आज] [transport_type : ट्रेन] कब चलती है", "english": "when does the f. [transport_type : train] run [date : today]"}
+{"id": "12839", "intent": "transport_query", "hindi": "मुझे [place_name : दिल्ली] ले चलो", "english": "take me to [place_name : layfayette saint and canal]"}
+{"id": "12343", "intent": "transport_query", "hindi": "[date : मंगलवार] को [place_name : दिल्ली स्टेशन] से [transport_name : बीस हजार पांच सौ एक तेजस एक्सप्रेस] [transport_type : रेलगाड़ी] का समय देखें", "english": "check time of [transport_name : ten thousand eight hundred and eighty seven] [transport_type : train] from [place_name : luni station] on [date : tuesday]"}
+{"id": "12446", "intent": "transport_query", "hindi": "क्या आप मुझे बता सकते हैं कि [transport_type : रेलगाड़ी] [place_name : नागपुर] के लिए कब निकलती है", "english": "can you tell me the times the [transport_type : train] leaves for [place_name : chicago]"}
+{"id": "12383", "intent": "transport_taxi", "hindi": "बुक करने के लिए [transport_type : taxi] ढूंढें", "english": "find a [transport_type : taxi] to book"}
+{"id": "12244", "intent": "transport_taxi", "hindi": "[time : एक] बजे [place_name : फिल्म] जाने के लिए एक [transport_type : टैक्सी] बुक करें", "english": "book a [transport_type : taxi] to go to the [place_name : movies] at [time : one]"}
+{"id": "12248", "intent": "transport_taxi", "hindi": "olly सबसे नजदीकी [transport_agency : ऊबर] खोजो", "english": "olly find the nearest [transport_agency : uber]"}
+{"id": "12558", "intent": "transport_taxi", "hindi": "कृपया मेरे लिए [transport_agency : uber] [transport_type : taxi] बूक करो", "english": "please book me a [transport_type : taxi] [transport_agency : uber]"}
+{"id": "12548", "intent": "transport_taxi", "hindi": "मैं [place_name : घर] तक की सवारी करना चाहता हूँ", "english": "i need a ride [place_name : home]"}
+{"id": "12779", "intent": "transport_taxi", "hindi": "निकटतम [transport_agency : ऊबर] आरक्षित करें", "english": "reserve the closest [transport_agency : uber]"}
+{"id": "12553", "intent": "transport_taxi", "hindi": "लोकेशन के लिए जाने वाली [transport_type : cab] बूक करो", "english": "book me a [transport_type : cab] going to location"}
+{"id": "12159", "intent": "transport_taxi", "hindi": "क्या तुम मेरे लिए एक [transport_agency : उबर] book कर सकते हो", "english": "can you book an [transport_agency : uber] for me"}
+{"id": "12329", "intent": "transport_taxi", "hindi": "[transport_type : पीली टैक्सी] बुलाओ", "english": "call [transport_type : yellow cab]"}
+{"id": "12452", "intent": "transport_taxi", "hindi": "मुझे [place_name : हवाई अड्डे] के लिए [transport_agency : ऊबर]", "english": "[transport_agency : uber] me to the [place_name : airport]"}
+{"id": "12308", "intent": "transport_ticket", "hindi": "मेरे लिए [transport_type : ट्रेन] का टिकट बुक करो", "english": "book me a [transport_type : train] ticket"}
+{"id": "14646", "intent": "transport_ticket", "hindi": "[place_name : कानपुर] की [date : आज] cheapest fight fares के बारे मे बताओ", "english": "tell me about the cheapest flight fares to [place_name : nj] [date : today]"}
+{"id": "12339", "intent": "transport_ticket", "hindi": "इस [date : मंगलवार] सुबह [time : नौ बजे] के लिए [transport_descriptor : एक तरफ] के लिए [transport_type : ट्रेन] टिकट बुक करें", "english": "book a [transport_type : train] ticket for one [transport_descriptor : one way] for this [date : tuesday] at [time : nine am]"}
+{"id": "12235", "intent": "transport_ticket", "hindi": "कृपया इस [time : सप्ताहांत] के लिए [transport_type : रेलगाड़ी] का टिकट खरीदें", "english": "please purchase a [transport_type : train] ticket for this [time : weekend]"}
+{"id": "12340", "intent": "transport_ticket", "hindi": "क्या तुम इस [date : शुक्रवार] को दो [transport_type : ट्रेन] टिकट बुक कर सकते हो", "english": "can you please book [transport_type : train] tickets for two for this [date : friday]"}
+{"id": "12723", "intent": "transport_ticket", "hindi": "मेरे लिए [place_name : बोस्टन] का टिकट खरीदें", "english": "buy me a ticket to [place_name : boston]"}
+{"id": "12813", "intent": "transport_ticket", "hindi": "कृपया [place_name : जयपुर] से [transport_name : राजधानी एक्सप्रेस] [transport_type : रेलगाड़ी] का टिकट बुक करें", "english": "please book a ticket of [transport_name : rajdhani express] [transport_type : train] from [place_name : jaipur]"}
+{"id": "12127", "intent": "transport_ticket", "hindi": "मुझे [date : रविवार] को [time : सुबह पाँच बजे] [transport_type : रेलगाड़ी] से [place_name : मथुरा] जाना है", "english": "i need to go to [place_name : dundee] at [time : five am] on [date : sunday] by [transport_type : train]"}
+{"id": "12606", "intent": "transport_ticket", "hindi": "मुझे [place_name : अहमदाबाद से देहरादून] का एक [transport_type : ट्रेन] टिकट चाहिए", "english": "i need to get a ticket via [transport_type : train] to [place_name : orlando from hwood]"}
+{"id": "12150", "intent": "transport_ticket", "hindi": "olly [date : इस weekend] मुझे [transport_name : गरीब रथ] की [place_name : जयपुर] के लिए टिकट book करके दो", "english": "olly book me a ticket to [place_name : paris] on [transport_name : eurostar] [date : this weekend]"}
+{"id": "12838", "intent": "transport_traffic", "hindi": "[time : अभी] यातायात कैसा है", "english": "how is the traffic at [time : the moment]"}
+{"id": "12442", "intent": "transport_traffic", "hindi": "[place_name : बाजार राजमार्ग] पर यातायात की स्थिति क्या है", "english": "what is the traffic situation at the [place_name : bazaar highway]"}
+{"id": "12182", "intent": "transport_traffic", "hindi": "[place_name : एक सौ एक] पर ट्राफिक कंडिशन कैसी हैं", "english": "what are the traffic conditions on the [place_name : one hundred and one]"}
+{"id": "12256", "intent": "transport_traffic", "hindi": "[place_name : सेंट्रल पार्क रोड] के पास वर्तमान में यातायात कैसा है", "english": "how is the traffic presently near [place_name : central park road]"}
+{"id": "12254", "intent": "transport_traffic", "hindi": "मुझे [place_name : शहर] के यातायात के बारे में बताएं", "english": "tell me about [place_name : city] traffic"}
+{"id": "12789", "intent": "transport_traffic", "hindi": "क्या आप मुझे यातायात के बारे में बता सकते हैं", "english": "can you tell me about the traffic"}
+{"id": "12717", "intent": "transport_traffic", "hindi": "अभी कैसा यातायात है", "english": "what is the traffic like now"}
+{"id": "12413", "intent": "transport_traffic", "hindi": "यातायात की मौजूदा स्थिति क्या है", "english": "what is the current traffic situation"}
+{"id": "12685", "intent": "transport_traffic", "hindi": "अभी यातायात कैसा है", "english": "what is the traffic like right now"}
+{"id": "12675", "intent": "transport_traffic", "hindi": "क्या यातायात बत्ती", "english": "is traffic light"}
+{"id": "3852", "intent": "weather_query", "hindi": "[place_name : लद्दाख] में अभी मौसम कैसा चल रहा है", "english": "what kind of weather are they having in [place_name : orange tx] right now"}
+{"id": "4266", "intent": "weather_query", "hindi": "[date : आज] का मौसम कैसा है", "english": "what is [date : todays] weather"}
+{"id": "4436", "intent": "weather_query", "hindi": "मुझे कौन सी [weather_descriptor : जैकेट] पहननी चाहिए", "english": "what [weather_descriptor : jacket] should i wear"}
+{"id": "1683", "intent": "weather_query", "hindi": "[date : कल] का [weather_descriptor : तापमान गर्म] होगा हाँ या नहीं", "english": "[date : tomorrow's] [weather_descriptor : temperature] is to be [weather_descriptor : hot] yes or no"}
+{"id": "103", "intent": "weather_query", "hindi": "मुझे [date : इस सप्ताह] का मौसम बताओ", "english": "tell me the weather [date : this week]"}
+{"id": "5590", "intent": "weather_query", "hindi": "[weather_descriptor : तापमान] खोलें", "english": "open [weather_descriptor : temperature]"}
+{"id": "6116", "intent": "weather_query", "hindi": "[date : इस सप्ताह] के मौसम की जानकारी", "english": "info on [date : this week] weather"}
+{"id": "319", "intent": "weather_query", "hindi": "मुझे [time : अब से दो दिनों में] [place_name : बार्सिलोना] में मौसम बताओ", "english": "tell me the weather in [place_name : barcelona] in [time : two days from now]"}
+{"id": "6289", "intent": "weather_query", "hindi": "अरे [date : आज] का मौसम कैसा है", "english": "hey what is the weather like [date : today]"}
+{"id": "6172", "intent": "weather_query", "hindi": "क्या [weather_descriptor : sunglasses] [date : today] के लिए एक अच्छा विकल्प है", "english": "are [weather_descriptor : sunglasses] a good choice for [date : today]"}

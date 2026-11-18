@@ -12,7 +12,7 @@ dependencies = ["scikit-learn", "indic_transliteration"]
 
 [project.optional-dependencies]
 dev = ["pytest", "ruff"]
-train = ["torch", "transformers", "seqeval"]
+train = ["torch", "transformers", "seqeval", "optuna"]
 
 [tool.setuptools]
 packages = ["cmx"]

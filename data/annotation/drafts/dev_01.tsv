@@ -1,0 +1,200 @@
+2672	maine [timeofday : subah] [time : 6 se 9 baje] ke beech kitne alarm lagaye hai
+1732	checkout [date : aaj] subah [time : 10 baje] ka alarm set karo
+237	kya maine [timeofday : subah] [alarm_type : uthne] ke liye alarm lagaya hai
+5541	please mujhe [date : weekdays] ke liye [timeofday : subah] ke alarm ka time batao
+3149	kya [date : kal] [timeofday : subah] ke liye koi alarms hai
+5982	tumne mere liye kitne baje ka alarm lagaya hai
+5609	alarm setting batao
+562	mera subah [time : 8 baje] wala alarm hata do
+4971	[person : finley] ke sone ke time wala alarm hata do
+4198	[time : 4 baje] ka alarm hata do
+3904	please [date : wednesday] [timeofday : shaam] ka alarm hata do
+3248	[date : kal] ka alarm cancel karo
+3270	[date : kal] ke liye jo alarm set hai wo hata do
+5436	[time : shaam] [time : 5 baje] wala alarm hatao
+173	[date : kal] [time : subah 6 baje] alarm lagao
+7043	please [time : abhi se 2 ghante ke liye] alarm set karo
+232	[timeofday : subah] [time : 6] baje ka alarm laga do
+610	main [date : kal] subah [time : 6 baje] uthna chahta hu plz
+3463	mujhe [date : kal] [time : subah 7 baje] [alarm_type : uthne] ka alarm chahiye
+2563	[date : kal] [timeofday : subah] [time : 8] baje ka alarm lagao
+4094	please subah [time : 8 baje] ka alarm laga do
+115	awaaz [change_amount : kam karo]
+3139	please apna volume kam karo
+689	plz volume kam karo
+3811	speaker ka volume kam karo
+4979	please mujhse aaram se baat karo
+331	awaaz kam karo
+737	kya tum awaaz thodi kam kar sakte ho
+516	please [time : agle ghante] ke liye mute karo
+5957	kya tum thodi der ke liye chup reh sakte ho
+3454	so jao
+2323	please speaker mute karo
+4497	settings mute karo
+2797	speakers ki awaaz mute kar do
+4421	awaaz band karo
+4398	please volume [change_amount : sabse tez] setting pe kar do
+1680	music ka volume [change_amount : 90 tak] badhao
+5755	audio on
+2360	volume badhao
+5726	please volume badha do
+691	please volume off kar do
+5393	awaaz tez karo
+6912	[date : aaj] ki [event_name : meeting] me kaun kaun hoga
+6948	[date : is hafte] meri kitni [event_name : meetings] hai
+6723	[time : baaki hafte] ke liye mera agenda kya hai
+9164	kya [date : is mahine] mera koi calendar event hai
+8941	[time : is mahine] [event_name : chhutti] kab hai
+7947	[event_name : arijit singh ke music] concert ka next schedule kab hai
+8046	[date : agle hafte] meri kitni meetings hai
+8146	[date : 14 tarikh] ko meri [event_name : meeting] cancel karo
+8612	mere calendar se [date : thursday] ka [meal_type : lunch] hata do
+8417	mere calendar ke saare [event_name : appointments] cancel karo
+8834	[time : baaki hafte ke liye] meri saari [event_name : meetings] hata do
+6883	[date : kal] [time : 2 pm] wali [event_name : birthday party] hata do
+6734	[event_name : meetings] se mera [time : din] khali karo
+8372	arey siri [date : kal] pakka kar lena ki mera calendar pura khali ho
+7734	mujhe [date : har friday] dukaan jaane ke liye yaad dilana
+8270	[date : wednesday] ko [event_name : meeting] ka notification
+8133	[person : ram] ko lene ke liye dopahar [time : 3 baje] ka reminder set karo
+7804	[general_frequency : roz] [time : subah 8 baje] mere office ke kaamo ka reminder lagao
+7260	[date : kal] [time : dopahar 3 baje] ki [event_name : meeting] ka reminder laga do
+8619	[general_frequency : har mahine ki 15 tarikh] ko event set karo taki [event_name : internet bill bharna] yaad rahe
+6914	[event_name : monday meeting] ko [general_frequency : har monday] calendar me daal do
+14737	ok google turkey banane ka sabse easy aur fast tarika kya hai
+6613	cooking ke baare me puchne ke liye assistant
+9993	[food_type : butt kaleji] kaise banti hai
+9965	main [food_type : maggi] kaise bana sakta hu
+10041	main [food_type : biscuit] kaise banau
+1268	[food_type : pakodi] banane ki tumhari recipe best thi
+10039	mujhe [food_type : khane ki] recipe dikhao
+9999	[food_type : pizza] ko ekdum [cooking_type : crispy] banane ke liye oven me kitni der rakhna chahiye
+10110	main [food_type : meatloaf] kaise bana sakta hu
+1189	agar [place_name : darjeeling] me [time : raat ke 10 baj] rahe hai to [place_name : bareilly] me kya time hai
+943	agar [place_name : east coast] pe [time : raat ke 8 baj] rahe hai to [place_name : jamnagar] me kitne baje hai
+1211	[place_name : shimla] ka time [place_name : jaipur] me convert karo
+2227	please [time : subah 9 baje] [place_name : cst] ko [place_name : ist] me convert karo
+1234	[place_name : india] me kya time hai jab [place_name : bharatiya ganatantra] me [time : raat ke 12 baje] hai
+5359	[time_zone : eastern] time zone pe switch karo
+3293	[time_zone : eastern] aur [time_zone : pacific] ke time me kitna fark hai
+3651	[place_name : delhi] me abhi kya time hai
+1201	[place_name : mumbai] me current time kya hai
+3443	[date : is mahine] [date : 22 tarikh] ko kaun sa din hai
+4519	[date : 22 april] ko kaun sa din hai
+6120	hey olly [place_name : noida] me kya time hai
+5744	[date : agle saal] [event_name : mera birthday] kis din padega
+2200	[event_name : holi] me kitne hafte bache hai
+11061	please [person : ram] ko mere contact list me add karo
+15921	alexa [email_address : tripathi at hotmail dot com] ko [person : mahima tripathi] ke naye contact ke roop me add karo
+17018	contacts me save karo
+15986	ye email contact me save karo
+17017	mere contact me email save karo
+16037	mera gmail [email_folder : inbox] refresh karo
+15863	[relation : mummy] ke unread emails dekho
+16641	[relation : boss] ka koi naya email
+16580	google us [person : pinku] ka naya email address dhundo jo maine [date : friday] ko add kiya tha
+16289	[business_name : clinic] ne mere test ke baare me kya bola
+17082	kya mujhe [date : aaj] [person : neha] ka koi naya email aaya hai
+16653	kya [time : pichle ek ghante] me koi email aaya hai
+17037	mujhe contact ki [personal_info : mail id] do
+16582	kya ye mere [relation : boss] ka sahi area code hai
+15867	please mere contacts se [person : vinod] ki [personal_info : details] do
+16779	[person : john] naam ka contact kholo
+16709	mere [device_type : phone book] me kitne contacts hai
+16184	mujhe mere [relation : bhai] ki [personal_info : contact details] batao
+16588	please wo contacts hata do jinse maine [date : 3 mahine se] baat nahi ki
+16512	[relation : mummy] ko email bhejo ki [date : kal] shopping jaana hai
+16081	mere [relation : manager] ko ek email bhejo
+16533	kya tum [person : ritu] ko email likhne me meri help karoge
+16971	mujhe [person : rohan] ke email ka reply karna hai
+15805	[person : dushyant] ko [date : kal] ki [event_name : meeting] ke baare me email karo aur likho ki [person : dushyant] kya hum [timeofday : dopahar] me meeting kar sakte hai
+16030	is email pe is [relation : colleague] ke liye naya email kholo
+16025	kya tum mere [relation : dost] [person : rohit] ko email bhej sakte ho ki main [date : kal] busy hu
+1277	arey
+167	arey arey
+1257	internet pe sabse accha [joke_type : knock knock] joke dhundo
+1478	[joke_type : naye] jokes dhundo
+4908	kuch [joke_type : funny] jokes kholo
+4775	kya tum mujhe ek [joke_type : accha] joke suna sakti ho
+638	kya tum mere liye [joke_type : janwaro] wala joke dhund sakte ho
+4745	mujhe ek [joke_type : bewakoof] joke chahiye
+1948	[joke_type : mazedar] joke
+6603	kis time pe [place_name : temperature level]
+6271	[date : aaj] ka din kaisa hai
+13617	[date : aaj] duniya me sabse ajeeb kya ho raha hai batao
+10554	main [date : aaj] kya kar raha hu
+15812	olly mujhe [person : ram] ki [event_name : party] ke baare me jaanna hai
+6570	mujhe [artist_name : neha kakkar] ke baare me batao
+6356	mujhe [date : saturday] ko [place_name : pub] me invite kiya gaya hai
+30	safai acchi hai dhool bahut buri hai ab apna jaadu karo mera [house_place : carpet] saaf karo
+1599	kya tum [device_type : roomba] start kar sakte ho
+2621	ab [device_type : vacuum cleaner] start karo
+5696	[house_place : ghar ki safai] shuru karo
+3840	[device_type : roomba] on karo
+5404	[house_place : kitchen] saaf karne ke liye [device_type : roomba] lo
+1943	[house_place : ghar] ki safai shuru karo
+5990	meri [coffee_type : subah] wali coffee ready karo
+5150	kya tum [device_type : coffee maker] chala sakte ho
+1569	kya mujhe [coffee_type : coffee] mil sakti hai
+2749	[device_type : coffee machine] start karo
+2599	mujhe abhi coffee chahiye
+2814	thodi coffee bana do
+5989	mujhe abhi thodi coffee chahiye yaar
+1216	[house_place : living room] ko [color_type : blue] kar do
+2841	[house_place : living room] ki lights [color_type : red] pe set karo
+4827	kya light ko [color_type : green] color me badal sakte hai
+2282	mere ghar ki saari lights ka color [color_type : blue] set karo
+2122	[house_place : living room] ki lights [color_type : laal] karo
+1215	olly [house_place : living room] ko [color_type : neela] banao
+4494	meri lights ko koi bhi [color_type : random] color me badal do
+925	please lights [change_amount : thodi si] kam karo
+17	[house_place : hall] me light kam karo
+2313	[change_amount : light neeche 7] karo
+4440	saari [house_place : andar ki] lights dim karo
+2576	[house_place : bedroom] ki lights dim kar do
+24	ek [house_place : room] ko dark karo
+2312	olly lights [change_amount : ko 7] kar do
+5202	[house_place : drawing hall] ki light band kar do
+4632	please [house_place : bedroom] ki light band karo
+2600	please mere [device_type : bed ke side wala lamp] band kar do
+2187	kya tum please mere [house_place : bedroom] ki light band kar doge
+4796	[house_place : bedroom] ki lights off kar do
+4277	kya tum mera [device_type : desk lamp] band kar sakte ho
+5518	[house_place : room] ki light band kar do
+1988	arey alexa mere [house_place : apartment] me [device_type : disco light] on karo aur party shuru karo
+3464	please saari bahar ki lights on karo
+312	yaha bahut andhera hai
+2470	lights on karo
+5094	yaha to andhera hai yaar
+2810	[house_place : living room] me light tez karo
+5728	[house_place : room] ki [device_type : har light] ki brightness badhao
+4387	[device_type : lamp ki light] badhao
+6052	alexa light ki brightness badhani hai yaha neeche dekhna mushkil hai
+3437	please light badhao
+851	light chamkao
+4287	lights on
+2946	alexa [house_place : bedroom] ka [device_type : pankha] band karo
+3803	[device_type : smart plug socket ko] band karo
+756	kya tum [device_type : wemo plug socket] band kar sakte ho
+388	[device_type : smart plug] off karo
+3183	bijli band
+678	[device_type : tv] socket on kar dena jab main ghar pahuchu
+5651	[device_type : wemo plug socket] chalu karo
+5069	[device_type : wemo] on karo
+5653	[device_type : wemo plug socket] ko on kar do
+4619	naya [device_type : smart socket] start karo
+3804	[device_type : wemo plug socket] on karo
+3394	please mera [device_type : wemo plug socket] chalu karo
+11178	[general_frequency : monthly] [list_name : kirana] saaman ki list banao
+10870	grocery kharidni hai isko mere [date : aaj] ke to do list me daal do
+10973	[list_name : school supplies] ke liye nayi list banao
+11086	meri [list_name : grocery] list me doodh add karo
+10925	mere [list_name : pending bills] ki nayi list banao
+11196	[list_name : christmas] list me pastry add karo
+11212	[list_name : purani playlist] delete karo aur nayi banao
+11182	meri [list_name : health plan]
+10424	olly meri [list_name : shopping] list ke items batao
+10555	meri [list_name : baaki kaam] wali list me item 5 check karo
+10775	jo [event_name : party] main plan kar raha hu uske liye contacts ki list hai kya
+10754	[date : is hafte] ke liye maine grocery list me jo daala hai wo padh ke sunao
+10450	meri [list_name : shopping] list me [date : aaj] kya hai

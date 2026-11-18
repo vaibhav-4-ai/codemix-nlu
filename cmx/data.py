@@ -54,6 +54,62 @@ def pick_seed(hindi: list[dict], english: list[dict], n: int = 50) -> list[dict]
     return picked
 
 
+def pick_per_intent(rows, partition, per_intent, first_ids, seed):
+    """Up to `per_intent` sentences of each intent from one partition.
+
+    Sentences in `first_ids` go first (so the 50 already-done ones stay in the test set),
+    then sentences that have slots, then the rest. Random order inside each group, fixed seed.
+    """
+    rng = random.Random(seed)
+    by_intent = {}
+    for r in rows:
+        if r["partition"] == partition:
+            if r["intent"] not in by_intent:
+                by_intent[r["intent"]] = []
+            by_intent[r["intent"]].append(r)
+    picked = []
+    for intent in sorted(by_intent):
+        group = by_intent[intent]
+        rng.shuffle(group)
+        already = []
+        with_slots = []
+        without = []
+        for r in group:
+            if r["id"] in first_ids:
+                already.append(r)
+            elif slots(r["annot_utt"]):
+                with_slots.append(r)
+            else:
+                without.append(r)
+        picked += (already + with_slots + without)[:per_intent]
+    return picked
+
+
+def pick_sets() -> None:
+    """Write the full test set (up to 10 per intent) and dev set (up to 7 per intent) to rewrite."""
+    hindi = load("hi-IN")
+    english_by_id = {}
+    for r in load("en-US"):
+        english_by_id[r["id"]] = r
+    seed_ids = set()
+    for line in (DATA / "annotation" / "seed_50.jsonl").read_text(encoding="utf-8").splitlines():
+        if line.strip():
+            seed_ids.add(json.loads(line)["id"])
+    for name, partition, per_intent in [("test_set", "test", 10), ("dev_set", "dev", 7)]:
+        rows = []
+        for r in pick_per_intent(hindi, partition, per_intent, seed_ids, SEED):
+            rows.append(
+                {
+                    "id": r["id"],
+                    "intent": r["intent"],
+                    "hindi": r["annot_utt"],
+                    "english": english_by_id[r["id"]]["annot_utt"],
+                }
+            )
+        save_jsonl(DATA / "annotation" / f"{name}.jsonl", rows)
+        print(f"{name}: {len(rows)} sentences")
+
+
 def fetch() -> None:
     """Download the tarball, check it, save hi-IN and en-US, and write the 50-sentence seed batch."""
     with urllib.request.urlopen(URL) as resp:
