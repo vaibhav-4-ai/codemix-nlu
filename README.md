@@ -68,6 +68,26 @@ each draw resamples the 50 sentences and uses the same draw for both scripts and
 
 Across the three seeds, full-test accuracy varied by under 1.5 points per recipe.
 
+### Is the confidence honest? (calibration)
+
+When a model says it's "90% sure", is it right 90% of the time? ECE measures the average gap between confidence
+and accuracy: 0 means honest. Temperature scaling fits one number T on Devanagari test sentences (cross-fitted,
+never the 50 paired ones) and applies it unchanged everywhere. 3 seeds pooled; `python -m cmx calibrate`.
+
+| Model | Sentences | Accuracy % | Avg confidence % (before → after) | ECE (before → after) |
+|---|---|---|---|---|
+| plain | MASSIVE test, Devanagari | 79.3 | 81.6 → 81.6 | 0.024 → 0.024 |
+| plain | 50 paired, Hinglish | 38.0 | 38.5 → 38.5 | 0.097 → 0.097 |
+| fixed | MASSIVE test, Devanagari | 83.9 | 91.3 → 86.0 | 0.074 → 0.021 |
+| fixed | 50 paired, Hinglish | 82.7 | 89.8 → 83.2 | 0.101 → 0.067 |
+
+- **The plain model fails honestly on Hinglish:** its average confidence falls to about 38%, which matches its
+  accuracy. That makes the failure detectable: a system can send low-confidence requests to a fallback (the idea
+  behind my other project, [deferral-curve](https://github.com/vaibhav-4-ai/deferral-curve)).
+- **The fixed model is overconfident** (91% sure, 84% right). One temperature (T = 1.25, the same for all 3 seeds)
+  brings the gap down: ECE drops from 0.074 to 0.021. It was fitted on Devanagari and still helps on Hinglish.
+- ECE on 150 answers (50 sentences × 3 seeds) is noisy, so treat the Hinglish rows as indicative.
+
 **A first, simpler version** (TF-IDF character n-grams + logistic regression, in CI on every push) shows the same
 pattern: Devanagari-only training scores 12% on Hinglish, and adding romanized + English data raises it to 68%.
 
@@ -109,16 +129,22 @@ pip install -e ".[train]"
 python -m cmx train --recipe plain --seed 13   # GPU: ~4 minutes on a T4
 python -m cmx train --recipe fixed --seed 13   # GPU: ~9 minutes on a T4
 python -m cmx evaluate          # reads predictions from artifacts/hf_runs/ (CI downloads them)
+python -m cmx calibrate         # ECE + temperature scaling from the same predictions
 ```
 
 Layout: `cmx/data.py` (download), `cmx/massive.py` (slot markup → BIO tags), `cmx/quick.py` (TF-IDF version and
 demo export), `cmx/examples.py` (training sets, tag alignment), `cmx/train.py` (model and training loop),
-`cmx/evaluate.py` (paired bootstrap), `docs/` (demo page).
+`cmx/evaluate.py` (paired bootstrap), `cmx/calibrate.py` (ECE, temperature scaling), `docs/` (demo page).
 
-## Next
+## Status and future work
 
-Calibration (is the model's confidence honest, especially on heavily mixed sentences?), transfer to Hinglish-TOP,
-a bigger hand-typed test set, separating the two parts of the fix, and an int8 model small enough to serve.
+**Complete as of November 2026:** data pipeline, a paired Hinglish test set, the TF-IDF baseline with a live demo,
+joint BERT training (2 recipes × 3 seeds), paired-bootstrap evaluation, and calibration. Every number on this page
+is recomputed in CI from the saved predictions.
+
+**Not done (cut for time):** transfer to Hinglish-TOP, serving the BERT model (an int8 export), a bigger
+hand-typed test set, calibration per code-mixing level, hyper-parameter tuning, and separating the two parts of
+the fix.
 
 ## License
 

@@ -25,9 +25,13 @@ jobs:
               curl -sSfL -o "artifacts/hf_runs/$run/predictions_$name.jsonl" \
                 "https://huggingface.co/vaibhav-4-ai/codemix-nlu/resolve/main/runs/$run/predictions_$name.jsonl"
             done
+            curl -sSfL -o "artifacts/hf_runs/$run/metrics.json" \
+              "https://huggingface.co/vaibhav-4-ai/codemix-nlu/resolve/main/runs/$run/metrics.json"
           done
       - name: Final numbers - with 95% ranges
         run: python -m cmx evaluate
+      - name: Calibration - is the confidence honest?
+        run: python -m cmx calibrate
   train-check:
     # No GPU here: a tiny model runs the real training loop for 2 steps, to prove it works.
     runs-on: ubuntu-24.04
