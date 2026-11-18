@@ -13,7 +13,7 @@ jobs:
           cache: pip
           cache-dependency-path: pyproject.toml
       - run: pip install -e ".[dev]"
-      - run: ruff check .
+      - run: ruff check --output-format=github .
       - run: pytest
       - name: Quick version - first number
         run: python -m cmx quick

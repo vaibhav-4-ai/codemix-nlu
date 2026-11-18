@@ -71,8 +71,8 @@ def count_changes(recipe, backbone, params, best):
         changes.append(f"recipe={recipe}")
     if backbone != BACKBONE:
         changes.append(f"backbone={backbone}")
-    for key in best:
-        if params[key] != best[key]:
+    for key, value in best.items():
+        if params[key] != value:
             changes.append(f"{key}={params[key]}")
     return changes
 
