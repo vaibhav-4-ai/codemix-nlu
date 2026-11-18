@@ -37,6 +37,10 @@ def main() -> None:
         from cmx.quick import run
 
         run(args.export)
+    elif args.command == "evaluate":
+        from cmx.evaluate import run
+
+        run()
     elif args.command == "fetch-data":
         from cmx.data import fetch
 

@@ -17,6 +17,17 @@ jobs:
       - run: pytest
       - name: Quick version - first number
         run: python -m cmx quick
+      - name: Download the 6 training runs' predictions from Hugging Face
+        run: |
+          for run in plain_seed13 fixed_seed13 plain_seed42 fixed_seed42 plain_seed1337 fixed_seed1337; do
+            mkdir -p "artifacts/hf_runs/$run"
+            for name in test devanagari_50 hinglish_50; do
+              curl -sSfL -o "artifacts/hf_runs/$run/predictions_$name.jsonl" \
+                "https://huggingface.co/vaibhav-4-ai/codemix-nlu/resolve/main/runs/$run/predictions_$name.jsonl"
+            done
+          done
+      - name: Final numbers - with 95% ranges
+        run: python -m cmx evaluate
   train-check:
     # No GPU here: a tiny model runs the real training loop for 2 steps, to prove it works.
     runs-on: ubuntu-24.04
