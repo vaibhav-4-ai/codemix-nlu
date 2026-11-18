@@ -1,7 +1,13 @@
 import random
 
 from cmx.annotations import problems
-from cmx.examples import add_spelling_noise, align_tags, clean_word, make_example, romanized_copy
+from cmx.examples import (
+    add_spelling_noise,
+    align_tags,
+    clean_word,
+    make_example,
+    romanized_copy,
+)
 
 
 def test_make_example_reads_the_brackets():

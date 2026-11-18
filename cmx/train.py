@@ -281,8 +281,12 @@ def train(recipe, seed, backbone, params=None, out=None, trial=None, save_model=
     if out is None:
         out = Path("artifacts") / "train" / f"{recipe}_{backbone.split('/')[-1]}_seed{seed}"
     out.mkdir(parents=True, exist_ok=True)
-    curve_lines = ["epoch,train_loss,dev_intent_accuracy,dev_slot_f1,hinglish_dev_intent_accuracy,"
-                   "hinglish_dev_slot_f1,seconds\n"]
+    curve_lines = [
+        (
+            "epoch,train_loss,dev_intent_accuracy,dev_slot_f1,hinglish_dev_intent_accuracy,"
+            "hinglish_dev_slot_f1,seconds\n"
+        )
+    ]
     print(f"backbone {backbone} | recipe {recipe} | {len(train_rows):,} training sentences | device {device}")
     print(f"settings {params}")
 
