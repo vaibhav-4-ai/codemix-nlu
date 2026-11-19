@@ -63,9 +63,9 @@ jobs:
       - run: pip install torch --index-url https://download.pytorch.org/whl/cpu
       - run: pip install -e ".[train,serve]"
       - name: int8 ONNX export - size, accuracy kept, speed
-        run: python -m cmx export
+        run: scripts/show_error.sh python -m cmx export
       - name: Transfer test on Google's Hinglish-TOP (human-written)
-        run: python -m cmx transfer
+        run: scripts/show_error.sh python -m cmx transfer
       - name: Put the int8 model + reports on Hugging Face (only with the HF_TOKEN secret, only on main)
         if: github.ref == 'refs/heads/main' && env.HF_TOKEN != ''
         run: python scripts/publish_model.py

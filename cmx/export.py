@@ -100,6 +100,28 @@ def full_model_predict(model, tokenizer, metrics, words):
     return {"intent": metrics["intent_names"][best], "tags": tags}
 
 
+def export_onnx(model, example, path, use_new_exporter):
+    """Save the model as ONNX. PyTorch has two exporters; the newer one copes with newer models.
+
+    dynamic_axes: batch size and sentence length can change at run time.
+    """
+    torch.onnx.export(
+        model,
+        (example["input_ids"], example["attention_mask"]),
+        str(path),
+        input_names=["input_ids", "attention_mask"],
+        output_names=["intent_logits", "slot_logits"],
+        dynamic_axes={
+            "input_ids": {0: "batch", 1: "pieces"},
+            "attention_mask": {0: "batch", 1: "pieces"},
+            "intent_logits": {0: "batch"},
+            "slot_logits": {0: "batch", 1: "pieces"},
+        },
+        opset_version=18,
+        dynamo=use_new_exporter,
+    )
+
+
 def percentile(values, share):
     ordered = sorted(values)
     return ordered[min(len(ordered) - 1, int(share * len(ordered)))]
@@ -117,21 +139,14 @@ def run():
     # 1. ONNX export. dynamic_axes: batch size and sentence length can change at run time.
     example = tokenizer(["alarm", "set", "karo"], is_split_into_words=True, return_tensors="pt")
     full_path = OUT / "model.onnx"
-    torch.onnx.export(
-        model,
-        (example["input_ids"], example["attention_mask"]),
-        str(full_path),
-        input_names=["input_ids", "attention_mask"],
-        output_names=["intent_logits", "slot_logits"],
-        dynamic_axes={
-            "input_ids": {0: "batch", 1: "pieces"},
-            "attention_mask": {0: "batch", 1: "pieces"},
-            "intent_logits": {0: "batch"},
-            "slot_logits": {0: "batch", 1: "pieces"},
-        },
-        opset_version=17,
-        dynamo=False,
-    )
+    try:
+        export_onnx(model, example, full_path, use_new_exporter=False)
+        exporter = "classic (TorchScript)"
+    except Exception as error:  # noqa: BLE001 - any failure: try the other exporter
+        print(f"classic exporter failed ({error}); trying the new one")
+        export_onnx(model, example, full_path, use_new_exporter=True)
+        exporter = "new (torch.export)"
+    print(f"exported with the {exporter} exporter")
     # 2. int8: weights of the matrix multiplications become 8-bit integers.
     quantize_dynamic(str(full_path), str(OUT / "model.int8.onnx"), weight_type=QuantType.QInt8)
     tokenizer.save_pretrained(OUT / "tokenizer")
