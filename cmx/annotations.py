@@ -8,6 +8,7 @@ only the writing changes). Rows that break the rule are listed and the build sto
 """
 
 import json
+import random
 
 from cmx.data import DATA, save_jsonl
 from cmx.massive import slot_types
@@ -48,10 +49,53 @@ def problems(hindi_annot, hinglish_annot):
     return ""
 
 
+REVIEW = ANNOTATION / "review_100.tsv"
+REVIEW_SEED = 13
+
+
+def make_review():
+    """Pick 100 random rewrites (fixed seed) into review_100.tsv for a person to check by hand."""
+    english_by_id = {}
+    for row in read_jsonl(ANNOTATION / "test_set.jsonl") + read_jsonl(ANNOTATION / "dev_set.jsonl"):
+        english_by_id[row["id"]] = row["english"]
+    rows = read_jsonl(ANNOTATION / "test_set_hinglish.jsonl") + read_jsonl(ANNOTATION / "dev_set_hinglish.jsonl")
+    ids = []
+    text_by_id = {}
+    for row in rows:
+        ids.append(row["id"])
+        text_by_id[row["id"]] = row["hinglish_annot"]
+    picked = random.Random(REVIEW_SEED).sample(sorted(ids), 100)
+    lines = ["n\tid\tenglish (the meaning)\thinglish (drafted)\tyour_version (leave empty if fine)\n"]
+    for n, row_id in enumerate(picked, start=1):
+        lines.append(f"{n}\t{row_id}\t{english_by_id[row_id]}\t{text_by_id[row_id]}\t\n")
+    with open(REVIEW, "w", encoding="utf-8") as f:
+        f.writelines(lines)
+    print(f"wrote {REVIEW} - 100 sentences to review")
+
+
+def read_review():
+    """-> (ids that were reviewed, {id: corrected hinglish} for the ones the reviewer changed)."""
+    reviewed = set()
+    changed = {}
+    if not REVIEW.exists():
+        return reviewed, changed
+    for line in REVIEW.read_text(encoding="utf-8").splitlines()[1:]:
+        parts = line.split("\t")
+        if len(parts) < 4:
+            continue
+        reviewed.add(parts[1])
+        if len(parts) >= 5 and parts[4].strip() and parts[4].strip() != parts[3].strip():
+            changed[parts[1]] = parts[4].strip()
+    return reviewed, changed
+
+
 def build():
     drafts = read_drafts()
     for row in read_jsonl(ANNOTATION / "seed_50_hinglish.jsonl"):
         drafts[row["id"]] = row["hinglish_annot"]
+    reviewed, changed = read_review()
+    for row_id, text in changed.items():
+        drafts[row_id] = text  # the reviewer's version wins
     bad = 0
     missing = 0
     for name in ["test_set", "dev_set"]:
@@ -71,11 +115,17 @@ def build():
                     "intent": row["intent"],
                     "hinglish_annot": drafts[row["id"]],
                     "drafted_by": "claude",
-                    "edited": False,
+                    "reviewed": row["id"] in reviewed,
+                    "edited": row["id"] in changed,
                 }
             )
         save_jsonl(ANNOTATION / f"{name}_hinglish.jsonl", out)
         print(f"{name}: {len(out)} rows ready")
     print(f"{bad} rows with problems, {missing} not drafted yet")
+    if reviewed:
+        summary = {"reviewed": len(reviewed), "edited": len(changed),
+                   "edit_rate": round(len(changed) / len(reviewed), 3)}  # fmt: skip
+        (ANNOTATION / "review_summary.json").write_text(json.dumps(summary, indent=2), encoding="utf-8")
+        print(f"human review: {len(changed)} of {len(reviewed)} sentences changed")
     if bad:
         raise SystemExit(1)

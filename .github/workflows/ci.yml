@@ -61,7 +61,7 @@ jobs:
           cache: pip
           cache-dependency-path: pyproject.toml
       - run: pip install torch --index-url https://download.pytorch.org/whl/cpu
-      - run: pip install -e ".[train,serve]"
+      - run: pip install -e ".[dev,train,serve]"
       - name: int8 ONNX export - size, accuracy kept, speed
         run: scripts/show_error.sh python -m cmx export
       - name: Transfer test on Google's Hinglish-TOP (human-written)

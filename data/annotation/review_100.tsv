@@ -1,0 +1,101 @@
+n	id	english (the meaning)	hinglish (drafted)	your_version (leave empty if fine)
+1	13548	i'd like you to turn turn on the t. v.	mai chahta hu ki tum tv on kar do	
+2	14118	show geographic details of [place_name : pyramids]	[place_name : pyramids] ki geography dikhao	
+3	4827	can the lights be changed to [color_type : green]	kya light ko [color_type : green] color me badal sakte hai	
+4	9691	open audio book [audiobook_name : history of rome]	[audiobook_name : rome ke itihaas] ki audio book kholo	
+5	4809	remember how i fell about this song	yaad rakhna ki is gaane ke baare me mujhe kaisa laga	
+6	6356	i got invited to the [place_name : pub] on [date : saturday]	mujhe [date : saturday] ko [place_name : pub] me invite kiya gaya hai	
+7	8146	cancel my [event_name : meeting] on the [date : fourteenth]	[date : 14 tarikh] ko meri [event_name : meeting] cancel karo	
+8	9375	play [radio_name : nine hundred and seventy one]	[radio_name : 97.1] chalu karo	
+9	12438	what are the [transport_type : train] times to travel from [place_name : new york city] to [place_name : poughkeepsie]	[place_name : punjab] se [place_name : haryana] jaane ke liye [transport_type : train] ka time kya hai	
+10	4436	what [weather_descriptor : jacket] should i wear	mujhe kaun si [weather_descriptor : jacket] pehenni chahiye	
+11	12978	browsing centers	browsing center	
+12	4618	enable [device_type : smart socket]	[device_type : smart socket] enable karo	
+13	11990	what's a movie in [place_name : theaters] that doesn't suck	[place_name : cinema halls] me kaun si movie hai jo bekaar nahi hai	
+14	8786	searching on [event_name : holidays] in my location	meri location pe [event_name : holidays] dhund raha hu	
+15	12885	which route has less traffic [date : today]	[date : aaj] kis route pe traffic kam hai	
+16	4277	can you turn off my [device_type : desk lamp]	kya tum mera [device_type : desk lamp] band kar sakte ho	
+17	5488	order [food_type : pizza] for [order_type : delivery]	[order_type : delivery] ke liye [food_type : pizza] order karo	
+18	12441	how is the traffic from [place_name : home] to work	[place_name : ghar] se office tak traffic kaisa hai	
+19	11785	[movie_name : logan]	[movie_name : lagaan]	
+20	10985	delete my [list_name : to do's] for [date : this week]	[date : is hafte] ki meri [list_name : kaam] ki list hata do	
+21	2851	[business_name : domino's] has [order_type : takeaway] right	kya [business_name : dominos] me [order_type : takeaway] ki facility hai	
+22	8116	during the timeframe of [date : february one and march sixteen] what [event_name : meetings] occurred	[date : 1 feb aur 16 march] ke beech kaun si [event_name : meetings] hui thi	
+23	12764	book a [transport_type : train] ticket to	ek [transport_type : train] ticket book karo	
+24	5574	brighten of lights in [house_place : living room]	[house_place : living room] ki lights ki brightness badha do	
+25	14142	how much is the [currency_name : british pound]	[currency_name : indian rupee] abhi kitne ka hai	
+26	1043	call the nearest [food_type : thai] [business_type : restaurant] with [order_type : delivery]	[order_type : delivery] wale sabse paas ke [food_type : thai] [business_type : restaurant] ko call karo	
+27	16907	[person : jay's] [personal_info : phone number]	[person : ram ka] [personal_info : phone number] do	
+28	11743	which [event_name : book fair] events are taking place [date : next week] in [place_name : washington d. c.]	[place_name : new delhi] me [date : agle hafte] kaun se [event_name : book fair] ho rahe hai	
+29	7734	remind me to go to the store [date : every friday]	mujhe [date : har friday] dukaan jaane ke liye yaad dilana	
+30	9965	how can i cook [food_type : pasta]	main [food_type : maggi] kaise bana sakta hu	
+31	388	turn off the [device_type : smart plug]	[device_type : smart plug] off karo	
+32	10291	start play [game_name : spider]	[game_name : ludo] khelna shuru karo	
+33	13846	has [person : sally fields] ever won an academy award	kya [person : katrina kaif] ne kabhi oscar jeeta hai	
+34	761	i want to know about this song	mujhe is gaane ke baare me jaanna hai	
+35	9831	[player_setting : start reading] [audiobook_name : fifty shades of grey] from chapter four	4th chapter se [audiobook_name : nirmala novel] [player_setting : padhna shuru karo]	
+36	11196	add pastries to the [list_name : christmas] list	[list_name : christmas] list me pastry add karo	
+37	8834	remove all my [event_name : meetings] for [time : the rest of the week]	[time : baaki hafte ke liye] meri saari [event_name : meetings] hata do	
+38	6147	find [joke_type : funny] jokes	[joke_type : funny] jokes dhundo	
+39	6570	tell me about [artist_name : rihana]	mujhe [artist_name : neha kakkar] ke baare me batao	
+40	9299	can you start [radio_name : f. m. eight hundred and ninety] radio channel	kya tum [radio_name : all india radio] start kar sakte ho	
+41	6438	[date : today] i searched all over for my phone and couldn't find it	[date : aaj] maine pura ghar chaan mara phone ke liye par mila hi nahi	
+42	13643	how do you define [definition_word : textual]	tum [definition_word : shabdik] ko kaise define karoge	
+43	7026	what events are going in my [place_name : town] [date : this week]	[date : is hafte] mere [place_name : sheher] me kaun se events chal rahe hai	
+44	1732	checkout [date : today] set alarm of [time : ten am]	checkout [date : aaj] subah [time : 10 baje] ka alarm set karo	
+45	967	can i get [order_type : take-out] from [business_name : pf changs]	kya mujhe [business_name : haldiram] se [order_type : take-out] mil sakta hai	
+46	16989	please say to the email that sent me [person : george] i need the money now it's urgent	please [person : ram] ne jo email bheja tha usme likho ki mujhe paise chahiye abhi urgent hai	
+47	11906	tell me about activities in my area [date : this weekend]	mujhe [date : is weekend] area ki activities ke baare me batao	
+48	6135	give me information on the song that's playing	jo gaana chal raha hai uske baare me batao	
+49	9030	remove from calendar my [event_name : medical appointment] for [date : today]	calendar se [date : aaj] ka mera [event_name : medical appointment] hata do	
+50	13496	is [person : tom cruise] an only child	kya [person : salim khan] ikloti aulaad hai	
+51	15427	post pic on my [device_type : phone] on [media_type : facebook] alexa	[media_type : facebook] alexa mere [device_type : phone] ki photo post karo	
+52	8165	[time : one thousand two hundred and thirty p. m.] already you will have a [event_name : meeting] in [time : ten mins]	dopahar ke [time : 1:30] ho gaye hain aapki ek [event_name : meeting] hai [time : 10 min] me	
+53	13033	what is three times seven	teen guna saat kya hai	
+54	2309	it is [time : seven am] in [time_zone : pacific] standard time	[time_zone : pacific] standard time me [time : subah 7 baje] hai	
+55	5653	toggle [device_type : wemo plug socket] on	[device_type : wemo plug socket] ko on kar do	
+56	3103	don't play this song again	ye gaana dobara mat bajana	
+57	321	disable my [device_type : okug]	mera [device_type : plug] disable kar do	
+58	16846	please add an email for [person : john doe] to my contacts [email_address : johndoe at yahoo dot com]	please [email_address : johndoe at yahoo dot com] pe mere contacts me [person : jagdish mishra] ke liye email add kar do	
+59	4638	change volume settings in the negative alexa	alexa volume settings negative me kar do	
+60	15541	send a [media_type : tweet] to [business_name : dominoes] about bad delivery	kharab delivery ke liye [business_name : dominos] ko ek [media_type : tweet] bhejo	
+61	16874	how many [personal_info : phone numbers] do i have for [person : brenden]	mere paas [person : ram] ke kitne [personal_info : phone numbers] hai	
+62	4266	what is [date : todays] weather	[date : aaj] mausam kaisa hai	
+63	14592	give me the description of a [definition_word : smartphone circuit]	mujhe [definition_word : smartphone circuit] ka description do	
+64	4443	start the [device_type : coffee machine] at [time : three]	[device_type : coffee machine] ko [time : 3] baje start kar dena	
+65	11693	what new movies available [date : today]	[date : aaj] kaun si nayi movies available hai	
+66	15265	give me details of my [media_type : twitter] handle profile including the total number of followers	mujhe mere [media_type : twitter] handle ki profile details do total followers ke saath	
+67	680	keep me informed about [news_topic : bitcoin price]	mujhe [news_topic : bitcoin ki price] ke baare me batate rehna	
+68	3775	i want the [device_type : smart socket] off now	mujhe abhi [device_type : smart socket] band karna hai	
+69	6271	how is the day [date : today]	[date : aaj] ka din kaisa hai	
+70	4247	house change all lights to [color_type : blue]	ghar ki saari lights [color_type : blue] kar do	
+71	13647	what is the [currency_name : yen us dollar] exchange rate	[currency_name : yen us dollar] exchange rate kya hai	
+72	4887	save my opinion on [artist_name : adele's] song	[artist_name : jubin nautiyal] ke music pe meri rai save karo	
+73	1715	lower volume [change_amount : by fifty percent]	volume [change_amount : 50 percent] kam karo	
+74	3149	do i have any alarms for [date : tomorrow] [timeofday : morning]	kya [date : kal] [timeofday : subah] ke liye koi alarms hai	
+75	3904	please delete the [date : wednesday] [timeofday : evening] alarm	please [date : wednesday] [timeofday : shaam] ka alarm hata do	
+76	5609	report alarm settings	alarm setting batao	
+77	11841	are there any [event_name : crafts fairs] happening in this area	kya is area me koi [event_name : craft mela] ho raha hai	
+78	17017	save the email to my contact	mere contact me email save karo	
+79	4728	turn on notification for all news on the [news_topic : stock market]	[news_topic : share market] ki saari news ke notifications on karo	
+80	5436	get rid of the [time : five p. m.] alarm	[time : shaam] [time : 5 baje] wala alarm hatao	
+81	17075	are there any new emails received [time : after four] o'clock [date : today]	[date : aaj] [time : 4] baje [time : ke baad] koi naya email aaya hai kya	
+82	2906	brightness [change_amount : ninety percent]	brightness [change_amount : 90 percent]	
+83	12308	book me a [transport_type : train] ticket	mere liye [transport_type : train] ka ticket book karo	
+84	14138	please tell me what is the definition of [definition_word : cylinder]	please batao [definition_word : cylinder] ki definition kya hai	
+85	1266	if it's [time : five am] in [place_name : berlin] what time is it here	agar [place_name : noida] me [time : subah ke 5 baj] rahe hai to yaha kya time hoga	
+86	12339	book a [transport_type : train] ticket for one [transport_descriptor : one way] for this [date : tuesday] at [time : nine am]	is [date : tuesday] subah [time : 9 baje] ka [transport_descriptor : one way] [transport_type : train] ticket book karo	
+87	2740	can i get [order_type : delivery] from this [business_type : restaurant]	kya mujhe is [business_type : restaurant] se [order_type : delivery] mil sakti hai	
+88	9137	at what time is the [business_name : italian cafe] closed between lunch and dinner	[business_name : italian cafe] lunch aur dinner ke beech kitne baje band hota hai	
+89	13460	tell me what the product of eighteen and thirty one is	batao 18 aur 31 ka product kya hai	
+90	15747	add this person's [personal_info : email]	is bande ka [personal_info : email] add kar do	
+91	1827	what's going on in [place_name : new york]	[place_name : lucknow] me kya ho raha hai	
+92	9310	play [media_type : tunes]	[media_type : dhun] laga do	
+93	3865	what are the scores for the [news_topic : two ucl games] going on right now	abhi chal rahe [news_topic : ipl] match ka score kya hai	
+94	13859	how much is [currency_name : us dollar] against [currency_name : rupee]	[currency_name : rupaye] ke muqable [currency_name : us dollar] kitna hai	
+95	16263	did i receive any new email from [person : robert]	kya mujhe robert ki taraf se koi naya email [person : mila] hai	
+96	9734	start play [audiobook_name : johns] [media_type : audiobook]	[audiobook_name : ek thi dayan] [media_type : audio book] chalana shuru karo	
+97	3439	play [playlist_name : romantic playlist]	[playlist_name : bhakti playlist] chalu karo	
+98	232	set an alarm at [time : six] in the [timeofday : morning]	[timeofday : subah] [time : 6] baje ka alarm laga do	
+99	3118	what is [time_zone : eastern] standard time right noe	abhi [time_zone : indian] standard time kya hai	
+100	13078	tell me [person : billy crytals] address	mujhe [person : akshay kumar] ka address batao	
