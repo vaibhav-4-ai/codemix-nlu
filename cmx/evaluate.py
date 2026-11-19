@@ -23,6 +23,7 @@ from pathlib import Path
 
 from cmx.charts import COLOURS, MUTED, new_chart, new_pair, save_chart
 from cmx.data import load
+from cmx.examples import test_sets
 from cmx.features import BANDS, band, build_word_lists, sentence_features
 from cmx.quick import notice
 
@@ -546,13 +547,27 @@ def run():
             tables[f"{model_name(recipe, backbone)}|{set_name}"] = per_sentence(recipe, backbone, set_name)
 
     first = model_name(models[0][0], models[0][1])
-    ids = sorted(tables[f"{first}|hinglish_paired_test"])
+    # A sentence corrected AFTER training was scored in its old form: leave it out rather than
+    # compare old guesses with new answers.
+    current = {}
+    for example in test_sets()["hinglish_paired_test"]:
+        current[example["id"]] = example["words"]
+    ids = []
+    changed_after_training = []
+    for i in sorted(tables[f"{first}|hinglish_paired_test"]):
+        if current.get(i) == tables[f"{first}|hinglish_paired_test"][i]["words"]:
+            ids.append(i)
+        else:
+            changed_after_training.append(i)
+    if changed_after_training:
+        print(f"left out {len(changed_after_training)} sentences corrected after training: {changed_after_training}")
     keys = []
     for recipe, backbone in models:
         for set_name in ["devanagari_paired_test", "hinglish_paired_test"]:
             key = f"{model_name(recipe, backbone)}|{set_name}"
-            if sorted(tables[key]) != ids:
-                raise SystemExit(f"{key} does not have the same sentence ids - can't pair them")
+            for i in ids:
+                if i not in tables[key]:
+                    raise SystemExit(f"{key} is missing sentence {i} - can't pair them")
             keys.append(key)
 
     lists = build_word_lists()
@@ -564,8 +579,13 @@ def run():
     print(f"bootstrap: {DRAWS} draws over {len(ids)} paired sentences, {len(models)} models ...", flush=True)
     boot = bootstrap(tables, keys, ids, SEED)
 
-    results = {"seeds": SEEDS, "draws": DRAWS, "paired_sentences": len(ids), "missing": missing}
+    results = {"seeds": SEEDS, "draws": DRAWS, "paired_sentences": len(ids), "missing": missing,
+               "left_out_corrected_after_training": changed_after_training}  # fmt: skip
     lines = ["# Results (written by `python -m cmx evaluate`)\n"]
+    if changed_after_training:
+        lines.append(f"{len(ids)} paired sentences scored. {len(changed_after_training)} were corrected after "
+                     "training (found in the 100-sentence check), so their saved predictions are for the old "
+                     "text; they are left out.\n")
     headline(models, tables, boot, lines, results)
     differences(models, boot, lines, results)
     by_band(models, tables, ids, bands, lines, results)

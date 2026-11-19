@@ -51,10 +51,12 @@ def problems(hindi_annot, hinglish_annot):
 
 REVIEW = ANNOTATION / "review_100.tsv"
 REVIEW_SEED = 13
+# Who checked the 100. Kept honest on purpose: a second AI pass is not a human review.
+REVIEWER = "claude, second pass (not a human)"
 
 
 def make_review():
-    """Pick 100 random rewrites (fixed seed) into review_100.tsv for a person to check by hand."""
+    """Pick 100 random rewrites (fixed seed) into review_100.tsv for a second check."""
     english_by_id = {}
     for row in read_jsonl(ANNOTATION / "test_set.jsonl") + read_jsonl(ANNOTATION / "dev_set.jsonl"):
         english_by_id[row["id"]] = row["english"]
@@ -115,7 +117,7 @@ def build():
                     "intent": row["intent"],
                     "hinglish_annot": drafts[row["id"]],
                     "drafted_by": "claude",
-                    "reviewed": row["id"] in reviewed,
+                    "checked": row["id"] in reviewed,  # one of the random 100 (see REVIEWER)
                     "edited": row["id"] in changed,
                 }
             )
@@ -123,9 +125,9 @@ def build():
         print(f"{name}: {len(out)} rows ready")
     print(f"{bad} rows with problems, {missing} not drafted yet")
     if reviewed:
-        summary = {"reviewed": len(reviewed), "edited": len(changed),
+        summary = {"checked": len(reviewed), "edited": len(changed), "reviewer": REVIEWER,
                    "edit_rate": round(len(changed) / len(reviewed), 3)}  # fmt: skip
         (ANNOTATION / "review_summary.json").write_text(json.dumps(summary, indent=2), encoding="utf-8")
-        print(f"human review: {len(changed)} of {len(reviewed)} sentences changed")
+        print(f"check by {REVIEWER}: {len(changed)} of {len(reviewed)} sentences changed")
     if bad:
         raise SystemExit(1)

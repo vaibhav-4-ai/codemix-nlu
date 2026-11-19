@@ -1,392 +1,392 @@
-{"id": "2672", "intent": "alarm_query", "hinglish_annot": "maine [timeofday : subah] [time : 6 se 9 baje] ke beech kitne alarm lagaye hai", "drafted_by": "claude", "edited": false}
-{"id": "1732", "intent": "alarm_query", "hinglish_annot": "checkout [date : aaj] subah [time : 10 baje] ka alarm set karo", "drafted_by": "claude", "edited": false}
-{"id": "237", "intent": "alarm_query", "hinglish_annot": "kya maine [timeofday : subah] [alarm_type : uthne] ke liye alarm lagaya hai", "drafted_by": "claude", "edited": false}
-{"id": "5541", "intent": "alarm_query", "hinglish_annot": "please mujhe [date : weekdays] ke liye [timeofday : subah] ke alarm ka time batao", "drafted_by": "claude", "edited": false}
-{"id": "3149", "intent": "alarm_query", "hinglish_annot": "kya [date : kal] [timeofday : subah] ke liye koi alarms hai", "drafted_by": "claude", "edited": false}
-{"id": "5982", "intent": "alarm_query", "hinglish_annot": "tumne mere liye kitne baje ka alarm lagaya hai", "drafted_by": "claude", "edited": false}
-{"id": "5609", "intent": "alarm_query", "hinglish_annot": "alarm setting batao", "drafted_by": "claude", "edited": false}
-{"id": "562", "intent": "alarm_remove", "hinglish_annot": "mera subah [time : 8 baje] wala alarm hata do", "drafted_by": "claude", "edited": false}
-{"id": "4971", "intent": "alarm_remove", "hinglish_annot": "[person : finley] ke sone ke time wala alarm hata do", "drafted_by": "claude", "edited": false}
-{"id": "4198", "intent": "alarm_remove", "hinglish_annot": "[time : 4 baje] ka alarm hata do", "drafted_by": "claude", "edited": false}
-{"id": "3904", "intent": "alarm_remove", "hinglish_annot": "please [date : wednesday] [timeofday : shaam] ka alarm hata do", "drafted_by": "claude", "edited": false}
-{"id": "3248", "intent": "alarm_remove", "hinglish_annot": "[date : kal] ka alarm cancel karo", "drafted_by": "claude", "edited": false}
-{"id": "3270", "intent": "alarm_remove", "hinglish_annot": "[date : kal] ke liye jo alarm set hai wo hata do", "drafted_by": "claude", "edited": false}
-{"id": "5436", "intent": "alarm_remove", "hinglish_annot": "[time : shaam] [time : 5 baje] wala alarm hatao", "drafted_by": "claude", "edited": false}
-{"id": "173", "intent": "alarm_set", "hinglish_annot": "[date : kal] [time : subah 6 baje] alarm lagao", "drafted_by": "claude", "edited": false}
-{"id": "7043", "intent": "alarm_set", "hinglish_annot": "please [time : abhi se 2 ghante ke liye] alarm set karo", "drafted_by": "claude", "edited": false}
-{"id": "232", "intent": "alarm_set", "hinglish_annot": "[timeofday : subah] [time : 6] baje ka alarm laga do", "drafted_by": "claude", "edited": false}
-{"id": "610", "intent": "alarm_set", "hinglish_annot": "main [date : kal] subah [time : 6 baje] uthna chahta hu plz", "drafted_by": "claude", "edited": false}
-{"id": "3463", "intent": "alarm_set", "hinglish_annot": "mujhe [date : kal] [time : subah 7 baje] [alarm_type : uthne] ka alarm chahiye", "drafted_by": "claude", "edited": false}
-{"id": "2563", "intent": "alarm_set", "hinglish_annot": "[date : kal] [timeofday : subah] [time : 8] baje ka alarm lagao", "drafted_by": "claude", "edited": false}
-{"id": "4094", "intent": "alarm_set", "hinglish_annot": "please subah [time : 8 baje] ka alarm laga do", "drafted_by": "claude", "edited": false}
-{"id": "115", "intent": "audio_volume_down", "hinglish_annot": "awaaz [change_amount : kam karo]", "drafted_by": "claude", "edited": false}
-{"id": "3139", "intent": "audio_volume_down", "hinglish_annot": "please apna volume kam karo", "drafted_by": "claude", "edited": false}
-{"id": "689", "intent": "audio_volume_down", "hinglish_annot": "plz volume kam karo", "drafted_by": "claude", "edited": false}
-{"id": "3811", "intent": "audio_volume_down", "hinglish_annot": "speaker ka volume kam karo", "drafted_by": "claude", "edited": false}
-{"id": "4979", "intent": "audio_volume_down", "hinglish_annot": "please mujhse aaram se baat karo", "drafted_by": "claude", "edited": false}
-{"id": "331", "intent": "audio_volume_down", "hinglish_annot": "awaaz kam karo", "drafted_by": "claude", "edited": false}
-{"id": "737", "intent": "audio_volume_down", "hinglish_annot": "kya tum awaaz thodi kam kar sakte ho", "drafted_by": "claude", "edited": false}
-{"id": "516", "intent": "audio_volume_mute", "hinglish_annot": "please [time : agle ghante] ke liye mute karo", "drafted_by": "claude", "edited": false}
-{"id": "5957", "intent": "audio_volume_mute", "hinglish_annot": "kya tum thodi der ke liye chup reh sakte ho", "drafted_by": "claude", "edited": false}
-{"id": "3454", "intent": "audio_volume_mute", "hinglish_annot": "so jao", "drafted_by": "claude", "edited": false}
-{"id": "2323", "intent": "audio_volume_mute", "hinglish_annot": "please speaker mute karo", "drafted_by": "claude", "edited": false}
-{"id": "4497", "intent": "audio_volume_mute", "hinglish_annot": "settings mute karo", "drafted_by": "claude", "edited": false}
-{"id": "2797", "intent": "audio_volume_mute", "hinglish_annot": "speakers ki awaaz mute kar do", "drafted_by": "claude", "edited": false}
-{"id": "4421", "intent": "audio_volume_mute", "hinglish_annot": "awaaz band karo", "drafted_by": "claude", "edited": false}
-{"id": "4398", "intent": "audio_volume_up", "hinglish_annot": "please volume [change_amount : sabse tez] setting pe kar do", "drafted_by": "claude", "edited": false}
-{"id": "1680", "intent": "audio_volume_up", "hinglish_annot": "music ka volume [change_amount : 90 tak] badhao", "drafted_by": "claude", "edited": false}
-{"id": "5755", "intent": "audio_volume_up", "hinglish_annot": "audio on", "drafted_by": "claude", "edited": false}
-{"id": "2360", "intent": "audio_volume_up", "hinglish_annot": "volume badhao", "drafted_by": "claude", "edited": false}
-{"id": "5726", "intent": "audio_volume_up", "hinglish_annot": "please volume badha do", "drafted_by": "claude", "edited": false}
-{"id": "691", "intent": "audio_volume_up", "hinglish_annot": "please volume off kar do", "drafted_by": "claude", "edited": false}
-{"id": "5393", "intent": "audio_volume_up", "hinglish_annot": "awaaz tez karo", "drafted_by": "claude", "edited": false}
-{"id": "6912", "intent": "calendar_query", "hinglish_annot": "[date : aaj] ki [event_name : meeting] me kaun kaun hoga", "drafted_by": "claude", "edited": false}
-{"id": "6948", "intent": "calendar_query", "hinglish_annot": "[date : is hafte] meri kitni [event_name : meetings] hai", "drafted_by": "claude", "edited": false}
-{"id": "6723", "intent": "calendar_query", "hinglish_annot": "[time : baaki hafte] ke liye mera agenda kya hai", "drafted_by": "claude", "edited": false}
-{"id": "9164", "intent": "calendar_query", "hinglish_annot": "kya [date : is mahine] mera koi calendar event hai", "drafted_by": "claude", "edited": false}
-{"id": "8941", "intent": "calendar_query", "hinglish_annot": "[time : is mahine] [event_name : chhutti] kab hai", "drafted_by": "claude", "edited": false}
-{"id": "7947", "intent": "calendar_query", "hinglish_annot": "[event_name : arijit singh ke music] concert ka next schedule kab hai", "drafted_by": "claude", "edited": false}
-{"id": "8046", "intent": "calendar_query", "hinglish_annot": "[date : agle hafte] meri kitni meetings hai", "drafted_by": "claude", "edited": false}
-{"id": "8146", "intent": "calendar_remove", "hinglish_annot": "[date : 14 tarikh] ko meri [event_name : meeting] cancel karo", "drafted_by": "claude", "edited": false}
-{"id": "8612", "intent": "calendar_remove", "hinglish_annot": "mere calendar se [date : thursday] ka [meal_type : lunch] hata do", "drafted_by": "claude", "edited": false}
-{"id": "8417", "intent": "calendar_remove", "hinglish_annot": "mere calendar ke saare [event_name : appointments] cancel karo", "drafted_by": "claude", "edited": false}
-{"id": "8834", "intent": "calendar_remove", "hinglish_annot": "[time : baaki hafte ke liye] meri saari [event_name : meetings] hata do", "drafted_by": "claude", "edited": false}
-{"id": "6883", "intent": "calendar_remove", "hinglish_annot": "[date : kal] [time : 2 pm] wali [event_name : birthday party] hata do", "drafted_by": "claude", "edited": false}
-{"id": "6734", "intent": "calendar_remove", "hinglish_annot": "[event_name : meetings] se mera [time : din] khali karo", "drafted_by": "claude", "edited": false}
-{"id": "8372", "intent": "calendar_remove", "hinglish_annot": "arey siri [date : kal] pakka kar lena ki mera calendar pura khali ho", "drafted_by": "claude", "edited": false}
-{"id": "7734", "intent": "calendar_set", "hinglish_annot": "mujhe [date : har friday] dukaan jaane ke liye yaad dilana", "drafted_by": "claude", "edited": false}
-{"id": "8270", "intent": "calendar_set", "hinglish_annot": "[date : wednesday] ko [event_name : meeting] ka notification", "drafted_by": "claude", "edited": false}
-{"id": "8133", "intent": "calendar_set", "hinglish_annot": "[person : ram] ko lene ke liye dopahar [time : 3 baje] ka reminder set karo", "drafted_by": "claude", "edited": false}
-{"id": "7804", "intent": "calendar_set", "hinglish_annot": "[general_frequency : roz] [time : subah 8 baje] mere office ke kaamo ka reminder lagao", "drafted_by": "claude", "edited": false}
-{"id": "7260", "intent": "calendar_set", "hinglish_annot": "[date : kal] [time : dopahar 3 baje] ki [event_name : meeting] ka reminder laga do", "drafted_by": "claude", "edited": false}
-{"id": "8619", "intent": "calendar_set", "hinglish_annot": "[general_frequency : har mahine ki 15 tarikh] ko event set karo taki [event_name : internet bill bharna] yaad rahe", "drafted_by": "claude", "edited": false}
-{"id": "6914", "intent": "calendar_set", "hinglish_annot": "[event_name : monday meeting] ko [general_frequency : har monday] calendar me daal do", "drafted_by": "claude", "edited": false}
-{"id": "14737", "intent": "cooking_query", "hinglish_annot": "ok google turkey banane ka sabse easy aur fast tarika kya hai", "drafted_by": "claude", "edited": false}
-{"id": "6613", "intent": "cooking_query", "hinglish_annot": "cooking ke baare me puchne ke liye assistant", "drafted_by": "claude", "edited": false}
-{"id": "9993", "intent": "cooking_recipe", "hinglish_annot": "[food_type : butt kaleji] kaise banti hai", "drafted_by": "claude", "edited": false}
-{"id": "9965", "intent": "cooking_recipe", "hinglish_annot": "main [food_type : maggi] kaise bana sakta hu", "drafted_by": "claude", "edited": false}
-{"id": "10041", "intent": "cooking_recipe", "hinglish_annot": "main [food_type : biscuit] kaise banau", "drafted_by": "claude", "edited": false}
-{"id": "1268", "intent": "cooking_recipe", "hinglish_annot": "[food_type : pakodi] banane ki tumhari recipe best thi", "drafted_by": "claude", "edited": false}
-{"id": "10039", "intent": "cooking_recipe", "hinglish_annot": "mujhe [food_type : khane ki] recipe dikhao", "drafted_by": "claude", "edited": false}
-{"id": "9999", "intent": "cooking_recipe", "hinglish_annot": "[food_type : pizza] ko ekdum [cooking_type : crispy] banane ke liye oven me kitni der rakhna chahiye", "drafted_by": "claude", "edited": false}
-{"id": "10110", "intent": "cooking_recipe", "hinglish_annot": "main [food_type : meatloaf] kaise bana sakta hu", "drafted_by": "claude", "edited": false}
-{"id": "1189", "intent": "datetime_convert", "hinglish_annot": "agar [place_name : darjeeling] me [time : raat ke 10 baj] rahe hai to [place_name : bareilly] me kya time hai", "drafted_by": "claude", "edited": false}
-{"id": "943", "intent": "datetime_convert", "hinglish_annot": "agar [place_name : east coast] pe [time : raat ke 8 baj] rahe hai to [place_name : jamnagar] me kitne baje hai", "drafted_by": "claude", "edited": false}
-{"id": "1211", "intent": "datetime_convert", "hinglish_annot": "[place_name : shimla] ka time [place_name : jaipur] me convert karo", "drafted_by": "claude", "edited": false}
-{"id": "2227", "intent": "datetime_convert", "hinglish_annot": "please [time : subah 9 baje] [place_name : cst] ko [place_name : ist] me convert karo", "drafted_by": "claude", "edited": false}
-{"id": "1234", "intent": "datetime_convert", "hinglish_annot": "[place_name : india] me kya time hai jab [place_name : bharatiya ganatantra] me [time : raat ke 12 baje] hai", "drafted_by": "claude", "edited": false}
-{"id": "5359", "intent": "datetime_convert", "hinglish_annot": "[time_zone : eastern] time zone pe switch karo", "drafted_by": "claude", "edited": false}
-{"id": "3293", "intent": "datetime_convert", "hinglish_annot": "[time_zone : eastern] aur [time_zone : pacific] ke time me kitna fark hai", "drafted_by": "claude", "edited": false}
-{"id": "3651", "intent": "datetime_query", "hinglish_annot": "[place_name : delhi] me abhi kya time hai", "drafted_by": "claude", "edited": false}
-{"id": "1201", "intent": "datetime_query", "hinglish_annot": "[place_name : mumbai] me current time kya hai", "drafted_by": "claude", "edited": false}
-{"id": "3443", "intent": "datetime_query", "hinglish_annot": "[date : is mahine] [date : 22 tarikh] ko kaun sa din hai", "drafted_by": "claude", "edited": false}
-{"id": "4519", "intent": "datetime_query", "hinglish_annot": "[date : 22 april] ko kaun sa din hai", "drafted_by": "claude", "edited": false}
-{"id": "6120", "intent": "datetime_query", "hinglish_annot": "hey olly [place_name : noida] me kya time hai", "drafted_by": "claude", "edited": false}
-{"id": "5744", "intent": "datetime_query", "hinglish_annot": "[date : agle saal] [event_name : mera birthday] kis din padega", "drafted_by": "claude", "edited": false}
-{"id": "2200", "intent": "datetime_query", "hinglish_annot": "[event_name : holi] me kitne hafte bache hai", "drafted_by": "claude", "edited": false}
-{"id": "11061", "intent": "email_addcontact", "hinglish_annot": "please [person : ram] ko mere contact list me add karo", "drafted_by": "claude", "edited": false}
-{"id": "15921", "intent": "email_addcontact", "hinglish_annot": "alexa [email_address : tripathi at hotmail dot com] ko [person : mahima tripathi] ke naye contact ke roop me add karo", "drafted_by": "claude", "edited": false}
-{"id": "17018", "intent": "email_addcontact", "hinglish_annot": "contacts me save karo", "drafted_by": "claude", "edited": false}
-{"id": "15986", "intent": "email_addcontact", "hinglish_annot": "ye email contact me save karo", "drafted_by": "claude", "edited": false}
-{"id": "17017", "intent": "email_addcontact", "hinglish_annot": "mere contact me email save karo", "drafted_by": "claude", "edited": false}
-{"id": "16037", "intent": "email_query", "hinglish_annot": "mera gmail [email_folder : inbox] refresh karo", "drafted_by": "claude", "edited": false}
-{"id": "15863", "intent": "email_query", "hinglish_annot": "[relation : mummy] ke unread emails dekho", "drafted_by": "claude", "edited": false}
-{"id": "16641", "intent": "email_query", "hinglish_annot": "[relation : boss] ka koi naya email", "drafted_by": "claude", "edited": false}
-{"id": "16580", "intent": "email_query", "hinglish_annot": "google us [person : pinku] ka naya email address dhundo jo maine [date : friday] ko add kiya tha", "drafted_by": "claude", "edited": false}
-{"id": "16289", "intent": "email_query", "hinglish_annot": "[business_name : clinic] ne mere test ke baare me kya bola", "drafted_by": "claude", "edited": false}
-{"id": "17082", "intent": "email_query", "hinglish_annot": "kya mujhe [date : aaj] [person : neha] ka koi naya email aaya hai", "drafted_by": "claude", "edited": false}
-{"id": "16653", "intent": "email_query", "hinglish_annot": "kya [time : pichle ek ghante] me koi email aaya hai", "drafted_by": "claude", "edited": false}
-{"id": "17037", "intent": "email_querycontact", "hinglish_annot": "mujhe contact ki [personal_info : mail id] do", "drafted_by": "claude", "edited": false}
-{"id": "16582", "intent": "email_querycontact", "hinglish_annot": "kya ye mere [relation : boss] ka sahi area code hai", "drafted_by": "claude", "edited": false}
-{"id": "15867", "intent": "email_querycontact", "hinglish_annot": "please mere contacts se [person : vinod] ki [personal_info : details] do", "drafted_by": "claude", "edited": false}
-{"id": "16779", "intent": "email_querycontact", "hinglish_annot": "[person : john] naam ka contact kholo", "drafted_by": "claude", "edited": false}
-{"id": "16709", "intent": "email_querycontact", "hinglish_annot": "mere [device_type : phone book] me kitne contacts hai", "drafted_by": "claude", "edited": false}
-{"id": "16184", "intent": "email_querycontact", "hinglish_annot": "mujhe mere [relation : bhai] ki [personal_info : contact details] batao", "drafted_by": "claude", "edited": false}
-{"id": "16588", "intent": "email_querycontact", "hinglish_annot": "please wo contacts hata do jinse maine [date : 3 mahine se] baat nahi ki", "drafted_by": "claude", "edited": false}
-{"id": "16512", "intent": "email_sendemail", "hinglish_annot": "[relation : mummy] ko email bhejo ki [date : kal] shopping jaana hai", "drafted_by": "claude", "edited": false}
-{"id": "16081", "intent": "email_sendemail", "hinglish_annot": "mere [relation : manager] ko ek email bhejo", "drafted_by": "claude", "edited": false}
-{"id": "16533", "intent": "email_sendemail", "hinglish_annot": "kya tum [person : ritu] ko email likhne me meri help karoge", "drafted_by": "claude", "edited": false}
-{"id": "16971", "intent": "email_sendemail", "hinglish_annot": "mujhe [person : rohan] ke email ka reply karna hai", "drafted_by": "claude", "edited": false}
-{"id": "15805", "intent": "email_sendemail", "hinglish_annot": "[person : dushyant] ko [date : kal] ki [event_name : meeting] ke baare me email karo aur likho ki [person : dushyant] kya hum [timeofday : dopahar] me meeting kar sakte hai", "drafted_by": "claude", "edited": false}
-{"id": "16030", "intent": "email_sendemail", "hinglish_annot": "is email pe is [relation : colleague] ke liye naya email kholo", "drafted_by": "claude", "edited": false}
-{"id": "16025", "intent": "email_sendemail", "hinglish_annot": "kya tum mere [relation : dost] [person : rohit] ko email bhej sakte ho ki main [date : kal] busy hu", "drafted_by": "claude", "edited": false}
-{"id": "1277", "intent": "general_greet", "hinglish_annot": "arey", "drafted_by": "claude", "edited": false}
-{"id": "167", "intent": "general_greet", "hinglish_annot": "arey arey", "drafted_by": "claude", "edited": false}
-{"id": "1257", "intent": "general_joke", "hinglish_annot": "internet pe sabse accha [joke_type : knock knock] joke dhundo", "drafted_by": "claude", "edited": false}
-{"id": "1478", "intent": "general_joke", "hinglish_annot": "[joke_type : naye] jokes dhundo", "drafted_by": "claude", "edited": false}
-{"id": "4908", "intent": "general_joke", "hinglish_annot": "kuch [joke_type : funny] jokes kholo", "drafted_by": "claude", "edited": false}
-{"id": "4775", "intent": "general_joke", "hinglish_annot": "kya tum mujhe ek [joke_type : accha] joke suna sakti ho", "drafted_by": "claude", "edited": false}
-{"id": "638", "intent": "general_joke", "hinglish_annot": "kya tum mere liye [joke_type : janwaro] wala joke dhund sakte ho", "drafted_by": "claude", "edited": false}
-{"id": "4745", "intent": "general_joke", "hinglish_annot": "mujhe ek [joke_type : bewakoof] joke chahiye", "drafted_by": "claude", "edited": false}
-{"id": "1948", "intent": "general_joke", "hinglish_annot": "[joke_type : mazedar] joke", "drafted_by": "claude", "edited": false}
-{"id": "6603", "intent": "general_quirky", "hinglish_annot": "kis time pe [place_name : temperature level]", "drafted_by": "claude", "edited": false}
-{"id": "6271", "intent": "general_quirky", "hinglish_annot": "[date : aaj] ka din kaisa hai", "drafted_by": "claude", "edited": false}
-{"id": "13617", "intent": "general_quirky", "hinglish_annot": "[date : aaj] duniya me sabse ajeeb kya ho raha hai batao", "drafted_by": "claude", "edited": false}
-{"id": "10554", "intent": "general_quirky", "hinglish_annot": "main [date : aaj] kya kar raha hu", "drafted_by": "claude", "edited": false}
-{"id": "15812", "intent": "general_quirky", "hinglish_annot": "olly mujhe [person : ram] ki [event_name : party] ke baare me jaanna hai", "drafted_by": "claude", "edited": false}
-{"id": "6570", "intent": "general_quirky", "hinglish_annot": "mujhe [artist_name : neha kakkar] ke baare me batao", "drafted_by": "claude", "edited": false}
-{"id": "6356", "intent": "general_quirky", "hinglish_annot": "mujhe [date : saturday] ko [place_name : pub] me invite kiya gaya hai", "drafted_by": "claude", "edited": false}
-{"id": "30", "intent": "iot_cleaning", "hinglish_annot": "safai acchi hai dhool bahut buri hai ab apna jaadu karo mera [house_place : carpet] saaf karo", "drafted_by": "claude", "edited": false}
-{"id": "1599", "intent": "iot_cleaning", "hinglish_annot": "kya tum [device_type : roomba] start kar sakte ho", "drafted_by": "claude", "edited": false}
-{"id": "2621", "intent": "iot_cleaning", "hinglish_annot": "ab [device_type : vacuum cleaner] start karo", "drafted_by": "claude", "edited": false}
-{"id": "5696", "intent": "iot_cleaning", "hinglish_annot": "[house_place : ghar ki safai] shuru karo", "drafted_by": "claude", "edited": false}
-{"id": "3840", "intent": "iot_cleaning", "hinglish_annot": "[device_type : roomba] on karo", "drafted_by": "claude", "edited": false}
-{"id": "5404", "intent": "iot_cleaning", "hinglish_annot": "[house_place : kitchen] saaf karne ke liye [device_type : roomba] lo", "drafted_by": "claude", "edited": false}
-{"id": "1943", "intent": "iot_cleaning", "hinglish_annot": "[house_place : ghar] ki safai shuru karo", "drafted_by": "claude", "edited": false}
-{"id": "5990", "intent": "iot_coffee", "hinglish_annot": "meri [coffee_type : subah] wali coffee ready karo", "drafted_by": "claude", "edited": false}
-{"id": "5150", "intent": "iot_coffee", "hinglish_annot": "kya tum [device_type : coffee maker] chala sakte ho", "drafted_by": "claude", "edited": false}
-{"id": "1569", "intent": "iot_coffee", "hinglish_annot": "kya mujhe [coffee_type : coffee] mil sakti hai", "drafted_by": "claude", "edited": false}
-{"id": "2749", "intent": "iot_coffee", "hinglish_annot": "[device_type : coffee machine] start karo", "drafted_by": "claude", "edited": false}
-{"id": "2599", "intent": "iot_coffee", "hinglish_annot": "mujhe abhi coffee chahiye", "drafted_by": "claude", "edited": false}
-{"id": "2814", "intent": "iot_coffee", "hinglish_annot": "thodi coffee bana do", "drafted_by": "claude", "edited": false}
-{"id": "5989", "intent": "iot_coffee", "hinglish_annot": "mujhe abhi thodi coffee chahiye yaar", "drafted_by": "claude", "edited": false}
-{"id": "1216", "intent": "iot_hue_lightchange", "hinglish_annot": "[house_place : living room] ko [color_type : blue] kar do", "drafted_by": "claude", "edited": false}
-{"id": "2841", "intent": "iot_hue_lightchange", "hinglish_annot": "[house_place : living room] ki lights [color_type : red] pe set karo", "drafted_by": "claude", "edited": false}
-{"id": "4827", "intent": "iot_hue_lightchange", "hinglish_annot": "kya light ko [color_type : green] color me badal sakte hai", "drafted_by": "claude", "edited": false}
-{"id": "2282", "intent": "iot_hue_lightchange", "hinglish_annot": "mere ghar ki saari lights ka color [color_type : blue] set karo", "drafted_by": "claude", "edited": false}
-{"id": "2122", "intent": "iot_hue_lightchange", "hinglish_annot": "[house_place : living room] ki lights [color_type : laal] karo", "drafted_by": "claude", "edited": false}
-{"id": "1215", "intent": "iot_hue_lightchange", "hinglish_annot": "olly [house_place : living room] ko [color_type : neela] banao", "drafted_by": "claude", "edited": false}
-{"id": "4494", "intent": "iot_hue_lightchange", "hinglish_annot": "meri lights ko koi bhi [color_type : random] color me badal do", "drafted_by": "claude", "edited": false}
-{"id": "925", "intent": "iot_hue_lightdim", "hinglish_annot": "please lights [change_amount : thodi si] kam karo", "drafted_by": "claude", "edited": false}
-{"id": "17", "intent": "iot_hue_lightdim", "hinglish_annot": "[house_place : hall] me light kam karo", "drafted_by": "claude", "edited": false}
-{"id": "2313", "intent": "iot_hue_lightdim", "hinglish_annot": "[change_amount : light neeche 7] karo", "drafted_by": "claude", "edited": false}
-{"id": "4440", "intent": "iot_hue_lightdim", "hinglish_annot": "saari [house_place : andar ki] lights dim karo", "drafted_by": "claude", "edited": false}
-{"id": "2576", "intent": "iot_hue_lightdim", "hinglish_annot": "[house_place : bedroom] ki lights dim kar do", "drafted_by": "claude", "edited": false}
-{"id": "24", "intent": "iot_hue_lightdim", "hinglish_annot": "ek [house_place : room] ko dark karo", "drafted_by": "claude", "edited": false}
-{"id": "2312", "intent": "iot_hue_lightdim", "hinglish_annot": "olly lights [change_amount : ko 7] kar do", "drafted_by": "claude", "edited": false}
-{"id": "5202", "intent": "iot_hue_lightoff", "hinglish_annot": "[house_place : drawing hall] ki light band kar do", "drafted_by": "claude", "edited": false}
-{"id": "4632", "intent": "iot_hue_lightoff", "hinglish_annot": "please [house_place : bedroom] ki light band karo", "drafted_by": "claude", "edited": false}
-{"id": "2600", "intent": "iot_hue_lightoff", "hinglish_annot": "please mere [device_type : bed ke side wala lamp] band kar do", "drafted_by": "claude", "edited": false}
-{"id": "2187", "intent": "iot_hue_lightoff", "hinglish_annot": "kya tum please mere [house_place : bedroom] ki light band kar doge", "drafted_by": "claude", "edited": false}
-{"id": "4796", "intent": "iot_hue_lightoff", "hinglish_annot": "[house_place : bedroom] ki lights off kar do", "drafted_by": "claude", "edited": false}
-{"id": "4277", "intent": "iot_hue_lightoff", "hinglish_annot": "kya tum mera [device_type : desk lamp] band kar sakte ho", "drafted_by": "claude", "edited": false}
-{"id": "5518", "intent": "iot_hue_lightoff", "hinglish_annot": "[house_place : room] ki light band kar do", "drafted_by": "claude", "edited": false}
-{"id": "1988", "intent": "iot_hue_lighton", "hinglish_annot": "arey alexa mere [house_place : apartment] me [device_type : disco light] on karo aur party shuru karo", "drafted_by": "claude", "edited": false}
-{"id": "3464", "intent": "iot_hue_lighton", "hinglish_annot": "please saari bahar ki lights on karo", "drafted_by": "claude", "edited": false}
-{"id": "312", "intent": "iot_hue_lighton", "hinglish_annot": "yaha bahut andhera hai", "drafted_by": "claude", "edited": false}
-{"id": "2470", "intent": "iot_hue_lighton", "hinglish_annot": "lights on karo", "drafted_by": "claude", "edited": false}
-{"id": "5094", "intent": "iot_hue_lighton", "hinglish_annot": "yaha to andhera hai yaar", "drafted_by": "claude", "edited": false}
-{"id": "2810", "intent": "iot_hue_lightup", "hinglish_annot": "[house_place : living room] me light tez karo", "drafted_by": "claude", "edited": false}
-{"id": "5728", "intent": "iot_hue_lightup", "hinglish_annot": "[house_place : room] ki [device_type : har light] ki brightness badhao", "drafted_by": "claude", "edited": false}
-{"id": "4387", "intent": "iot_hue_lightup", "hinglish_annot": "[device_type : lamp ki light] badhao", "drafted_by": "claude", "edited": false}
-{"id": "6052", "intent": "iot_hue_lightup", "hinglish_annot": "alexa light ki brightness badhani hai yaha neeche dekhna mushkil hai", "drafted_by": "claude", "edited": false}
-{"id": "3437", "intent": "iot_hue_lightup", "hinglish_annot": "please light badhao", "drafted_by": "claude", "edited": false}
-{"id": "851", "intent": "iot_hue_lightup", "hinglish_annot": "light chamkao", "drafted_by": "claude", "edited": false}
-{"id": "4287", "intent": "iot_hue_lightup", "hinglish_annot": "lights on", "drafted_by": "claude", "edited": false}
-{"id": "2946", "intent": "iot_wemo_off", "hinglish_annot": "alexa [house_place : bedroom] ka [device_type : pankha] band karo", "drafted_by": "claude", "edited": false}
-{"id": "3803", "intent": "iot_wemo_off", "hinglish_annot": "[device_type : smart plug socket ko] band karo", "drafted_by": "claude", "edited": false}
-{"id": "756", "intent": "iot_wemo_off", "hinglish_annot": "kya tum [device_type : wemo plug socket] band kar sakte ho", "drafted_by": "claude", "edited": false}
-{"id": "388", "intent": "iot_wemo_off", "hinglish_annot": "[device_type : smart plug] off karo", "drafted_by": "claude", "edited": false}
-{"id": "3183", "intent": "iot_wemo_off", "hinglish_annot": "bijli band", "drafted_by": "claude", "edited": false}
-{"id": "678", "intent": "iot_wemo_on", "hinglish_annot": "[device_type : tv] socket on kar dena jab main ghar pahuchu", "drafted_by": "claude", "edited": false}
-{"id": "5651", "intent": "iot_wemo_on", "hinglish_annot": "[device_type : wemo plug socket] chalu karo", "drafted_by": "claude", "edited": false}
-{"id": "5069", "intent": "iot_wemo_on", "hinglish_annot": "[device_type : wemo] on karo", "drafted_by": "claude", "edited": false}
-{"id": "5653", "intent": "iot_wemo_on", "hinglish_annot": "[device_type : wemo plug socket] ko on kar do", "drafted_by": "claude", "edited": false}
-{"id": "4619", "intent": "iot_wemo_on", "hinglish_annot": "naya [device_type : smart socket] start karo", "drafted_by": "claude", "edited": false}
-{"id": "3804", "intent": "iot_wemo_on", "hinglish_annot": "[device_type : wemo plug socket] on karo", "drafted_by": "claude", "edited": false}
-{"id": "3394", "intent": "iot_wemo_on", "hinglish_annot": "please mera [device_type : wemo plug socket] chalu karo", "drafted_by": "claude", "edited": false}
-{"id": "11178", "intent": "lists_createoradd", "hinglish_annot": "[general_frequency : monthly] [list_name : kirana] saaman ki list banao", "drafted_by": "claude", "edited": false}
-{"id": "10870", "intent": "lists_createoradd", "hinglish_annot": "grocery kharidni hai isko mere [date : aaj] ke to do list me daal do", "drafted_by": "claude", "edited": false}
-{"id": "10973", "intent": "lists_createoradd", "hinglish_annot": "[list_name : school supplies] ke liye nayi list banao", "drafted_by": "claude", "edited": false}
-{"id": "11086", "intent": "lists_createoradd", "hinglish_annot": "meri [list_name : grocery] list me doodh add karo", "drafted_by": "claude", "edited": false}
-{"id": "10925", "intent": "lists_createoradd", "hinglish_annot": "mere [list_name : pending bills] ki nayi list banao", "drafted_by": "claude", "edited": false}
-{"id": "11196", "intent": "lists_createoradd", "hinglish_annot": "[list_name : christmas] list me pastry add karo", "drafted_by": "claude", "edited": false}
-{"id": "11212", "intent": "lists_createoradd", "hinglish_annot": "[list_name : purani playlist] delete karo aur nayi banao", "drafted_by": "claude", "edited": false}
-{"id": "11182", "intent": "lists_query", "hinglish_annot": "meri [list_name : health plan]", "drafted_by": "claude", "edited": false}
-{"id": "10424", "intent": "lists_query", "hinglish_annot": "olly meri [list_name : shopping] list ke items batao", "drafted_by": "claude", "edited": false}
-{"id": "10555", "intent": "lists_query", "hinglish_annot": "meri [list_name : baaki kaam] wali list me item 5 check karo", "drafted_by": "claude", "edited": false}
-{"id": "10775", "intent": "lists_query", "hinglish_annot": "jo [event_name : party] main plan kar raha hu uske liye contacts ki list hai kya", "drafted_by": "claude", "edited": false}
-{"id": "10754", "intent": "lists_query", "hinglish_annot": "[date : is hafte] ke liye maine grocery list me jo daala hai wo padh ke sunao", "drafted_by": "claude", "edited": false}
-{"id": "10450", "intent": "lists_query", "hinglish_annot": "meri [list_name : shopping] list me [date : aaj] kya hai", "drafted_by": "claude", "edited": false}
-{"id": "10457", "intent": "lists_query", "hinglish_annot": "meri [list_name : party shopping list] me vodka add karo", "drafted_by": "claude", "edited": false}
-{"id": "10784", "intent": "lists_remove", "hinglish_annot": "meri [list_name : to do] list delete karo", "drafted_by": "claude", "edited": false}
-{"id": "11084", "intent": "lists_remove", "hinglish_annot": "[list_name : shopping] list se doodh hatao", "drafted_by": "claude", "edited": false}
-{"id": "10521", "intent": "lists_remove", "hinglish_annot": "mere [list_name : purane english] gaano ki list hata do", "drafted_by": "claude", "edited": false}
-{"id": "10470", "intent": "lists_remove", "hinglish_annot": "[date : pichle hafte] jo [list_name : khane] ka saaman kharida tha wo list hata do", "drafted_by": "claude", "edited": false}
-{"id": "10453", "intent": "lists_remove", "hinglish_annot": "bread ko [list_name : shopping] list se hata do", "drafted_by": "claude", "edited": false}
-{"id": "11200", "intent": "lists_remove", "hinglish_annot": "[list_name : karne wali cheezo] ki list hata do", "drafted_by": "claude", "edited": false}
-{"id": "11131", "intent": "lists_remove", "hinglish_annot": "meri [date : aaj] ki [list_name : to do] list hata do", "drafted_by": "claude", "edited": false}
-{"id": "1179", "intent": "music_dislikeness", "hinglish_annot": "kabhi bhi koi [music_genre : shirley setia] play mat karna", "drafted_by": "claude", "edited": false}
-{"id": "1698", "intent": "music_dislikeness", "hinglish_annot": "mujhe wo gaana pasand nahi hai band kar do", "drafted_by": "claude", "edited": false}
-{"id": "1823", "intent": "music_likeness", "hinglish_annot": "[artist_name : arijit singh] mere favourite singer hai", "drafted_by": "claude", "edited": false}
-{"id": "3202", "intent": "music_likeness", "hinglish_annot": "mujhe [music_genre : jazz] pasand hai tumhe pata hona chahiye", "drafted_by": "claude", "edited": false}
-{"id": "2955", "intent": "music_likeness", "hinglish_annot": "mujhe [music_genre : hip hop] pasand hai", "drafted_by": "claude", "edited": false}
-{"id": "2303", "intent": "music_likeness", "hinglish_annot": "main hamesha ke liye [music_genre : hip hop] hu", "drafted_by": "claude", "edited": false}
-{"id": "1971", "intent": "music_likeness", "hinglish_annot": "mujhe [artist_name : arijit singh] ka tu jaane na gaana pasand hai", "drafted_by": "claude", "edited": false}
-{"id": "5021", "intent": "music_likeness", "hinglish_annot": "[music_genre : mujhe ye gaana sunna accha lagta hai]", "drafted_by": "claude", "edited": false}
-{"id": "5180", "intent": "music_likeness", "hinglish_annot": "please is gaane ko meri favourite playlist me add karo", "drafted_by": "claude", "edited": false}
-{"id": "1177", "intent": "music_query", "hinglish_annot": "[artist_name : jubin nautiyal] ke gaane [song_name : main hamesha tumse pyaar karunga] ke lyrics kya hai", "drafted_by": "claude", "edited": false}
-{"id": "13106", "intent": "music_query", "hinglish_annot": "kya tum [artist_name : ar rahman] ke gaane sunte ho", "drafted_by": "claude", "edited": false}
-{"id": "5408", "intent": "music_query", "hinglish_annot": "please mujhe [artist_name : o zaalima] gaane ki details do", "drafted_by": "claude", "edited": false}
-{"id": "3404", "intent": "music_query", "hinglish_annot": "gaana repeat kaise kare", "drafted_by": "claude", "edited": false}
-{"id": "6135", "intent": "music_query", "hinglish_annot": "jo gaana chal raha hai uske baare me batao", "drafted_by": "claude", "edited": false}
-{"id": "2582", "intent": "music_query", "hinglish_annot": "mujhe artist ka naam batao", "drafted_by": "claude", "edited": false}
-{"id": "3863", "intent": "music_query", "hinglish_annot": "jo gaana radio pe chal raha hai uska producer kaun hai", "drafted_by": "claude", "edited": false}
-{"id": "2161", "intent": "music_settings", "hinglish_annot": "[player_setting : gaana] repeat karo", "drafted_by": "claude", "edited": false}
-{"id": "444", "intent": "music_settings", "hinglish_annot": "[player_setting : shuffle off karo]", "drafted_by": "claude", "edited": false}
-{"id": "5536", "intent": "music_settings", "hinglish_annot": "abhi wala gaana please [player_setting : repeat karo]", "drafted_by": "claude", "edited": false}
-{"id": "4008", "intent": "music_settings", "hinglish_annot": "[player_setting : repeat] on karo", "drafted_by": "claude", "edited": false}
-{"id": "4778", "intent": "music_settings", "hinglish_annot": "[music_descriptor : last gaane ko] fir se [player_setting : repeat karo]", "drafted_by": "claude", "edited": false}
-{"id": "113", "intent": "music_settings", "hinglish_annot": "is track ko [player_setting : loop] karo", "drafted_by": "claude", "edited": false}
-{"id": "5107", "intent": "music_settings", "hinglish_annot": "is gaane ko [player_setting : repeat] pe daalo", "drafted_by": "claude", "edited": false}
-{"id": "2641", "intent": "news_query", "hinglish_annot": "[news_topic : rikt] ke baare me naya kya hai", "drafted_by": "claude", "edited": false}
-{"id": "3865", "intent": "news_query", "hinglish_annot": "abhi chal rahe [news_topic : ipl] match ka score kya hai", "drafted_by": "claude", "edited": false}
-{"id": "2668", "intent": "news_query", "hinglish_annot": "[media_type : news nation] se news laao", "drafted_by": "claude", "edited": false}
-{"id": "1827", "intent": "news_query", "hinglish_annot": "[place_name : lucknow] me kya ho raha hai", "drafted_by": "claude", "edited": false}
-{"id": "532", "intent": "news_query", "hinglish_annot": "please mujhe kuch [place_name : international] news batao", "drafted_by": "claude", "edited": false}
-{"id": "3868", "intent": "news_query", "hinglish_annot": "[media_type : amar ujala] ki headline kya hai", "drafted_by": "claude", "edited": false}
-{"id": "3056", "intent": "news_query", "hinglish_annot": "[date : aaj] [news_topic : politics] me naya kya hai kya tum [person : modi] ki news filter kar sakte ho", "drafted_by": "claude", "edited": false}
-{"id": "9734", "intent": "play_audiobook", "hinglish_annot": "[audiobook_name : ek thi dayan] [media_type : audio book] chalana shuru karo", "drafted_by": "claude", "edited": false}
-{"id": "9688", "intent": "play_audiobook", "hinglish_annot": "[audiobook_name : mowgli] ka 7th chapter [player_setting : shuru karo]", "drafted_by": "claude", "edited": false}
-{"id": "9798", "intent": "play_audiobook", "hinglish_annot": "mere liye [audiobook_name : godaan] fir se [player_setting : shuru karo]", "drafted_by": "claude", "edited": false}
-{"id": "9889", "intent": "play_audiobook", "hinglish_annot": "[audiobook_name : vitamin ki] meri [audiobook_name : kitaab] [player_setting : continue karo]", "drafted_by": "claude", "edited": false}
-{"id": "9756", "intent": "play_audiobook", "hinglish_annot": "meri [media_type : audio list] [player_setting : fir] se [player_setting : shuru karo] jaha last time ruke the", "drafted_by": "claude", "edited": false}
-{"id": "9831", "intent": "play_audiobook", "hinglish_annot": "4th chapter se [audiobook_name : nirmala novel] [player_setting : padhna shuru karo]", "drafted_by": "claude", "edited": false}
-{"id": "9765", "intent": "play_audiobook", "hinglish_annot": "last time wali [media_type : audio book] [player_setting : resume karo]", "drafted_by": "claude", "edited": false}
-{"id": "10388", "intent": "play_game", "hinglish_annot": "[game_name : ludo] game khelo", "drafted_by": "claude", "edited": false}
-{"id": "10327", "intent": "play_game", "hinglish_annot": "[game_name : puzzle] solve karte hai", "drafted_by": "claude", "edited": false}
-{"id": "10415", "intent": "play_game", "hinglish_annot": "chalo [game_name : ludo] khelte hai", "drafted_by": "claude", "edited": false}
-{"id": "10351", "intent": "play_game", "hinglish_annot": "open [game_name : papa pear saga]", "drafted_by": "claude", "edited": false}
-{"id": "10295", "intent": "play_game", "hinglish_annot": "main chahta hu tum mera [game_name : hockey] game 5th level se khelo", "drafted_by": "claude", "edited": false}
-{"id": "10324", "intent": "play_game", "hinglish_annot": "mere saath [game_name : saap seedhi] khelo", "drafted_by": "claude", "edited": false}
-{"id": "10291", "intent": "play_game", "hinglish_annot": "[game_name : ludo] khelna shuru karo", "drafted_by": "claude", "edited": false}
-{"id": "741", "intent": "play_music", "hinglish_annot": "[music_genre : arijit singh] aur [artist_name : sonu nigam] ke gaane chalao", "drafted_by": "claude", "edited": false}
-{"id": "3439", "intent": "play_music", "hinglish_annot": "[playlist_name : bhakti playlist] chalu karo", "drafted_by": "claude", "edited": false}
-{"id": "5735", "intent": "play_music", "hinglish_annot": "please [artist_name : sunidhi chauhan] ka gaana fir se chalao", "drafted_by": "claude", "edited": false}
-{"id": "3530", "intent": "play_music", "hinglish_annot": "kuch [music_genre : bhakti] wala laga do", "drafted_by": "claude", "edited": false}
-{"id": "2272", "intent": "play_music", "hinglish_annot": "please mere [music_descriptor : top rated] [music_genre : bhakti] gaane chalao", "drafted_by": "claude", "edited": false}
-{"id": "4546", "intent": "play_music", "hinglish_annot": "[playlist_name : sanam] ka chalao", "drafted_by": "claude", "edited": false}
-{"id": "5449", "intent": "play_music", "hinglish_annot": "[music_genre : indian folk] gaane chalao", "drafted_by": "claude", "edited": false}
-{"id": "11326", "intent": "play_podcasts", "hinglish_annot": "iske baad [podcast_name : ek aur kahani] ka 7th episode chalao", "drafted_by": "claude", "edited": false}
-{"id": "11281", "intent": "play_podcasts", "hinglish_annot": "kya tum radio me ek episode [player_setting : aage] kar sakte ho", "drafted_by": "claude", "edited": false}
-{"id": "11358", "intent": "play_podcasts", "hinglish_annot": "[podcast_descriptor : agle] podcast pe chalo", "drafted_by": "claude", "edited": false}
-{"id": "11530", "intent": "play_podcasts", "hinglish_annot": "[podcast_name : narendra modi the legend] podcast device pe chalao", "drafted_by": "claude", "edited": false}
-{"id": "11496", "intent": "play_podcasts", "hinglish_annot": "[podcast_name : ankur warikoo show] podcast chalu karo", "drafted_by": "claude", "edited": false}
-{"id": "11370", "intent": "play_podcasts", "hinglish_annot": "mujhe [person : ankur warikoo] ka podcast sunna hai", "drafted_by": "claude", "edited": false}
-{"id": "11305", "intent": "play_podcasts", "hinglish_annot": "latest [podcast_name : kaaran] podcast chalao", "drafted_by": "claude", "edited": false}
-{"id": "9614", "intent": "play_radio", "hinglish_annot": "[radio_name : hindi] fm tune karo", "drafted_by": "claude", "edited": false}
-{"id": "9500", "intent": "play_radio", "hinglish_annot": "[app_name : radio mirchi] pe rj naved ka show dhundo", "drafted_by": "claude", "edited": false}
-{"id": "9375", "intent": "play_radio", "hinglish_annot": "[radio_name : 97.1] chalu karo", "drafted_by": "claude", "edited": false}
-{"id": "9310", "intent": "play_radio", "hinglish_annot": "[media_type : dhun] laga do", "drafted_by": "claude", "edited": false}
-{"id": "9615", "intent": "play_radio", "hinglish_annot": "[radio_name : all india radio] chalao", "drafted_by": "claude", "edited": false}
-{"id": "9299", "intent": "play_radio", "hinglish_annot": "kya tum [radio_name : all india radio] start kar sakte ho", "drafted_by": "claude", "edited": false}
-{"id": "9228", "intent": "play_radio", "hinglish_annot": "[radio_name : acche jokes] wala radio channel lagao", "drafted_by": "claude", "edited": false}
-{"id": "14144", "intent": "qa_currency", "hinglish_annot": "[currency_name : euro] to [currency_name : usd]", "drafted_by": "claude", "edited": false}
-{"id": "13647", "intent": "qa_currency", "hinglish_annot": "[currency_name : yen us dollar] exchange rate kya hai", "drafted_by": "claude", "edited": false}
-{"id": "13804", "intent": "qa_currency", "hinglish_annot": "siri ek [currency_name : american dollar] [currency_name : indian rupee] me kitna hai", "drafted_by": "claude", "edited": false}
-{"id": "13720", "intent": "qa_currency", "hinglish_annot": "[currency_name : inr] se [currency_name : cad] ka exchange rate kya hai", "drafted_by": "claude", "edited": false}
-{"id": "13859", "intent": "qa_currency", "hinglish_annot": "[currency_name : rupaye] ke muqable [currency_name : us dollar] kitna hai", "drafted_by": "claude", "edited": false}
-{"id": "15097", "intent": "qa_currency", "hinglish_annot": "[business_name : samsung] ka exchange rate kya hai", "drafted_by": "claude", "edited": false}
-{"id": "14087", "intent": "qa_currency", "hinglish_annot": "[currency_name : indian rupee] ka exchange rate kya hai", "drafted_by": "claude", "edited": false}
-{"id": "13139", "intent": "qa_definition", "hinglish_annot": "[definition_word : toofan] kya hai", "drafted_by": "claude", "edited": false}
-{"id": "13812", "intent": "qa_definition", "hinglish_annot": "mujhe [definition_word : paneer] ke baare me batao", "drafted_by": "claude", "edited": false}
-{"id": "13643", "intent": "qa_definition", "hinglish_annot": "tum [definition_word : shabdik] ko kaise define karoge", "drafted_by": "claude", "edited": false}
-{"id": "14458", "intent": "qa_definition", "hinglish_annot": "[definition_word : volkswagen golf car] kaisi dikhti hai", "drafted_by": "claude", "edited": false}
-{"id": "13387", "intent": "qa_definition", "hinglish_annot": "[definition_word : pda] ki definition kya hai", "drafted_by": "claude", "edited": false}
-{"id": "14593", "intent": "qa_definition", "hinglish_annot": "mujhe [definition_word : laptop circuit] ka description do", "drafted_by": "claude", "edited": false}
-{"id": "13563", "intent": "qa_definition", "hinglish_annot": "[definition_word : aalu] ka matlab kya hai", "drafted_by": "claude", "edited": false}
-{"id": "13496", "intent": "qa_factoid", "hinglish_annot": "kya [person : salim khan] ikloti aulaad hai", "drafted_by": "claude", "edited": false}
-{"id": "14125", "intent": "qa_factoid", "hinglish_annot": "[artist_name : alka yagnik] ka bio", "drafted_by": "claude", "edited": false}
-{"id": "14397", "intent": "qa_factoid", "hinglish_annot": "[person : sonu nigam] ka janam kab hua tha", "drafted_by": "claude", "edited": false}
-{"id": "13846", "intent": "qa_factoid", "hinglish_annot": "kya [person : katrina kaif] ne kabhi oscar jeeta hai", "drafted_by": "claude", "edited": false}
-{"id": "14320", "intent": "qa_factoid", "hinglish_annot": "[person : modi] ki wife kaun hai", "drafted_by": "claude", "edited": false}
-{"id": "14866", "intent": "qa_factoid", "hinglish_annot": "[place_name : duniya] me kitni nadiya hai", "drafted_by": "claude", "edited": false}
-{"id": "13519", "intent": "qa_factoid", "hinglish_annot": "[artist_name : beatles] me kaun kaun tha", "drafted_by": "claude", "edited": false}
-{"id": "13354", "intent": "qa_maths", "hinglish_annot": "two plus two ka answer kya hai", "drafted_by": "claude", "edited": false}
-{"id": "14218", "intent": "qa_maths", "hinglish_annot": "ek foot me kitne inch hote hai", "drafted_by": "claude", "edited": false}
-{"id": "13462", "intent": "qa_maths", "hinglish_annot": "maths ka sawal solve karo", "drafted_by": "claude", "edited": false}
-{"id": "14850", "intent": "qa_maths", "hinglish_annot": "12 ko 4 se divide karo to kitna aayega", "drafted_by": "claude", "edited": false}
-{"id": "12978", "intent": "qa_maths", "hinglish_annot": "browsing center", "drafted_by": "claude", "edited": false}
-{"id": "14849", "intent": "qa_maths", "hinglish_annot": "do guna teen ka answer kya hai", "drafted_by": "claude", "edited": false}
-{"id": "13033", "intent": "qa_maths", "hinglish_annot": "teen guna saat kya hai", "drafted_by": "claude", "edited": false}
-{"id": "14088", "intent": "qa_stock", "hinglish_annot": "[business_name : reliance] ke share ki kya price hai", "drafted_by": "claude", "edited": false}
-{"id": "4942", "intent": "qa_stock", "hinglish_annot": "mujhe [date : aaj] ka [news_topic : share market] update bhejo", "drafted_by": "claude", "edited": false}
-{"id": "14069", "intent": "qa_stock", "hinglish_annot": "mujhe [business_name : reliance] ka stock price chahiye", "drafted_by": "claude", "edited": false}
-{"id": "15043", "intent": "qa_stock", "hinglish_annot": "[business_name : reliance] ka kya bhaav hai", "drafted_by": "claude", "edited": false}
-{"id": "14920", "intent": "qa_stock", "hinglish_annot": "[business_name : big bazaar] ka stock price kya hai", "drafted_by": "claude", "edited": false}
-{"id": "4675", "intent": "qa_stock", "hinglish_annot": "[business_name : google] ka current [news_topic : share price] kya hai", "drafted_by": "claude", "edited": false}
-{"id": "4728", "intent": "qa_stock", "hinglish_annot": "[news_topic : share market] ki saari news ke notifications on karo", "drafted_by": "claude", "edited": false}
-{"id": "6571", "intent": "recommendation_events", "hinglish_annot": "[place_name : delhi] me kya ho raha hai", "drafted_by": "claude", "edited": false}
-{"id": "8786", "intent": "recommendation_events", "hinglish_annot": "meri location pe [event_name : holidays] dhund raha hu", "drafted_by": "claude", "edited": false}
-{"id": "11743", "intent": "recommendation_events", "hinglish_annot": "[place_name : new delhi] me [date : agle hafte] kaun se [event_name : book fair] ho rahe hai", "drafted_by": "claude", "edited": false}
-{"id": "11906", "intent": "recommendation_events", "hinglish_annot": "mujhe [date : is weekend] area ki activities ke baare me batao", "drafted_by": "claude", "edited": false}
-{"id": "11729", "intent": "recommendation_events", "hinglish_annot": "[place_name : qutub national park] ghoomte waqt ek list bana do", "drafted_by": "claude", "edited": false}
-{"id": "11611", "intent": "recommendation_events", "hinglish_annot": "aas paas kaun se [event_name : music concerts] [time : fix] hone wale hai", "drafted_by": "claude", "edited": false}
-{"id": "12055", "intent": "recommendation_events", "hinglish_annot": "[date : aaj] ke local events", "drafted_by": "claude", "edited": false}
-{"id": "12107", "intent": "recommendation_locations", "hinglish_annot": "mujhe aisi jagah chahiye jo [place_name : delhi] me [food_type : pizza] deliver kare", "drafted_by": "claude", "edited": false}
-{"id": "11716", "intent": "recommendation_locations", "hinglish_annot": "sabse paas [business_type : kirana]", "drafted_by": "claude", "edited": false}
-{"id": "11795", "intent": "recommendation_locations", "hinglish_annot": "[place_name : odisha] me sabse sasta netbook kaun bechta hai", "drafted_by": "claude", "edited": false}
-{"id": "14421", "intent": "recommendation_locations", "hinglish_annot": "sabse paas ka [food_type : indian] [business_type : restaurant] kaha hai", "drafted_by": "claude", "edited": false}
-{"id": "11708", "intent": "recommendation_locations", "hinglish_annot": "[place_name : kerala] me koi acchi [business_type : bike shops] hai kya", "drafted_by": "claude", "edited": false}
-{"id": "11675", "intent": "recommendation_locations", "hinglish_annot": "sabse nazdeek [business_type : restaurant] kaha hai", "drafted_by": "claude", "edited": false}
-{"id": "11666", "intent": "recommendation_locations", "hinglish_annot": "main kuch [business_type : dress shops] dhund raha hu kya tum [place_name : ek mile ke andar] kapdo ki dukaan dhund sakte ho", "drafted_by": "claude", "edited": false}
-{"id": "11615", "intent": "recommendation_movies", "hinglish_annot": "[place_name : regal cinema] me kaun si movies lagi hai", "drafted_by": "claude", "edited": false}
-{"id": "11740", "intent": "recommendation_movies", "hinglish_annot": "mere paas ke [business_type : cinema halls]", "drafted_by": "claude", "edited": false}
-{"id": "11693", "intent": "recommendation_movies", "hinglish_annot": "[date : aaj] kaun si nayi movies available hai", "drafted_by": "claude", "edited": false}
-{"id": "11745", "intent": "recommendation_movies", "hinglish_annot": "sabse paas ka theatre kaun sa hai jaha [movie_name : ajay devgn] ki nayi movie lagi hai", "drafted_by": "claude", "edited": false}
-{"id": "11849", "intent": "recommendation_movies", "hinglish_annot": "mere aas paas ke [place_name : cinemas] me kaun si movies chal rahi hai", "drafted_by": "claude", "edited": false}
-{"id": "11785", "intent": "recommendation_movies", "hinglish_annot": "[movie_name : lagaan]", "drafted_by": "claude", "edited": false}
-{"id": "15017", "intent": "recommendation_movies", "hinglish_annot": "kya tum bata sakte ho [timeofday : aaj raat] cinema me kaun si movies chal rahi hai", "drafted_by": "claude", "edited": false}
-{"id": "15559", "intent": "social_post", "hinglish_annot": "[media_type : tumblr] pe post karo mujhe maza aa raha hai", "drafted_by": "claude", "edited": false}
-{"id": "15514", "intent": "social_post", "hinglish_annot": "[business_name : samsung] ko complaint [media_type : tweet] karo", "drafted_by": "claude", "edited": false}
-{"id": "15221", "intent": "social_post", "hinglish_annot": "[media_type : youtube] pe ek video daalo", "drafted_by": "claude", "edited": false}
-{"id": "15349", "intent": "social_post", "hinglish_annot": "main [business_name : tesco] se khush nahi hu please help karo", "drafted_by": "claude", "edited": false}
-{"id": "15533", "intent": "social_post", "hinglish_annot": "[business_name : meijer] ko ek [media_type : tweet] bhejo ki unki customer service sabse kharab hai", "drafted_by": "claude", "edited": false}
-{"id": "15427", "intent": "social_post", "hinglish_annot": "[media_type : facebook] alexa mere [device_type : phone] ki photo post karo", "drafted_by": "claude", "edited": false}
-{"id": "15541", "intent": "social_post", "hinglish_annot": "kharab delivery ke liye [business_name : dominos] ko ek [media_type : tweet] bhejo", "drafted_by": "claude", "edited": false}
-{"id": "15258", "intent": "social_query", "hinglish_annot": "[media_type : facebook] ki latest news feed", "drafted_by": "claude", "edited": false}
-{"id": "15252", "intent": "social_query", "hinglish_annot": "mujhe wo jagah dikhao jaha mere [relation : rishtedaar] gaye hai unki photos ke hisaab se", "drafted_by": "claude", "edited": false}
-{"id": "15540", "intent": "social_query", "hinglish_annot": "kya [person : rahul] ne [media_type : facebook] pe kuch naya post kiya hai", "drafted_by": "claude", "edited": false}
-{"id": "15171", "intent": "social_query", "hinglish_annot": "[person : mohan] ke [media_type : facebook] se mujhe [time : weekend] ke updates batao", "drafted_by": "claude", "edited": false}
-{"id": "15182", "intent": "social_query", "hinglish_annot": "mere liye [media_type : punjab kesari] ka last tweet padho", "drafted_by": "claude", "edited": false}
-{"id": "15207", "intent": "social_query", "hinglish_annot": "mera [media_type : facebook] update [general_frequency : har teen ghante] me milna chahiye", "drafted_by": "claude", "edited": false}
-{"id": "15265", "intent": "social_query", "hinglish_annot": "mujhe mere [media_type : twitter] handle ki profile details do total followers ke saath", "drafted_by": "claude", "edited": false}
-{"id": "4867", "intent": "takeaway_order", "hinglish_annot": "[food_type : mushroom pizza] order karne ke liye [business_name : dominos] ko call karo", "drafted_by": "claude", "edited": false}
-{"id": "4161", "intent": "takeaway_order", "hinglish_annot": "mujhe [timeofday : aaj raat] [food_type : chinese] food order karna hai jo deliver kare", "drafted_by": "claude", "edited": false}
-{"id": "1416", "intent": "takeaway_order", "hinglish_annot": "kuch [order_type : takeaway] khana order karo", "drafted_by": "claude", "edited": false}
-{"id": "3134", "intent": "takeaway_order", "hinglish_annot": "mere aas paas kaha kaha se main [order_type : saath le jaane ke liye] khana le sakta hu", "drafted_by": "claude", "edited": false}
-{"id": "2478", "intent": "takeaway_order", "hinglish_annot": "order [order_type : take-out]", "drafted_by": "claude", "edited": false}
-{"id": "4338", "intent": "takeaway_order", "hinglish_annot": "mujhe [order_type : delivery] dikhao", "drafted_by": "claude", "edited": false}
-{"id": "2901", "intent": "takeaway_order", "hinglish_annot": "le jaane ke liye normal [food_type : egg roll] order karo", "drafted_by": "claude", "edited": false}
-{"id": "6009", "intent": "takeaway_query", "hinglish_annot": "main [food_type : indian khana] kaha se pick karu", "drafted_by": "claude", "edited": false}
-{"id": "966", "intent": "takeaway_query", "hinglish_annot": "kya [business_name : pf changs] [order_type : take-out] order lete hai", "drafted_by": "claude", "edited": false}
-{"id": "2851", "intent": "takeaway_query", "hinglish_annot": "kya [business_name : dominos] me [order_type : takeaway] ki facility hai", "drafted_by": "claude", "edited": false}
-{"id": "58", "intent": "takeaway_query", "hinglish_annot": "[place_name : kalika bhojnalaya] me mera [food_type : indian] [order_type : takeaway] dhundo", "drafted_by": "claude", "edited": false}
-{"id": "2740", "intent": "takeaway_query", "hinglish_annot": "kya mujhe is [business_type : restaurant] se [order_type : delivery] mil sakti hai", "drafted_by": "claude", "edited": false}
-{"id": "2844", "intent": "takeaway_query", "hinglish_annot": "[business_type : restaurant ki] [order_type : delivery] kaisi chal rahi hai", "drafted_by": "claude", "edited": false}
-{"id": "6008", "intent": "takeaway_query", "hinglish_annot": "kya [business_name : domino's] me mera order ready hai", "drafted_by": "claude", "edited": false}
-{"id": "12505", "intent": "transport_query", "hinglish_annot": "[place_name : agra] ke liye next shatabdi express [transport_type : train] kab hai", "drafted_by": "claude", "edited": false}
-{"id": "12284", "intent": "transport_query", "hinglish_annot": "[place_name : mumbai] ke liye agli [transport_type : train] kab hai", "drafted_by": "claude", "edited": false}
-{"id": "12134", "intent": "transport_query", "hinglish_annot": "[place_name : cornwall] ke liye next [transport_type : train] kab hai", "drafted_by": "claude", "edited": false}
-{"id": "12827", "intent": "transport_query", "hinglish_annot": "[place_name : delhi] ke liye saari [transport_type : trains] ka time batao", "drafted_by": "claude", "edited": false}
-{"id": "12740", "intent": "transport_query", "hinglish_annot": "sabse paas wale [business_name : mcdonalds] ka rasta kya hai", "drafted_by": "claude", "edited": false}
-{"id": "12438", "intent": "transport_query", "hinglish_annot": "[place_name : punjab] se [place_name : haryana] jaane ke liye [transport_type : train] ka time kya hai", "drafted_by": "claude", "edited": false}
-{"id": "12267", "intent": "transport_query", "hinglish_annot": "[place_name : punjab] mail [place_name : gwalior] kitne baje pahuchti hai", "drafted_by": "claude", "edited": false}
-{"id": "12904", "intent": "transport_taxi", "hinglish_annot": "please next [transport_type : taxi] book karo", "drafted_by": "claude", "edited": false}
-{"id": "12181", "intent": "transport_taxi", "hinglish_annot": "mere liye abhi ek [transport_agency : uber] bhejo", "drafted_by": "claude", "edited": false}
-{"id": "12554", "intent": "transport_taxi", "hinglish_annot": "mujhe ek [transport_type : cab] bulani hai", "drafted_by": "claude", "edited": false}
-{"id": "12711", "intent": "transport_taxi", "hinglish_annot": "[transport_agency : uber] set up karo", "drafted_by": "claude", "edited": false}
-{"id": "12715", "intent": "transport_taxi", "hinglish_annot": "mujhe abhi lene ke liye [transport_type : taxi] bulao", "drafted_by": "claude", "edited": false}
-{"id": "12919", "intent": "transport_taxi", "hinglish_annot": "[transport_agency : uber] app kholo aur mujhe ek [transport_type : car] dilwao plz", "drafted_by": "claude", "edited": false}
-{"id": "12888", "intent": "transport_taxi", "hinglish_annot": "[date : friday] ko [time : subah saade 5 baje] [place_name : airport] ke liye mere liye [transport_type : taxi] book karo", "drafted_by": "claude", "edited": false}
-{"id": "12764", "intent": "transport_ticket", "hinglish_annot": "ek [transport_type : train] ticket book karo", "drafted_by": "claude", "edited": false}
-{"id": "12680", "intent": "transport_ticket", "hinglish_annot": "[place_name : mumbai] ki [transport_type : train] ke liye mera ek ticket le lo", "drafted_by": "claude", "edited": false}
-{"id": "12149", "intent": "transport_ticket", "hinglish_annot": "[place_name : new delhi] ke liye [transport_name : rajdhani express] me [date : is friday] [time : shaam 5 baje] ka ek ticket book karo", "drafted_by": "claude", "edited": false}
-{"id": "12307", "intent": "transport_ticket", "hinglish_annot": "[place_name : jaipur] ke liye [date : tuesday ki] [transport_type : train] ke do tickets dhundo", "drafted_by": "claude", "edited": false}
-{"id": "12706", "intent": "transport_ticket", "hinglish_annot": "is time ke liye [transport_type : train] ka ticket book karo", "drafted_by": "claude", "edited": false}
-{"id": "12593", "intent": "transport_ticket", "hinglish_annot": "olly please mere liye [place_name : lucknow] ka ek [transport_type : train] ticket le lo", "drafted_by": "claude", "edited": false}
-{"id": "12470", "intent": "transport_ticket", "hinglish_annot": "[timeofday : subah] jaane ke liye ticket book karo", "drafted_by": "claude", "edited": false}
-{"id": "12441", "intent": "transport_traffic", "hinglish_annot": "[place_name : ghar] se office tak traffic kaisa hai", "drafted_by": "claude", "edited": false}
-{"id": "12810", "intent": "transport_traffic", "hinglish_annot": "[place_name : ohio] me abhi traffic kaisa hai", "drafted_by": "claude", "edited": false}
-{"id": "12177", "intent": "transport_traffic", "hinglish_annot": "[place_name : dwarka] me zyada traffic hai kya", "drafted_by": "claude", "edited": false}
-{"id": "12783", "intent": "transport_traffic", "hinglish_annot": "aaj [timeofday : subah] traffic kaisa hai", "drafted_by": "claude", "edited": false}
-{"id": "12692", "intent": "transport_traffic", "hinglish_annot": "[place_name : ghantaghar] me aksar kitna traffic rehta hai", "drafted_by": "claude", "edited": false}
-{"id": "12178", "intent": "transport_traffic", "hinglish_annot": "abhi [place_name : mira road] pe kitna traffic hai", "drafted_by": "claude", "edited": false}
-{"id": "12885", "intent": "transport_traffic", "hinglish_annot": "[date : aaj] kis route pe traffic kam hai", "drafted_by": "claude", "edited": false}
-{"id": "3589", "intent": "weather_query", "hinglish_annot": "[date : is hafte] mausam kaisa hai", "drafted_by": "claude", "edited": false}
-{"id": "5322", "intent": "weather_query", "hinglish_annot": "[place_name : bhopal] me [date : aaj] mausam kaisa hai", "drafted_by": "claude", "edited": false}
-{"id": "2654", "intent": "weather_query", "hinglish_annot": "kya [date : agle hafte] [weather_descriptor : barf] padegi", "drafted_by": "claude", "edited": false}
-{"id": "5462", "intent": "weather_query", "hinglish_annot": "kya mujhe [date : aaj] [weather_descriptor : jacket] chahiye", "drafted_by": "claude", "edited": false}
-{"id": "490", "intent": "weather_query", "hinglish_annot": "kya bahar [weather_descriptor : garmi] hai", "drafted_by": "claude", "edited": false}
-{"id": "4681", "intent": "weather_query", "hinglish_annot": "kya mera golf game [weather_descriptor : baarish] se dhul jayega", "drafted_by": "claude", "edited": false}
-{"id": "4292", "intent": "weather_query", "hinglish_annot": "kya [date : aaj] main shopping karte waqt [weather_descriptor : shorts] pehen sakta hu", "drafted_by": "claude", "edited": false}
+{"id": "2672", "intent": "alarm_query", "hinglish_annot": "maine [timeofday : subah] [time : 6 se 9 baje] ke beech kitne alarm lagaye hai", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "1732", "intent": "alarm_query", "hinglish_annot": "checkout [date : aaj] subah [time : 10 baje] ka alarm set karo", "drafted_by": "claude", "checked": true, "edited": false}
+{"id": "237", "intent": "alarm_query", "hinglish_annot": "kya maine [timeofday : subah] [alarm_type : uthne] ke liye alarm lagaya hai", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "5541", "intent": "alarm_query", "hinglish_annot": "please mujhe [date : weekdays] ke liye [timeofday : subah] ke alarm ka time batao", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "3149", "intent": "alarm_query", "hinglish_annot": "kya [date : kal] [timeofday : subah] ke liye koi alarms hai", "drafted_by": "claude", "checked": true, "edited": false}
+{"id": "5982", "intent": "alarm_query", "hinglish_annot": "tumne mere liye kitne baje ka alarm lagaya hai", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "5609", "intent": "alarm_query", "hinglish_annot": "alarm setting batao", "drafted_by": "claude", "checked": true, "edited": false}
+{"id": "562", "intent": "alarm_remove", "hinglish_annot": "mera subah [time : 8 baje] wala alarm hata do", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "4971", "intent": "alarm_remove", "hinglish_annot": "[person : finley] ke sone ke time wala alarm hata do", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "4198", "intent": "alarm_remove", "hinglish_annot": "[time : 4 baje] ka alarm hata do", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "3904", "intent": "alarm_remove", "hinglish_annot": "please [date : wednesday] [timeofday : shaam] ka alarm hata do", "drafted_by": "claude", "checked": true, "edited": false}
+{"id": "3248", "intent": "alarm_remove", "hinglish_annot": "[date : kal] ka alarm cancel karo", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "3270", "intent": "alarm_remove", "hinglish_annot": "[date : kal] ke liye jo alarm set hai wo hata do", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "5436", "intent": "alarm_remove", "hinglish_annot": "[time : shaam] [time : 5 baje] wala alarm hatao", "drafted_by": "claude", "checked": true, "edited": false}
+{"id": "173", "intent": "alarm_set", "hinglish_annot": "[date : kal] [time : subah 6 baje] alarm lagao", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "7043", "intent": "alarm_set", "hinglish_annot": "please [time : abhi se 2 ghante ke liye] alarm set karo", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "232", "intent": "alarm_set", "hinglish_annot": "[timeofday : subah] [time : 6] baje ka alarm laga do", "drafted_by": "claude", "checked": true, "edited": false}
+{"id": "610", "intent": "alarm_set", "hinglish_annot": "main [date : kal] subah [time : 6 baje] uthna chahta hu plz", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "3463", "intent": "alarm_set", "hinglish_annot": "mujhe [date : kal] [time : subah 7 baje] [alarm_type : uthne] ka alarm chahiye", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "2563", "intent": "alarm_set", "hinglish_annot": "[date : kal] [timeofday : subah] [time : 8] baje ka alarm lagao", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "4094", "intent": "alarm_set", "hinglish_annot": "please subah [time : 8 baje] ka alarm laga do", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "115", "intent": "audio_volume_down", "hinglish_annot": "awaaz [change_amount : kam karo]", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "3139", "intent": "audio_volume_down", "hinglish_annot": "please apna volume kam karo", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "689", "intent": "audio_volume_down", "hinglish_annot": "plz volume kam karo", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "3811", "intent": "audio_volume_down", "hinglish_annot": "speaker ka volume kam karo", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "4979", "intent": "audio_volume_down", "hinglish_annot": "please mujhse aaram se baat karo", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "331", "intent": "audio_volume_down", "hinglish_annot": "awaaz kam karo", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "737", "intent": "audio_volume_down", "hinglish_annot": "kya tum awaaz thodi kam kar sakte ho", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "516", "intent": "audio_volume_mute", "hinglish_annot": "please [time : agle ghante] ke liye mute karo", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "5957", "intent": "audio_volume_mute", "hinglish_annot": "kya tum thodi der ke liye chup reh sakte ho", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "3454", "intent": "audio_volume_mute", "hinglish_annot": "so jao", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "2323", "intent": "audio_volume_mute", "hinglish_annot": "please speaker mute karo", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "4497", "intent": "audio_volume_mute", "hinglish_annot": "settings mute karo", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "2797", "intent": "audio_volume_mute", "hinglish_annot": "speakers ki awaaz mute kar do", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "4421", "intent": "audio_volume_mute", "hinglish_annot": "awaaz band karo", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "4398", "intent": "audio_volume_up", "hinglish_annot": "please volume [change_amount : sabse tez] setting pe kar do", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "1680", "intent": "audio_volume_up", "hinglish_annot": "music ka volume [change_amount : 90 tak] badhao", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "5755", "intent": "audio_volume_up", "hinglish_annot": "audio on", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "2360", "intent": "audio_volume_up", "hinglish_annot": "volume badhao", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "5726", "intent": "audio_volume_up", "hinglish_annot": "please volume badha do", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "691", "intent": "audio_volume_up", "hinglish_annot": "please volume off kar do", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "5393", "intent": "audio_volume_up", "hinglish_annot": "awaaz tez karo", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "6912", "intent": "calendar_query", "hinglish_annot": "[date : aaj] ki [event_name : meeting] me kaun kaun hoga", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "6948", "intent": "calendar_query", "hinglish_annot": "[date : is hafte] meri kitni [event_name : meetings] hai", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "6723", "intent": "calendar_query", "hinglish_annot": "[time : baaki hafte] ke liye mera agenda kya hai", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "9164", "intent": "calendar_query", "hinglish_annot": "kya [date : is mahine] mera koi calendar event hai", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "8941", "intent": "calendar_query", "hinglish_annot": "[time : is mahine] [event_name : chhutti] kab hai", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "7947", "intent": "calendar_query", "hinglish_annot": "[event_name : arijit singh ke music] concert ka next schedule kab hai", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "8046", "intent": "calendar_query", "hinglish_annot": "[date : agle hafte] meri kitni meetings hai", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "8146", "intent": "calendar_remove", "hinglish_annot": "[date : 14 tarikh] ko meri [event_name : meeting] cancel karo", "drafted_by": "claude", "checked": true, "edited": false}
+{"id": "8612", "intent": "calendar_remove", "hinglish_annot": "mere calendar se [date : thursday] ka [meal_type : lunch] hata do", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "8417", "intent": "calendar_remove", "hinglish_annot": "mere calendar ke saare [event_name : appointments] cancel karo", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "8834", "intent": "calendar_remove", "hinglish_annot": "[time : baaki hafte ke liye] meri saari [event_name : meetings] hata do", "drafted_by": "claude", "checked": true, "edited": false}
+{"id": "6883", "intent": "calendar_remove", "hinglish_annot": "[date : kal] [time : 2 pm] wali [event_name : birthday party] hata do", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "6734", "intent": "calendar_remove", "hinglish_annot": "[event_name : meetings] se mera [time : din] khali karo", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "8372", "intent": "calendar_remove", "hinglish_annot": "arey siri [date : kal] pakka kar lena ki mera calendar pura khali ho", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "7734", "intent": "calendar_set", "hinglish_annot": "mujhe [date : har friday] dukaan jaane ke liye yaad dilana", "drafted_by": "claude", "checked": true, "edited": false}
+{"id": "8270", "intent": "calendar_set", "hinglish_annot": "[date : wednesday] ko [event_name : meeting] ka notification", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "8133", "intent": "calendar_set", "hinglish_annot": "[person : ram] ko lene ke liye dopahar [time : 3 baje] ka reminder set karo", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "7804", "intent": "calendar_set", "hinglish_annot": "[general_frequency : roz] [time : subah 8 baje] mere office ke kaamo ka reminder lagao", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "7260", "intent": "calendar_set", "hinglish_annot": "[date : kal] [time : dopahar 3 baje] ki [event_name : meeting] ka reminder laga do", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "8619", "intent": "calendar_set", "hinglish_annot": "[general_frequency : har mahine ki 15 tarikh] ko event set karo taki [event_name : internet bill bharna] yaad rahe", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "6914", "intent": "calendar_set", "hinglish_annot": "[event_name : monday meeting] ko [general_frequency : har monday] calendar me daal do", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "14737", "intent": "cooking_query", "hinglish_annot": "ok google turkey banane ka sabse easy aur fast tarika kya hai", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "6613", "intent": "cooking_query", "hinglish_annot": "cooking ke baare me puchne ke liye assistant", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "9993", "intent": "cooking_recipe", "hinglish_annot": "[food_type : butt kaleji] kaise banti hai", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "9965", "intent": "cooking_recipe", "hinglish_annot": "main [food_type : maggi] kaise bana sakta hu", "drafted_by": "claude", "checked": true, "edited": false}
+{"id": "10041", "intent": "cooking_recipe", "hinglish_annot": "main [food_type : biscuit] kaise banau", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "1268", "intent": "cooking_recipe", "hinglish_annot": "[food_type : pakodi] banane ki tumhari recipe best thi", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "10039", "intent": "cooking_recipe", "hinglish_annot": "mujhe [food_type : khane ki] recipe dikhao", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "9999", "intent": "cooking_recipe", "hinglish_annot": "[food_type : pizza] ko ekdum [cooking_type : crispy] banane ke liye oven me kitni der rakhna chahiye", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "10110", "intent": "cooking_recipe", "hinglish_annot": "main [food_type : meatloaf] kaise bana sakta hu", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "1189", "intent": "datetime_convert", "hinglish_annot": "agar [place_name : darjeeling] me [time : raat ke 10 baj] rahe hai to [place_name : bareilly] me kya time hai", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "943", "intent": "datetime_convert", "hinglish_annot": "agar [place_name : east coast] pe [time : raat ke 8 baj] rahe hai to [place_name : jamnagar] me kitne baje hai", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "1211", "intent": "datetime_convert", "hinglish_annot": "[place_name : shimla] ka time [place_name : jaipur] me convert karo", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "2227", "intent": "datetime_convert", "hinglish_annot": "please [time : subah 9 baje] [place_name : cst] ko [place_name : ist] me convert karo", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "1234", "intent": "datetime_convert", "hinglish_annot": "[place_name : india] me kya time hai jab [place_name : bharatiya ganatantra] me [time : raat ke 12 baje] hai", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "5359", "intent": "datetime_convert", "hinglish_annot": "[time_zone : eastern] time zone pe switch karo", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "3293", "intent": "datetime_convert", "hinglish_annot": "[time_zone : eastern] aur [time_zone : pacific] ke time me kitna fark hai", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "3651", "intent": "datetime_query", "hinglish_annot": "[place_name : delhi] me abhi kya time hai", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "1201", "intent": "datetime_query", "hinglish_annot": "[place_name : mumbai] me current time kya hai", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "3443", "intent": "datetime_query", "hinglish_annot": "[date : is mahine] [date : 22 tarikh] ko kaun sa din hai", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "4519", "intent": "datetime_query", "hinglish_annot": "[date : 22 april] ko kaun sa din hai", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "6120", "intent": "datetime_query", "hinglish_annot": "hey olly [place_name : noida] me kya time hai", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "5744", "intent": "datetime_query", "hinglish_annot": "[date : agle saal] [event_name : mera birthday] kis din padega", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "2200", "intent": "datetime_query", "hinglish_annot": "[event_name : holi] me kitne hafte bache hai", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "11061", "intent": "email_addcontact", "hinglish_annot": "please [person : ram] ko mere contact list me add karo", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "15921", "intent": "email_addcontact", "hinglish_annot": "alexa [email_address : tripathi at hotmail dot com] ko [person : mahima tripathi] ke naye contact ke roop me add karo", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "17018", "intent": "email_addcontact", "hinglish_annot": "contacts me save karo", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "15986", "intent": "email_addcontact", "hinglish_annot": "ye email contact me save karo", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "17017", "intent": "email_addcontact", "hinglish_annot": "mere contact me email save karo", "drafted_by": "claude", "checked": true, "edited": false}
+{"id": "16037", "intent": "email_query", "hinglish_annot": "mera gmail [email_folder : inbox] refresh karo", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "15863", "intent": "email_query", "hinglish_annot": "[relation : mummy] ke unread emails dekho", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "16641", "intent": "email_query", "hinglish_annot": "[relation : boss] ka koi naya email", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "16580", "intent": "email_query", "hinglish_annot": "google us [person : pinku] ka naya email address dhundo jo maine [date : friday] ko add kiya tha", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "16289", "intent": "email_query", "hinglish_annot": "[business_name : clinic] ne mere test ke baare me kya bola", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "17082", "intent": "email_query", "hinglish_annot": "kya mujhe [date : aaj] [person : neha] ka koi naya email aaya hai", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "16653", "intent": "email_query", "hinglish_annot": "kya [time : pichle ek ghante] me koi email aaya hai", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "17037", "intent": "email_querycontact", "hinglish_annot": "mujhe contact ki [personal_info : mail id] do", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "16582", "intent": "email_querycontact", "hinglish_annot": "kya ye mere [relation : boss] ka sahi area code hai", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "15867", "intent": "email_querycontact", "hinglish_annot": "please mere contacts se [person : vinod] ki [personal_info : details] do", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "16779", "intent": "email_querycontact", "hinglish_annot": "[person : john] naam ka contact kholo", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "16709", "intent": "email_querycontact", "hinglish_annot": "mere [device_type : phone book] me kitne contacts hai", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "16184", "intent": "email_querycontact", "hinglish_annot": "mujhe mere [relation : bhai] ki [personal_info : contact details] batao", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "16588", "intent": "email_querycontact", "hinglish_annot": "please wo contacts hata do jinse maine [date : 3 mahine se] baat nahi ki", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "16512", "intent": "email_sendemail", "hinglish_annot": "[relation : mummy] ko email bhejo ki [date : kal] shopping jaana hai", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "16081", "intent": "email_sendemail", "hinglish_annot": "mere [relation : manager] ko ek email bhejo", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "16533", "intent": "email_sendemail", "hinglish_annot": "kya tum [person : ritu] ko email likhne me meri help karoge", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "16971", "intent": "email_sendemail", "hinglish_annot": "mujhe [person : rohan] ke email ka reply karna hai", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "15805", "intent": "email_sendemail", "hinglish_annot": "[person : dushyant] ko [date : kal] ki [event_name : meeting] ke baare me email karo aur likho ki [person : dushyant] kya hum [timeofday : dopahar] me meeting kar sakte hai", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "16030", "intent": "email_sendemail", "hinglish_annot": "is email pe is [relation : colleague] ke liye naya email kholo", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "16025", "intent": "email_sendemail", "hinglish_annot": "kya tum mere [relation : dost] [person : rohit] ko email bhej sakte ho ki main [date : kal] busy hu", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "1277", "intent": "general_greet", "hinglish_annot": "arey", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "167", "intent": "general_greet", "hinglish_annot": "arey arey", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "1257", "intent": "general_joke", "hinglish_annot": "internet pe sabse accha [joke_type : knock knock] joke dhundo", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "1478", "intent": "general_joke", "hinglish_annot": "[joke_type : naye] jokes dhundo", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "4908", "intent": "general_joke", "hinglish_annot": "kuch [joke_type : funny] jokes kholo", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "4775", "intent": "general_joke", "hinglish_annot": "kya tum mujhe ek [joke_type : accha] joke suna sakti ho", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "638", "intent": "general_joke", "hinglish_annot": "kya tum mere liye [joke_type : janwaro] wala joke dhund sakte ho", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "4745", "intent": "general_joke", "hinglish_annot": "mujhe ek [joke_type : bewakoof] joke chahiye", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "1948", "intent": "general_joke", "hinglish_annot": "[joke_type : mazedar] joke", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "6603", "intent": "general_quirky", "hinglish_annot": "kis time pe [place_name : temperature level]", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "6271", "intent": "general_quirky", "hinglish_annot": "[date : aaj] ka din kaisa hai", "drafted_by": "claude", "checked": true, "edited": false}
+{"id": "13617", "intent": "general_quirky", "hinglish_annot": "[date : aaj] duniya me sabse ajeeb kya ho raha hai batao", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "10554", "intent": "general_quirky", "hinglish_annot": "main [date : aaj] kya kar raha hu", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "15812", "intent": "general_quirky", "hinglish_annot": "olly mujhe [person : ram] ki [event_name : party] ke baare me jaanna hai", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "6570", "intent": "general_quirky", "hinglish_annot": "mujhe [artist_name : neha kakkar] ke baare me batao", "drafted_by": "claude", "checked": true, "edited": false}
+{"id": "6356", "intent": "general_quirky", "hinglish_annot": "mujhe [date : saturday] ko [place_name : pub] me invite kiya gaya hai", "drafted_by": "claude", "checked": true, "edited": false}
+{"id": "30", "intent": "iot_cleaning", "hinglish_annot": "safai acchi hai dhool bahut buri hai ab apna jaadu karo mera [house_place : carpet] saaf karo", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "1599", "intent": "iot_cleaning", "hinglish_annot": "kya tum [device_type : roomba] start kar sakte ho", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "2621", "intent": "iot_cleaning", "hinglish_annot": "ab [device_type : vacuum cleaner] start karo", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "5696", "intent": "iot_cleaning", "hinglish_annot": "[house_place : ghar ki safai] shuru karo", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "3840", "intent": "iot_cleaning", "hinglish_annot": "[device_type : roomba] on karo", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "5404", "intent": "iot_cleaning", "hinglish_annot": "[house_place : kitchen] saaf karne ke liye [device_type : roomba] lo", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "1943", "intent": "iot_cleaning", "hinglish_annot": "[house_place : ghar] ki safai shuru karo", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "5990", "intent": "iot_coffee", "hinglish_annot": "meri [coffee_type : subah] wali coffee ready karo", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "5150", "intent": "iot_coffee", "hinglish_annot": "kya tum [device_type : coffee maker] chala sakte ho", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "1569", "intent": "iot_coffee", "hinglish_annot": "kya mujhe [coffee_type : coffee] mil sakti hai", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "2749", "intent": "iot_coffee", "hinglish_annot": "[device_type : coffee machine] start karo", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "2599", "intent": "iot_coffee", "hinglish_annot": "mujhe abhi coffee chahiye", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "2814", "intent": "iot_coffee", "hinglish_annot": "thodi coffee bana do", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "5989", "intent": "iot_coffee", "hinglish_annot": "mujhe abhi thodi coffee chahiye yaar", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "1216", "intent": "iot_hue_lightchange", "hinglish_annot": "[house_place : living room] ko [color_type : blue] kar do", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "2841", "intent": "iot_hue_lightchange", "hinglish_annot": "[house_place : living room] ki lights [color_type : red] pe set karo", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "4827", "intent": "iot_hue_lightchange", "hinglish_annot": "kya light ko [color_type : green] color me badal sakte hai", "drafted_by": "claude", "checked": true, "edited": false}
+{"id": "2282", "intent": "iot_hue_lightchange", "hinglish_annot": "mere ghar ki saari lights ka color [color_type : blue] set karo", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "2122", "intent": "iot_hue_lightchange", "hinglish_annot": "[house_place : living room] ki lights [color_type : laal] karo", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "1215", "intent": "iot_hue_lightchange", "hinglish_annot": "olly [house_place : living room] ko [color_type : neela] banao", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "4494", "intent": "iot_hue_lightchange", "hinglish_annot": "meri lights ko koi bhi [color_type : random] color me badal do", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "925", "intent": "iot_hue_lightdim", "hinglish_annot": "please lights [change_amount : thodi si] kam karo", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "17", "intent": "iot_hue_lightdim", "hinglish_annot": "[house_place : hall] me light kam karo", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "2313", "intent": "iot_hue_lightdim", "hinglish_annot": "[change_amount : light neeche 7] karo", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "4440", "intent": "iot_hue_lightdim", "hinglish_annot": "saari [house_place : andar ki] lights dim karo", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "2576", "intent": "iot_hue_lightdim", "hinglish_annot": "[house_place : bedroom] ki lights dim kar do", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "24", "intent": "iot_hue_lightdim", "hinglish_annot": "ek [house_place : room] ko dark karo", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "2312", "intent": "iot_hue_lightdim", "hinglish_annot": "olly lights [change_amount : ko 7] kar do", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "5202", "intent": "iot_hue_lightoff", "hinglish_annot": "[house_place : drawing hall] ki light band kar do", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "4632", "intent": "iot_hue_lightoff", "hinglish_annot": "please [house_place : bedroom] ki light band karo", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "2600", "intent": "iot_hue_lightoff", "hinglish_annot": "please mere [device_type : bed ke side wala lamp] band kar do", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "2187", "intent": "iot_hue_lightoff", "hinglish_annot": "kya tum please mere [house_place : bedroom] ki light band kar doge", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "4796", "intent": "iot_hue_lightoff", "hinglish_annot": "[house_place : bedroom] ki lights off kar do", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "4277", "intent": "iot_hue_lightoff", "hinglish_annot": "kya tum mera [device_type : desk lamp] band kar sakte ho", "drafted_by": "claude", "checked": true, "edited": false}
+{"id": "5518", "intent": "iot_hue_lightoff", "hinglish_annot": "[house_place : room] ki light band kar do", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "1988", "intent": "iot_hue_lighton", "hinglish_annot": "arey alexa mere [house_place : apartment] me [device_type : disco light] on karo aur party shuru karo", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "3464", "intent": "iot_hue_lighton", "hinglish_annot": "please saari bahar ki lights on karo", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "312", "intent": "iot_hue_lighton", "hinglish_annot": "yaha bahut andhera hai", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "2470", "intent": "iot_hue_lighton", "hinglish_annot": "lights on karo", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "5094", "intent": "iot_hue_lighton", "hinglish_annot": "yaha to andhera hai yaar", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "2810", "intent": "iot_hue_lightup", "hinglish_annot": "[house_place : living room] me light tez karo", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "5728", "intent": "iot_hue_lightup", "hinglish_annot": "[house_place : room] ki [device_type : har light] ki brightness badhao", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "4387", "intent": "iot_hue_lightup", "hinglish_annot": "[device_type : lamp ki light] badhao", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "6052", "intent": "iot_hue_lightup", "hinglish_annot": "alexa light ki brightness badhani hai yaha neeche dekhna mushkil hai", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "3437", "intent": "iot_hue_lightup", "hinglish_annot": "please light badhao", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "851", "intent": "iot_hue_lightup", "hinglish_annot": "light chamkao", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "4287", "intent": "iot_hue_lightup", "hinglish_annot": "lights on", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "2946", "intent": "iot_wemo_off", "hinglish_annot": "alexa [house_place : bedroom] ka [device_type : pankha] band karo", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "3803", "intent": "iot_wemo_off", "hinglish_annot": "[device_type : smart plug socket ko] band karo", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "756", "intent": "iot_wemo_off", "hinglish_annot": "kya tum [device_type : wemo plug socket] band kar sakte ho", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "388", "intent": "iot_wemo_off", "hinglish_annot": "[device_type : smart plug] off karo", "drafted_by": "claude", "checked": true, "edited": false}
+{"id": "3183", "intent": "iot_wemo_off", "hinglish_annot": "bijli band", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "678", "intent": "iot_wemo_on", "hinglish_annot": "[device_type : tv] socket on kar dena jab main ghar pahuchu", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "5651", "intent": "iot_wemo_on", "hinglish_annot": "[device_type : wemo plug socket] chalu karo", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "5069", "intent": "iot_wemo_on", "hinglish_annot": "[device_type : wemo] on karo", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "5653", "intent": "iot_wemo_on", "hinglish_annot": "[device_type : wemo plug socket] ko on kar do", "drafted_by": "claude", "checked": true, "edited": false}
+{"id": "4619", "intent": "iot_wemo_on", "hinglish_annot": "naya [device_type : smart socket] start karo", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "3804", "intent": "iot_wemo_on", "hinglish_annot": "[device_type : wemo plug socket] on karo", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "3394", "intent": "iot_wemo_on", "hinglish_annot": "please mera [device_type : wemo plug socket] chalu karo", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "11178", "intent": "lists_createoradd", "hinglish_annot": "[general_frequency : monthly] [list_name : kirana] saaman ki list banao", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "10870", "intent": "lists_createoradd", "hinglish_annot": "grocery kharidni hai isko mere [date : aaj] ke to do list me daal do", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "10973", "intent": "lists_createoradd", "hinglish_annot": "[list_name : school supplies] ke liye nayi list banao", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "11086", "intent": "lists_createoradd", "hinglish_annot": "meri [list_name : grocery] list me doodh add karo", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "10925", "intent": "lists_createoradd", "hinglish_annot": "mere [list_name : pending bills] ki nayi list banao", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "11196", "intent": "lists_createoradd", "hinglish_annot": "[list_name : christmas] list me pastry add karo", "drafted_by": "claude", "checked": true, "edited": false}
+{"id": "11212", "intent": "lists_createoradd", "hinglish_annot": "[list_name : purani playlist] delete karo aur nayi banao", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "11182", "intent": "lists_query", "hinglish_annot": "meri [list_name : health plan]", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "10424", "intent": "lists_query", "hinglish_annot": "olly meri [list_name : shopping] list ke items batao", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "10555", "intent": "lists_query", "hinglish_annot": "meri [list_name : baaki kaam] wali list me item 5 check karo", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "10775", "intent": "lists_query", "hinglish_annot": "jo [event_name : party] main plan kar raha hu uske liye contacts ki list hai kya", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "10754", "intent": "lists_query", "hinglish_annot": "[date : is hafte] ke liye maine grocery list me jo daala hai wo padh ke sunao", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "10450", "intent": "lists_query", "hinglish_annot": "meri [list_name : shopping] list me [date : aaj] kya hai", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "10457", "intent": "lists_query", "hinglish_annot": "meri [list_name : party shopping list] me vodka add karo", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "10784", "intent": "lists_remove", "hinglish_annot": "meri [list_name : to do] list delete karo", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "11084", "intent": "lists_remove", "hinglish_annot": "[list_name : shopping] list se doodh hatao", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "10521", "intent": "lists_remove", "hinglish_annot": "mere [list_name : purane english] gaano ki list hata do", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "10470", "intent": "lists_remove", "hinglish_annot": "[date : pichle hafte] jo [list_name : khane] ka saaman kharida tha wo list hata do", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "10453", "intent": "lists_remove", "hinglish_annot": "bread ko [list_name : shopping] list se hata do", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "11200", "intent": "lists_remove", "hinglish_annot": "[list_name : karne wali cheezo] ki list hata do", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "11131", "intent": "lists_remove", "hinglish_annot": "meri [date : aaj] ki [list_name : to do] list hata do", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "1179", "intent": "music_dislikeness", "hinglish_annot": "kabhi bhi koi [music_genre : shirley setia] play mat karna", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "1698", "intent": "music_dislikeness", "hinglish_annot": "mujhe wo gaana pasand nahi hai band kar do", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "1823", "intent": "music_likeness", "hinglish_annot": "[artist_name : arijit singh] mere favourite singer hai", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "3202", "intent": "music_likeness", "hinglish_annot": "mujhe [music_genre : jazz] pasand hai tumhe pata hona chahiye", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "2955", "intent": "music_likeness", "hinglish_annot": "mujhe [music_genre : hip hop] pasand hai", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "2303", "intent": "music_likeness", "hinglish_annot": "main hamesha ke liye [music_genre : hip hop] hu", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "1971", "intent": "music_likeness", "hinglish_annot": "mujhe [artist_name : arijit singh] ka tu jaane na gaana pasand hai", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "5021", "intent": "music_likeness", "hinglish_annot": "[music_genre : mujhe ye gaana sunna accha lagta hai]", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "5180", "intent": "music_likeness", "hinglish_annot": "please is gaane ko meri favourite playlist me add karo", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "1177", "intent": "music_query", "hinglish_annot": "[artist_name : jubin nautiyal] ke gaane [song_name : main hamesha tumse pyaar karunga] ke lyrics kya hai", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "13106", "intent": "music_query", "hinglish_annot": "kya tum [artist_name : ar rahman] ke gaane sunte ho", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "5408", "intent": "music_query", "hinglish_annot": "please mujhe [artist_name : o zaalima] gaane ki details do", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "3404", "intent": "music_query", "hinglish_annot": "gaana repeat kaise kare", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "6135", "intent": "music_query", "hinglish_annot": "jo gaana chal raha hai uske baare me batao", "drafted_by": "claude", "checked": true, "edited": false}
+{"id": "2582", "intent": "music_query", "hinglish_annot": "mujhe artist ka naam batao", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "3863", "intent": "music_query", "hinglish_annot": "jo gaana radio pe chal raha hai uska producer kaun hai", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "2161", "intent": "music_settings", "hinglish_annot": "[player_setting : gaana] repeat karo", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "444", "intent": "music_settings", "hinglish_annot": "[player_setting : shuffle off karo]", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "5536", "intent": "music_settings", "hinglish_annot": "abhi wala gaana please [player_setting : repeat karo]", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "4008", "intent": "music_settings", "hinglish_annot": "[player_setting : repeat] on karo", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "4778", "intent": "music_settings", "hinglish_annot": "[music_descriptor : last gaane ko] fir se [player_setting : repeat karo]", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "113", "intent": "music_settings", "hinglish_annot": "is track ko [player_setting : loop] karo", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "5107", "intent": "music_settings", "hinglish_annot": "is gaane ko [player_setting : repeat] pe daalo", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "2641", "intent": "news_query", "hinglish_annot": "[news_topic : rikt] ke baare me naya kya hai", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "3865", "intent": "news_query", "hinglish_annot": "abhi chal rahe [news_topic : ipl] match ka score kya hai", "drafted_by": "claude", "checked": true, "edited": false}
+{"id": "2668", "intent": "news_query", "hinglish_annot": "[media_type : news nation] se news laao", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "1827", "intent": "news_query", "hinglish_annot": "[place_name : lucknow] me kya ho raha hai", "drafted_by": "claude", "checked": true, "edited": false}
+{"id": "532", "intent": "news_query", "hinglish_annot": "please mujhe kuch [place_name : international] news batao", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "3868", "intent": "news_query", "hinglish_annot": "[media_type : amar ujala] ki headline kya hai", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "3056", "intent": "news_query", "hinglish_annot": "[date : aaj] [news_topic : politics] me naya kya hai kya tum [person : modi] ki news filter kar sakte ho", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "9734", "intent": "play_audiobook", "hinglish_annot": "[audiobook_name : ek thi dayan] [media_type : audio book] chalana shuru karo", "drafted_by": "claude", "checked": true, "edited": false}
+{"id": "9688", "intent": "play_audiobook", "hinglish_annot": "[audiobook_name : mowgli] ka 7th chapter [player_setting : shuru karo]", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "9798", "intent": "play_audiobook", "hinglish_annot": "mere liye [audiobook_name : godaan] fir se [player_setting : shuru karo]", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "9889", "intent": "play_audiobook", "hinglish_annot": "[audiobook_name : vitamin ki] meri [audiobook_name : kitaab] [player_setting : continue karo]", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "9756", "intent": "play_audiobook", "hinglish_annot": "meri [media_type : audio list] [player_setting : fir] se [player_setting : shuru karo] jaha last time ruke the", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "9831", "intent": "play_audiobook", "hinglish_annot": "4th chapter se [audiobook_name : nirmala novel] [player_setting : padhna shuru karo]", "drafted_by": "claude", "checked": true, "edited": false}
+{"id": "9765", "intent": "play_audiobook", "hinglish_annot": "last time wali [media_type : audio book] [player_setting : resume karo]", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "10388", "intent": "play_game", "hinglish_annot": "[game_name : ludo] game khelo", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "10327", "intent": "play_game", "hinglish_annot": "[game_name : puzzle] solve karte hai", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "10415", "intent": "play_game", "hinglish_annot": "chalo [game_name : ludo] khelte hai", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "10351", "intent": "play_game", "hinglish_annot": "open [game_name : papa pear saga]", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "10295", "intent": "play_game", "hinglish_annot": "main chahta hu tum mera [game_name : hockey] game 5th level se khelo", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "10324", "intent": "play_game", "hinglish_annot": "mere saath [game_name : saap seedhi] khelo", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "10291", "intent": "play_game", "hinglish_annot": "[game_name : ludo] khelna shuru karo", "drafted_by": "claude", "checked": true, "edited": false}
+{"id": "741", "intent": "play_music", "hinglish_annot": "[music_genre : arijit singh] aur [artist_name : sonu nigam] ke gaane chalao", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "3439", "intent": "play_music", "hinglish_annot": "[playlist_name : bhakti playlist] chalu karo", "drafted_by": "claude", "checked": true, "edited": false}
+{"id": "5735", "intent": "play_music", "hinglish_annot": "please [artist_name : sunidhi chauhan] ka gaana fir se chalao", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "3530", "intent": "play_music", "hinglish_annot": "kuch [music_genre : bhakti] wala laga do", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "2272", "intent": "play_music", "hinglish_annot": "please mere [music_descriptor : top rated] [music_genre : bhakti] gaane chalao", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "4546", "intent": "play_music", "hinglish_annot": "[playlist_name : sanam] ka chalao", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "5449", "intent": "play_music", "hinglish_annot": "[music_genre : indian folk] gaane chalao", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "11326", "intent": "play_podcasts", "hinglish_annot": "iske baad [podcast_name : ek aur kahani] ka 7th episode chalao", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "11281", "intent": "play_podcasts", "hinglish_annot": "kya tum radio me ek episode [player_setting : aage] kar sakte ho", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "11358", "intent": "play_podcasts", "hinglish_annot": "[podcast_descriptor : agle] podcast pe chalo", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "11530", "intent": "play_podcasts", "hinglish_annot": "[podcast_name : narendra modi the legend] podcast device pe chalao", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "11496", "intent": "play_podcasts", "hinglish_annot": "[podcast_name : ankur warikoo show] podcast chalu karo", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "11370", "intent": "play_podcasts", "hinglish_annot": "mujhe [person : ankur warikoo] ka podcast sunna hai", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "11305", "intent": "play_podcasts", "hinglish_annot": "latest [podcast_name : kaaran] podcast chalao", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "9614", "intent": "play_radio", "hinglish_annot": "[radio_name : hindi] fm tune karo", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "9500", "intent": "play_radio", "hinglish_annot": "[app_name : radio mirchi] pe rj naved ka show dhundo", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "9375", "intent": "play_radio", "hinglish_annot": "[radio_name : 97.1] chalu karo", "drafted_by": "claude", "checked": true, "edited": false}
+{"id": "9310", "intent": "play_radio", "hinglish_annot": "[media_type : dhun] laga do", "drafted_by": "claude", "checked": true, "edited": false}
+{"id": "9615", "intent": "play_radio", "hinglish_annot": "[radio_name : all india radio] chalao", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "9299", "intent": "play_radio", "hinglish_annot": "kya tum [radio_name : all india radio] start kar sakte ho", "drafted_by": "claude", "checked": true, "edited": false}
+{"id": "9228", "intent": "play_radio", "hinglish_annot": "[radio_name : acche jokes] wala radio channel lagao", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "14144", "intent": "qa_currency", "hinglish_annot": "[currency_name : euro] to [currency_name : usd]", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "13647", "intent": "qa_currency", "hinglish_annot": "[currency_name : yen us dollar] exchange rate kya hai", "drafted_by": "claude", "checked": true, "edited": false}
+{"id": "13804", "intent": "qa_currency", "hinglish_annot": "siri ek [currency_name : american dollar] [currency_name : indian rupee] me kitna hai", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "13720", "intent": "qa_currency", "hinglish_annot": "[currency_name : inr] se [currency_name : cad] ka exchange rate kya hai", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "13859", "intent": "qa_currency", "hinglish_annot": "[currency_name : rupaye] ke muqable [currency_name : us dollar] kitna hai", "drafted_by": "claude", "checked": true, "edited": false}
+{"id": "15097", "intent": "qa_currency", "hinglish_annot": "[business_name : samsung] ka exchange rate kya hai", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "14087", "intent": "qa_currency", "hinglish_annot": "[currency_name : indian rupee] ka exchange rate kya hai", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "13139", "intent": "qa_definition", "hinglish_annot": "[definition_word : toofan] kya hai", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "13812", "intent": "qa_definition", "hinglish_annot": "mujhe [definition_word : paneer] ke baare me batao", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "13643", "intent": "qa_definition", "hinglish_annot": "tum [definition_word : shabdik] ko kaise define karoge", "drafted_by": "claude", "checked": true, "edited": false}
+{"id": "14458", "intent": "qa_definition", "hinglish_annot": "[definition_word : volkswagen golf car] kaisi dikhti hai", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "13387", "intent": "qa_definition", "hinglish_annot": "[definition_word : pda] ki definition kya hai", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "14593", "intent": "qa_definition", "hinglish_annot": "mujhe [definition_word : laptop circuit] ka description do", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "13563", "intent": "qa_definition", "hinglish_annot": "[definition_word : aalu] ka matlab kya hai", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "13496", "intent": "qa_factoid", "hinglish_annot": "kya [person : salim khan] ikloti aulaad hai", "drafted_by": "claude", "checked": true, "edited": false}
+{"id": "14125", "intent": "qa_factoid", "hinglish_annot": "[artist_name : alka yagnik] ka bio", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "14397", "intent": "qa_factoid", "hinglish_annot": "[person : sonu nigam] ka janam kab hua tha", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "13846", "intent": "qa_factoid", "hinglish_annot": "kya [person : katrina kaif] ne kabhi oscar jeeta hai", "drafted_by": "claude", "checked": true, "edited": false}
+{"id": "14320", "intent": "qa_factoid", "hinglish_annot": "[person : modi] ki wife kaun hai", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "14866", "intent": "qa_factoid", "hinglish_annot": "[place_name : duniya] me kitni nadiya hai", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "13519", "intent": "qa_factoid", "hinglish_annot": "[artist_name : beatles] me kaun kaun tha", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "13354", "intent": "qa_maths", "hinglish_annot": "two plus two ka answer kya hai", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "14218", "intent": "qa_maths", "hinglish_annot": "ek foot me kitne inch hote hai", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "13462", "intent": "qa_maths", "hinglish_annot": "maths ka sawal solve karo", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "14850", "intent": "qa_maths", "hinglish_annot": "12 ko 4 se divide karo to kitna aayega", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "12978", "intent": "qa_maths", "hinglish_annot": "browsing center", "drafted_by": "claude", "checked": true, "edited": false}
+{"id": "14849", "intent": "qa_maths", "hinglish_annot": "do guna teen ka answer kya hai", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "13033", "intent": "qa_maths", "hinglish_annot": "teen guna saat kya hai", "drafted_by": "claude", "checked": true, "edited": false}
+{"id": "14088", "intent": "qa_stock", "hinglish_annot": "[business_name : reliance] ke share ki kya price hai", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "4942", "intent": "qa_stock", "hinglish_annot": "mujhe [date : aaj] ka [news_topic : share market] update bhejo", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "14069", "intent": "qa_stock", "hinglish_annot": "mujhe [business_name : reliance] ka stock price chahiye", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "15043", "intent": "qa_stock", "hinglish_annot": "[business_name : reliance] ka kya bhaav hai", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "14920", "intent": "qa_stock", "hinglish_annot": "[business_name : big bazaar] ka stock price kya hai", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "4675", "intent": "qa_stock", "hinglish_annot": "[business_name : google] ka current [news_topic : share price] kya hai", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "4728", "intent": "qa_stock", "hinglish_annot": "[news_topic : share market] ki saari news ke notifications on karo", "drafted_by": "claude", "checked": true, "edited": false}
+{"id": "6571", "intent": "recommendation_events", "hinglish_annot": "[place_name : delhi] me kya ho raha hai", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "8786", "intent": "recommendation_events", "hinglish_annot": "meri location pe [event_name : holidays] dhund raha hu", "drafted_by": "claude", "checked": true, "edited": false}
+{"id": "11743", "intent": "recommendation_events", "hinglish_annot": "[place_name : new delhi] me [date : agle hafte] kaun se [event_name : book fair] ho rahe hai", "drafted_by": "claude", "checked": true, "edited": false}
+{"id": "11906", "intent": "recommendation_events", "hinglish_annot": "mujhe [date : is weekend] area ki activities ke baare me batao", "drafted_by": "claude", "checked": true, "edited": false}
+{"id": "11729", "intent": "recommendation_events", "hinglish_annot": "[place_name : qutub national park] ghoomte waqt ek list bana do", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "11611", "intent": "recommendation_events", "hinglish_annot": "aas paas kaun se [event_name : music concerts] [time : fix] hone wale hai", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "12055", "intent": "recommendation_events", "hinglish_annot": "[date : aaj] ke local events", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "12107", "intent": "recommendation_locations", "hinglish_annot": "mujhe aisi jagah chahiye jo [place_name : delhi] me [food_type : pizza] deliver kare", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "11716", "intent": "recommendation_locations", "hinglish_annot": "sabse paas [business_type : kirana]", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "11795", "intent": "recommendation_locations", "hinglish_annot": "[place_name : odisha] me sabse sasta netbook kaun bechta hai", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "14421", "intent": "recommendation_locations", "hinglish_annot": "sabse paas ka [food_type : indian] [business_type : restaurant] kaha hai", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "11708", "intent": "recommendation_locations", "hinglish_annot": "[place_name : kerala] me koi acchi [business_type : bike shops] hai kya", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "11675", "intent": "recommendation_locations", "hinglish_annot": "sabse nazdeek [business_type : restaurant] kaha hai", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "11666", "intent": "recommendation_locations", "hinglish_annot": "main kuch [business_type : dress shops] dhund raha hu kya tum [place_name : ek mile ke andar] kapdo ki dukaan dhund sakte ho", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "11615", "intent": "recommendation_movies", "hinglish_annot": "[place_name : regal cinema] me kaun si movies lagi hai", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "11740", "intent": "recommendation_movies", "hinglish_annot": "mere paas ke [business_type : cinema halls]", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "11693", "intent": "recommendation_movies", "hinglish_annot": "[date : aaj] kaun si nayi movies available hai", "drafted_by": "claude", "checked": true, "edited": false}
+{"id": "11745", "intent": "recommendation_movies", "hinglish_annot": "sabse paas ka theatre kaun sa hai jaha [movie_name : ajay devgn] ki nayi movie lagi hai", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "11849", "intent": "recommendation_movies", "hinglish_annot": "mere aas paas ke [place_name : cinemas] me kaun si movies chal rahi hai", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "11785", "intent": "recommendation_movies", "hinglish_annot": "[movie_name : lagaan]", "drafted_by": "claude", "checked": true, "edited": false}
+{"id": "15017", "intent": "recommendation_movies", "hinglish_annot": "kya tum bata sakte ho [timeofday : aaj raat] cinema me kaun si movies chal rahi hai", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "15559", "intent": "social_post", "hinglish_annot": "[media_type : tumblr] pe post karo mujhe maza aa raha hai", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "15514", "intent": "social_post", "hinglish_annot": "[business_name : samsung] ko complaint [media_type : tweet] karo", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "15221", "intent": "social_post", "hinglish_annot": "[media_type : youtube] pe ek video daalo", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "15349", "intent": "social_post", "hinglish_annot": "main [business_name : tesco] se khush nahi hu please help karo", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "15533", "intent": "social_post", "hinglish_annot": "[business_name : meijer] ko ek [media_type : tweet] bhejo ki unki customer service sabse kharab hai", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "15427", "intent": "social_post", "hinglish_annot": "alexa mere [device_type : phone] se [media_type : facebook] pe photo post karo", "drafted_by": "claude", "checked": true, "edited": true}
+{"id": "15541", "intent": "social_post", "hinglish_annot": "kharab delivery ke liye [business_name : dominos] ko ek [media_type : tweet] bhejo", "drafted_by": "claude", "checked": true, "edited": false}
+{"id": "15258", "intent": "social_query", "hinglish_annot": "[media_type : facebook] ki latest news feed", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "15252", "intent": "social_query", "hinglish_annot": "mujhe wo jagah dikhao jaha mere [relation : rishtedaar] gaye hai unki photos ke hisaab se", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "15540", "intent": "social_query", "hinglish_annot": "kya [person : rahul] ne [media_type : facebook] pe kuch naya post kiya hai", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "15171", "intent": "social_query", "hinglish_annot": "[person : mohan] ke [media_type : facebook] se mujhe [time : weekend] ke updates batao", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "15182", "intent": "social_query", "hinglish_annot": "mere liye [media_type : punjab kesari] ka last tweet padho", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "15207", "intent": "social_query", "hinglish_annot": "mera [media_type : facebook] update [general_frequency : har teen ghante] me milna chahiye", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "15265", "intent": "social_query", "hinglish_annot": "mujhe mere [media_type : twitter] handle ki profile details do total followers ke saath", "drafted_by": "claude", "checked": true, "edited": false}
+{"id": "4867", "intent": "takeaway_order", "hinglish_annot": "[food_type : mushroom pizza] order karne ke liye [business_name : dominos] ko call karo", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "4161", "intent": "takeaway_order", "hinglish_annot": "mujhe [timeofday : aaj raat] [food_type : chinese] food order karna hai jo deliver kare", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "1416", "intent": "takeaway_order", "hinglish_annot": "kuch [order_type : takeaway] khana order karo", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "3134", "intent": "takeaway_order", "hinglish_annot": "mere aas paas kaha kaha se main [order_type : saath le jaane ke liye] khana le sakta hu", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "2478", "intent": "takeaway_order", "hinglish_annot": "order [order_type : take-out]", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "4338", "intent": "takeaway_order", "hinglish_annot": "mujhe [order_type : delivery] dikhao", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "2901", "intent": "takeaway_order", "hinglish_annot": "le jaane ke liye normal [food_type : egg roll] order karo", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "6009", "intent": "takeaway_query", "hinglish_annot": "main [food_type : indian khana] kaha se pick karu", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "966", "intent": "takeaway_query", "hinglish_annot": "kya [business_name : pf changs] [order_type : take-out] order lete hai", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "2851", "intent": "takeaway_query", "hinglish_annot": "kya [business_name : dominos] me [order_type : takeaway] ki facility hai", "drafted_by": "claude", "checked": true, "edited": false}
+{"id": "58", "intent": "takeaway_query", "hinglish_annot": "[place_name : kalika bhojnalaya] me mera [food_type : indian] [order_type : takeaway] dhundo", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "2740", "intent": "takeaway_query", "hinglish_annot": "kya mujhe is [business_type : restaurant] se [order_type : delivery] mil sakti hai", "drafted_by": "claude", "checked": true, "edited": false}
+{"id": "2844", "intent": "takeaway_query", "hinglish_annot": "[business_type : restaurant ki] [order_type : delivery] kaisi chal rahi hai", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "6008", "intent": "takeaway_query", "hinglish_annot": "kya [business_name : domino's] me mera order ready hai", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "12505", "intent": "transport_query", "hinglish_annot": "[place_name : agra] ke liye next shatabdi express [transport_type : train] kab hai", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "12284", "intent": "transport_query", "hinglish_annot": "[place_name : mumbai] ke liye agli [transport_type : train] kab hai", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "12134", "intent": "transport_query", "hinglish_annot": "[place_name : cornwall] ke liye next [transport_type : train] kab hai", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "12827", "intent": "transport_query", "hinglish_annot": "[place_name : delhi] ke liye saari [transport_type : trains] ka time batao", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "12740", "intent": "transport_query", "hinglish_annot": "sabse paas wale [business_name : mcdonalds] ka rasta kya hai", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "12438", "intent": "transport_query", "hinglish_annot": "[place_name : punjab] se [place_name : haryana] jaane ke liye [transport_type : train] ka time kya hai", "drafted_by": "claude", "checked": true, "edited": false}
+{"id": "12267", "intent": "transport_query", "hinglish_annot": "[place_name : punjab] mail [place_name : gwalior] kitne baje pahuchti hai", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "12904", "intent": "transport_taxi", "hinglish_annot": "please next [transport_type : taxi] book karo", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "12181", "intent": "transport_taxi", "hinglish_annot": "mere liye abhi ek [transport_agency : uber] bhejo", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "12554", "intent": "transport_taxi", "hinglish_annot": "mujhe ek [transport_type : cab] bulani hai", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "12711", "intent": "transport_taxi", "hinglish_annot": "[transport_agency : uber] set up karo", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "12715", "intent": "transport_taxi", "hinglish_annot": "mujhe abhi lene ke liye [transport_type : taxi] bulao", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "12919", "intent": "transport_taxi", "hinglish_annot": "[transport_agency : uber] app kholo aur mujhe ek [transport_type : car] dilwao plz", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "12888", "intent": "transport_taxi", "hinglish_annot": "[date : friday] ko [time : subah saade 5 baje] [place_name : airport] ke liye mere liye [transport_type : taxi] book karo", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "12764", "intent": "transport_ticket", "hinglish_annot": "ek [transport_type : train] ticket book karo", "drafted_by": "claude", "checked": true, "edited": false}
+{"id": "12680", "intent": "transport_ticket", "hinglish_annot": "[place_name : mumbai] ki [transport_type : train] ke liye mera ek ticket le lo", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "12149", "intent": "transport_ticket", "hinglish_annot": "[place_name : new delhi] ke liye [transport_name : rajdhani express] me [date : is friday] [time : shaam 5 baje] ka ek ticket book karo", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "12307", "intent": "transport_ticket", "hinglish_annot": "[place_name : jaipur] ke liye [date : tuesday ki] [transport_type : train] ke do tickets dhundo", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "12706", "intent": "transport_ticket", "hinglish_annot": "is time ke liye [transport_type : train] ka ticket book karo", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "12593", "intent": "transport_ticket", "hinglish_annot": "olly please mere liye [place_name : lucknow] ka ek [transport_type : train] ticket le lo", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "12470", "intent": "transport_ticket", "hinglish_annot": "[timeofday : subah] jaane ke liye ticket book karo", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "12441", "intent": "transport_traffic", "hinglish_annot": "[place_name : ghar] se office tak traffic kaisa hai", "drafted_by": "claude", "checked": true, "edited": false}
+{"id": "12810", "intent": "transport_traffic", "hinglish_annot": "[place_name : ohio] me abhi traffic kaisa hai", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "12177", "intent": "transport_traffic", "hinglish_annot": "[place_name : dwarka] me zyada traffic hai kya", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "12783", "intent": "transport_traffic", "hinglish_annot": "aaj [timeofday : subah] traffic kaisa hai", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "12692", "intent": "transport_traffic", "hinglish_annot": "[place_name : ghantaghar] me aksar kitna traffic rehta hai", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "12178", "intent": "transport_traffic", "hinglish_annot": "abhi [place_name : mira road] pe kitna traffic hai", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "12885", "intent": "transport_traffic", "hinglish_annot": "[date : aaj] kis route pe traffic kam hai", "drafted_by": "claude", "checked": true, "edited": false}
+{"id": "3589", "intent": "weather_query", "hinglish_annot": "[date : is hafte] mausam kaisa hai", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "5322", "intent": "weather_query", "hinglish_annot": "[place_name : bhopal] me [date : aaj] mausam kaisa hai", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "2654", "intent": "weather_query", "hinglish_annot": "kya [date : agle hafte] [weather_descriptor : barf] padegi", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "5462", "intent": "weather_query", "hinglish_annot": "kya mujhe [date : aaj] [weather_descriptor : jacket] chahiye", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "490", "intent": "weather_query", "hinglish_annot": "kya bahar [weather_descriptor : garmi] hai", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "4681", "intent": "weather_query", "hinglish_annot": "kya mera golf game [weather_descriptor : baarish] se dhul jayega", "drafted_by": "claude", "checked": false, "edited": false}
+{"id": "4292", "intent": "weather_query", "hinglish_annot": "kya [date : aaj] main shopping karte waqt [weather_descriptor : shorts] pehen sakta hu", "drafted_by": "claude", "checked": false, "edited": false}

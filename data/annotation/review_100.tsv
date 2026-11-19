@@ -49,14 +49,14 @@ n	id	english (the meaning)	hinglish (drafted)	your_version (leave empty if fine)
 48	6135	give me information on the song that's playing	jo gaana chal raha hai uske baare me batao	
 49	9030	remove from calendar my [event_name : medical appointment] for [date : today]	calendar se [date : aaj] ka mera [event_name : medical appointment] hata do	
 50	13496	is [person : tom cruise] an only child	kya [person : salim khan] ikloti aulaad hai	
-51	15427	post pic on my [device_type : phone] on [media_type : facebook] alexa	[media_type : facebook] alexa mere [device_type : phone] ki photo post karo	
-52	8165	[time : one thousand two hundred and thirty p. m.] already you will have a [event_name : meeting] in [time : ten mins]	dopahar ke [time : 1:30] ho gaye hain aapki ek [event_name : meeting] hai [time : 10 min] me	
+51	15427	post pic on my [device_type : phone] on [media_type : facebook] alexa	[media_type : facebook] alexa mere [device_type : phone] ki photo post karo	alexa mere [device_type : phone] se [media_type : facebook] pe photo post karo
+52	8165	[time : one thousand two hundred and thirty p. m.] already you will have a [event_name : meeting] in [time : ten mins]	dopahar ke [time : 1:30] ho gaye hain aapki ek [event_name : meeting] hai [time : 10 min] me	dopahar ke [time : 12:30] ho gaye hain aapki [time : 10 min] me ek [event_name : meeting] hai
 53	13033	what is three times seven	teen guna saat kya hai	
 54	2309	it is [time : seven am] in [time_zone : pacific] standard time	[time_zone : pacific] standard time me [time : subah 7 baje] hai	
 55	5653	toggle [device_type : wemo plug socket] on	[device_type : wemo plug socket] ko on kar do	
 56	3103	don't play this song again	ye gaana dobara mat bajana	
 57	321	disable my [device_type : okug]	mera [device_type : plug] disable kar do	
-58	16846	please add an email for [person : john doe] to my contacts [email_address : johndoe at yahoo dot com]	please [email_address : johndoe at yahoo dot com] pe mere contacts me [person : jagdish mishra] ke liye email add kar do	
+58	16846	please add an email for [person : john doe] to my contacts [email_address : johndoe at yahoo dot com]	please [email_address : johndoe at yahoo dot com] pe mere contacts me [person : jagdish mishra] ke liye email add kar do	please mere contacts me [person : jagdish mishra] ka email [email_address : jagdish at yahoo dot com] add kar do
 59	4638	change volume settings in the negative alexa	alexa volume settings negative me kar do	
 60	15541	send a [media_type : tweet] to [business_name : dominoes] about bad delivery	kharab delivery ke liye [business_name : dominos] ko ek [media_type : tweet] bhejo	
 61	16874	how many [personal_info : phone numbers] do i have for [person : brenden]	mere paas [person : ram] ke kitne [personal_info : phone numbers] hai	
@@ -93,7 +93,7 @@ n	id	english (the meaning)	hinglish (drafted)	your_version (leave empty if fine)
 92	9310	play [media_type : tunes]	[media_type : dhun] laga do	
 93	3865	what are the scores for the [news_topic : two ucl games] going on right now	abhi chal rahe [news_topic : ipl] match ka score kya hai	
 94	13859	how much is [currency_name : us dollar] against [currency_name : rupee]	[currency_name : rupaye] ke muqable [currency_name : us dollar] kitna hai	
-95	16263	did i receive any new email from [person : robert]	kya mujhe robert ki taraf se koi naya email [person : mila] hai	
+95	16263	did i receive any new email from [person : robert]	kya mujhe robert ki taraf se koi naya email [person : mila] hai	[person : robert] ki taraf se koi naya email mila hai kya
 96	9734	start play [audiobook_name : johns] [media_type : audiobook]	[audiobook_name : ek thi dayan] [media_type : audio book] chalana shuru karo	
 97	3439	play [playlist_name : romantic playlist]	[playlist_name : bhakti playlist] chalu karo	
 98	232	set an alarm at [time : six] in the [timeofday : morning]	[timeofday : subah] [time : 6] baje ka alarm laga do	

@@ -148,7 +148,10 @@ def run():
         exporter = "new (torch.export)"
     print(f"exported with the {exporter} exporter")
     # 2. int8: weights of the matrix multiplications become 8-bit integers.
-    quantize_dynamic(str(full_path), str(OUT / "model.int8.onnx"), weight_type=QuantType.QInt8)
+    # per_channel: each row of a weight matrix gets its own scale, instead of one scale for the
+    # whole matrix - small extra size, usually much less accuracy lost.
+    quantize_dynamic(str(full_path), str(OUT / "model.int8.onnx"), weight_type=QuantType.QInt8,
+                     per_channel=True)
     tokenizer.save_pretrained(OUT / "tokenizer")
     labels = {"intent_names": metrics["intent_names"], "tag_names": metrics["tag_names"]}
     (OUT / "labels.json").write_text(json.dumps(labels), encoding="utf-8")

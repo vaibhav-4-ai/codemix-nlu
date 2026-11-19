@@ -14,7 +14,14 @@ from pathlib import Path
 from cmx.charts import COLOURS, GRID, INK, MUTED, SURFACE, new_chart, save_chart
 from cmx.data import load
 from cmx.examples import make_example, romanized_copy, test_sets
-from cmx.features import BANDS, FEATURE_NAMES, band, build_word_lists, sentence_features
+from cmx.features import (
+    BANDS,
+    FEATURE_NAMES,
+    HINDI_SHORT_WORDS,
+    band,
+    build_word_lists,
+    sentence_features,
+)
 from cmx.quick import notice
 
 OUT = Path("artifacts") / "eda"
@@ -339,6 +346,9 @@ def run():
     with open(OUT / "features.csv", "w", encoding="utf-8") as f:
         f.writelines(csv_lines)
     (OUT / "eda.json").write_text(json.dumps(summary, indent=2, ensure_ascii=False), encoding="utf-8")
+    # The word lists, for other projects that want the same CMI meter (deferral-curve uses them).
+    wordlists = {"english": lists.english, "hindi": lists.hindi, "hindi_short_words": HINDI_SHORT_WORDS}
+    (OUT / "wordlists.json").write_text(json.dumps(wordlists, ensure_ascii=False), encoding="utf-8")
     report = "\n".join(lines)
     (OUT / "report.md").write_text(report, encoding="utf-8")
     print(report)
