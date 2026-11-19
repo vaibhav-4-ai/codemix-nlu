@@ -1,6 +1,13 @@
 import math
 
-from cmx.calibrate import confidence, ece, fit_temperature
+from cmx.calibrate import (
+    answered_share,
+    confidence,
+    ece,
+    fit_temperature,
+    pick_cutoff,
+    reliability,
+)
 
 
 def test_ece_perfect_and_overconfident():
@@ -22,3 +29,19 @@ def test_fit_temperature_softens_an_overconfident_model():
     for i in range(10):
         cases.append({"logs": [math.log(0.99), math.log(0.01)], "answer": 0 if i < 6 else 1, "right": i < 6})
     assert fit_temperature(cases) > 1.0
+
+
+def test_cutoff_keeps_answered_sentences_right():
+    # low-confidence answers are the wrong ones -> the cut-off should drop them
+    confidences = [0.95, 0.9, 0.85, 0.8, 0.3, 0.2]
+    correct = [True, True, True, True, False, False]
+    cutoff = pick_cutoff(confidences, correct)
+    share, accuracy = answered_share(confidences, correct, cutoff)
+    assert 0.2 < cutoff <= 0.8
+    assert accuracy == 1.0
+    assert abs(share - 4 / 6) < 1e-9
+
+
+def test_reliability_points():
+    points = reliability([0.95, 0.95, 0.15], [True, False, False])
+    assert points == [(0.15, 0.0, 1), (0.95, 0.5, 2)]

@@ -1,4 +1,4 @@
-from cmx.evaluate import interval, slot_spans, summarize
+from cmx.evaluate import interval, macro_f1, slot_spans, summarize
 
 
 def test_slot_spans_basic():
@@ -28,3 +28,13 @@ def test_interval_middle_95():
     low, high = interval(list(range(1000)))
     assert low == 25
     assert high == 974
+
+
+def test_macro_f1_weights_every_intent_equally():
+    # alarm: 3 seeds right; music: 3 seeds wrong (guessed alarm)
+    entries = [
+        {"intent": "alarm", "guesses": ["alarm", "alarm", "alarm"]},
+        {"intent": "music", "guesses": ["alarm", "alarm", "alarm"]},
+    ]
+    # alarm F1 = 2*3 / (3 + 6) = 0.667, music F1 = 0 -> average 0.333
+    assert abs(macro_f1(entries) - (2 * 3 / 9) / 2) < 1e-9

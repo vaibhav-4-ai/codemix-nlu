@@ -1,0 +1,10 @@
+{
+  "learning_rate": 4.9534384520184184e-05,
+  "epochs": 6,
+  "batch_size": 32,
+  "grad_accum": 1,
+  "slot_weight": 1.492370749264888,
+  "rare_slot_weighting": false,
+  "warmup": 0.14679989508808658,
+  "dropout": 0.1
+}

@@ -9,48 +9,16 @@
 """
 
 import json
-import os
 from pathlib import Path
 
-import matplotlib.pyplot as plt
-
+from cmx.charts import COLOURS, GRID, INK, MUTED, SURFACE, new_chart, save_chart
 from cmx.data import load
 from cmx.examples import make_example, romanized_copy, test_sets
 from cmx.features import BANDS, FEATURE_NAMES, band, build_word_lists, sentence_features
+from cmx.quick import notice
 
 OUT = Path("artifacts") / "eda"
 FEATURES = FEATURE_NAMES
-
-# Colours from a colour-blind-checked palette; used in this fixed order, never cycled.
-SURFACE = "#fcfcfb"
-INK = "#0b0b0b"
-MUTED = "#52514e"
-GRID = "#e4e3df"
-COLOURS = ["#2a78d6", "#eb6834", "#1baf7a", "#eda100"]
-
-
-def notice(title, message):
-    if os.environ.get("GITHUB_ACTIONS"):
-        print(f"::notice title={title}::{message}")
-
-
-def new_chart(width, height, title):
-    fig, ax = plt.subplots(figsize=(width, height), facecolor=SURFACE)
-    ax.set_facecolor(SURFACE)
-    ax.set_title(title, loc="left", color=INK, fontsize=12)
-    for side in ["top", "right", "left"]:
-        ax.spines[side].set_visible(False)
-    ax.spines["bottom"].set_color(MUTED)
-    ax.tick_params(colors=MUTED, labelsize=9)
-    ax.grid(axis="y", color=GRID, linewidth=0.8)
-    ax.set_axisbelow(True)
-    return fig, ax
-
-
-def save_chart(fig, name):
-    fig.tight_layout()
-    fig.savefig(OUT / name, dpi=150, facecolor=SURFACE)
-    plt.close(fig)
 
 
 def mean(values):
@@ -98,7 +66,7 @@ def class_balance(train, lines):
     ax.grid(axis="x", color=GRID, linewidth=0.8)
     ax.tick_params(axis="y", labelsize=6.5)
     ax.set_xlabel("sentences", color=MUTED)
-    save_chart(fig, "intents.png")
+    save_chart(fig, OUT / "intents.png")
     return {"intents": len(counts), "most": biggest, "fewest": smallest}
 
 
@@ -134,7 +102,7 @@ def slot_tail(train_examples, lines):
     ax.axhline(50, color=MUTED, linewidth=1, linestyle="--")
     ax.text(len(names) - 1, 55, "50 examples", color=MUTED, fontsize=8, ha="right")
     ax.set_ylabel("times in training", color=MUTED)
-    save_chart(fig, "slots.png")
+    save_chart(fig, OUT / "slots.png")
     return {"slot_types": len(counts), "rare_types": len(rare)}
 
 
@@ -164,7 +132,7 @@ def lengths(sets, english_test, lines):
     ax.set_xlabel("words", color=MUTED)
     ax.set_ylabel("% of sentences", color=MUTED)
     ax.legend(frameon=False, fontsize=9, labelcolor=INK)
-    save_chart(fig, "lengths.png")
+    save_chart(fig, OUT / "lengths.png")
     return result
 
 
@@ -239,9 +207,7 @@ def code_mixing(sets, english_test, romanized_test, lists, lines, rows):
 
     fig, ax = new_chart(7, 3.6, "How mixed is each Hinglish test sentence? (CMI)")
     values = cmi_values["Hinglish paired test"]
-    edges = []
-    for i in range(0, 52, 4):
-        edges.append(i)
+    edges = list(range(0, 52, 4))  # bars 4 CMI points wide: 0-4, 4-8, ...
     ax.hist(values, bins=edges, color=COLOURS[0], edgecolor=SURFACE, linewidth=2)
     for band_row in BANDS[1:]:
         ax.axvline(band_row[1], color=MUTED, linewidth=1, linestyle="--")
@@ -253,7 +219,7 @@ def code_mixing(sets, english_test, romanized_test, lists, lines, rows):
         ax.text(middle, tops * 0.93, name, color=MUTED, fontsize=9, ha="center")
     ax.set_xlabel("CMI (0 = all Hindi or all English, 50 = half and half)", color=MUTED)
     ax.set_ylabel("sentences", color=MUTED)
-    save_chart(fig, "cmi.png")
+    save_chart(fig, OUT / "cmi.png")
     return {"means": result, "bands": band_counts}
 
 
@@ -366,10 +332,7 @@ def run():
         "leakage": leakage(hindi, sets, lines),
     }
 
-    header = ["id", "set"]
-    for feature in FEATURES:
-        header.append(feature)
-    header.append("band")
+    header = ["id", "set", *FEATURES, "band"]  # *FEATURES = all 6 feature names, in order
     csv_lines = [",".join(header) + "\n"]
     for row in rows:
         csv_lines.append(",".join(row) + "\n")

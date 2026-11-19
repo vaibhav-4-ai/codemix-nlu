@@ -21,7 +21,7 @@ from pathlib import Path
 
 import lightgbm
 import sklearn_crfsuite
-from scipy.sparse import csr_matrix, hstack
+from sklearn.decomposition import TruncatedSVD
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import accuracy_score, f1_score
@@ -76,39 +76,45 @@ def tfidf_logreg(train, sets):
 # ---------- 2. LightGBM ----------
 
 
-def feature_matrix(vectorizer, texts, examples, lists):
-    """TF-IDF letter pieces + the 6 code-mixing numbers, side by side."""
-    pieces = vectorizer.transform(texts)
-    extra = []
-    for example in examples:
+def feature_matrix(vectorizer, svd, texts, examples, lists):
+    """200 summary numbers of the TF-IDF letter pieces + the 6 code-mixing numbers, side by side.
+
+    Trees split on one column at a time, so 3,000 mostly-empty columns suit them badly.
+    SVD squeezes them into 200 dense columns that each mix many pieces.
+    """
+    summary = svd.transform(vectorizer.transform(texts))
+    rows = []
+    for k, example in enumerate(examples):
         values = sentence_features(example["words"], lists)
-        row = []
+        row = list(summary[k])
         for name in FEATURE_NAMES:
             row.append(values[name])
-        extra.append(row)
-    return hstack([pieces, csr_matrix(extra)]).tocsr()
+        rows.append(row)
+    return rows
 
 
 def lightgbm_intent(train, sets, lists):
     texts, intents = texts_and_intents(train)
     vectorizer = TfidfVectorizer(
-        analyzer="char_wb", ngram_range=(2, 4), min_df=2, sublinear_tf=True, max_features=3000
+        analyzer="char_wb", ngram_range=(2, 4), min_df=2, sublinear_tf=True, max_features=20000
     )
-    vectorizer.fit(texts)
+    svd = TruncatedSVD(n_components=200, random_state=SEED)
+    svd.fit(vectorizer.fit_transform(texts))
     model = lightgbm.LGBMClassifier(
-        n_estimators=150,
-        learning_rate=0.1,
-        num_leaves=31,
-        min_child_samples=5,
+        n_estimators=200,
+        learning_rate=0.05,
+        num_leaves=15,
+        min_child_samples=10,
         colsample_bytree=0.5,
         random_state=SEED,
         verbose=-1,
     )
-    model.fit(feature_matrix(vectorizer, texts, train, lists), intents)
-    result = {}
+    train_rows = feature_matrix(vectorizer, svd, texts, train, lists)
+    model.fit(train_rows, intents)
+    result = {"train": intent_scores(intents, list(model.predict(train_rows)))}
     for name in SCORED:
         test_texts, truth = texts_and_intents(sets[name])
-        guesses = model.predict(feature_matrix(vectorizer, test_texts, sets[name], lists))
+        guesses = model.predict(feature_matrix(vectorizer, svd, test_texts, sets[name], lists))
         result[name] = intent_scores(truth, list(guesses))
     return result
 
@@ -289,7 +295,7 @@ def run():
     lines.append("| model | recipe | Hindi test (2,974) | Devanagari paired (560) | Hinglish paired (560) |")
     lines.append("|---|---|---|---|---|")
     for key, scores in results.items():
-        if key.startswith("tfidf") or key.startswith("lightgbm"):
+        if key.startswith(("tfidf", "lightgbm")):  # either start counts
             model_name, recipe = key.split(" ")
             cells = []
             for name in SCORED:
@@ -331,6 +337,8 @@ def run():
         scores = results[key]
         notice(f"Baseline {key}", f"intent acc: Devanagari paired {pct(scores['devanagari_paired_test']['accuracy'])}"
                                   f" | Hinglish paired {pct(scores['hinglish_paired_test']['accuracy'])}")
+    notice("LightGBM on its own training data", f"intent acc {pct(results['lightgbm fixed']['train']['accuracy'])}"
+                                                " (near 100 = it learned; near 2 = it guesses one intent)")
     for key in ["crf plain", "crf fixed"]:
         scores = results[key]
         notice(f"Baseline {key}", f"slot F1: Devanagari paired {pct(scores['devanagari_paired_test']['slot_f1'])}"
