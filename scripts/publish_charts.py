@@ -15,7 +15,7 @@ if not os.environ.get("HF_TOKEN"):
 else:
     api = HfApi()
     for stage in sorted(Path("artifacts").iterdir()):
-        if stage.is_dir() and list(stage.glob("*.png")):
+        if stage.is_dir() and ((stage / "report.md").exists() or list(stage.glob("*.png"))):
             api.upload_folder(
                 folder_path=str(stage),
                 path_in_repo=f"charts/{stage.name}",
