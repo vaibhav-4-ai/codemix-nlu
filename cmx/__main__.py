@@ -58,6 +58,14 @@ def main() -> None:
         from cmx.annotations import build
 
         build()
+    elif args.command == "eda":
+        from cmx.eda import run
+
+        run()
+    elif args.command == "baselines":
+        from cmx.baselines import run
+
+        run()
     elif args.command == "calibrate":
         from cmx.calibrate import run
 

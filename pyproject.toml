@@ -11,7 +11,8 @@ requires-python = ">=3.11"
 dependencies = ["scikit-learn", "indic_transliteration"]
 
 [project.optional-dependencies]
-dev = ["pytest", "ruff"]
+dev = ["pytest", "ruff", "matplotlib"]
+baselines = ["lightgbm", "sklearn-crfsuite"]
 train = ["torch", "transformers", "seqeval", "optuna"]
 
 [tool.setuptools]
