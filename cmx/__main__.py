@@ -66,6 +66,14 @@ def main() -> None:
         from cmx.baselines import run
 
         run()
+    elif args.command == "export":
+        from cmx.export import run
+
+        run()
+    elif args.command == "transfer":
+        from cmx.transfer import run
+
+        run()
     elif args.command == "calibrate":
         from cmx.calibrate import run
 

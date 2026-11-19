@@ -129,7 +129,7 @@ def describe(cases, temperature):
 
 def pick_cutoff(confidences, correct):
     """The lowest confidence cut-off whose answered sentences are at least TARGET right."""
-    for step in range(0, 100):
+    for step in range(100):
         cutoff = step / 100
         answered = 0
         right = 0
