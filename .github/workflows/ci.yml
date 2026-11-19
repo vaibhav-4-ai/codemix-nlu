@@ -48,6 +48,9 @@ jobs:
       - name: Put the charts on Hugging Face (only with the HF_TOKEN secret, only on main)
         if: github.ref == 'refs/heads/main' && env.HF_TOKEN != ''
         run: python scripts/publish_charts.py
+      - name: Build the paired Hinglish dataset (uploaded only with the HF_TOKEN secret, only on main)
+        run: |
+          if [ "$GITHUB_REF" = "refs/heads/main" ]; then python scripts/publish_dataset.py; else HF_TOKEN= python scripts/publish_dataset.py; fi
   export-and-transfer:
     # Shrink the main model to int8 for CPU serving, then test it on Google's Hinglish-TOP.
     runs-on: ubuntu-24.04

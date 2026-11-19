@@ -148,10 +148,9 @@ def run():
         exporter = "new (torch.export)"
     print(f"exported with the {exporter} exporter")
     # 2. int8: weights of the matrix multiplications become 8-bit integers.
-    # per_channel: each row of a weight matrix gets its own scale, instead of one scale for the
-    # whole matrix - small extra size, usually much less accuracy lost.
-    quantize_dynamic(str(full_path), str(OUT / "model.int8.onnx"), weight_type=QuantType.QInt8,
-                     per_channel=True)
+    # One scale per weight matrix. (per_channel=True was tried on 2026-11-20: accuracy fell to 1.6%,
+    # i.e. the quantized graph was broken, so it is not used.)
+    quantize_dynamic(str(full_path), str(OUT / "model.int8.onnx"), weight_type=QuantType.QInt8)
     tokenizer.save_pretrained(OUT / "tokenizer")
     labels = {"intent_names": metrics["intent_names"], "tag_names": metrics["tag_names"]}
     (OUT / "labels.json").write_text(json.dumps(labels), encoding="utf-8")
@@ -206,6 +205,10 @@ def run():
     (OUT / "report.md").write_text(report, encoding="utf-8")
     (OUT / "results.json").write_text(json.dumps(results, indent=2), encoding="utf-8")
     hinglish = results["sets"]["hinglish_paired_test"]
+    # Safety gate: a broken export must never reach the live server (CI uploads only if this passes).
+    if hinglish["int8_intent"] < hinglish["full_intent"] - 0.10:
+        raise SystemExit(f"int8 model lost too much: {100 * hinglish['full_intent']:.1f} -> "
+                         f"{100 * hinglish['int8_intent']:.1f} - not publishing it")
     notice("int8 export", f"{results['size_mb']['pytorch_fp32']} MB -> {results['size_mb']['onnx_int8']} MB; "
                           f"Hinglish intent {100 * hinglish['full_intent']:.1f} -> {100 * hinglish['int8_intent']:.1f};"
                           f" p95 {results['ms_per_sentence']['p95']} ms")
