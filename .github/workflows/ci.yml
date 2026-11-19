@@ -67,6 +67,8 @@ jobs:
       - run: pip install -e ".[dev,train,serve]"
       - name: int8 ONNX export - size, accuracy kept, speed
         run: scripts/show_error.sh python -m cmx export
+      - name: Same answers the way the live server runs it?
+        run: scripts/show_error.sh python scripts/check_serving.py
       - name: Transfer test on Google's Hinglish-TOP (human-written)
         run: scripts/show_error.sh python -m cmx transfer
       - name: Put the int8 model + reports on Hugging Face (only with the HF_TOKEN secret, only on main)

@@ -14,7 +14,7 @@ dependencies = ["scikit-learn", "indic_transliteration"]
 dev = ["pytest", "ruff", "matplotlib"]
 baselines = ["lightgbm", "sklearn-crfsuite"]
 train = ["torch", "transformers", "seqeval", "optuna"]
-serve = ["onnx", "onnxscript", "onnxruntime", "transformers", "huggingface_hub"]
+serve = ["onnx", "onnxscript", "onnxruntime", "tokenizers", "transformers", "huggingface_hub"]
 
 [tool.setuptools]
 packages = ["cmx"]
