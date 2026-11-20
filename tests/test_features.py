@@ -1,4 +1,4 @@
-from cmx.features import WordLists, band, sentence_features, skeleton
+from cmx.features import WordLists, band, code_mixing, sentence_features, skeleton
 
 
 def tiny_lists():
@@ -37,3 +37,9 @@ def test_bands():
     assert band(10) == "light"
     assert band(25) == "medium"
     assert band(50) == "heavy"
+
+
+def test_packaged_word_lists_work_without_massive():
+    values = code_mixing("kal subah 7 baje alarm set kar do")
+    assert values["cmi"] == 28.57
+    assert values["band"] == "medium"

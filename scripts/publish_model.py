@@ -25,4 +25,10 @@ else:
         repo_id=REPO,
         commit_message="CI: Hinglish-TOP transfer report",
     )
-    print("uploaded serving/ and charts/transfer/")
+    api.upload_file(
+        path_or_fileobj="MODEL_CARD.md",
+        path_in_repo="README.md",
+        repo_id=REPO,
+        commit_message="CI: model card",
+    )
+    print("uploaded serving/, charts/transfer/ and the model card")

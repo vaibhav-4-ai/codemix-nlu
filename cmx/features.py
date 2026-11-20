@@ -18,6 +18,9 @@ The word lists come from the training data only (never from a test sentence):
     Hindi    every Hindi training word, turned into English letters ("kamare", "kii", ...)
 """
 
+import json
+from pathlib import Path
+
 from cmx.data import load
 from cmx.quick import romanize
 
@@ -173,6 +176,28 @@ def sentence_features(words, lists):
         "variant": round(variant / latin, 3) if latin else 0.0,
         "oov": round(unknown / latin, 3) if latin else 0.0,
     }
+
+
+PACKAGED_LISTS = Path(__file__).parent / "wordlists.json"  # shipped with `pip install codemix-nlu`
+
+
+def packaged_word_lists():
+    """The word lists that come with the package (built from MASSIVE's training data by `cmx eda`)."""
+    data = json.loads(PACKAGED_LISTS.read_text(encoding="utf-8"))
+    return WordLists(data["english"], data["hindi"])
+
+
+def code_mixing(text, lists=None):
+    """All the numbers for one sentence. Pass `lists` when scoring many sentences, to load them once.
+
+    >>> code_mixing("kal subah 7 baje alarm set kar do")["cmi"]
+    28.57
+    """
+    if lists is None:
+        lists = packaged_word_lists()
+    values = sentence_features(text.split(), lists)
+    values["band"] = band(values["cmi"])
+    return values
 
 
 def band(cmi):

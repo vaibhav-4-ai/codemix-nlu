@@ -1,0 +1,22 @@
+name: Publish to PyPI
+# Runs when a version tag like v1.0.0 is pushed. No password is stored anywhere: PyPI trusts this exact
+# workflow in this exact repository ("trusted publishing"), set up once on pypi.org.
+on:
+  push:
+    tags: ["v*"]
+permissions:
+  contents: read
+jobs:
+  publish:
+    runs-on: ubuntu-24.04
+    environment: pypi
+    permissions:
+      id-token: write  # lets GitHub prove to PyPI which repository and workflow this is
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.11"
+      - run: pip install build
+      - run: python -m build
+      - uses: pypa/gh-action-pypi-publish@release/v1

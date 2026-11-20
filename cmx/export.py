@@ -150,7 +150,10 @@ def run():
     # 2. int8: weights of the matrix multiplications become 8-bit integers.
     # One scale per weight matrix. (per_channel=True was tried on 2026-11-20: accuracy fell to 1.6%,
     # i.e. the quantized graph was broken, so it is not used.)
-    quantize_dynamic(str(full_path), str(OUT / "model.int8.onnx"), weight_type=QuantType.QInt8)
+    # QUInt8 (0..255) weights, not QInt8 (-128..127): on older x86 CPUs without the VNNI instructions,
+    # ONNX Runtime's signed-weight path can overflow inside the multiply and give garbage. The live
+    # server answered "calendar_query" to everything with QInt8 while GitHub's newer CPUs were fine.
+    quantize_dynamic(str(full_path), str(OUT / "model.int8.onnx"), weight_type=QuantType.QUInt8)
     tokenizer.save_pretrained(OUT / "tokenizer")
     labels = {"intent_names": metrics["intent_names"], "tag_names": metrics["tag_names"]}
     (OUT / "labels.json").write_text(json.dumps(labels), encoding="utf-8")
