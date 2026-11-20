@@ -60,4 +60,8 @@ has the results.
 
 Done: data pipeline, paired Hinglish set (published on Hugging Face with a data card), data analysis, simple
 models with nested CV, tuning, 6 models × 3 seeds, the degradation curve, calibration per band, error analysis,
-int8 export, Hinglish-TOP transfer, live demo, one-command reproduce.
+int8 export, Hinglish-TOP transfer (with 95% ranges and macro-F1), live demo, one-command reproduce, the pip
+package with a benchmark tool, slot PR-AUC and robustness slices, and a postmortem of the live incident.
+
+Not done, on purpose or for lack of people: human annotation with an agreement score, a slice of real users'
+requests, and the reverse transfer direction. They are listed in the README's limitations.

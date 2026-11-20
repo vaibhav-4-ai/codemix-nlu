@@ -22,6 +22,7 @@ import time
 from pathlib import Path
 
 import torch
+import transformers
 from seqeval.metrics import f1_score
 from torch import nn
 from transformers import AutoModel, AutoTokenizer, get_linear_schedule_with_warmup
@@ -355,6 +356,11 @@ def train(recipe, seed, backbone, params=None, out=None, trial=None, save_model=
         )
     metrics["intent_names"] = intent_names
     metrics["tag_names"] = tag_names
+    # What ran this: so the numbers can be traced to exact software and hardware later.
+    metrics["software"] = {"torch": torch.__version__, "transformers": transformers.__version__}
+    if on_gpu:
+        metrics["gpu"] = torch.cuda.get_device_name(0)
+        metrics["gpu_peak_memory_gb"] = round(torch.cuda.max_memory_allocated() / 1e9, 2)
     (out / "metrics.json").write_text(json.dumps(metrics, indent=2), encoding="utf-8")
 
     if save_model is None:

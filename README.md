@@ -1,6 +1,10 @@
 # codemix-nlu
 
-**How much worse does a Hindi voice assistant understand you when you type in Hinglish, and what fixes it?**
+**A Hindi voice-assistant model misroutes 52% of requests typed in Hinglish. Retraining it on the same data in
+two more forms cuts that to 14%: about 3 in 4 misrouted requests fixed, with no new labelled data.**
+
+**[Try it live](https://deferral-curve.onrender.com/codemix)** · `pip install codemix-nlu` ([use it](#use-it)) ·
+[limitations](#limitations)
 
 Most Indians type Hindi in English letters, mixed with English words: *"kal subah 7 baje ka alarm laga do"*.
 Hindi NLU models are usually trained on Devanagari. This project measures what that mismatch costs on a real
@@ -77,6 +81,34 @@ auto-romanized Hindi 2.0 (the last two are a check on the tagger).
 
 - **Backbone ablation:** the fixed recipe on [`google/muril-base-cased`](https://huggingface.co/google/muril-base-cased).
 - **3 seeds** (13, 42, 1337) for each of the 6 models: 18 runs.
+- **Rare slot types:** 19 of 55 slot types appear fewer than 50 times in training. The loop can weight each tag's
+  loss by 1/√(its count). Optuna had it on in 8 of its 12 trials; the best of those scored 0.720 on dev against
+  0.776 for the best trial, which had it **off**. Other settings changed at the same time, so this is a hint, not
+  a clean test. How rare types fare is measured in [Robustness](#9-robustness-spelling-and-rare-slots).
+- **Loss weighting:** loss = intent loss + 1.49 × slot loss. Optuna chose the 1.49 on dev (searched 0.5 to 2),
+  not by hand.
+
+### GPU memory, worked out (Kaggle T4, 16 GB)
+
+hing-mbert has about **178 M parameters** (the saved fp32 weights are 712 MB at 4 bytes each). Half of them are
+the word-piece table: 119,547 pieces × 768 numbers ≈ 92 M. Training with AdamW needs, per parameter:
+
+| what | bytes per parameter | total |
+|---|---|---|
+| weights (fp32) | 4 | 0.71 GB |
+| gradients (fp32) | 4 | 0.71 GB |
+| AdamW's two running averages (fp32) | 8 | 1.42 GB |
+| **subtotal** | 16 | **2.85 GB** |
+
+Activations, for a batch of 32 sentences of up to 64 word-pieces in fp16 (autocast) through 12 layers, come to
+at most ~0.7 GB (rough rule: sequence × batch × hidden × ~39 bytes per layer). Total **≈ 3.6 GB of 16 GB**, so
+gradient accumulation (in the loop, set to 1) and gradient checkpointing (re-computing activations to save
+memory, ~30% slower) weren't needed. This is an estimate: the 18 runs didn't record peak memory. The loop now
+records it (`gpu_peak_memory_gb` in `metrics.json`) for future runs.
+
+At 8 GPUs, ZeRO stage 1 would split the 1.42 GB of optimizer state across them (≈ 0.18 GB each), stage 2 the
+gradients too, and stage 3 / FSDP the weights as well. I haven't run multi-GPU training; at this model size one
+GPU is enough.
 
 ## Results
 
@@ -185,7 +217,9 @@ Ceiling: the same int8 model on our own Hinglish test, same intents: 85.4.
 `python -m cmx export`: ONNX export, then dynamic int8 quantization with unsigned 8-bit weights:
 **712 MB → 178 MB**. It keeps 93% of intent decisions identical to the full model; Hinglish intent 86.2 → 83.2,
 slot F1 69.6 → 68.2. Signed 8-bit weights gave garbage on the live server's older CPU (no VNNI instructions)
-while working on GitHub's; `scripts/check_serving.py` now runs the model exactly as the server does, in CI. A safety gate stops the upload if int8 loses more than 10 points (added after
+while working on GitHub's ([postmortem](https://github.com/vaibhav-4-ai/deferral-curve/blob/main/POSTMORTEM-01.md));
+`scripts/check_serving.py` now runs the model exactly as the server does, in CI, and a daily job checks the live
+answers. A safety gate stops the upload if int8 loses more than 10 points (added after
 a per-channel export silently broke the model, 1.6% accuracy, once). The served page runs this model next to the TF-IDF plain model inside the
 [deferral-curve](https://github.com/vaibhav-4-ai/deferral-curve) container (512 MB, 0.1 CPU) with onnxruntime +
 tokenizers only (no torch): **[/codemix](https://deferral-curve.onrender.com/codemix)**. Measured live (2026-11-20, 12
@@ -218,17 +252,52 @@ augmentation of Hindi direction words and dates.
 - The served model is one seed (13), int8; the tables use the full-size models.
 - **Change from the original plan:** HingBERT (`l3cube-pune/hing-bert`) has only 70 Devanagari tokens in its
   vocabulary and can't read the Devanagari training data, so hing-mbert is used.
-
+- **Planned but not done:**
+  - Human annotation of the Hinglish with a second annotator and an agreement score (Cohen's κ).
+  - A slice of real users' Hinglish requests from public sources, with a consent note.
+  - The reverse transfer direction (train on Hinglish-TOP, test on this set).
 ## Prior work
 
-- **Hinglish-TOP / CST5** (Agarwal et al., 2022, arXiv 2211.07514): 10k human-written Hinglish requests with
-  semantic parses. Used here as the transfer test.
-- arXiv [2204.12753](https://arxiv.org/abs/2204.12753): *A Comprehensive Understanding of Code-mixed Language
-  Semantics using Hierarchical Transformer*.
-- arXiv [1812.02914](https://arxiv.org/abs/1812.02914): *Intent Detection for code-mix utterances in task oriented
-  dialogue systems*.
-- Krishnan et al., 2021: multilingual code-switching augmentation for zero-shot cross-lingual intent and slot
-  prediction.
+**The closest: Hinglish-TOP / CST5** (Agarwal et al., 2022, [arXiv 2211.07514](https://arxiv.org/abs/2211.07514)).
+About 10k human-written Hinglish requests with intent + slot labels, paired with **English**, on TOP's
+hierarchical parses, in 9 assistant domains. This project pairs Hinglish with **Devanagari Hindi** instead, on
+MASSIVE's flat 60-intent / 55-slot labels, sliced by CMI and with calibration. Hinglish-TOP is used here as the
+transfer test.
+
+Data and benchmarks:
+- **MASSIVE** (FitzGerald et al., 2022, [arXiv 2204.08582](https://arxiv.org/abs/2204.08582)): the source of
+  every label and the Devanagari and English sentences.
+- **GLUECoS** (Khanuja et al., ACL 2020, [arXiv 2004.12376](https://arxiv.org/abs/2004.12376)): the code-switched
+  benchmark (language ID, POS, NER, sentiment, QA, NLI). It has no intent or slot task.
+- **Naamapadam / IndicNER** (Mhaske et al., ACL 2023, [arXiv 2212.10168](https://arxiv.org/abs/2212.10168)):
+  named entities for 11 Indian languages in their **native scripts**, not romanized.
+- **CodeMixBench**: two different papers share the name. One tests LLMs on code-mixed text in 18 languages
+  (Yang & Chai, EMNLP 2025, [arXiv 2507.18791](https://arxiv.org/abs/2507.18791)); the other tests code
+  generation from code-mixed prompts, including Hinglish (Sheokand & Sawant, 2025,
+  [arXiv 2505.05063](https://arxiv.org/abs/2505.05063)).
+- **CALICO** ([arXiv 2412.05388](https://arxiv.org/abs/2412.05388)): uses an LLM to localize intent + slot data
+  (MultiATIS++) into other languages, close in spirit to how the Hinglish here was drafted.
+
+Models:
+- **L3Cube-HingCorpus and HingBERT** (Nayak & Joshi, 2022, [arXiv 2204.08398](https://arxiv.org/abs/2204.08398)):
+  the Hinglish encoders, including the hing-mbert used here.
+- **MuRIL** (Khanuja et al., 2021, [arXiv 2103.10730](https://arxiv.org/abs/2103.10730)): Indian-language BERT that
+  already trains on transliterated text, so the romanization idea is not new in pre-training; here it is
+  measured as fine-tuning data.
+- **RomanSetu** (Husain et al., ACL 2024, [arXiv 2401.14280](https://arxiv.org/abs/2401.14280)): romanized text
+  as a way into LLMs for Indian languages.
+- **Code Mixologist** (Gupta et al., 2026, [arXiv 2602.11181](https://arxiv.org/abs/2602.11181)): a practitioner's
+  guide to building code-mixed LLMs.
+
+Measuring code-mixing: **CMI** (Das & Gambäck, 2014, *Identifying languages at the word level in code-mixed
+Indian social media text*) and the **I-Index** (Guzmán et al., 2017, *Metrics for modeling code-switching
+across corpora*).
+
+Earlier code-mixed intent work: arXiv [2204.12753](https://arxiv.org/abs/2204.12753) (*A Comprehensive
+Understanding of Code-mixed Language Semantics using Hierarchical Transformer*), arXiv
+[1812.02914](https://arxiv.org/abs/1812.02914) (*Intent Detection for code-mix utterances in task oriented
+dialogue systems*), and Krishnan et al., 2021 (multilingual code-switching augmentation for zero-shot
+cross-lingual intent and slot prediction).
 
 As far as I found, none of these measures **the same sentences with identical labels in Devanagari and in
 Hinglish**, sliced by how mixed they are, with calibration.
@@ -236,16 +305,28 @@ Hinglish**, sliced by how mixed they are, with calibration.
 ## Use it
 
 ```bash
-pip install codemix-nlu
+pip install codemix-nlu            # code-mixing numbers + the benchmark (no torch)
+pip install "codemix-nlu[model]"   # + this project's int8 model (onnxruntime, ~180 MB download on first use)
 ```
+
+**How mixed is a sentence?**
 ```python
 from cmx.features import code_mixing
 code_mixing("kal subah 7 baje alarm set kar do")
 # {'cmi': 28.57, 'i_index': 0.333, 'english_share': 0.286, 'script_latin': 1.0, 'variant': 0.143,
 #  'oov': 0.0, 'band': 'medium'}
 ```
-The word lists ship with the package. To run the model itself, use `serving/` on
-[Hugging Face](https://huggingface.co/vaibhav-4-ai/codemix-nlu) (int8 ONNX, see the model card).
+
+**Benchmark your own model** on the 560 paired requests (Devanagari vs Hinglish, same labels):
+```bash
+codemix-nlu benchmark-inputs inputs.jsonl     # the 1,120 sentences to predict: {"id", "form", "words"}
+# ... your model writes predictions.jsonl:     {"id", "form", "intent", "tags" (optional)}
+codemix-nlu benchmark predictions.jsonl       # accuracy, macro-F1, slot F1, the drop with a 95% range, by CMI band
+```
+To see the format, run this project's model through the same steps:
+`codemix-nlu predict-file inputs.jsonl predictions.jsonl`. One sentence: `codemix-nlu predict "kal subah 7 baje
+ka alarm laga do"`. CI runs all of these on every push, the way a stranger would. Changes:
+[CHANGELOG.md](https://github.com/vaibhav-4-ai/codemix-nlu/blob/main/CHANGELOG.md).
 
 ## Reproduce
 
@@ -267,6 +348,16 @@ finishes and skips finished runs if restarted.
 | calibration | `python -m cmx calibrate` | CI |
 | int8 export | `python -m cmx export` | CI |
 | Hinglish-TOP transfer | `python -m cmx transfer` | CI |
+
+**What ran where:**
+
+| | |
+|---|---|
+| training | Kaggle T4 (16 GB), 2026-11-19, seeds 13 / 42 / 1337. Library versions weren't recorded for these 18 runs (Kaggle's default image that day); the loop records them from now on |
+| everything else | GitHub Actions, `ubuntu-24.04`, Python 3.11, CPU only, on every push. Exact library versions: end of the [export report](https://huggingface.co/vaibhav-4-ai/codemix-nlu/blob/main/serving/report.md) |
+| live demo | Render free plan: 512 MB, 0.1 CPU, no VNNI instructions |
+| data | MASSIVE 1.1 tarball and the Hinglish-TOP test file, both pinned by SHA-256 checksum |
+| ranges | paired bootstrap, 2,000 draws, fixed seed 13 |
 
 ## License
 

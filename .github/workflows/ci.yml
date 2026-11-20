@@ -71,6 +71,12 @@ jobs:
         run: scripts/show_error.sh python scripts/check_serving.py
       - name: Transfer test on Google's Hinglish-TOP (human-written)
         run: scripts/show_error.sh python -m cmx transfer
+      - name: The pip package's benchmark tool, used the way a stranger would (published model + dataset)
+        run: |
+          python -m cmx benchmark-inputs artifacts/inputs.jsonl
+          python -m cmx predict-file artifacts/inputs.jsonl artifacts/predictions.jsonl
+          python -m cmx benchmark artifacts/predictions.jsonl
+          python -m cmx cmi "kal subah 7 baje alarm set kar do"
       - name: Put the int8 model + reports on Hugging Face (only with the HF_TOKEN secret, only on main)
         if: github.ref == 'refs/heads/main' && env.HF_TOKEN != ''
         run: python scripts/publish_model.py

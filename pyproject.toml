@@ -6,7 +6,7 @@ build-backend = "setuptools.build_meta"
 name = "codemix-nlu"
 description = "Romanized, code-mixed Hinglish intent and slot NLU on MASSIVE: how much accuracy code-mixing costs versus Devanagari, measured, and what recovers it."
 license = { text = "Apache-2.0" }
-version = "1.0.0"
+version = "1.1.0"
 readme = "README.md"
 requires-python = ">=3.11"
 dependencies = ["scikit-learn", "indic_transliteration"]
@@ -16,6 +16,10 @@ dev = ["pytest", "ruff", "matplotlib"]
 baselines = ["lightgbm", "sklearn-crfsuite"]
 train = ["torch", "transformers", "seqeval", "optuna"]
 serve = ["onnx", "onnxscript", "onnxruntime", "tokenizers", "transformers", "huggingface_hub"]
+model = ["onnxruntime", "tokenizers"]  # just enough to run the published int8 model
+
+[project.scripts]
+codemix-nlu = "cmx.__main__:main"  # `codemix-nlu benchmark predictions.jsonl` = `python -m cmx benchmark ...`
 
 [project.urls]
 Homepage = "https://github.com/vaibhav-4-ai/codemix-nlu"

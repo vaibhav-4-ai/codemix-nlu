@@ -15,6 +15,12 @@ COMMANDS = (
     "evaluate",  # Stage 7: the degradation curve, CIs, ablations, error analysis
     "transfer",  # Stage 7b: evaluate on Google's Hinglish-TOP
     "export",  # Stage 8: ONNX + int8 for serving
+    # For anyone who installs the package (no torch needed):
+    "cmi",  # code-mixing numbers for one sentence
+    "predict",  # this project's int8 model on one sentence (needs the [model] extra)
+    "benchmark-inputs",  # write the 560 x 2 paired sentences your model should predict
+    "predict-file",  # run this project's int8 model on that file
+    "benchmark",  # score a predictions file: accuracy, macro-F1, slot F1, the drop, per CMI band
 )
 
 
@@ -33,8 +39,39 @@ def main() -> None:
             p.add_argument("--backbone", default="l3cube-pune/hing-mbert")
         if name == "tune":
             p.add_argument("--trials", type=int, default=12)
+        if name in ("cmi", "predict"):
+            p.add_argument("text", help='one sentence, e.g. "kal subah 7 baje alarm laga do"')
+        if name == "benchmark-inputs":
+            p.add_argument("out", help="where to write the sentences, e.g. inputs.jsonl")
+        if name == "predict-file":
+            p.add_argument("inputs")
+            p.add_argument("out")
+        if name == "benchmark":
+            p.add_argument("predictions", help="your predictions, one JSON line per sentence and form")
     args = parser.parse_args()
-    if args.command == "train":
+    if args.command == "cmi":
+        import json
+
+        from cmx.features import code_mixing
+
+        print(json.dumps(code_mixing(args.text), indent=2))
+    elif args.command == "predict":
+        from cmx.harness import predict_text
+
+        predict_text(args.text)
+    elif args.command == "benchmark-inputs":
+        from cmx.harness import write_inputs
+
+        write_inputs(args.out)
+    elif args.command == "predict-file":
+        from cmx.harness import predict_file
+
+        predict_file(args.inputs, args.out)
+    elif args.command == "benchmark":
+        from cmx.harness import benchmark
+
+        benchmark(args.predictions)
+    elif args.command == "train":
         from cmx.train import train
 
         train(args.recipe, args.seed, args.backbone)

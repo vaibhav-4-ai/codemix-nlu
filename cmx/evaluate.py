@@ -9,7 +9,9 @@ Kaggle trained 6 models x 3 seeds and uploaded every prediction to Hugging Face
     4. by CMI     the drop sliced by how mixed the Hinglish sentence is (the degradation curve)
     5. checks     seed-to-seed spread; the drop without the 23 sentences that also sit in training
     6. curves     training loss and Hinglish dev accuracy per epoch
-    7. errors     real sentences the model gets wrong, written to errors.md
+    7. spelling   Hinglish accuracy by how many words are spelled in a way training never showed
+    8. rare slots slot F1 for slot types that are rare / medium / common in training
+    9. errors     real sentences the model gets wrong, written to errors.md
 
 "Paired": every comparison uses the SAME sentences, so each resample picks one set of sentence
 ids and uses it for every model and both scripts. The ranges for differences come out narrower
@@ -23,8 +25,9 @@ from pathlib import Path
 
 from cmx.charts import COLOURS, MUTED, new_chart, new_pair, save_chart
 from cmx.data import load
-from cmx.examples import test_sets
+from cmx.examples import test_sets, training_examples
 from cmx.features import BANDS, band, build_word_lists, sentence_features
+from cmx.massive import slot_spans
 from cmx.quick import notice
 
 SEEDS = [13, 42, 1337]
@@ -43,32 +46,22 @@ RUNS = Path("artifacts") / "hf" / "runs_v2"
 OUT = Path("artifacts") / "evaluate"
 DRAWS = 2000
 SEED = 13
+# Share of a Hinglish sentence's English-letter words that training never showed in that spelling.
+SPELLING_GROUPS = [
+    ("all familiar", 0.0, 0.0001),
+    ("some unfamiliar (up to 20%)", 0.0001, 0.2),
+    ("many unfamiliar (over 20%)", 0.2, 2.0),
+]
+# How often a slot type appears in the Hindi training sentences.
+RARITY_GROUPS = [
+    ("rare (under 50)", 0, 50),
+    ("medium (50-499)", 50, 500),
+    ("common (500+)", 500, 10**9),
+]
 
 
 def model_name(recipe, backbone):
     return f"{recipe} {backbone}"
-
-
-def slot_spans(tags):
-    """BIO tags -> set of slots as (first word, last word, type).
-
-    ["B-time", "I-time", "O", "B-date"] -> {(0, 1, "time"), (3, 3, "date")}
-    An I- tag with no matching slot open starts a new slot (the same rule seqeval uses).
-    """
-    spans = set()
-    start = None
-    kind = None
-    padded = list(tags) + ["O"]
-    for i, tag in enumerate(padded):
-        continues = tag.startswith("I-") and tag[2:] == kind
-        if start is not None and not continues:
-            spans.add((start, i - 1, kind))
-            start = None
-            kind = None
-        if tag.startswith("B-") or (tag.startswith("I-") and not continues):
-            start = i
-            kind = tag[2:]
-    return spans
 
 
 def run_folder(recipe, backbone, seed):
@@ -444,6 +437,159 @@ def curves(models, lines):
     lines.append("")
 
 
+def group_of(value, groups):
+    """The name of the group whose [low, high) range holds the value."""
+    for name, low, high in groups:
+        if low <= value < high:
+            return name
+    return groups[-1][0]
+
+
+def by_spelling(models, tables, ids, unfamiliar, lines, results):
+    """Hinglish intent accuracy, split by the share of words spelled in a way training never showed."""
+    lines.append("## 7. Robustness: unfamiliar spellings\n")
+    lines.append("Unfamiliar = share of the Hinglish sentence's English-letter words that are a new spelling "
+                 "of a known Hindi word or in no word list at all (`variant` + `oov` in `cmx eda`). "
+                 "The Devanagari column is the same sentences in Devanagari, for comparison.\n")
+    lines.append("| model | group | sentences | Devanagari intent | Hinglish intent |")
+    lines.append("|---|---|---|---|---|")
+    results["spelling"] = {}
+    for g, group_row in enumerate(SPELLING_GROUPS):
+        group_name = group_row[0]
+        group_ids = []
+        for i in ids:
+            if group_of(unfamiliar[i], SPELLING_GROUPS) == group_name:
+                group_ids.append(i)
+        if len(group_ids) < 2:
+            continue
+        keys = []
+        for recipe, backbone in models:
+            name = model_name(recipe, backbone)
+            keys.append(f"{name}|devanagari_paired_test")
+            keys.append(f"{name}|hinglish_paired_test")
+        boot = bootstrap(tables, keys, group_ids, SEED + 20 + g)
+        for recipe, backbone in models:
+            name = model_name(recipe, backbone)
+            dev = boot[f"{name}|devanagari_paired_test"]
+            hin = boot[f"{name}|hinglish_paired_test"]
+            entry = {
+                "n": len(group_ids),
+                "devanagari": dev["point"][0],
+                "hinglish": hin["point"][0], "hinglish_95": interval(hin["intent"]),
+            }  # fmt: skip
+            results["spelling"][f"{name}|{group_name}"] = entry
+            lines.append(f"| {name} | {group_name} | {len(group_ids)} | {pct(entry['devanagari'])} | "
+                         f"{with_range(entry['hinglish'], entry['hinglish_95'])} |")
+    lines.append("")
+    for recipe in ["plain", "fixed"]:
+        name = model_name(recipe, MAIN)
+        cells = []
+        for group_row in SPELLING_GROUPS:
+            entry = results["spelling"].get(f"{name}|{group_row[0]}")
+            if entry is not None:
+                cells.append(f"{group_row[0].split(' (')[0]} {pct(entry['hinglish'])}")
+        if cells:
+            notice(f"Unfamiliar spellings - {recipe}", "Hinglish intent: " + "; ".join(cells))
+
+
+def slot_counts(entry, rarity):
+    """For one sentence: {group: [slots found, true slots, guessed slots]}, summed over the seeds."""
+    counts = {}
+    for group_row in RARITY_GROUPS:
+        counts[group_row[0]] = [0, 0, 0]
+    true_spans = slot_spans(entry["tags"])
+    for guessed_tags in entry["guessed_tags"]:
+        guessed_spans = slot_spans(guessed_tags)
+        for span in true_spans:
+            group = rarity.get(span[2], RARITY_GROUPS[0][0])  # never seen in training = rare
+            counts[group][1] += 1
+            if span in guessed_spans:
+                counts[group][0] += 1
+        for span in guessed_spans:
+            group = rarity.get(span[2], RARITY_GROUPS[0][0])
+            counts[group][2] += 1
+    return counts
+
+
+def f1_of(found, true, guessed):
+    if true + guessed == 0:
+        return 0.0
+    return 2 * found / (true + guessed)
+
+
+def by_rarity(models, tables, ids, train_counts, lines, results):
+    """Slot F1 for slot types that are rare, medium or common in training."""
+    rarity = {}
+    for kind, count in train_counts.items():
+        rarity[kind] = group_of(count, RARITY_GROUPS)
+    group_names = []
+    for group_row in RARITY_GROUPS:
+        group_names.append(group_row[0])
+    types_per_group = {}
+    for name in group_names:
+        types_per_group[name] = 0
+    for name in rarity.values():
+        types_per_group[name] += 1
+
+    lines.append("## 8. Robustness: rare slot types\n")
+    lines.append("Slot F1 counted only over slots of each group's types. Slot types per group: "
+                 + ", ".join(f"{name} {types_per_group[name]}" for name in group_names)
+                 + ". 95% ranges (paired bootstrap) for the plain and fixed models.\n")
+    lines.append("| model | set | " + " | ".join(group_names) + " |")
+    lines.append("|---|---|" + "---|" * len(group_names))
+    results["rare_slots"] = {}
+    with_ranges = [model_name("plain", MAIN), model_name("fixed", MAIN)]
+    rng = random.Random(SEED + 30)
+    draws = []
+    for _ in range(DRAWS):
+        sample = []
+        for _ in ids:
+            sample.append(rng.choice(ids))
+        draws.append(sample)
+    for recipe, backbone in models:
+        name = model_name(recipe, backbone)
+        for set_name in ["devanagari_paired_test", "hinglish_paired_test"]:
+            per_id = {}
+            for i in ids:
+                per_id[i] = slot_counts(tables[f"{name}|{set_name}"][i], rarity)
+            cells = []
+            for group in group_names:
+                found = 0
+                true = 0
+                guessed = 0
+                for i in ids:
+                    found += per_id[i][group][0]
+                    true += per_id[i][group][1]
+                    guessed += per_id[i][group][2]
+                value = f1_of(found, true, guessed)
+                entry = {"slot_f1": value, "true_slots": true // len(SEEDS)}
+                cell = f"{pct(value)} ({true // len(SEEDS)} slots)"
+                if name in with_ranges:
+                    values = []
+                    for sample in draws:
+                        f = 0
+                        t = 0
+                        g = 0
+                        for i in sample:
+                            f += per_id[i][group][0]
+                            t += per_id[i][group][1]
+                            g += per_id[i][group][2]
+                        values.append(f1_of(f, t, g))
+                    entry["slot_f1_95"] = interval(values)
+                    cell = f"{with_range(value, entry['slot_f1_95'])}, {true // len(SEEDS)} slots"
+                results["rare_slots"][f"{name}|{set_name}|{group}"] = entry
+                cells.append(cell)
+            lines.append(f"| {name} | {set_name.split('_')[0]} | " + " | ".join(cells) + " |")
+    lines.append("")
+    for recipe in ["plain", "fixed"]:
+        name = model_name(recipe, MAIN)
+        entry = results["rare_slots"].get(f"{name}|hinglish_paired_test|{group_names[0]}")
+        common = results["rare_slots"].get(f"{name}|hinglish_paired_test|{group_names[-1]}")
+        if entry is not None and common is not None:
+            notice(f"Rare slots on Hinglish - {recipe}", f"rare-type slot F1 {pct(entry['slot_f1'])}, "
+                                                         f"common-type {pct(common['slot_f1'])}")
+
+
 def errors(tables, bands, ids):
     """Real sentences: what goes wrong, written for a person to read."""
     plain = model_name("plain", MAIN)
@@ -572,9 +718,16 @@ def run():
 
     lists = build_word_lists()
     bands = {}
+    unfamiliar = {}
     for i in ids:
-        cmi = sentence_features(tables[f"{first}|hinglish_paired_test"][i]["words"], lists)["cmi"]
-        bands[i] = band(cmi)
+        features = sentence_features(tables[f"{first}|hinglish_paired_test"][i]["words"], lists)
+        bands[i] = band(features["cmi"])
+        unfamiliar[i] = features["variant"] + features["oov"]
+    train_counts = {}
+    for example in training_examples("plain"):
+        for tag in example["tags"]:
+            if tag.startswith("B-"):
+                train_counts[tag[2:]] = train_counts.get(tag[2:], 0) + 1
 
     print(f"bootstrap: {DRAWS} draws over {len(ids)} paired sentences, {len(models)} models ...", flush=True)
     boot = bootstrap(tables, keys, ids, SEED)
@@ -591,6 +744,8 @@ def run():
     by_band(models, tables, ids, bands, lines, results)
     checks(models, tables, ids, lines, results)
     curves(models, lines)
+    by_spelling(models, tables, ids, unfamiliar, lines, results)
+    by_rarity(models, tables, ids, train_counts, lines, results)
 
     report = "\n".join(lines) + "\n"
     print(report)

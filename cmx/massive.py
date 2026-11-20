@@ -31,6 +31,28 @@ def parse_annot(annot: str) -> tuple[list[str], list[str]]:
     return words, tags
 
 
+def slot_spans(tags):
+    """BIO tags -> set of slots as (first word, last word, type).
+
+    ["B-time", "I-time", "O", "B-date"] -> {(0, 1, "time"), (3, 3, "date")}
+    An I- tag with no matching slot open starts a new slot (the same rule seqeval uses).
+    """
+    spans = set()
+    start = None
+    kind = None
+    padded = list(tags) + ["O"]
+    for i, tag in enumerate(padded):
+        continues = tag.startswith("I-") and tag[2:] == kind
+        if start is not None and not continues:
+            spans.add((start, i - 1, kind))
+            start = None
+            kind = None
+        if tag.startswith("B-") or (tag.startswith("I-") and not continues):
+            start = i
+            kind = tag[2:]
+    return spans
+
+
 def slot_types(annot: str) -> list[str]:
     """The slot names in a sentence, sorted: '[time : 7 baje] [date : kal]' -> ['date', 'time']."""
     return sorted(m.group(1).strip() for m in SLOT.finditer(annot))

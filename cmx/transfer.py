@@ -21,6 +21,8 @@ import json
 import urllib.request
 from pathlib import Path
 
+import numpy
+
 from cmx.examples import test_sets, training_examples
 from cmx.export import OnnxModel
 from cmx.features import BANDS, band, build_word_lists, sentence_features
@@ -34,6 +36,9 @@ URL = (
 SHA256 = "9f7bd4f80b15956143b4188a113981735264944ac825d6231b60cc2444533791"
 OUT = Path("artifacts") / "transfer"
 EXPORTED = Path("artifacts") / "export"  # made by `python -m cmx export`
+MAIN_MODEL = "main model (fixed, hing-mbert), int8"
+DRAWS = 2000
+SEED = 13
 
 MAPPING = {
     "GET_WEATHER": "weather_query",
@@ -99,8 +104,66 @@ def accuracy(guesses, truth):
     return right / len(truth)
 
 
+def right_flags(guesses, truth):
+    """1 for each sentence the model got right, 0 for each it got wrong."""
+    flags = []
+    for k, guess in enumerate(guesses):
+        flags.append(1 if guess == truth[k] else 0)
+    return flags
+
+
+def macro_f1(guesses, truth):
+    """F1 for each true intent, then the plain average (a small intent counts as much as a big one)."""
+    counts = {}
+    for k, guess in enumerate(guesses):
+        for name in [truth[k], guess]:
+            if name not in counts:
+                counts[name] = {"hit": 0, "true": 0, "guessed": 0}
+        counts[truth[k]]["true"] += 1
+        counts[guess]["guessed"] += 1
+        if guess == truth[k]:
+            counts[guess]["hit"] += 1
+    scores = []
+    for value in counts.values():
+        if value["true"] > 0:
+            scores.append(2 * value["hit"] / (value["true"] + value["guessed"]))
+    return sum(scores) / len(scores)
+
+
+def middle_95(values):
+    ordered = sorted(values)
+    return [float(ordered[int(0.025 * len(ordered))]), float(ordered[int(0.975 * len(ordered)) - 1])]
+
+
+def paired_ranges(english_flags, hinglish_flags):
+    """95% ranges for English accuracy, Hinglish accuracy and the drop, from 2,000 paired resamples.
+
+    Each resample picks n sentence positions at random (with repeats) and uses the SAME positions
+    for both columns, so the range of the drop is honest and narrow.
+    numpy does the counting: `flags[picks]` looks up the 0/1 of every picked sentence at once.
+    """
+    english = numpy.array(english_flags)
+    hinglish = numpy.array(hinglish_flags)
+    rng = numpy.random.default_rng(SEED)
+    picks = rng.integers(0, len(english), size=(DRAWS, len(english)))
+    english_means = english[picks].mean(axis=1)
+    hinglish_means = hinglish[picks].mean(axis=1)
+    return {
+        "english_95": middle_95(english_means),
+        "hinglish_95": middle_95(hinglish_means),
+        "drop_95": middle_95(english_means - hinglish_means),
+    }
+
+
 def pct(x):
     return f"{100 * x:.1f}"
+
+
+def with_range(value, low_high):
+    """'85.3 (84.2 to 86.4)', or just '85.3' when there is no range."""
+    if low_high is None:
+        return pct(value)
+    return f"{pct(value)} ({pct(low_high[0])} to {pct(low_high[1])})"
 
 
 def run():
@@ -132,6 +195,7 @@ def run():
     scores["floor: always guess " + common] = {"hinglish": counts[common] / len(truth),
                                                 "english": counts[common] / len(truth)}  # fmt: skip
 
+    guesses_by_model = {}
     # TF-IDF baselines
     for recipe in ["plain", "fixed"]:
         train_texts = []
@@ -140,26 +204,35 @@ def run():
             train_texts.append(" ".join(example["words"]))
             train_labels.append(example["intent"])
         model = make_model().fit(train_texts, train_labels)
-        result = {}
+        name = f"TF-IDF + logistic regression, {recipe}"
+        guesses_by_model[name] = {}
         for side in ["hinglish", "english"]:
             texts = []
             for row in kept:
                 texts.append(" ".join(words_of(row[side])))
-            result[side] = accuracy(list(model.predict(texts)), truth)
-        scores[f"TF-IDF + logistic regression, {recipe}"] = result
+            guesses_by_model[name][side] = list(model.predict(texts))
 
     # the shrunk main model
     small = OnnxModel(EXPORTED)
-    result = {}
-    guesses_hinglish = []
+    guesses_by_model[MAIN_MODEL] = {}
     for side in ["hinglish", "english"]:
         guesses = []
         for row in kept:
             guesses.append(small.predict(words_of(row[side]))["intent"])
-        result[side] = accuracy(guesses, truth)
-        if side == "hinglish":
-            guesses_hinglish = guesses
-    scores["main model (fixed, hing-mbert), int8"] = result
+        guesses_by_model[MAIN_MODEL][side] = guesses
+    guesses_hinglish = guesses_by_model[MAIN_MODEL]["hinglish"]
+
+    # accuracy, macro-F1 and paired 95% ranges for every model
+    for name, by_side in guesses_by_model.items():
+        result = {}
+        flags = {}
+        for side in ["hinglish", "english"]:
+            result[side] = accuracy(by_side[side], truth)
+            result[f"{side}_macro_f1"] = macro_f1(by_side[side], truth)
+            flags[side] = right_flags(by_side[side], truth)
+        ranges = paired_ranges(flags["english"], flags["hinglish"])
+        result.update(ranges)
+        scores[name] = result
 
     # ceiling: same model, MASSIVE's own Hinglish test, same intents only
     mapped_intents = set(MAPPING.values())
@@ -173,6 +246,8 @@ def run():
         ceiling_guesses.append(small.predict(example["words"])["intent"])
         ceiling_truth.append(example["intent"])
     ceiling = accuracy(ceiling_guesses, ceiling_truth)
+    ceiling_flags = right_flags(ceiling_guesses, ceiling_truth)
+    ceiling_95 = paired_ranges(ceiling_flags, ceiling_flags)["english_95"]  # one column: both sides the same
 
     # by CMI band, Hinglish side
     lists = build_word_lists()
@@ -189,14 +264,22 @@ def run():
     lines.append(f"{len(rows):,} sentences in the file; {len(kept):,} kept ({len(MAPPING)} intents mapped), "
                  f"{len(rows) - len(kept):,} dropped. Intent only: Hinglish-TOP's slot labels are a "
                  "different scheme.\n")
-    lines.append("| model | English | Hinglish | drop |")
-    lines.append("|---|---|---|---|")
+    lines.append("Intent accuracy, with 95% ranges from 2,000 paired resamples of the sentences; macro-F1 "
+                 "(every intent counts the same) in the last two columns.\n")
+    lines.append("| model | English | Hinglish | drop | macro-F1 English | macro-F1 Hinglish |")
+    lines.append("|---|---|---|---|---|---|")
     for name, result in scores.items():
-        lines.append(f"| {name} | {pct(result['english'])} | {pct(result['hinglish'])} | "
-                     f"{pct(result['english'] - result['hinglish'])} |")
+        cells = []
+        for side in ["english", "hinglish"]:
+            cells.append(with_range(result[side], result.get(f"{side}_95")))
+        cells.append(with_range(result["english"] - result["hinglish"], result.get("drop_95")))
+        for side in ["english", "hinglish"]:
+            value = result.get(f"{side}_macro_f1")
+            cells.append("-" if value is None else pct(value))
+        lines.append(f"| {name} | " + " | ".join(cells) + " |")
     lines.append(f"\nCeiling - the same int8 model on MASSIVE's own Hinglish test, same {len(mapped_intents)} "
-                 f"intents ({len(in_domain)} sentences): {pct(ceiling)}. The gap to the Hinglish column is the "
-                 "cost of new writers, new topics and a different labelling style.\n")
+                 f"intents ({len(in_domain)} sentences): {with_range(ceiling, ceiling_95)}. The gap to the "
+                 "Hinglish column is the cost of new writers, new topics and a different labelling style.\n")
     lines.append("**Main model on Hinglish-TOP, by CMI band:**\n")
     lines.append("| band | sentences | intent accuracy |")
     lines.append("|---|---|---|")
@@ -220,11 +303,13 @@ def run():
     print(report)
     (OUT / "report.md").write_text(report, encoding="utf-8")
     results = {"kept": len(kept), "dropped": len(rows) - len(kept), "scores": scores, "ceiling": ceiling,
-               "bands": band_scores}  # fmt: skip
+               "ceiling_95": ceiling_95, "ceiling_sentences": len(in_domain), "bands": band_scores}  # fmt: skip
     (OUT / "results.json").write_text(json.dumps(results, indent=2), encoding="utf-8")
-    main = scores["main model (fixed, hing-mbert), int8"]
-    notice("Hinglish-TOP transfer", f"int8 main model: English {pct(main['english'])}, Hinglish "
-                                    f"{pct(main['hinglish'])}; ceiling {pct(ceiling)}; n={len(kept)}")
+    main = scores[MAIN_MODEL]
+    notice("Hinglish-TOP transfer", f"int8 main model: English {with_range(main['english'], main['english_95'])}"
+                                    f"; Hinglish {with_range(main['hinglish'], main['hinglish_95'])}"
+                                    f"; macro-F1 Hinglish {pct(main['hinglish_macro_f1'])}"
+                                    f"; ceiling {with_range(ceiling, ceiling_95)}; n={len(kept)}")
 
 
 def by_count(pair):

@@ -4,26 +4,35 @@
 2. ONNX: save the model as a plain graph of maths steps that runs without PyTorch
 3. int8: store each weight as an 8-bit integer instead of a 32-bit decimal -> about 4x smaller
 4. check what that cost: accuracy, how often int8 and full-size agree, size, speed (p50 / p95)
+5. slot PR-AUC for the full model, rare vs common slot types (needs the slot probabilities,
+   which the saved predictions don't keep)
 
 Writes artifacts/export/: model.int8.onnx, labels.json, tokenizer/, report.md, results.json.
 """
 
 import json
 import os
+import platform
 import time
 from pathlib import Path
 
 import numpy
 import onnxruntime
+import sklearn
 import torch
+import transformers
 from huggingface_hub import hf_hub_download, snapshot_download
 from onnxruntime.quantization import QuantType, quantize_dynamic
+from sklearn.metrics import average_precision_score
 from transformers import AutoTokenizer
 
-from cmx.evaluate import slot_spans
-from cmx.examples import test_sets
+from cmx.examples import test_sets, training_examples
+from cmx.massive import slot_spans
 from cmx.quick import notice
 from cmx.train import BACKBONE, MAX_PIECES, JointModel
+
+PR_AUC_SETS = ["test", "hinglish_paired_test"]  # the full Hindi test (2,974) and the paired Hinglish
+RARE = 50  # a slot type seen fewer than 50 times in training counts as rare
 
 REPO = "vaibhav-4-ai/codemix-nlu"
 RUN = "runs_v2/fixed_hing-mbert_seed13"
@@ -91,13 +100,63 @@ def full_model_predict(model, tokenizer, metrics, words):
     with torch.no_grad():
         intent_logits, slot_logits = model(ids, torch.ones_like(ids))
     best = int(intent_logits[0].argmax())
+    tag_probs = torch.softmax(slot_logits[0], dim=-1)
     tags = ["O"] * len(words)
+    word_probs = [None] * len(words)  # each word: the probability of every tag (on its first piece)
     previous = None
     for position, word_id in enumerate(enc.word_ids()):
         if word_id is not None and word_id != previous:
             tags[word_id] = metrics["tag_names"][int(slot_logits[0][position].argmax())]
+            word_probs[word_id] = tag_probs[position].tolist()
         previous = word_id
-    return {"intent": metrics["intent_names"][best], "tags": tags}
+    return {"intent": metrics["intent_names"][best], "tags": tags, "word_probs": word_probs}
+
+
+def slot_pr_auc(examples, guesses, tag_names, train_counts):
+    """PR-AUC (average precision) for each slot type, at the word level.
+
+    For slot type "time", every word gets a score = P(B-time) + P(I-time) and a label = is it
+    really part of a time slot? Average precision summarises the whole precision-recall curve, so
+    it does not depend on one cut-off, and it is not flattered by the many "O" words (unlike accuracy).
+    Words cut off by the 64-piece limit have no probabilities and are skipped.
+    """
+    kinds = []
+    for name in tag_names:
+        if name.startswith("B-"):
+            kinds.append(name[2:])
+    per_type = {}
+    for kind in kinds:
+        b_index = tag_names.index("B-" + kind)
+        i_index = tag_names.index("I-" + kind) if ("I-" + kind) in tag_names else None
+        labels = []
+        scores = []
+        for k, example in enumerate(examples):
+            for w, tag in enumerate(example["tags"]):
+                probs = guesses[k]["word_probs"][w]
+                if probs is None:
+                    continue
+                score = probs[b_index]
+                if i_index is not None:
+                    score += probs[i_index]
+                labels.append(1 if tag[2:] == kind else 0)
+                scores.append(score)
+        positives = sum(labels)
+        if positives == 0:
+            continue  # this slot type never appears in this set: nothing to score
+        per_type[kind] = {
+            "pr_auc": float(average_precision_score(labels, scores)),
+            "words": positives, "train_count": train_counts.get(kind, 0),
+        }  # fmt: skip
+    groups = {"rare": [], "common": []}
+    for value in per_type.values():
+        groups["rare" if value["train_count"] < RARE else "common"].append(value["pr_auc"])
+    summary = {"types_scored": len(per_type)}
+    for name, values in groups.items():
+        summary[f"{name}_types"] = len(values)
+        summary[f"{name}_mean_pr_auc"] = sum(values) / len(values) if values else None
+    all_values = groups["rare"] + groups["common"]
+    summary["macro_pr_auc"] = sum(all_values) / len(all_values) if all_values else None
+    return summary, per_type
 
 
 def export_onnx(model, example, path, use_new_exporter):
@@ -120,6 +179,12 @@ def export_onnx(model, example, path, use_new_exporter):
         opset_version=18,
         dynamo=use_new_exporter,
     )
+
+
+def pr_cell(value, n_types):
+    if value is None:
+        return "-"
+    return f"{value:.3f} ({n_types})"
 
 
 def percentile(values, share):
@@ -169,6 +234,7 @@ def run():
         "sets": {},
     }
     timings = []
+    full_by_set = {}
     for name in CHECK_SETS:
         full_guesses = []
         small_guesses = []
@@ -188,9 +254,34 @@ def run():
             "full_intent": full_acc, "int8_intent": small_acc, "full_slot_f1": full_f1,
             "int8_slot_f1": small_f1, "same_intent_share": agree / len(full_guesses),
         }  # fmt: skip
+        full_by_set[name] = full_guesses
     results["ms_per_sentence"] = {"p50": round(percentile(timings, 0.5), 1),
                                   "p95": round(percentile(timings, 0.95), 1)}  # fmt: skip
     os.remove(full_path)  # the full-size ONNX copy is not needed any more
+
+    # 4. slot PR-AUC, full model, rare vs common slot types
+    train_counts = {}
+    for example in training_examples("plain"):
+        for tag in example["tags"]:
+            if tag.startswith("B-"):
+                train_counts[tag[2:]] = train_counts.get(tag[2:], 0) + 1
+    results["slot_pr_auc"] = {}
+    per_type_by_set = {}
+    for name in PR_AUC_SETS:
+        if name not in full_by_set:
+            guesses = []
+            for item in sets[name]:
+                guesses.append(full_model_predict(model, tokenizer, metrics, item["words"]))
+            full_by_set[name] = guesses
+        summary, per_type = slot_pr_auc(sets[name], full_by_set[name], metrics["tag_names"], train_counts)
+        results["slot_pr_auc"][name] = summary
+        per_type_by_set[name] = per_type
+    results["slot_pr_auc_per_type"] = per_type_by_set
+    results["software"] = {
+        "python": platform.python_version(), "torch": torch.__version__,
+        "transformers": transformers.__version__, "onnxruntime": onnxruntime.__version__,
+        "scikit-learn": sklearn.__version__, "numpy": numpy.__version__, "machine": platform.machine(),
+    }  # fmt: skip
 
     lines = ["# Export: int8 ONNX for CPU serving (written by `python -m cmx export`)\n"]
     lines.append(f"Model: fixed recipe, hing-mbert, seed 13. Size: PyTorch {results['size_mb']['pytorch_fp32']} MB"
@@ -203,6 +294,20 @@ def run():
                      f"{100 * r['same_intent_share']:.1f}% |")
     lines.append(f"\nSpeed on the GitHub runner CPU, one sentence at a time, 2 threads: "
                  f"p50 {results['ms_per_sentence']['p50']} ms, p95 {results['ms_per_sentence']['p95']} ms.\n")
+    lines.append(f"## Slot PR-AUC (full-size model, word level; rare = under {RARE} times in training)\n")
+    lines.append("| set | slot types scored | all types | rare types | common types |")
+    lines.append("|---|---|---|---|---|")
+    for name, s in results["slot_pr_auc"].items():
+        cells = [str(s["types_scored"]), pr_cell(s["macro_pr_auc"], s["types_scored"])]
+        cells.append(pr_cell(s["rare_mean_pr_auc"], s["rare_types"]))
+        cells.append(pr_cell(s["common_mean_pr_auc"], s["common_types"]))
+        lines.append(f"| {name} | " + " | ".join(cells) + " |")
+    lines.append("\nEach cell is the plain average over slot types, so a rare type counts as much as a common "
+                 "one. Per-type numbers are in results.json.\n")
+    software = []
+    for key, value in results["software"].items():
+        software.append(f"{key} {value}")
+    lines.append("Software for this run: " + ", ".join(software) + ".\n")
     report = "\n".join(lines)
     print(report)
     (OUT / "report.md").write_text(report, encoding="utf-8")
@@ -215,3 +320,8 @@ def run():
     notice("int8 export", f"{results['size_mb']['pytorch_fp32']} MB -> {results['size_mb']['onnx_int8']} MB; "
                           f"Hinglish intent {100 * hinglish['full_intent']:.1f} -> {100 * hinglish['int8_intent']:.1f};"
                           f" p95 {results['ms_per_sentence']['p95']} ms")
+    for name, s in results["slot_pr_auc"].items():
+        rare = "-" if s["rare_mean_pr_auc"] is None else f"{s['rare_mean_pr_auc']:.3f}"
+        common = "-" if s["common_mean_pr_auc"] is None else f"{s['common_mean_pr_auc']:.3f}"
+        notice(f"Slot PR-AUC - {name}", f"rare types {rare} ({s['rare_types']}); "
+                                        f"common types {common} ({s['common_types']})")
