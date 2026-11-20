@@ -199,7 +199,8 @@ def report(result):
 
 
 def benchmark(predictions_path):
-    from cmx.quick import notice  # prints a note on the GitHub run page; does nothing elsewhere
+    # notice() prints a note on the GitHub run page; it does nothing elsewhere.
+    from cmx.quick import notice
 
     result = score(paired_test(), read_lines(predictions_path))
     print(report(result))
