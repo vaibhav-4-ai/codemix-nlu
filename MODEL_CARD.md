@@ -47,7 +47,7 @@ and read the names from `labels.json`. See `dc/codemix.py` in [deferral-curve](h
 | served int8 (fixed, seed 13) | 82.7% | 83.2% | |
 
 On Google's human-written Hinglish-TOP (4,262 requests, 17 mapped intents) the served int8 model gets 89.1%
-(88.1–90.0) in English and 85.3% (84.3–86.4) in Hinglish; macro-F1 83.8 / 79.2.
+(88.2–90.0) in English and 85.3% (84.3–86.3) in Hinglish; macro-F1 83.8 / 79.2.
 
 To benchmark another model on the paired set the same way: `pip install codemix-nlu`, then
 `codemix-nlu benchmark-inputs` / `codemix-nlu benchmark` (see the GitHub README).

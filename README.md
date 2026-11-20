@@ -210,11 +210,13 @@ Intent accuracy with 95% ranges (2,000 paired resamples), then macro-F1 (every i
 | always guess the most common intent | 21.6 | 21.6 | - |
 | TF-IDF, plain | 15.9 (14.9–17.0) | 8.7 (7.9–9.5) | 12.6 / 8.6 |
 | TF-IDF, fixed | 77.0 (75.7–78.3) | 70.1 (68.7–71.4) | 69.1 / 63.5 |
-| **fixed hing-mbert, int8 (the served model)** | **89.1** (88.1–90.0) | **85.3** (84.3–86.4) | 83.8 / 79.2 |
+| **fixed hing-mbert, int8 (the served model)** | **89.1** (88.2–90.0) | **85.3** (84.3–86.3) | 83.8 / 79.2 |
 
 Ceiling: the same int8 model on our own Hinglish test, same intents: 85.4 (79.2–91.5; only 130 sentences, so the
 range is wide). English → Hinglish costs the served model 3.8 points (2.9–4.6) on these new writers. The test file has 6,513
 human-written rows, and 4,262 fall in the 17 mapped intents. No Hinglish-TOP data is ever used for training.
+The int8 model can give a different answer on a handful of sentences on different CPU types, so the last digit of
+these ranges can move by 0.1 between CI runs.
 
 ### 7. Serving
 
