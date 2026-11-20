@@ -44,10 +44,10 @@ and read the names from `labels.json`. See `dc/codemix.py` in [deferral-curve](h
 |---|---|---|---|
 | plain (Devanagari only) | 82.0% intent | **48.3%** (44.8–51.7) | 82.9% |
 | fixed (+ romanized + English) | 85.4% | **85.8%** (83.2–88.4) | 84.7% |
-| served int8 (fixed, seed 13) | 82.5% | 83.2% | |
+| served int8 (fixed, seed 13) | 82.7% | 83.2% | |
 
-On Google's human-written Hinglish-TOP (4,262 requests, 17 mapped intents) the served int8 model gets 88.2% in
-English and 83.8% in Hinglish.
+On Google's human-written Hinglish-TOP (4,262 requests, 17 mapped intents) the served int8 model gets 89.1% in
+English and 85.3% in Hinglish.
 
 ## Limitations
 

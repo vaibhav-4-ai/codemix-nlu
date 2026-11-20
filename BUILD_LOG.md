@@ -18,7 +18,7 @@ has the results.
 - **Who wrote the Hinglish:** an AI model (Claude) drafted all 952 sentences; I chose this to finish in time. Every
   row is checked automatically (same slot types as the Hindi), and a random 100 were checked again, also by AI
   (4 corrected). Because it is not human-written, I added a transfer test on Google's human-written Hinglish-TOP;
-  the model scores 83.8% there against 84.6% on my set, so the AI-drafted set isn't flattering the model.
+  the model scores 85.3% there against 85.4% on my set, so the AI-drafted set isn't flattering the model.
 - **One change at a time:** five training recipes, each adding one thing. `train.py` refuses a run that changes
   more than one setting from the main run.
 - **Tuning only on dev:** Optuna's score is the mean of intent accuracy and slot F1 on the Devanagari dev set and
@@ -35,9 +35,11 @@ has the results.
   It now also reports its training accuracy, so a broken run is obvious.
 - **Per-channel int8 quantization broke the model** (Hinglish accuracy 1.6%) and CI uploaded it before I noticed.
   I reverted it and added a gate: the export fails, and nothing is uploaded, if int8 loses more than 10 points.
-- **The live page first answered "calendar_query" for everything**, while the same model scored 83% in CI. CI
-  and the server differ in tokenizer library and in two memory-saving ONNX Runtime options;
-  `scripts/check_serving.py` now runs the model all three ways in CI to find which one breaks it.
+- **The live page first answered "calendar_query" for everything**, while the same model scored 83% in CI.
+  `scripts/check_serving.py` ran the model exactly as the server does (light tokenizer, memory options) and
+  still got 83%, so the code was fine and the difference was the **CPU**: the server reports no VNNI
+  instructions, and ONNX Runtime's signed 8-bit path can overflow on such CPUs. Unsigned 8-bit weights (QUInt8)
+  fixed it: 12 of 12 test requests right on the live page, and int8 slot F1 went up (63.7 → 68.2).
 - **4 of the 100 checked sentences were wrong** (a wrong time, a slot on the wrong word, two garbled word orders).
   They were fixed after training, so the results script leaves those sentences out instead of comparing old
   predictions with new answers.

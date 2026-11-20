@@ -12,9 +12,9 @@ model on a 512 MB CPU server.
 | **The drop** | A hing-mbert model trained on Devanagari Hindi gets the intent right for **82.0%** of 557 test requests, but only **48.3%** of **the same requests** written in Hinglish: **−33.7 points** (95% range 29.9 to 37.5). |
 | **The fix** | Training on Devanagari + auto-romanized Hindi + English: Hinglish **85.8%**, Devanagari **85.4%**. The gap is gone (−0.4, range −2.8 to 2.0). |
 | **Why both halves** | Romanized data fixes Hinglish with *no* English words; English data fixes *heavily* mixed Hinglish. Neither alone closes the gap ([the curve](#3-the-degradation-curve)). |
-| **On strangers' Hinglish** | On Google's human-written Hinglish-TOP (4,262 requests, different writers and topics), the served int8 model scores **83.8%**, close to its 84.6% ceiling on our own test set. |
+| **On strangers' Hinglish** | On Google's human-written Hinglish-TOP (4,262 requests, different writers and topics), the served int8 model scores **85.3%**, matching its 85.4% on our own test set. |
 | **Honest confidence** | Temperature scaling cuts calibration error on Hinglish from 0.076 to 0.017; an "ask instead of act" cut-off answers 90% of Hinglish requests at 91% accuracy. |
-| **Served** | 712 MB → **178 MB** int8 ONNX, 7–9 ms per sentence on a CPU. Live: **[deferral-curve.onrender.com/codemix](https://deferral-curve.onrender.com/codemix)** |
+| **Served** | 712 MB → **178 MB** int8 ONNX. Live on a 512 MB, 0.1-CPU server: **442 MB** peak, **p95 147 ms**: **[deferral-curve.onrender.com/codemix](https://deferral-curve.onrender.com/codemix)** |
 
 Every number on this page is recomputed by CI on each push, from predictions saved on
 [Hugging Face](https://huggingface.co/vaibhav-4-ai/codemix-nlu). The paired test set is published as
@@ -176,18 +176,20 @@ dropped intent is listed with its reason in the
 | always guess the most common intent | 21.6 | 21.6 |
 | TF-IDF, plain | 15.9 | 8.7 |
 | TF-IDF, fixed | 77.0 | 70.1 |
-| **fixed hing-mbert, int8 (the served model)** | **88.2** | **83.8** |
+| **fixed hing-mbert, int8 (the served model)** | **89.1** | **85.3** |
 
-Ceiling: the same int8 model on our own Hinglish test, same intents: 84.6.
+Ceiling: the same int8 model on our own Hinglish test, same intents: 85.4.
 
 ### 7. Serving
 
-`python -m cmx export`: ONNX export, then dynamic int8 quantization: **712 MB → 178 MB**. It keeps 91% of
-intent decisions identical to the full model; Hinglish intent 86.2 → 83.2. Speed: p50 7.3 ms, p95 9.4 ms per
-sentence (GitHub runner, 2 threads). A safety gate stops the upload if int8 loses more than 10 points (added after
+`python -m cmx export`: ONNX export, then dynamic int8 quantization with unsigned 8-bit weights:
+**712 MB → 178 MB**. It keeps 93% of intent decisions identical to the full model; Hinglish intent 86.2 → 83.2,
+slot F1 69.6 → 68.2. Signed 8-bit weights gave garbage on the live server's older CPU (no VNNI instructions)
+while working on GitHub's; `scripts/check_serving.py` now runs the model exactly as the server does, in CI. A safety gate stops the upload if int8 loses more than 10 points (added after
 a per-channel export silently broke the model, 1.6% accuracy, once). The served page runs this model next to the TF-IDF plain model inside the
 [deferral-curve](https://github.com/vaibhav-4-ai/deferral-curve) container (512 MB, 0.1 CPU) with onnxruntime +
-tokenizers only (no torch): **[/codemix](https://deferral-curve.onrender.com/codemix)**. Memory and live p95 are on
+tokenizers only (no torch): **[/codemix](https://deferral-curve.onrender.com/codemix)**. Measured live (2026-11-20, 12
+requests): **442 MB peak memory, p50 104 ms, p95 147 ms** on 0.1 CPU; current numbers on
 [/stats](https://deferral-curve.onrender.com/stats).
 
 ### 8. Errors
@@ -208,7 +210,7 @@ augmentation of Hindi direction words and dates.
 ## Limitations
 
 - The paired Hinglish is **AI-drafted and AI-checked**, not written by many real users. Hinglish-TOP (human-written)
-  agrees with it (83.8 vs 84.6), but slang, typos and heavy abbreviation ("kl", "krna") are under-represented.
+  agrees with it (85.3 vs 85.4), but slang, typos and heavy abbreviation ("kl", "krna") are under-represented.
 - The CMI tagger is a word-list tagger: short words like "to" / "me" are ambiguous, and unknown words default to
   Hindi.
 - The "none" band has only 54 sentences, so its ranges are wide.
@@ -230,6 +232,20 @@ augmentation of Hindi direction words and dates.
 
 As far as I found, none of these measures **the same sentences with identical labels in Devanagari and in
 Hinglish**, sliced by how mixed they are, with calibration.
+
+## Use it
+
+```bash
+pip install codemix-nlu
+```
+```python
+from cmx.features import code_mixing
+code_mixing("kal subah 7 baje alarm set kar do")
+# {'cmi': 28.57, 'i_index': 0.333, 'english_share': 0.286, 'script_latin': 1.0, 'variant': 0.143,
+#  'oov': 0.0, 'band': 'medium'}
+```
+The word lists ship with the package. To run the model itself, use `serving/` on
+[Hugging Face](https://huggingface.co/vaibhav-4-ai/codemix-nlu) (int8 ONNX, see the model card).
 
 ## Reproduce
 
