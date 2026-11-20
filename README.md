@@ -203,14 +203,18 @@ dropped intent is listed with its reason in the
 [report](https://huggingface.co/vaibhav-4-ai/codemix-nlu/blob/main/charts/transfer/report.md), e.g. timers
 (MASSIVE has none) and "send a message" (MASSIVE splits it across email and social).
 
-| model | English | Hinglish |
-|---|---|---|
-| always guess the most common intent | 21.6 | 21.6 |
-| TF-IDF, plain | 15.9 | 8.7 |
-| TF-IDF, fixed | 77.0 | 70.1 |
-| **fixed hing-mbert, int8 (the served model)** | **89.1** | **85.3** |
+Intent accuracy with 95% ranges (2,000 paired resamples), then macro-F1 (every intent counts the same):
 
-Ceiling: the same int8 model on our own Hinglish test, same intents: 85.4.
+| model | English | Hinglish | macro-F1 English / Hinglish |
+|---|---|---|---|
+| always guess the most common intent | 21.6 | 21.6 | - |
+| TF-IDF, plain | 15.9 (14.9–17.0) | 8.7 (7.9–9.5) | 12.6 / 8.6 |
+| TF-IDF, fixed | 77.0 (75.7–78.3) | 70.1 (68.7–71.4) | 69.1 / 63.5 |
+| **fixed hing-mbert, int8 (the served model)** | **89.1** (88.1–90.0) | **85.3** (84.3–86.4) | 83.8 / 79.2 |
+
+Ceiling: the same int8 model on our own Hinglish test, same intents: 85.4 (79.2–91.5; only 130 sentences, so the
+range is wide). English → Hinglish costs the served model 3.8 points (2.9–4.6) on these new writers. The test file has 6,513
+human-written rows, and 4,262 fall in the 17 mapped intents. No Hinglish-TOP data is ever used for training.
 
 ### 7. Serving
 
@@ -241,6 +245,44 @@ Opposite pairs (up↔down, on↔off) are 3 of its 8 most common mix-ups. In slot
 common types (90.8% of date slots found in Devanagari, 65.7% in Hinglish). A next step would be targeted
 augmentation of Hindi direction words and dates.
 
+### 9. Robustness: spelling and rare slots
+
+**Unfamiliar spellings.** Each Hinglish sentence is grouped by the share of its English-letter words that
+training never showed in that spelling (*kamre* when training only had *kamare*, or not in any word list).
+[Report](https://huggingface.co/vaibhav-4-ai/codemix-nlu/blob/main/charts/evaluate/results.md), section 7.
+
+| Hinglish intent accuracy | all familiar (171) | some unfamiliar, up to 20% (137) | many unfamiliar, over 20% (249) |
+|---|---|---|---|
+| plain | 49.5 (43.1–55.8) | 54.0 (47.0–61.1) | 44.3 (39.2–49.5) |
+| fixed | 86.9 (82.3–91.2) | 88.8 (83.9–93.2) | 83.3 (78.8–87.3) |
+| noisy (fixed + spelling noise) | 88.7 (84.2–92.8) | 89.8 (84.9–94.2) | 83.8 (79.7–87.7) |
+
+The fixed model loses about 3.6 points on heavily misspelled sentences, and the ranges overlap, so spelling
+isn't its main weakness. The spelling-noise recipe, built for exactly these sentences, doesn't help them
+(83.8 vs 83.3).
+
+**Rare slot types.** 19 of 55 slot types appear fewer than 50 times in training. Slot F1 on the paired test,
+counted per group of types (46 / 358 / 242 slots):
+
+| slot F1 | rare (under 50) | medium (50–499) | common (500+) |
+|---|---|---|---|
+| plain, Hinglish | 16.9 (4.1–30.0) | 38.3 (33.7–42.7) | 52.5 (47.5–57.6) |
+| fixed, Devanagari | 53.2 (39.0–65.9) | 68.5 (64.2–72.8) | 69.3 (64.2–74.5) |
+| fixed, Hinglish | 57.8 (42.7–70.4) | 71.1 (66.8–75.0) | 67.0 (61.9–71.9) |
+
+**Slot PR-AUC** (full-size fixed model, seed 13, word level: P(B-type) + P(I-type) against "is this word part of
+that slot"), averaged over slot types so a rare type counts as much as a common one:
+
+| set | rare types | common types |
+|---|---|---|
+| full Hindi test (2,974) | **0.476** (17 types) | 0.778 (36 types) |
+| Hinglish paired test (560) | 0.649 (14 types) | 0.795 (36 types) |
+
+**Rare slot types are the model's clearest weak spot**, in Devanagari as much as in Hinglish: 13–15 points of
+slot F1 below the medium types, and 0.30 lower PR-AUC on the full Hindi test. Only 46 rare slots are in the paired
+test, so their ranges are wide; the PR-AUC on 2,974 sentences confirms the gap. Weighting rare tags in the loss
+was tried during tuning (see Model and training) and wasn't chosen.
+
 ## Limitations
 
 - The paired Hinglish is **AI-drafted and AI-checked**, not written by many real users. Hinglish-TOP (human-written)
@@ -248,6 +290,7 @@ augmentation of Hindi direction words and dates.
 - The CMI tagger is a word-list tagger: short words like "to" / "me" are ambiguous, and unknown words default to
   Hindi.
 - The "none" band has only 54 sentences, so its ranges are wide.
+- Slot types that are rare in training are found much less often (slot PR-AUC 0.48 vs 0.78 on the Hindi test).
 - Slot F1 on Hinglish-TOP is not reported: its slot labels are a different scheme.
 - The served model is one seed (13), int8; the tables use the full-size models.
 - **Change from the original plan:** HingBERT (`l3cube-pune/hing-bert`) has only 70 Devanagari tokens in its

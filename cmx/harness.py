@@ -199,8 +199,13 @@ def report(result):
 
 
 def benchmark(predictions_path):
+    from cmx.quick import notice  # prints a note on the GitHub run page; does nothing elsewhere
+
     result = score(paired_test(), read_lines(predictions_path))
     print(report(result))
+    notice("Benchmark tool", f"Devanagari {pct(result['devanagari']['intent_accuracy'])}; Hinglish "
+                             f"{pct(result['hinglish']['intent_accuracy'])}; Hinglish slot F1 "
+                             f"{pct(result['hinglish']['slot_f1'])}; drop {pct(result['drop'])}")
     return result
 
 

@@ -3,7 +3,7 @@
 Versions follow [semantic versioning](https://semver.org): a new MAJOR number would mean a change that breaks
 existing use.
 
-## 1.1.0 (2026-11-21)
+## 1.1.0 (2026-11-20)
 
 - **Benchmark tool:** `codemix-nlu benchmark-inputs`, `benchmark` and `predict-file` score any model on the 560
   paired requests (intent accuracy, macro-F1, slot F1, the Devanagari − Hinglish drop with a paired 95% range, and

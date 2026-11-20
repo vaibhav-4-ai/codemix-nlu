@@ -46,14 +46,19 @@ and read the names from `labels.json`. See `dc/codemix.py` in [deferral-curve](h
 | fixed (+ romanized + English) | 85.4% | **85.8%** (83.2–88.4) | 84.7% |
 | served int8 (fixed, seed 13) | 82.7% | 83.2% | |
 
-On Google's human-written Hinglish-TOP (4,262 requests, 17 mapped intents) the served int8 model gets 89.1% in
-English and 85.3% in Hinglish.
+On Google's human-written Hinglish-TOP (4,262 requests, 17 mapped intents) the served int8 model gets 89.1%
+(88.1–90.0) in English and 85.3% (84.3–86.4) in Hinglish; macro-F1 83.8 / 79.2.
+
+To benchmark another model on the paired set the same way: `pip install codemix-nlu`, then
+`codemix-nlu benchmark-inputs` / `codemix-nlu benchmark` (see the GitHub README).
 
 ## Limitations
 
 - The paired Hinglish test set was drafted by an AI model and checked automatically and by a second AI pass (4 of
   100 corrected), not by a native speaker. The Hinglish-TOP result is the check on real writers.
 - int8 costs about 3 intent points against the full model.
+- Slot types that are rare in training (19 of 55) are found much less often: slot PR-AUC 0.48 vs 0.78 for common
+  types on the Hindi test.
 - For research and demos, not production: 60 MASSIVE intents only, English/Hindi only.
 
 ## Licences
